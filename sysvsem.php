@@ -1,9 +1,9 @@
 <?php
 
-// Start of sysvsem v.
+// Start of sysvsem v.7.0.4-7ubuntu2
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Get a semaphore id
  * @link http://php.net/manual/en/function.sem-get.php
  * @param int $key
@@ -23,10 +23,10 @@
  * @return resource a positive semaphore identifier on success, or <b>FALSE</b> on
  * error.
  */
-function sem_get ($key, $max_acquire = 1, $perm = 0666, $auto_release = 1) {}
+function sem_get(int $key, int $max_acquire = 1, int $perm = 0666, int $auto_release = 1) {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Acquire a semaphore
  * @link http://php.net/manual/en/function.sem-acquire.php
  * @param resource $sem_identifier <p>
@@ -41,10 +41,10 @@ function sem_get ($key, $max_acquire = 1, $perm = 0666, $auto_release = 1) {}
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function sem_acquire ($sem_identifier, $nowait = false) {}
+function sem_acquire($sem_identifier, bool $nowait = false): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Release a semaphore
  * @link http://php.net/manual/en/function.sem-release.php
  * @param resource $sem_identifier <p>
@@ -53,10 +53,10 @@ function sem_acquire ($sem_identifier, $nowait = false) {}
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function sem_release ($sem_identifier) {}
+function sem_release($sem_identifier): bool {}
 
 /**
- * (PHP 4 &gt;= 4.1.0, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.1.0, PHP 5, PHP 7)<br/>
  * Remove a semaphore
  * @link http://php.net/manual/en/function.sem-remove.php
  * @param resource $sem_identifier <p>
@@ -65,7 +65,7 @@ function sem_release ($sem_identifier) {}
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function sem_remove ($sem_identifier) {}
+function sem_remove($sem_identifier): bool {}
 
-// End of sysvsem v.
+// End of sysvsem v.7.0.4-7ubuntu2
 ?>

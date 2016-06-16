@@ -1,52 +1,59 @@
 <?php
 
-// Start of memcache v.3.0.8
+// Start of memcache v.3.0.9-dev
 
 class MemcachePool  {
 
-	public function connect () {}
+	public function connect() {}
 
-	public function addserver () {}
+	public function addserver() {}
 
-	public function setserverparams () {}
+	public function setserverparams() {}
 
-	public function setfailurecallback () {}
+	public function setfailurecallback() {}
 
-	public function getserverstatus () {}
+	public function getserverstatus() {}
 
-	public function findserver () {}
+	public function findserver() {}
 
-	public function getversion () {}
+	public function getversion() {}
 
-	public function add () {}
+	public function add() {}
 
-	public function set () {}
+	public function set() {}
 
-	public function replace () {}
+	public function replace() {}
 
-	public function cas () {}
+	public function cas() {}
 
-	public function append () {}
+	public function append() {}
 
-	public function prepend () {}
+	public function prepend() {}
 
-	public function get () {}
+	/**
+	 * @param $var1
+	 * @param $var2
+	 * @param $var3
+	 */
+	public function get($var1, &$var2, &$var3) {}
 
-	public function delete () {}
+	public function delete() {}
 
-	public function getstats () {}
+	public function getstats() {}
 
-	public function getextendedstats () {}
+	public function getextendedstats() {}
 
-	public function setcompressthreshold () {}
+	public function setcompressthreshold() {}
 
-	public function increment () {}
+	public function increment() {}
 
-	public function decrement () {}
+	public function decrement() {}
 
-	public function close () {}
+	public function close() {}
 
-	public function flush () {}
+	public function flush() {}
+
+	public function setSaslAuthData() {}
 
 }
 
@@ -83,7 +90,7 @@ class Memcache extends MemcachePool  {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function connect ($host, $port = null, $timeout = null) {}
+	public function connect(string $host, int $port = null, int $timeout = null): bool {}
 
 	/**
 	 * (PECL memcache &gt;= 0.4.0)<br/>
@@ -106,7 +113,7 @@ class Memcache extends MemcachePool  {
 	 * </p>
 	 * @return mixed a Memcache object or <b>FALSE</b> on failure.
 	 */
-	public function pconnect ($host, $port = null, $timeout = null) {}
+	public function pconnect(string $host, int $port = null, int $timeout = null) {}
 
 	/**
 	 * (PECL memcache &gt;= 2.0.0)<br/>
@@ -173,79 +180,92 @@ class Memcache extends MemcachePool  {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function addserver ($host, $port = 11211, $persistent = null, $weight = null, $timeout = null, $retry_interval = null, $status = null, callable $failure_callback = null, $timeoutms = null) {}
+	public function addserver(string $host, int $port = 11211, bool $persistent = null, int $weight = null, int $timeout = null, int $retry_interval = null, bool $status = null, callable $failure_callback = null, int $timeoutms = null): bool {}
 
-	public function setserverparams () {}
+	public function setserverparams() {}
 
-	public function setfailurecallback () {}
+	public function setfailurecallback() {}
 
-	public function getserverstatus () {}
+	public function getserverstatus() {}
 
-	public function findserver () {}
+	public function findserver() {}
 
-	public function getversion () {}
+	public function getversion() {}
 
-	public function add () {}
+	public function add() {}
 
-	public function set () {}
+	public function set() {}
 
-	public function replace () {}
+	public function replace() {}
 
-	public function cas () {}
+	public function cas() {}
 
-	public function append () {}
+	public function append() {}
 
-	public function prepend () {}
+	public function prepend() {}
 
-	public function get () {}
+	/**
+	 * @param $var1
+	 * @param $var2
+	 * @param $var3
+	 */
+	public function get($var1, &$var2, &$var3) {}
 
-	public function delete () {}
+	public function delete() {}
 
-	public function getstats () {}
+	public function getstats() {}
 
-	public function getextendedstats () {}
+	public function getextendedstats() {}
 
-	public function setcompressthreshold () {}
+	public function setcompressthreshold() {}
 
-	public function increment () {}
+	public function increment() {}
 
-	public function decrement () {}
+	public function decrement() {}
 
-	public function close () {}
+	public function close() {}
 
-	public function flush () {}
+	public function flush() {}
+
+	public function setSaslAuthData() {}
 
 }
 
-function memcache_connect () {}
+function memcache_connect() {}
 
-function memcache_pconnect () {}
+function memcache_pconnect() {}
 
-function memcache_add_server () {}
+function memcache_add_server() {}
 
-function memcache_set_server_params () {}
+function memcache_set_server_params() {}
 
-function memcache_set_failure_callback () {}
+function memcache_set_failure_callback() {}
 
-function memcache_get_server_status () {}
+function memcache_get_server_status() {}
 
-function memcache_get_version () {}
+function memcache_get_version() {}
 
-function memcache_add () {}
+function memcache_add() {}
 
-function memcache_set () {}
+function memcache_set() {}
 
-function memcache_replace () {}
+function memcache_replace() {}
 
-function memcache_cas () {}
+function memcache_cas() {}
 
-function memcache_append () {}
+function memcache_append() {}
 
-function memcache_prepend () {}
+function memcache_prepend() {}
 
-function memcache_get () {}
+/**
+ * @param $var1
+ * @param $var2
+ * @param $var3
+ * @param $var4
+ */
+function memcache_get($var1, $var2, &$var3, &$var4) {}
 
-function memcache_delete () {}
+function memcache_delete() {}
 
 /**
  * (PECL memcache &gt;= 0.2.0)<br/>
@@ -258,21 +278,23 @@ function memcache_delete () {}
  * @return bool <b>TRUE</b> if PHP was built with --enable-debug option, otherwise
  * returns <b>FALSE</b>.
  */
-function memcache_debug ($on_off) {}
+function memcache_debug(bool $on_off): bool {}
 
-function memcache_get_stats () {}
+function memcache_get_stats() {}
 
-function memcache_get_extended_stats () {}
+function memcache_get_extended_stats() {}
 
-function memcache_set_compress_threshold () {}
+function memcache_set_compress_threshold() {}
 
-function memcache_increment () {}
+function memcache_increment() {}
 
-function memcache_decrement () {}
+function memcache_decrement() {}
 
-function memcache_close () {}
+function memcache_close() {}
 
-function memcache_flush () {}
+function memcache_flush() {}
+
+function memcache_set_sasl_auth_data() {}
 
 define ('MEMCACHE_COMPRESSED', 2);
 define ('MEMCACHE_USER1', 65536);
@@ -281,5 +303,5 @@ define ('MEMCACHE_USER3', 262144);
 define ('MEMCACHE_USER4', 524288);
 define ('MEMCACHE_HAVE_SESSION', 1);
 
-// End of memcache v.3.0.8
+// End of memcache v.3.0.9-dev
 ?>

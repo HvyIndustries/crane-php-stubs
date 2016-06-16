@@ -1,9 +1,9 @@
 <?php
 
-// Start of wddx v.
+// Start of wddx v.7.0.4-7ubuntu2
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Serialize a single value into a WDDX packet
  * @link http://php.net/manual/en/function.wddx-serialize-value.php
  * @param mixed $var <p>
@@ -14,10 +14,10 @@
  * </p>
  * @return string the WDDX packet, or <b>FALSE</b> on error.
  */
-function wddx_serialize_value ($var, $comment = null) {}
+function wddx_serialize_value($var, string $comment = null): string {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Serialize variables into a WDDX packet
  * @link http://php.net/manual/en/function.wddx-serialize-vars.php
  * @param mixed $var_name <p>
@@ -27,10 +27,10 @@ function wddx_serialize_value ($var, $comment = null) {}
  * @param mixed $_ [optional]
  * @return string the WDDX packet, or <b>FALSE</b> on error.
  */
-function wddx_serialize_vars ($var_name, $_ = null) {}
+function wddx_serialize_vars($var_name, $_ = null): string {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Starts a new WDDX packet with structure inside it
  * @link http://php.net/manual/en/function.wddx-packet-start.php
  * @param string $comment [optional] <p>
@@ -38,10 +38,10 @@ function wddx_serialize_vars ($var_name, $_ = null) {}
  * </p>
  * @return resource a packet ID for use in later functions, or <b>FALSE</b> on error.
  */
-function wddx_packet_start ($comment = null) {}
+function wddx_packet_start(string $comment = null) {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Ends a WDDX packet with the specified ID
  * @link http://php.net/manual/en/function.wddx-packet-end.php
  * @param resource $packet_id <p>
@@ -49,10 +49,10 @@ function wddx_packet_start ($comment = null) {}
  * </p>
  * @return string the string containing the WDDX packet.
  */
-function wddx_packet_end ($packet_id) {}
+function wddx_packet_end($packet_id): string {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Add variables to a WDDX packet with the specified ID
  * @link http://php.net/manual/en/function.wddx-add-vars.php
  * @param resource $packet_id <p>
@@ -65,10 +65,10 @@ function wddx_packet_end ($packet_id) {}
  * @param mixed $_ [optional]
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function wddx_add_vars ($packet_id, $var_name, $_ = null) {}
+function wddx_add_vars($packet_id, $var_name, $_ = null): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Unserializes a WDDX packet
  * @link http://php.net/manual/en/function.wddx-deserialize.php
  * @param string $packet <p>
@@ -77,7 +77,7 @@ function wddx_add_vars ($packet_id, $var_name, $_ = null) {}
  * @return mixed the deserialized value which can be a string, a number or an
  * array. Note that structures are deserialized into associative arrays.
  */
-function wddx_deserialize ($packet) {}
+function wddx_deserialize(string $packet) {}
 
-// End of wddx v.
+// End of wddx v.7.0.4-7ubuntu2
 ?>

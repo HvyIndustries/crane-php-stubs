@@ -1,6 +1,6 @@
 <?php
 
-// Start of libxml v.
+// Start of libxml v.7.0.4-7ubuntu2
 
 /**
  * Contains various information about errors thrown by libxml. The error codes
@@ -61,7 +61,7 @@ class LibXMLError  {
 }
 
 /**
- * (PHP 5)<br/>
+ * (PHP 5, PHP 7)<br/>
  * Set the streams context for the next libxml document load or write
  * @link http://php.net/manual/en/function.libxml-set-streams-context.php
  * @param resource $streams_context <p>
@@ -70,10 +70,10 @@ class LibXMLError  {
  * </p>
  * @return void No value is returned.
  */
-function libxml_set_streams_context ($streams_context) {}
+function libxml_set_streams_context($streams_context) {}
 
 /**
- * (PHP 5 &gt;= 5.1.0)<br/>
+ * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
  * Disable libxml errors and allow user to fetch error information as needed
  * @link http://php.net/manual/en/function.libxml-use-internal-errors.php
  * @param bool $use_errors [optional] <p>
@@ -82,36 +82,36 @@ function libxml_set_streams_context ($streams_context) {}
  * @return bool This function returns the previous value of
  * <i>use_errors</i>.
  */
-function libxml_use_internal_errors ($use_errors = false) {}
+function libxml_use_internal_errors(bool $use_errors = false): bool {}
 
 /**
- * (PHP 5 &gt;= 5.1.0)<br/>
+ * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
  * Retrieve last error from libxml
  * @link http://php.net/manual/en/function.libxml-get-last-error.php
  * @return LibXMLError a LibXMLError object if there is any error in the
  * buffer, <b>FALSE</b> otherwise.
  */
-function libxml_get_last_error () {}
+function libxml_get_last_error(): LibXMLError {}
 
 /**
- * (PHP 5 &gt;= 5.1.0)<br/>
+ * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
  * Clear libxml error buffer
  * @link http://php.net/manual/en/function.libxml-clear-errors.php
  * @return void No value is returned.
  */
-function libxml_clear_errors () {}
+function libxml_clear_errors() {}
 
 /**
- * (PHP 5 &gt;= 5.1.0)<br/>
+ * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
  * Retrieve array of errors
  * @link http://php.net/manual/en/function.libxml-get-errors.php
  * @return array an array with LibXMLError objects if there are any
  * errors in the buffer, or an empty array otherwise.
  */
-function libxml_get_errors () {}
+function libxml_get_errors(): array {}
 
 /**
- * (PHP 5 &gt;= 5.2.11)<br/>
+ * (PHP 5 &gt;= 5.2.11, PHP 7)<br/>
  * Disable the ability to load external entities
  * @link http://php.net/manual/en/function.libxml-disable-entity-loader.php
  * @param bool $disable [optional] <p>
@@ -121,10 +121,10 @@ function libxml_get_errors () {}
  * </p>
  * @return bool the previous value.
  */
-function libxml_disable_entity_loader ($disable = true) {}
+function libxml_disable_entity_loader(bool $disable = true): bool {}
 
 /**
- * (PHP 5 &gt;= 5.4.0)<br/>
+ * (PHP 5 &gt;= 5.4.0, PHP 7)<br/>
  * Changes the default external entity loader
  * @link http://php.net/manual/en/function.libxml-set-external-entity-loader.php
  * @param callable $resolver_function <p>
@@ -135,21 +135,21 @@ function libxml_disable_entity_loader ($disable = true) {}
  * </p>
  * @return void No value is returned.
  */
-function libxml_set_external_entity_loader (callable $resolver_function) {}
+function libxml_set_external_entity_loader(callable $resolver_function) {}
 
 
 /**
  * libxml version like 20605 or 20617
  * @link http://php.net/manual/en/libxml.constants.php
  */
-define ('LIBXML_VERSION', 20902);
+define ('LIBXML_VERSION', 20903);
 
 /**
  * libxml version like 2.6.5 or 2.6.17
  * @link http://php.net/manual/en/libxml.constants.php
  */
-define ('LIBXML_DOTTED_VERSION', "2.9.2");
-define ('LIBXML_LOADED_VERSION', 20902);
+define ('LIBXML_DOTTED_VERSION', "2.9.3");
+define ('LIBXML_LOADED_VERSION', 20903);
 
 /**
  * Substitute entities
@@ -257,6 +257,15 @@ define ('LIBXML_NOXMLDECL', 2);
 define ('LIBXML_PARSEHUGE', 524288);
 
 /**
+ * Allows line numbers greater than 65535 to be reported correctly.
+ * <p>
+ * Only available as of PHP 7.0.0 with Libxml &gt;= 2.9.0
+ * </p>
+ * @link http://php.net/manual/en/libxml.constants.php
+ */
+define ('LIBXML_BIGLINES', 4194304);
+
+/**
  * Expand empty tags (e.g. &lt;br/&gt; to
  * &lt;br&gt;&lt;/br&gt;)
  * <p>
@@ -321,5 +330,5 @@ define ('LIBXML_ERR_ERROR', 2);
  */
 define ('LIBXML_ERR_FATAL', 3);
 
-// End of libxml v.
+// End of libxml v.7.0.4-7ubuntu2
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-// Start of SimpleXML v.0.1
+// Start of SimpleXML v.7.0.4-7ubuntu2
 
 /**
  * Represents an element in an XML document.
@@ -9,7 +9,7 @@
 class SimpleXMLElement implements Traversable {
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * Creates a new SimpleXMLElement object
 	 * @link http://php.net/manual/en/simplexmlelement.construct.php
 	 * @param string $data <p>
@@ -33,10 +33,10 @@ class SimpleXMLElement implements Traversable {
 	 * defaults to <b>FALSE</b>.
 	 * </p>
 	 */
-	final public function __construct ($data, $options = 0, $data_is_url = false, $ns = "", $is_prefix = false) {}
+	final public function __construct(string $data, int $options = 0, bool $data_is_url = false, string $ns = "", bool $is_prefix = false) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * Return a well-formed XML string based on SimpleXML element
 	 * @link http://php.net/manual/en/simplexmlelement.asxml.php
 	 * @param string $filename [optional] <p>
@@ -48,18 +48,18 @@ class SimpleXMLElement implements Traversable {
 	 * parameter is specified, it returns <b>TRUE</b> if the file was written
 	 * successfully and <b>FALSE</b> otherwise.
 	 */
-	public function asXML ($filename = null) {}
+	public function asXML(string $filename = null) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Alias of <b>SimpleXMLElement::asXML</b>
 	 * @link http://php.net/manual/en/simplexmlelement.savexml.php
 	 * @param $filename [optional]
 	 */
-	public function saveXML ($filename) {}
+	public function saveXML($filename) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Runs XPath query on XML data
 	 * @link http://php.net/manual/en/simplexmlelement.xpath.php
 	 * @param string $path <p>
@@ -68,10 +68,10 @@ class SimpleXMLElement implements Traversable {
 	 * @return array an array of SimpleXMLElement objects or <b>FALSE</b> in
 	 * case of an error.
 	 */
-	public function xpath ($path) {}
+	public function xpath(string $path): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Creates a prefix/ns context for the next XPath query
 	 * @link http://php.net/manual/en/simplexmlelement.registerxpathnamespace.php
 	 * @param string $prefix <p>
@@ -85,10 +85,10 @@ class SimpleXMLElement implements Traversable {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function registerXPathNamespace ($prefix, $ns) {}
+	public function registerXPathNamespace(string $prefix, string $ns): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * Identifies an element's attributes
 	 * @link http://php.net/manual/en/simplexmlelement.attributes.php
 	 * @param string $ns [optional] <p>
@@ -104,10 +104,10 @@ class SimpleXMLElement implements Traversable {
 	 * Returns <b>NULL</b> if called on a <b>SimpleXMLElement</b>
 	 * object that already represents an attribute and not a tag.
 	 */
-	public function attributes ($ns = null, $is_prefix = false) {}
+	public function attributes(string $ns = null, bool $is_prefix = false): SimpleXMLElement {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * Finds children of given node
 	 * @link http://php.net/manual/en/simplexmlelement.children.php
 	 * @param string $ns [optional] <p>
@@ -122,10 +122,10 @@ class SimpleXMLElement implements Traversable {
 	 * @return SimpleXMLElement a <b>SimpleXMLElement</b> element, whether the node
 	 * has children or not.
 	 */
-	public function children ($ns = null, $is_prefix = false) {}
+	public function children(string $ns = null, bool $is_prefix = false): SimpleXMLElement {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Returns namespaces used in document
 	 * @link http://php.net/manual/en/simplexmlelement.getnamespaces.php
 	 * @param bool $recursive [optional] <p>
@@ -135,10 +135,10 @@ class SimpleXMLElement implements Traversable {
 	 * @return array The getNamespaces method returns an array of
 	 * namespace names with their associated URIs.
 	 */
-	public function getNamespaces ($recursive = false) {}
+	public function getNamespaces(bool $recursive = false): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Returns namespaces declared in document
 	 * @link http://php.net/manual/en/simplexmlelement.getdocnamespaces.php
 	 * @param bool $recursive [optional] <p>
@@ -152,19 +152,19 @@ class SimpleXMLElement implements Traversable {
 	 * @return array The getDocNamespaces method returns an array
 	 * of namespace names with their associated URIs.
 	 */
-	public function getDocNamespaces ($recursive = false, $from_root = true) {}
+	public function getDocNamespaces(bool $recursive = false, bool $from_root = true): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.3)<br/>
+	 * (PHP 5 &gt;= 5.1.3, PHP 7)<br/>
 	 * Gets the name of the XML element
 	 * @link http://php.net/manual/en/simplexmlelement.getname.php
 	 * @return string The getName method returns as a string the
 	 * name of the XML tag referenced by the SimpleXMLElement object.
 	 */
-	public function getName () {}
+	public function getName(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.3)<br/>
+	 * (PHP 5 &gt;= 5.1.3, PHP 7)<br/>
 	 * Adds a child element to the XML node
 	 * @link http://php.net/manual/en/simplexmlelement.addchild.php
 	 * @param string $name <p>
@@ -179,10 +179,10 @@ class SimpleXMLElement implements Traversable {
 	 * @return SimpleXMLElement The addChild method returns a SimpleXMLElement
 	 * object representing the child added to the XML node.
 	 */
-	public function addChild ($name, $value = null, $namespace = null) {}
+	public function addChild(string $name, string $value = null, string $namespace = null): SimpleXMLElement {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.3)<br/>
+	 * (PHP 5 &gt;= 5.1.3, PHP 7)<br/>
 	 * Adds an attribute to the SimpleXML element
 	 * @link http://php.net/manual/en/simplexmlelement.addattribute.php
 	 * @param string $name <p>
@@ -196,7 +196,7 @@ class SimpleXMLElement implements Traversable {
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function addAttribute ($name, $value = null, $namespace = null) {}
+	public function addAttribute(string $name, string $value = null, string $namespace = null) {}
 
 	/**
 	 * (No version information available, might only be in Git)<br/>
@@ -204,15 +204,15 @@ class SimpleXMLElement implements Traversable {
 	 * @link http://php.net/manual/en/simplexmlelement.tostring.php
 	 * @return string the string content on success or an empty string on failure.
 	 */
-	public function __toString () {}
+	public function __toString(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Counts the children of an element
 	 * @link http://php.net/manual/en/simplexmlelement.count.php
 	 * @return int the number of elements of an element.
 	 */
-	public function count () {}
+	public function count(): int {}
 
 }
 
@@ -223,64 +223,64 @@ class SimpleXMLElement implements Traversable {
 class SimpleXMLIterator extends SimpleXMLElement implements Traversable, RecursiveIterator, Iterator, Countable {
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Rewind to the first element
 	 * @link http://php.net/manual/en/simplexmliterator.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Check whether the current element is valid
 	 * @link http://php.net/manual/en/simplexmliterator.valid.php
 	 * @return bool <b>TRUE</b> if the current element is valid, otherwise <b>FALSE</b>
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Returns the current element
 	 * @link http://php.net/manual/en/simplexmliterator.current.php
 	 * @return mixed the current element as a <b>SimpleXMLIterator</b> object or <b>NULL</b> on failure.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Return current key
 	 * @link http://php.net/manual/en/simplexmliterator.key.php
 	 * @return mixed the XML tag name of the element referenced by the current <b>SimpleXMLIterator</b> object or <b>FALSE</b>
 	 */
-	public function key () {}
+	public function key() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Move to next element
 	 * @link http://php.net/manual/en/simplexmliterator.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Checks whether the current element has sub elements.
 	 * @link http://php.net/manual/en/simplexmliterator.haschildren.php
 	 * @return bool <b>TRUE</b> if the current element has sub-elements, otherwise <b>FALSE</b>
 	 */
-	public function hasChildren () {}
+	public function hasChildren(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Returns the sub-elements of the current element
 	 * @link http://php.net/manual/en/simplexmliterator.getchildren.php
 	 * @return SimpleXMLIterator a <b>SimpleXMLIterator</b> object containing
 	 * the sub-elements of the current element.
 	 */
-	public function getChildren () {}
+	public function getChildren(): SimpleXMLIterator {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * Creates a new SimpleXMLElement object
 	 * @link http://php.net/manual/en/simplexmlelement.construct.php
 	 * @param string $data <p>
@@ -304,10 +304,10 @@ class SimpleXMLIterator extends SimpleXMLElement implements Traversable, Recursi
 	 * defaults to <b>FALSE</b>.
 	 * </p>
 	 */
-	final public function __construct ($data, $options = 0, $data_is_url = false, $ns = "", $is_prefix = false) {}
+	final public function __construct(string $data, int $options = 0, bool $data_is_url = false, string $ns = "", bool $is_prefix = false) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * Return a well-formed XML string based on SimpleXML element
 	 * @link http://php.net/manual/en/simplexmlelement.asxml.php
 	 * @param string $filename [optional] <p>
@@ -319,18 +319,18 @@ class SimpleXMLIterator extends SimpleXMLElement implements Traversable, Recursi
 	 * parameter is specified, it returns <b>TRUE</b> if the file was written
 	 * successfully and <b>FALSE</b> otherwise.
 	 */
-	public function asXML ($filename = null) {}
+	public function asXML(string $filename = null) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Alias of <b>SimpleXMLElement::asXML</b>
 	 * @link http://php.net/manual/en/simplexmlelement.savexml.php
 	 * @param $filename [optional]
 	 */
-	public function saveXML ($filename) {}
+	public function saveXML($filename) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Runs XPath query on XML data
 	 * @link http://php.net/manual/en/simplexmlelement.xpath.php
 	 * @param string $path <p>
@@ -339,10 +339,10 @@ class SimpleXMLIterator extends SimpleXMLElement implements Traversable, Recursi
 	 * @return array an array of SimpleXMLElement objects or <b>FALSE</b> in
 	 * case of an error.
 	 */
-	public function xpath ($path) {}
+	public function xpath(string $path): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Creates a prefix/ns context for the next XPath query
 	 * @link http://php.net/manual/en/simplexmlelement.registerxpathnamespace.php
 	 * @param string $prefix <p>
@@ -356,10 +356,10 @@ class SimpleXMLIterator extends SimpleXMLElement implements Traversable, Recursi
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function registerXPathNamespace ($prefix, $ns) {}
+	public function registerXPathNamespace(string $prefix, string $ns): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * Identifies an element's attributes
 	 * @link http://php.net/manual/en/simplexmlelement.attributes.php
 	 * @param string $ns [optional] <p>
@@ -375,10 +375,10 @@ class SimpleXMLIterator extends SimpleXMLElement implements Traversable, Recursi
 	 * Returns <b>NULL</b> if called on a <b>SimpleXMLElement</b>
 	 * object that already represents an attribute and not a tag.
 	 */
-	public function attributes ($ns = null, $is_prefix = false) {}
+	public function attributes(string $ns = null, bool $is_prefix = false): SimpleXMLElement {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * Finds children of given node
 	 * @link http://php.net/manual/en/simplexmlelement.children.php
 	 * @param string $ns [optional] <p>
@@ -393,10 +393,10 @@ class SimpleXMLIterator extends SimpleXMLElement implements Traversable, Recursi
 	 * @return SimpleXMLElement a <b>SimpleXMLElement</b> element, whether the node
 	 * has children or not.
 	 */
-	public function children ($ns = null, $is_prefix = false) {}
+	public function children(string $ns = null, bool $is_prefix = false): SimpleXMLElement {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Returns namespaces used in document
 	 * @link http://php.net/manual/en/simplexmlelement.getnamespaces.php
 	 * @param bool $recursive [optional] <p>
@@ -406,10 +406,10 @@ class SimpleXMLIterator extends SimpleXMLElement implements Traversable, Recursi
 	 * @return array The getNamespaces method returns an array of
 	 * namespace names with their associated URIs.
 	 */
-	public function getNamespaces ($recursive = false) {}
+	public function getNamespaces(bool $recursive = false): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Returns namespaces declared in document
 	 * @link http://php.net/manual/en/simplexmlelement.getdocnamespaces.php
 	 * @param bool $recursive [optional] <p>
@@ -423,19 +423,19 @@ class SimpleXMLIterator extends SimpleXMLElement implements Traversable, Recursi
 	 * @return array The getDocNamespaces method returns an array
 	 * of namespace names with their associated URIs.
 	 */
-	public function getDocNamespaces ($recursive = false, $from_root = true) {}
+	public function getDocNamespaces(bool $recursive = false, bool $from_root = true): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.3)<br/>
+	 * (PHP 5 &gt;= 5.1.3, PHP 7)<br/>
 	 * Gets the name of the XML element
 	 * @link http://php.net/manual/en/simplexmlelement.getname.php
 	 * @return string The getName method returns as a string the
 	 * name of the XML tag referenced by the SimpleXMLElement object.
 	 */
-	public function getName () {}
+	public function getName(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.3)<br/>
+	 * (PHP 5 &gt;= 5.1.3, PHP 7)<br/>
 	 * Adds a child element to the XML node
 	 * @link http://php.net/manual/en/simplexmlelement.addchild.php
 	 * @param string $name <p>
@@ -450,10 +450,10 @@ class SimpleXMLIterator extends SimpleXMLElement implements Traversable, Recursi
 	 * @return SimpleXMLElement The addChild method returns a SimpleXMLElement
 	 * object representing the child added to the XML node.
 	 */
-	public function addChild ($name, $value = null, $namespace = null) {}
+	public function addChild(string $name, string $value = null, string $namespace = null): SimpleXMLElement {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.3)<br/>
+	 * (PHP 5 &gt;= 5.1.3, PHP 7)<br/>
 	 * Adds an attribute to the SimpleXML element
 	 * @link http://php.net/manual/en/simplexmlelement.addattribute.php
 	 * @param string $name <p>
@@ -467,7 +467,7 @@ class SimpleXMLIterator extends SimpleXMLElement implements Traversable, Recursi
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function addAttribute ($name, $value = null, $namespace = null) {}
+	public function addAttribute(string $name, string $value = null, string $namespace = null) {}
 
 	/**
 	 * (No version information available, might only be in Git)<br/>
@@ -475,20 +475,20 @@ class SimpleXMLIterator extends SimpleXMLElement implements Traversable, Recursi
 	 * @link http://php.net/manual/en/simplexmlelement.tostring.php
 	 * @return string the string content on success or an empty string on failure.
 	 */
-	public function __toString () {}
+	public function __toString(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Counts the children of an element
 	 * @link http://php.net/manual/en/simplexmlelement.count.php
 	 * @return int the number of elements of an element.
 	 */
-	public function count () {}
+	public function count(): int {}
 
 }
 
 /**
- * (PHP 5)<br/>
+ * (PHP 5, PHP 7)<br/>
  * Interprets an XML file into an object
  * @link http://php.net/manual/en/function.simplexml-load-file.php
  * @param string $filename <p>
@@ -522,10 +522,10 @@ class SimpleXMLIterator extends SimpleXMLElement implements Traversable, Recursi
  * @return SimpleXMLElement an object of class SimpleXMLElement with
  * properties containing the data held within the XML document, or <b>FALSE</b> on failure.
  */
-function simplexml_load_file ($filename, $class_name = "SimpleXMLElement", $options = 0, $ns = "", $is_prefix = false) {}
+function simplexml_load_file(string $filename, string $class_name = "SimpleXMLElement", int $options = 0, string $ns = "", bool $is_prefix = false): SimpleXMLElement {}
 
 /**
- * (PHP 5)<br/>
+ * (PHP 5, PHP 7)<br/>
  * Interprets a string of XML into an object
  * @link http://php.net/manual/en/function.simplexml-load-string.php
  * @param string $data <p>
@@ -551,10 +551,10 @@ function simplexml_load_file ($filename, $class_name = "SimpleXMLElement", $opti
  * @return SimpleXMLElement an object of class SimpleXMLElement with
  * properties containing the data held within the xml document, or <b>FALSE</b> on failure.
  */
-function simplexml_load_string ($data, $class_name = "SimpleXMLElement", $options = 0, $ns = "", $is_prefix = false) {}
+function simplexml_load_string(string $data, string $class_name = "SimpleXMLElement", int $options = 0, string $ns = "", bool $is_prefix = false): SimpleXMLElement {}
 
 /**
- * (PHP 5)<br/>
+ * (PHP 5, PHP 7)<br/>
  * Get a SimpleXMLElement object from a DOM node.
  * @link http://php.net/manual/en/function.simplexml-import-dom.php
  * @param DOMNode $node <p>
@@ -568,7 +568,7 @@ function simplexml_load_string ($data, $class_name = "SimpleXMLElement", $option
  * </p>
  * @return SimpleXMLElement a SimpleXMLElement or <b>FALSE</b> on failure.
  */
-function simplexml_import_dom (DOMNode $node, $class_name = "SimpleXMLElement") {}
+function simplexml_import_dom(DOMNode $node, string $class_name = "SimpleXMLElement"): SimpleXMLElement {}
 
-// End of SimpleXML v.0.1
+// End of SimpleXML v.7.0.4-7ubuntu2
 ?>

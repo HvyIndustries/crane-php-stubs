@@ -1,9 +1,9 @@
 <?php
 
-// Start of bz2 v.
+// Start of bz2 v.7.0.4-7ubuntu2
 
 /**
- * (PHP 4 &gt;= 4.0.4, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.4, PHP 5, PHP 7)<br/>
  * Opens a bzip2 compressed file
  * @link http://php.net/manual/en/function.bzopen.php
  * @param mixed $file <p>
@@ -16,10 +16,10 @@
  * @return resource If the open fails, <b>bzopen</b> returns <b>FALSE</b>, otherwise
  * it returns a pointer to the newly opened file.
  */
-function bzopen ($file, $mode) {}
+function bzopen($file, string $mode) {}
 
 /**
- * (PHP 4 &gt;= 4.0.4, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.4, PHP 5, PHP 7)<br/>
  * Binary safe bzip2 file read
  * @link http://php.net/manual/en/function.bzread.php
  * @param resource $bz <p>
@@ -33,10 +33,10 @@ function bzopen ($file, $mode) {}
  * </p>
  * @return string the uncompressed data, or <b>FALSE</b> on error.
  */
-function bzread ($bz, $length = 1024) {}
+function bzread($bz, int $length = 1024): string {}
 
 /**
- * (PHP 4 &gt;= 4.0.4, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.4, PHP 5, PHP 7)<br/>
  * Binary safe bzip2 file write
  * @link http://php.net/manual/en/function.bzwrite.php
  * @param resource $bz <p>
@@ -53,22 +53,22 @@ function bzread ($bz, $length = 1024) {}
  * </p>
  * @return int the number of bytes written, or <b>FALSE</b> on error.
  */
-function bzwrite ($bz, $data, $length = null) {}
+function bzwrite($bz, string $data, int $length = null): int {}
 
 /**
- * (PHP 4 &gt;= 4.0.4, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.4, PHP 5, PHP 7)<br/>
  * Force a write of all buffered data
  * @link http://php.net/manual/en/function.bzflush.php
  * @param resource $bz <p>
  * The file pointer. It must be valid and must point to a file
  * successfully opened by <b>bzopen</b>.
  * </p>
- * @return int <b>TRUE</b> on success or <b>FALSE</b> on failure.
+ * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function bzflush ($bz) {}
+function bzflush($bz): bool {}
 
 /**
- * (PHP 4 &gt;= 4.0.4, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.4, PHP 5, PHP 7)<br/>
  * Close a bzip2 file
  * @link http://php.net/manual/en/function.bzclose.php
  * @param resource $bz <p>
@@ -77,10 +77,10 @@ function bzflush ($bz) {}
  * </p>
  * @return int <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function bzclose ($bz) {}
+function bzclose($bz): int {}
 
 /**
- * (PHP 4 &gt;= 4.0.4, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.4, PHP 5, PHP 7)<br/>
  * Returns a bzip2 error number
  * @link http://php.net/manual/en/function.bzerrno.php
  * @param resource $bz <p>
@@ -89,10 +89,10 @@ function bzclose ($bz) {}
  * </p>
  * @return int the error number as an integer.
  */
-function bzerrno ($bz) {}
+function bzerrno($bz): int {}
 
 /**
- * (PHP 4 &gt;= 4.0.4, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.4, PHP 5, PHP 7)<br/>
  * Returns a bzip2 error string
  * @link http://php.net/manual/en/function.bzerrstr.php
  * @param resource $bz <p>
@@ -101,10 +101,10 @@ function bzerrno ($bz) {}
  * </p>
  * @return string a string containing the error message.
  */
-function bzerrstr ($bz) {}
+function bzerrstr($bz): string {}
 
 /**
- * (PHP 4 &gt;= 4.0.4, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.4, PHP 5, PHP 7)<br/>
  * Returns the bzip2 error number and error string in an array
  * @link http://php.net/manual/en/function.bzerror.php
  * @param resource $bz <p>
@@ -115,10 +115,10 @@ function bzerrstr ($bz) {}
  * errno entry, and the error message in the
  * errstr entry.
  */
-function bzerror ($bz) {}
+function bzerror($bz): array {}
 
 /**
- * (PHP 4 &gt;= 4.0.4, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.4, PHP 5, PHP 7)<br/>
  * Compress a string into bzip2 encoded data
  * @link http://php.net/manual/en/function.bzcompress.php
  * @param string $source <p>
@@ -140,10 +140,10 @@ function bzerror ($bz) {}
  * </p>
  * @return mixed The compressed string, or an error number if an error occurred.
  */
-function bzcompress ($source, $blocksize = 4, $workfactor = 0) {}
+function bzcompress(string $source, int $blocksize = 4, int $workfactor = 0) {}
 
 /**
- * (PHP 4 &gt;= 4.0.4, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.4, PHP 5, PHP 7)<br/>
  * Decompresses bzip2 encoded data
  * @link http://php.net/manual/en/function.bzdecompress.php
  * @param string $source <p>
@@ -160,7 +160,7 @@ function bzcompress ($source, $blocksize = 4, $workfactor = 0) {}
  * </p>
  * @return mixed The decompressed string, or an error number if an error occurred.
  */
-function bzdecompress ($source, $small = 0) {}
+function bzdecompress(string $source, int $small = 0) {}
 
-// End of bz2 v.
+// End of bz2 v.7.0.4-7ubuntu2
 ?>

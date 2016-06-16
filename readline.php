@@ -1,9 +1,9 @@
 <?php
 
-// Start of readline v.5.6.4-4ubuntu6.2
+// Start of readline v.7.0.4-7ubuntu2
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Reads a line
  * @link http://php.net/manual/en/function.readline.php
  * @param string $prompt [optional] <p>
@@ -12,10 +12,10 @@
  * @return string a single string from the user. The line returned has the ending
  * newline removed.
  */
-function readline ($prompt = null) {}
+function readline(string $prompt = null): string {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Gets/sets various internal readline variables
  * @link http://php.net/manual/en/function.readline-info.php
  * @param string $varname [optional] <p>
@@ -33,10 +33,10 @@ function readline ($prompt = null) {}
  * <p>
  * If called with one or two parameters, the old value is returned.
  */
-function readline_info ($varname = null, $newvalue = null) {}
+function readline_info(string $varname = null, string $newvalue = null) {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Adds a line to the history
  * @link http://php.net/manual/en/function.readline-add-history.php
  * @param string $line <p>
@@ -44,18 +44,18 @@ function readline_info ($varname = null, $newvalue = null) {}
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function readline_add_history ($line) {}
+function readline_add_history(string $line): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Clears the history
  * @link http://php.net/manual/en/function.readline-clear-history.php
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function readline_clear_history () {}
+function readline_clear_history(): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Reads the history
  * @link http://php.net/manual/en/function.readline-read-history.php
  * @param string $filename [optional] <p>
@@ -63,10 +63,10 @@ function readline_clear_history () {}
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function readline_read_history ($filename = null) {}
+function readline_read_history(string $filename = null): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Writes the history
  * @link http://php.net/manual/en/function.readline-write-history.php
  * @param string $filename [optional] <p>
@@ -74,10 +74,10 @@ function readline_read_history ($filename = null) {}
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function readline_write_history ($filename = null) {}
+function readline_write_history(string $filename = null): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Registers a completion function
  * @link http://php.net/manual/en/function.readline-completion-function.php
  * @param callable $function <p>
@@ -86,10 +86,10 @@ function readline_write_history ($filename = null) {}
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function readline_completion_function (callable $function) {}
+function readline_completion_function(callable $function): bool {}
 
 /**
- * (PHP 5 &gt;= 5.1.0)<br/>
+ * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
  * Initializes the readline callback interface and terminal, prints the prompt and returns immediately
  * @link http://php.net/manual/en/function.readline-callback-handler-install.php
  * @param string $prompt <p>
@@ -101,42 +101,42 @@ function readline_completion_function (callable $function) {}
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function readline_callback_handler_install ($prompt, callable $callback) {}
+function readline_callback_handler_install(string $prompt, callable $callback): bool {}
 
 /**
- * (PHP 5 &gt;= 5.1.0)<br/>
+ * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
  * Reads a character and informs the readline callback interface when a line is received
  * @link http://php.net/manual/en/function.readline-callback-read-char.php
  * @return void No value is returned.
  */
-function readline_callback_read_char () {}
+function readline_callback_read_char() {}
 
 /**
- * (PHP 5 &gt;= 5.1.0)<br/>
+ * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
  * Removes a previously installed callback handler and restores terminal settings
  * @link http://php.net/manual/en/function.readline-callback-handler-remove.php
  * @return bool <b>TRUE</b> if a previously installed callback handler was removed, or
  * <b>FALSE</b> if one could not be found.
  */
-function readline_callback_handler_remove () {}
+function readline_callback_handler_remove(): bool {}
 
 /**
- * (PHP 5 &gt;= 5.1.0)<br/>
+ * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
  * Redraws the display
  * @link http://php.net/manual/en/function.readline-redisplay.php
  * @return void No value is returned.
  */
-function readline_redisplay () {}
+function readline_redisplay() {}
 
 /**
- * (PHP 5 &gt;= 5.1.0)<br/>
+ * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
  * Inform readline that the cursor has moved to a new line
  * @link http://php.net/manual/en/function.readline-on-new-line.php
  * @return void No value is returned.
  */
-function readline_on_new_line () {}
+function readline_on_new_line() {}
 
 define ('READLINE_LIB', "libedit");
 
-// End of readline v.5.6.4-4ubuntu6.2
+// End of readline v.7.0.4-7ubuntu2
 ?>

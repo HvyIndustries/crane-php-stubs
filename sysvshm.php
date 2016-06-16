@@ -1,9 +1,9 @@
 <?php
 
-// Start of sysvshm v.
+// Start of sysvshm v.7.0.4-7ubuntu2
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Creates or open a shared memory segment
  * @link http://php.net/manual/en/function.shm-attach.php
  * @param int $key <p>
@@ -19,10 +19,10 @@
  * </p>
  * @return resource a shared memory segment identifier.
  */
-function shm_attach ($key, $memsize = null, $perm = 0666) {}
+function shm_attach(int $key, int $memsize = null, int $perm = 0666) {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Removes shared memory from Unix systems
  * @link http://php.net/manual/en/function.shm-remove.php
  * @param resource $shm_identifier <p>
@@ -31,10 +31,10 @@ function shm_attach ($key, $memsize = null, $perm = 0666) {}
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function shm_remove ($shm_identifier) {}
+function shm_remove($shm_identifier): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Disconnects from shared memory segment
  * @link http://php.net/manual/en/function.shm-detach.php
  * @param resource $shm_identifier <p>
@@ -43,10 +43,10 @@ function shm_remove ($shm_identifier) {}
  * </p>
  * @return bool <b>shm_detach</b> always returns <b>TRUE</b>.
  */
-function shm_detach ($shm_identifier) {}
+function shm_detach($shm_identifier): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Inserts or updates a variable in shared memory
  * @link http://php.net/manual/en/function.shm-put-var.php
  * @param resource $shm_identifier <p>
@@ -64,10 +64,10 @@ function shm_detach ($shm_identifier) {}
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function shm_put_var ($shm_identifier, $variable_key, $variable) {}
+function shm_put_var($shm_identifier, int $variable_key, $variable): bool {}
 
 /**
- * (PHP 5 &gt;= 5.3.0)<br/>
+ * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
  * Check whether a specific entry exists
  * @link http://php.net/manual/en/function.shm-has-var.php
  * @param resource $shm_identifier <p>
@@ -78,10 +78,10 @@ function shm_put_var ($shm_identifier, $variable_key, $variable) {}
  * </p>
  * @return bool <b>TRUE</b> if the entry exists, otherwise <b>FALSE</b>
  */
-function shm_has_var ($shm_identifier, $variable_key) {}
+function shm_has_var($shm_identifier, int $variable_key): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Returns a variable from shared memory
  * @link http://php.net/manual/en/function.shm-get-var.php
  * @param resource $shm_identifier <p>
@@ -92,10 +92,10 @@ function shm_has_var ($shm_identifier, $variable_key) {}
  * </p>
  * @return mixed the variable with the given key.
  */
-function shm_get_var ($shm_identifier, $variable_key) {}
+function shm_get_var($shm_identifier, int $variable_key) {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Removes a variable from shared memory
  * @link http://php.net/manual/en/function.shm-remove-var.php
  * @param resource $shm_identifier <p>
@@ -107,7 +107,7 @@ function shm_get_var ($shm_identifier, $variable_key) {}
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function shm_remove_var ($shm_identifier, $variable_key) {}
+function shm_remove_var($shm_identifier, int $variable_key): bool {}
 
-// End of sysvshm v.
+// End of sysvshm v.7.0.4-7ubuntu2
 ?>

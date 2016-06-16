@@ -1,5 +1,5 @@
 <?php
 
-// Start of PDO_Firebird v.0.3
-// End of PDO_Firebird v.0.3
+// Start of PDO_Firebird v.7.0.4-7ubuntu2
+// End of PDO_Firebird v.7.0.4-7ubuntu2
 ?>

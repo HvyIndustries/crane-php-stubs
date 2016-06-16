@@ -1,9 +1,9 @@
 <?php
 
-// Start of shmop v.
+// Start of shmop v.7.0.4-7ubuntu2
 
 /**
- * (PHP 4 &gt;= 4.0.4, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.4, PHP 5, PHP 7)<br/>
  * Create or open shared memory block
  * @link http://php.net/manual/en/function.shmop-open.php
  * @param int $key <p>
@@ -27,10 +27,10 @@
  * use to access the shared memory segment you've created. <b>FALSE</b> is
  * returned on failure.
  */
-function shmop_open ($key, $flags, $mode, $size) {}
+function shmop_open(int $key, string $flags, int $mode, int $size): int {}
 
 /**
- * (PHP 4 &gt;= 4.0.4, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.4, PHP 5, PHP 7)<br/>
  * Read data from shared memory block
  * @link http://php.net/manual/en/function.shmop-read.php
  * @param int $shmid <p>
@@ -45,10 +45,10 @@ function shmop_open ($key, $flags, $mode, $size) {}
  * </p>
  * @return string the data or <b>FALSE</b> on failure.
  */
-function shmop_read ($shmid, $start, $count) {}
+function shmop_read(int $shmid, int $start, int $count): string {}
 
 /**
- * (PHP 4 &gt;= 4.0.4, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.4, PHP 5, PHP 7)<br/>
  * Close shared memory block
  * @link http://php.net/manual/en/function.shmop-close.php
  * @param int $shmid <p>
@@ -57,10 +57,10 @@ function shmop_read ($shmid, $start, $count) {}
  * </p>
  * @return void No value is returned.
  */
-function shmop_close ($shmid) {}
+function shmop_close(int $shmid) {}
 
 /**
- * (PHP 4 &gt;= 4.0.4, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.4, PHP 5, PHP 7)<br/>
  * Get size of shared memory block
  * @link http://php.net/manual/en/function.shmop-size.php
  * @param int $shmid <p>
@@ -70,10 +70,10 @@ function shmop_close ($shmid) {}
  * @return int an int, which represents the number of bytes the shared memory
  * block occupies.
  */
-function shmop_size ($shmid) {}
+function shmop_size(int $shmid): int {}
 
 /**
- * (PHP 4 &gt;= 4.0.4, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.4, PHP 5, PHP 7)<br/>
  * Write data into shared memory block
  * @link http://php.net/manual/en/function.shmop-write.php
  * @param int $shmid <p>
@@ -90,10 +90,10 @@ function shmop_size ($shmid) {}
  * @return int The size of the written <i>data</i>, or <b>FALSE</b> on
  * failure.
  */
-function shmop_write ($shmid, $data, $offset) {}
+function shmop_write(int $shmid, string $data, int $offset): int {}
 
 /**
- * (PHP 4 &gt;= 4.0.4, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.4, PHP 5, PHP 7)<br/>
  * Delete shared memory block
  * @link http://php.net/manual/en/function.shmop-delete.php
  * @param int $shmid <p>
@@ -102,7 +102,7 @@ function shmop_write ($shmid, $data, $offset) {}
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function shmop_delete ($shmid) {}
+function shmop_delete(int $shmid): bool {}
 
-// End of shmop v.
+// End of shmop v.7.0.4-7ubuntu2
 ?>

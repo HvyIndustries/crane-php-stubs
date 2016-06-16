@@ -3,7 +3,7 @@
 // Start of hash v.1.0
 
 /**
- * (PHP 5 &gt;= 5.1.2, PECL hash &gt;= 1.1)<br/>
+ * (PHP 5 &gt;= 5.1.2, PHP 7, PECL hash &gt;= 1.1)<br/>
  * Generate a hash value (message digest)
  * @link http://php.net/manual/en/function.hash.php
  * @param string $algo <p>
@@ -20,10 +20,10 @@
  * unless <i>raw_output</i> is set to true in which case the raw
  * binary representation of the message digest is returned.
  */
-function hash ($algo, $data, $raw_output = false) {}
+function hash(string $algo, string $data, bool $raw_output = false): string {}
 
 /**
- * (PHP 5 &gt;= 5.1.2, PECL hash &gt;= 1.1)<br/>
+ * (PHP 5 &gt;= 5.1.2, PHP 7, PECL hash &gt;= 1.1)<br/>
  * Generate a hash value using the contents of a given file
  * @link http://php.net/manual/en/function.hash-file.php
  * @param string $algo <p>
@@ -40,10 +40,10 @@ function hash ($algo, $data, $raw_output = false) {}
  * unless <i>raw_output</i> is set to true in which case the raw
  * binary representation of the message digest is returned.
  */
-function hash_file ($algo, $filename, $raw_output = false) {}
+function hash_file(string $algo, string $filename, bool $raw_output = false): string {}
 
 /**
- * (PHP 5 &gt;= 5.1.2, PECL hash &gt;= 1.1)<br/>
+ * (PHP 5 &gt;= 5.1.2, PHP 7, PECL hash &gt;= 1.1)<br/>
  * Generate a keyed hash value using the HMAC method
  * @link http://php.net/manual/en/function.hash-hmac.php
  * @param string $algo <p>
@@ -64,10 +64,10 @@ function hash_file ($algo, $filename, $raw_output = false) {}
  * binary representation of the message digest is returned.
  * Returns <b>FALSE</b> when <i>algo</i> is unknown.
  */
-function hash_hmac ($algo, $data, $key, $raw_output = false) {}
+function hash_hmac(string $algo, string $data, string $key, bool $raw_output = false): string {}
 
 /**
- * (PHP 5 &gt;= 5.1.2, PECL hash &gt;= 1.1)<br/>
+ * (PHP 5 &gt;= 5.1.2, PHP 7, PECL hash &gt;= 1.1)<br/>
  * Generate a keyed hash value using the HMAC method and the contents of a given file
  * @link http://php.net/manual/en/function.hash-hmac-file.php
  * @param string $algo <p>
@@ -87,10 +87,10 @@ function hash_hmac ($algo, $data, $key, $raw_output = false) {}
  * unless <i>raw_output</i> is set to true in which case the raw
  * binary representation of the message digest is returned.
  */
-function hash_hmac_file ($algo, $filename, $key, $raw_output = false) {}
+function hash_hmac_file(string $algo, string $filename, string $key, bool $raw_output = false): string {}
 
 /**
- * (PHP 5 &gt;= 5.1.2, PECL hash &gt;= 1.1)<br/>
+ * (PHP 5 &gt;= 5.1.2, PHP 7, PECL hash &gt;= 1.1)<br/>
  * Initialize an incremental hashing context
  * @link http://php.net/manual/en/function.hash-init.php
  * @param string $algo <p>
@@ -110,10 +110,10 @@ function hash_hmac_file ($algo, $filename, $key, $raw_output = false) {}
  * <b>hash_update_stream</b>, <b>hash_update_file</b>,
  * and <b>hash_final</b>.
  */
-function hash_init ($algo, $options = 0, $key = null) {}
+function hash_init(string $algo, int $options = 0, string $key = null) {}
 
 /**
- * (PHP 5 &gt;= 5.1.2, PECL hash &gt;= 1.1)<br/>
+ * (PHP 5 &gt;= 5.1.2, PHP 7, PECL hash &gt;= 1.1)<br/>
  * Pump data into an active hashing context
  * @link http://php.net/manual/en/function.hash-update.php
  * @param resource $context <p>
@@ -124,10 +124,10 @@ function hash_init ($algo, $options = 0, $key = null) {}
  * </p>
  * @return bool <b>TRUE</b>.
  */
-function hash_update ($context, $data) {}
+function hash_update($context, string $data): bool {}
 
 /**
- * (PHP 5 &gt;= 5.1.2, PECL hash &gt;= 1.1)<br/>
+ * (PHP 5 &gt;= 5.1.2, PHP 7, PECL hash &gt;= 1.1)<br/>
  * Pump data into an active hashing context from an open stream
  * @link http://php.net/manual/en/function.hash-update-stream.php
  * @param resource $context <p>
@@ -142,10 +142,10 @@ function hash_update ($context, $data) {}
  * </p>
  * @return int Actual number of bytes added to the hashing context from <i>handle</i>.
  */
-function hash_update_stream ($context, $handle, $length = -1) {}
+function hash_update_stream($context, $handle, int $length = -1): int {}
 
 /**
- * (PHP 5 &gt;= 5.1.2, PECL hash &gt;= 1.1)<br/>
+ * (PHP 5 &gt;= 5.1.2, PHP 7, PECL hash &gt;= 1.1)<br/>
  * Pump data into an active hashing context from a file
  * @link http://php.net/manual/en/function.hash-update-file.php
  * @param resource $hcontext <p>
@@ -159,10 +159,10 @@ function hash_update_stream ($context, $handle, $length = -1) {}
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function hash_update_file ($hcontext, $filename, $scontext = null) {}
+function hash_update_file($hcontext, string $filename, $scontext = null): bool {}
 
 /**
- * (PHP 5 &gt;= 5.1.2, PECL hash &gt;= 1.1)<br/>
+ * (PHP 5 &gt;= 5.1.2, PHP 7, PECL hash &gt;= 1.1)<br/>
  * Finalize an incremental hash and return resulting digest
  * @link http://php.net/manual/en/function.hash-final.php
  * @param resource $context <p>
@@ -176,10 +176,10 @@ function hash_update_file ($hcontext, $filename, $scontext = null) {}
  * unless <i>raw_output</i> is set to true in which case the raw
  * binary representation of the message digest is returned.
  */
-function hash_final ($context, $raw_output = false) {}
+function hash_final($context, bool $raw_output = false): string {}
 
 /**
- * (PHP 5 &gt;= 5.3.0)<br/>
+ * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
  * Copy hashing context
  * @link http://php.net/manual/en/function.hash-copy.php
  * @param resource $context <p>
@@ -187,19 +187,19 @@ function hash_final ($context, $raw_output = false) {}
  * </p>
  * @return resource a copy of Hashing Context resource.
  */
-function hash_copy ($context) {}
+function hash_copy($context) {}
 
 /**
- * (PHP 5 &gt;= 5.1.2, PECL hash &gt;= 1.1)<br/>
+ * (PHP 5 &gt;= 5.1.2, PHP 7, PECL hash &gt;= 1.1)<br/>
  * Return a list of registered hashing algorithms
  * @link http://php.net/manual/en/function.hash-algos.php
  * @return array a numerically indexed array containing the list of supported
  * hashing algorithms.
  */
-function hash_algos () {}
+function hash_algos(): array {}
 
 /**
- * (PHP 5 &gt;= 5.5.0)<br/>
+ * (PHP 5 &gt;= 5.5.0, PHP 7)<br/>
  * Generate a PBKDF2 key derivation of a supplied password
  * @link http://php.net/manual/en/function.hash-pbkdf2.php
  * @param $algo
@@ -212,10 +212,10 @@ function hash_algos () {}
  * <i>raw_output</i> is set to <b>TRUE</b> in which case the raw
  * binary representation of the derived key is returned.
  */
-function hash_pbkdf2 ($algo, $password, $salt, $iterations, $length, $raw_output) {}
+function hash_pbkdf2($algo, $password, $salt, $iterations, $length, $raw_output) {}
 
 /**
- * (PHP 5 &gt;= 5.6.0)<br/>
+ * (PHP 5 &gt;= 5.6.0, PHP 7)<br/>
  * Timing attack safe string comparison
  * @link http://php.net/manual/en/function.hash-equals.php
  * @param string $known_string <p>
@@ -226,10 +226,10 @@ function hash_pbkdf2 ($algo, $password, $salt, $iterations, $length, $raw_output
  * </p>
  * @return bool <b>TRUE</b> when the two strings are equal, <b>FALSE</b> otherwise.
  */
-function hash_equals ($known_string, $user_string) {}
+function hash_equals(string $known_string, string $user_string): bool {}
 
 /**
- * (PHP 4 &gt;= 4.0.4, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.4, PHP 5, PHP 7)<br/>
  * Generates a key
  * @link http://php.net/manual/en/function.mhash-keygen-s2k.php
  * @param int $hash <p>
@@ -251,10 +251,10 @@ function hash_equals ($known_string, $user_string) {}
  * </p>
  * @return string the generated key as a string, or <b>FALSE</b> on error.
  */
-function mhash_keygen_s2k ($hash, $password, $salt, $bytes) {}
+function mhash_keygen_s2k(int $hash, string $password, string $salt, int $bytes): string {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Gets the block size of the specified hash
  * @link http://php.net/manual/en/function.mhash-get-block-size.php
  * @param int $hash <p>
@@ -263,10 +263,10 @@ function mhash_keygen_s2k ($hash, $password, $salt, $bytes) {}
  * @return int the size in bytes or <b>FALSE</b>, if the <i>hash</i>
  * does not exist.
  */
-function mhash_get_block_size ($hash) {}
+function mhash_get_block_size(int $hash): int {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Gets the name of the specified hash
  * @link http://php.net/manual/en/function.mhash-get-hash-name.php
  * @param int $hash <p>
@@ -274,19 +274,19 @@ function mhash_get_block_size ($hash) {}
  * </p>
  * @return string the name of the hash or <b>FALSE</b>, if the hash does not exist.
  */
-function mhash_get_hash_name ($hash) {}
+function mhash_get_hash_name(int $hash): string {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Gets the highest available hash ID
  * @link http://php.net/manual/en/function.mhash-count.php
  * @return int the highest available hash ID. Hashes are numbered from 0 to this
  * hash ID.
  */
-function mhash_count () {}
+function mhash_count(): int {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Computes hash
  * @link http://php.net/manual/en/function.mhash.php
  * @param int $hash <p>
@@ -304,7 +304,7 @@ function mhash_count () {}
  * @return string the resulting hash (also called digest) or HMAC as a string, or
  * <b>FALSE</b> on error.
  */
-function mhash ($hash, $data, $key = null) {}
+function mhash(int $hash, string $data, string $key = null): string {}
 
 
 /**

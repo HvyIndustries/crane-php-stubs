@@ -1,5 +1,5 @@
 <?php
 
-// Start of pdo_pgsql v.1.0.2
-// End of pdo_pgsql v.1.0.2
+// Start of pdo_pgsql v.7.0.4-7ubuntu2
+// End of pdo_pgsql v.7.0.4-7ubuntu2
 ?>

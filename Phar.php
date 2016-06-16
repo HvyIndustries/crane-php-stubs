@@ -7,7 +7,7 @@
  * for try/catch blocks.
  * @link http://php.net/manual/en/class.pharexception.php
  */
-class PharException extends Exception  {
+class PharException extends Exception implements Throwable {
 	protected $message;
 	protected $code;
 	protected $file;
@@ -15,15 +15,15 @@ class PharException extends Exception  {
 
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Clone the exception
 	 * @link http://php.net/manual/en/exception.clone.php
 	 * @return void No value is returned.
 	 */
-	final private function __clone () {}
+	final private function __clone() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Construct the exception
 	 * @link http://php.net/manual/en/exception.construct.php
 	 * @param string $message [optional] <p>
@@ -32,22 +32,24 @@ class PharException extends Exception  {
 	 * @param int $code [optional] <p>
 	 * The Exception code.
 	 * </p>
-	 * @param Exception $previous [optional] <p>
+	 * @param Throwable $previous [optional] <p>
 	 * The previous exception used for the exception chaining.
 	 * </p>
 	 */
-	public function __construct ($message = "", $code = 0, Exception $previous = null) {}
+	public function __construct(string $message = "", int $code = 0, Throwable $previous = null) {}
+
+	public function __wakeup() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception message
 	 * @link http://php.net/manual/en/exception.getmessage.php
 	 * @return string the Exception message as a string.
 	 */
-	final public function getMessage () {}
+	final public function getMessage(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception code
 	 * @link http://php.net/manual/en/exception.getcode.php
 	 * @return mixed the exception code as integer in
@@ -55,56 +57,56 @@ class PharException extends Exception  {
 	 * <b>Exception</b> descendants (for example as
 	 * string in <b>PDOException</b>).
 	 */
-	final public function getCode () {}
+	final public function getCode() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the file in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getfile.php
 	 * @return string the filename in which the exception was created.
 	 */
-	final public function getFile () {}
+	final public function getFile(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the line in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getline.php
 	 * @return int the line number where the exception was created.
 	 */
-	final public function getLine () {}
+	final public function getLine(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace
 	 * @link http://php.net/manual/en/exception.gettrace.php
 	 * @return array the Exception stack trace as an array.
 	 */
-	final public function getTrace () {}
+	final public function getTrace(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns previous Exception
 	 * @link http://php.net/manual/en/exception.getprevious.php
 	 * @return Exception the previous <b>Exception</b> if available
 	 * or <b>NULL</b> otherwise.
 	 */
-	final public function getPrevious () {}
+	final public function getPrevious(): Exception {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace as a string
 	 * @link http://php.net/manual/en/exception.gettraceasstring.php
 	 * @return string the Exception stack trace as a string.
 	 */
-	final public function getTraceAsString () {}
+	final public function getTraceAsString(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * String representation of the exception
 	 * @link http://php.net/manual/en/exception.tostring.php
 	 * @return string the string representation of the exception.
 	 */
-	public function __toString () {}
+	public function __toString(): string {}
 
 }
 
@@ -158,9 +160,9 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * functionality.
 	 * </p>
 	 */
-	public function __construct ($fname, $flags = null, $alias = null) {}
+	public function __construct(string $fname, int $flags = null, string $alias = null) {}
 
-	public function __destruct () {}
+	public function __destruct() {}
 
 	/**
 	 * (Unknown)<br/>
@@ -171,7 +173,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return void no return value, exception is thrown on failure.
 	 */
-	public function addEmptyDir ($dirname) {}
+	public function addEmptyDir(string $dirname) {}
 
 	/**
 	 * (Unknown)<br/>
@@ -186,7 +188,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return void no return value, exception is thrown on failure.
 	 */
-	public function addFile ($file, $localname = null) {}
+	public function addFile(string $file, string $localname = null) {}
 
 	/**
 	 * (Unknown)<br/>
@@ -200,7 +202,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return void no return value, exception is thrown on failure.
 	 */
-	public function addFromString ($localname, $contents) {}
+	public function addFromString(string $localname, string $contents) {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -219,7 +221,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * mapping internal path of file to the full path of the file on the
 	 * filesystem.
 	 */
-	public function buildFromDirectory ($base_dir, $regex = null) {}
+	public function buildFromDirectory(string $base_dir, string $regex = null): array {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -237,7 +239,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * mapping internal path of file to the full path of the file on the
 	 * filesystem.
 	 */
-	public function buildFromIterator (Iterator $iter, $base_directory = null) {}
+	public function buildFromIterator(Iterator $iter, string $base_directory = null): array {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -250,7 +252,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function compressFiles ($compression) {}
+	public function compressFiles(int $compression) {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -258,7 +260,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * @link http://php.net/manual/en/phar.decompressfiles.php
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function decompressFiles () {}
+	public function decompressFiles(): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -278,7 +280,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return object a <b>Phar</b> object.
 	 */
-	public function compress ($compression, $extension = null) {}
+	public function compress(int $compression, string $extension = null) {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -293,7 +295,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return object A <b>Phar</b> object is returned.
 	 */
-	public function decompress ($extension = null) {}
+	public function decompress(string $extension = null) {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -326,7 +328,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * @return Phar The method returns a <b>Phar</b> object on success and throws an
 	 * exception on failure.
 	 */
-	public function convertToExecutable ($format = 9021976, $compression = 9021976, $extension = null) {}
+	public function convertToExecutable(int $format = 9021976, int $compression = 9021976, string $extension = null): Phar {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -357,7 +359,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * @return PharData The method returns a <b>PharData</b> object on success and throws an
 	 * exception on failure.
 	 */
-	public function convertToData ($format = 9021976, $compression = 9021976, $extension = null) {}
+	public function convertToData(int $format = 9021976, int $compression = 9021976, string $extension = null): PharData {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -368,7 +370,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * @return bool returns <b>TRUE</b> on success, but it is safer to encase method call in a
 	 * try/catch block and assume success if no exception is thrown.
 	 */
-	public function copy ($oldfile, $newfile) {}
+	public function copy(string $oldfile, string $newfile): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -377,7 +379,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * @return int The number of files contained within this phar, or 0 (the number zero)
 	 * if none.
 	 */
-	public function count () {}
+	public function count(): int {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -389,7 +391,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * @return bool returns <b>TRUE</b> on success, but it is better to check for thrown exception,
 	 * and assume success if none is thrown.
 	 */
-	public function delete ($entry) {}
+	public function delete(string $entry): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.2.0)<br/>
@@ -398,7 +400,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * @return bool returns <b>TRUE</b> on success, but it is better to check for thrown exception,
 	 * and assume success if none is thrown.
 	 */
-	public function delMetadata () {}
+	public function delMetadata(): bool {}
 
 	/**
 	 * (Unknown)<br/>
@@ -416,11 +418,11 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * @return bool returns <b>TRUE</b> on success, but it is better to check for thrown exception,
 	 * and assume success if none is thrown.
 	 */
-	public function extractTo ($pathto, $files = null, $overwrite = false) {}
+	public function extractTo(string $pathto, $files = null, bool $overwrite = false): bool {}
 
-	public function getAlias () {}
+	public function getAlias() {}
 
-	public function getPath () {}
+	public function getPath() {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -429,7 +431,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * @return mixed any PHP variable that can be serialized and is stored as meta-data for the Phar archive,
 	 * or <b>NULL</b> if no meta-data is stored.
 	 */
-	public function getMetadata () {}
+	public function getMetadata() {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -437,7 +439,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * @link http://php.net/manual/en/phar.getmodified.php
 	 * @return bool <b>TRUE</b> if the phar has been modified since opened, <b>FALSE</b> if not.
 	 */
-	public function getModified () {}
+	public function getModified(): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -452,7 +454,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * phar.require_hash INI variable
 	 * is set to true.
 	 */
-	public function getSignature () {}
+	public function getSignature(): array {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -461,7 +463,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * @return string a string containing the contents of the bootstrap loader (stub) of
 	 * the current Phar archive.
 	 */
-	public function getStub () {}
+	public function getStub(): string {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -473,7 +475,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * its manifest. See Phar file format
 	 * documentation for more information.
 	 */
-	public function getVersion () {}
+	public function getVersion(): string {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.2.0)<br/>
@@ -481,7 +483,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * @link http://php.net/manual/en/phar.hasmetadata.php
 	 * @return bool <b>TRUE</b> if meta-data has been set, and <b>FALSE</b> if not.
 	 */
-	public function hasMetadata () {}
+	public function hasMetadata(): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -489,7 +491,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * @link http://php.net/manual/en/phar.isbuffering.php
 	 * @return bool <b>TRUE</b> if the write operations are being buffer, <b>FALSE</b> otherwise.
 	 */
-	public function isBuffering () {}
+	public function isBuffering(): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -497,7 +499,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * @link http://php.net/manual/en/phar.iscompressed.php
 	 * @return mixed Phar::GZ, Phar::BZ2 or <b>FALSE</b>
 	 */
-	public function isCompressed () {}
+	public function isCompressed() {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -509,7 +511,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return bool <b>TRUE</b> if the phar archive matches the file format requested by the parameter
 	 */
-	public function isFileFormat ($format) {}
+	public function isFileFormat(int $format): bool {}
 
 	/**
 	 * (Unknown)<br/>
@@ -517,7 +519,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * @link http://php.net/manual/en/phar.iswritable.php
 	 * @return bool <b>TRUE</b> if the phar archive can be modified
 	 */
-	public function isWritable () {}
+	public function isWritable(): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -528,7 +530,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return bool <b>TRUE</b> if the file exists within the phar, or <b>FALSE</b> if not.
 	 */
-	public function offsetExists ($offset) {}
+	public function offsetExists(string $offset): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -540,7 +542,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * @return int A <b>PharFileInfo</b> object is returned that can be used to
 	 * iterate over a file's contents or to retrieve information about the current file.
 	 */
-	public function offsetGet ($offset) {}
+	public function offsetGet(string $offset): int {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -554,7 +556,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return void No return values.
 	 */
-	public function offsetSet ($offset, $value) {}
+	public function offsetSet(string $offset, string $value) {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -565,7 +567,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function offsetUnset ($offset) {}
+	public function offsetUnset(string $offset): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.2.1)<br/>
@@ -577,7 +579,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return bool
 	 */
-	public function setAlias ($alias) {}
+	public function setAlias(string $alias): bool {}
 
 	/**
 	 * (Unknown)<br/>
@@ -591,7 +593,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function setDefaultStub ($index = null, $webindex = null) {}
+	public function setDefaultStub(string $index = null, string $webindex = null): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -602,7 +604,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setMetadata ($metadata) {}
+	public function setMetadata($metadata) {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.1.0)<br/>
@@ -627,7 +629,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setSignatureAlgorithm ($sigtype, $privatekey = null) {}
+	public function setSignatureAlgorithm(int $sigtype, string $privatekey = null) {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -641,7 +643,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function setStub ($stub, $len = -1) {}
+	public function setStub(string $stub, int $len = -1): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -649,7 +651,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * @link http://php.net/manual/en/phar.startbuffering.php
 	 * @return void No value is returned.
 	 */
-	public function startBuffering () {}
+	public function startBuffering() {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -657,7 +659,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * @link http://php.net/manual/en/phar.stopbuffering.php
 	 * @return void No value is returned.
 	 */
-	public function stopBuffering () {}
+	public function stopBuffering() {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -665,7 +667,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * @link http://php.net/manual/en/phar.apiversion.php
 	 * @return string The API version string as in &#x00022;1.0.0&#x00022;.
 	 */
-	final public static function apiVersion () {}
+	final public static function apiVersion(): string {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -678,7 +680,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return bool <b>TRUE</b> if compression/decompression is available, <b>FALSE</b> if not.
 	 */
-	final public static function canCompress ($type = 0) {}
+	final public static function canCompress(int $type = 0): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -686,7 +688,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * @link http://php.net/manual/en/phar.canwrite.php
 	 * @return bool <b>TRUE</b> if write access is enabled, <b>FALSE</b> if it is disabled.
 	 */
-	final public static function canWrite () {}
+	final public static function canWrite(): bool {}
 
 	/**
 	 * (Unknown)<br/>
@@ -698,7 +700,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * that allows the created Phar archive to work with or without the Phar extension
 	 * enabled.
 	 */
-	final public static function createDefaultStub ($indexfile = null, $webindexfile = null) {}
+	final public static function createDefaultStub(string $indexfile = null, string $webindexfile = null): string {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.2.0)<br/>
@@ -709,7 +711,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * the zlib extension or the
 	 * bz2 extension.
 	 */
-	final public static function getSupportedCompression () {}
+	final public static function getSupportedCompression(): array {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.1.0)<br/>
@@ -718,7 +720,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * @return array an array containing any of MD5, SHA-1,
 	 * SHA-256, SHA-512, or OpenSSL.
 	 */
-	final public static function getSupportedSignatures () {}
+	final public static function getSupportedSignatures(): array {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -726,7 +728,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * @link http://php.net/manual/en/phar.interceptfilefuncs.php
 	 * @return void
 	 */
-	final public static function interceptFileFuncs () {}
+	final public static function interceptFileFuncs() {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.2.0)<br/>
@@ -741,7 +743,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return bool <b>TRUE</b> if the filename is valid, <b>FALSE</b> if not.
 	 */
-	final public static function isValidPharFilename ($filename, $executable = true) {}
+	final public static function isValidPharFilename(string $filename, bool $executable = true): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -758,7 +760,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	final public static function loadPhar ($filename, $alias = null) {}
+	final public static function loadPhar(string $filename, string $alias = null): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -773,7 +775,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	final public static function mapPhar ($alias = null, $dataoffset = 0) {}
+	final public static function mapPhar(string $alias = null, int $dataoffset = 0): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -785,7 +787,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return string the filename if valid, empty string otherwise.
 	 */
-	final public static function running ($retphar = true) {}
+	final public static function running(bool $retphar = true): string {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -800,7 +802,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return void No return. <b>PharException</b> is thrown on failure.
 	 */
-	final public static function mount ($pharpath, $externalpath) {}
+	final public static function mount(string $pharpath, string $externalpath) {}
 
 	/**
 	 * (Unknown)<br/>
@@ -815,7 +817,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return void No return.
 	 */
-	final public static function mungServer (array $munglist) {}
+	final public static function mungServer(array $munglist) {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -826,7 +828,7 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	final public static function unlinkArchive ($archive) {}
+	final public static function unlinkArchive(string $archive): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -906,88 +908,88 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	final public static function webPhar ($alias = null, $index = "index.php", $f404 = null, array $mimetypes = null, callable $rewrites = null) {}
+	final public static function webPhar(string $alias = null, string $index = "index.php", string $f404 = null, array $mimetypes = null, callable $rewrites = null) {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Returns whether current entry is a directory and not '.' or '..'
 	 * @link http://php.net/manual/en/recursivedirectoryiterator.haschildren.php
 	 * @param bool $allow_links [optional] <p>
 	 * </p>
 	 * @return bool whether the current entry is a directory, but not '.' or '..'
 	 */
-	public function hasChildren ($allow_links = false) {}
+	public function hasChildren(bool $allow_links = false): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Returns an iterator for the current entry if it is a directory
 	 * @link http://php.net/manual/en/recursivedirectoryiterator.getchildren.php
 	 * @return mixed The filename, file information, or $this depending on the set flags.
 	 * See the FilesystemIterator
 	 * constants.
 	 */
-	public function getChildren () {}
+	public function getChildren() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get sub path
 	 * @link http://php.net/manual/en/recursivedirectoryiterator.getsubpath.php
 	 * @return string The sub path (sub directory).
 	 */
-	public function getSubPath () {}
+	public function getSubPath(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get sub path and name
 	 * @link http://php.net/manual/en/recursivedirectoryiterator.getsubpathname.php
 	 * @return string The sub path (sub directory) and filename.
 	 */
-	public function getSubPathname () {}
+	public function getSubPathname(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Rewinds back to the beginning
 	 * @link http://php.net/manual/en/filesystemiterator.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Move to the next file
 	 * @link http://php.net/manual/en/filesystemiterator.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Retrieve the key for the current file
 	 * @link http://php.net/manual/en/filesystemiterator.key.php
 	 * @return string the pathname or filename depending on the set flags.
 	 * See the FilesystemIterator constants.
 	 */
-	public function key () {}
+	public function key(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * The current file
 	 * @link http://php.net/manual/en/filesystemiterator.current.php
 	 * @return mixed The filename, file information, or $this depending on the set flags.
 	 * See the FilesystemIterator constants.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Get the handling flags
 	 * @link http://php.net/manual/en/filesystemiterator.getflags.php
 	 * @return int The integer value of the set flags.
 	 */
-	public function getFlags () {}
+	public function getFlags(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Sets handling flags
 	 * @link http://php.net/manual/en/filesystemiterator.setflags.php
 	 * @param int $flags [optional] <p>
@@ -996,27 +998,27 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setFlags ($flags = null) {}
+	public function setFlags(int $flags = null) {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Return file name of current DirectoryIterator item.
 	 * @link http://php.net/manual/en/directoryiterator.getfilename.php
 	 * @return string the file name of the current <b>DirectoryIterator</b> item.
 	 */
-	public function getFilename () {}
+	public function getFilename(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.6)<br/>
+	 * (PHP 5 &gt;= 5.3.6, PHP 7)<br/>
 	 * Gets the file extension
 	 * @link http://php.net/manual/en/directoryiterator.getextension.php
 	 * @return string a string containing the file extension, or an
 	 * empty string if the file has no extension.
 	 */
-	public function getExtension () {}
+	public function getExtension(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Get base name of current DirectoryIterator item.
 	 * @link http://php.net/manual/en/directoryiterator.getbasename.php
 	 * @param string $suffix [optional] <p>
@@ -1025,27 +1027,27 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return string The base name of the current <b>DirectoryIterator</b> item.
 	 */
-	public function getBasename ($suffix = null) {}
+	public function getBasename(string $suffix = null): string {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Determine if current DirectoryIterator item is '.' or '..'
 	 * @link http://php.net/manual/en/directoryiterator.isdot.php
 	 * @return bool <b>TRUE</b> if the entry is . or ..,
 	 * otherwise <b>FALSE</b>
 	 */
-	public function isDot () {}
+	public function isDot(): bool {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Check whether current DirectoryIterator position is a valid file
 	 * @link http://php.net/manual/en/directoryiterator.valid.php
 	 * @return bool <b>TRUE</b> if the position is valid, otherwise <b>FALSE</b>
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Seek to a DirectoryIterator item
 	 * @link http://php.net/manual/en/directoryiterator.seek.php
 	 * @param int $position <p>
@@ -1053,156 +1055,156 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function seek ($position) {}
+	public function seek(int $position) {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Get file name as a string
 	 * @link http://php.net/manual/en/directoryiterator.tostring.php
 	 * @return string the file name of the current <b>DirectoryIterator</b> item.
 	 */
-	public function __toString () {}
+	public function __toString(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the path to the file
 	 * @link http://php.net/manual/en/splfileinfo.getpathname.php
 	 * @return string The path to the file.
 	 */
-	public function getPathname () {}
+	public function getPathname(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file permissions
 	 * @link http://php.net/manual/en/splfileinfo.getperms.php
 	 * @return int the file permissions.
 	 */
-	public function getPerms () {}
+	public function getPerms(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the inode for the file
 	 * @link http://php.net/manual/en/splfileinfo.getinode.php
 	 * @return int the inode number for the filesystem object.
 	 */
-	public function getInode () {}
+	public function getInode(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file size
 	 * @link http://php.net/manual/en/splfileinfo.getsize.php
 	 * @return int The filesize in bytes.
 	 */
-	public function getSize () {}
+	public function getSize(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the owner of the file
 	 * @link http://php.net/manual/en/splfileinfo.getowner.php
 	 * @return int The owner id in numerical format.
 	 */
-	public function getOwner () {}
+	public function getOwner(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the file group
 	 * @link http://php.net/manual/en/splfileinfo.getgroup.php
 	 * @return int The group id in numerical format.
 	 */
-	public function getGroup () {}
+	public function getGroup(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets last access time of the file
 	 * @link http://php.net/manual/en/splfileinfo.getatime.php
 	 * @return int the time the file was last accessed.
 	 */
-	public function getATime () {}
+	public function getATime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the last modified time
 	 * @link http://php.net/manual/en/splfileinfo.getmtime.php
 	 * @return int the last modified time for the file, in a Unix timestamp.
 	 */
-	public function getMTime () {}
+	public function getMTime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the inode change time
 	 * @link http://php.net/manual/en/splfileinfo.getctime.php
 	 * @return int The last change time, in a Unix timestamp.
 	 */
-	public function getCTime () {}
+	public function getCTime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file type
 	 * @link http://php.net/manual/en/splfileinfo.gettype.php
 	 * @return string A string representing the type of the entry.
 	 * May be one of file, link,
 	 * or dir
 	 */
-	public function getType () {}
+	public function getType(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if file is readable
 	 * @link http://php.net/manual/en/splfileinfo.isreadable.php
 	 * @return bool <b>TRUE</b> if readable, <b>FALSE</b> otherwise.
 	 */
-	public function isReadable () {}
+	public function isReadable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is executable
 	 * @link http://php.net/manual/en/splfileinfo.isexecutable.php
 	 * @return bool <b>TRUE</b> if executable, <b>FALSE</b> otherwise.
 	 */
-	public function isExecutable () {}
+	public function isExecutable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the object references a regular file
 	 * @link http://php.net/manual/en/splfileinfo.isfile.php
 	 * @return bool <b>TRUE</b> if the file exists and is a regular file (not a link), <b>FALSE</b> otherwise.
 	 */
-	public function isFile () {}
+	public function isFile(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is a directory
 	 * @link http://php.net/manual/en/splfileinfo.isdir.php
 	 * @return bool <b>TRUE</b> if a directory, <b>FALSE</b> otherwise.
 	 */
-	public function isDir () {}
+	public function isDir(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is a link
 	 * @link http://php.net/manual/en/splfileinfo.islink.php
 	 * @return bool <b>TRUE</b> if the file is a link, <b>FALSE</b> otherwise.
 	 */
-	public function isLink () {}
+	public function isLink(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Gets the target of a link
 	 * @link http://php.net/manual/en/splfileinfo.getlinktarget.php
 	 * @return string the target of the filesystem link.
 	 */
-	public function getLinkTarget () {}
+	public function getLinkTarget(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Gets absolute path to file
 	 * @link http://php.net/manual/en/splfileinfo.getrealpath.php
-	 * @return string the path to the file.
+	 * @return string the path to the file, or <b>FALSE</b> if the file does not exist.
 	 */
-	public function getRealPath () {}
+	public function getRealPath(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileInfo object for the file
 	 * @link http://php.net/manual/en/splfileinfo.getfileinfo.php
 	 * @param string $class_name [optional] <p>
@@ -1210,10 +1212,10 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return SplFileInfo An <b>SplFileInfo</b> object created for the file.
 	 */
-	public function getFileInfo ($class_name = null) {}
+	public function getFileInfo(string $class_name = null): SplFileInfo {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileInfo object for the path
 	 * @link http://php.net/manual/en/splfileinfo.getpathinfo.php
 	 * @param string $class_name [optional] <p>
@@ -1221,10 +1223,10 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return SplFileInfo an <b>SplFileInfo</b> object for the parent path of the file.
 	 */
-	public function getPathInfo ($class_name = null) {}
+	public function getPathInfo(string $class_name = null): SplFileInfo {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileObject object for the file
 	 * @link http://php.net/manual/en/splfileinfo.openfile.php
 	 * @param string $open_mode [optional] <p>
@@ -1242,10 +1244,10 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return SplFileObject The opened file as an <b>SplFileObject</b> object.
 	 */
-	public function openFile ($open_mode = "r", $use_include_path = false, $context = null) {}
+	public function openFile(string $open_mode = "r", bool $use_include_path = false, $context = null): SplFileObject {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Sets the class used with <b>SplFileInfo::openFile</b>
 	 * @link http://php.net/manual/en/splfileinfo.setfileclass.php
 	 * @param string $class_name [optional] <p>
@@ -1254,10 +1256,10 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setFileClass ($class_name = "SplFileObject") {}
+	public function setFileClass(string $class_name = "SplFileObject") {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Sets the class used with <b>SplFileInfo::getFileInfo</b> and <b>SplFileInfo::getPathInfo</b>
 	 * @link http://php.net/manual/en/splfileinfo.setinfoclass.php
 	 * @param string $class_name [optional] <p>
@@ -1267,9 +1269,9 @@ class Phar extends RecursiveDirectoryIterator implements RecursiveIterator, Seek
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setInfoClass ($class_name = "SplFileInfo") {}
+	public function setInfoClass(string $class_name = "SplFileInfo") {}
 
-	final public function _bad_state_ex () {}
+	final public function _bad_state_ex() {}
 
 }
 
@@ -1317,9 +1319,9 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * available within the <b>Phar</b> class.
 	 * </p>
 	 */
-	public function __construct ($fname, $flags = null, $alias = null, $format = 'Phar::TAR') {}
+	public function __construct(string $fname, int $flags = null, string $alias = null, int $format = Phar::TAR) {}
 
-	public function __destruct () {}
+	public function __destruct() {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -1330,7 +1332,7 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * </p>
 	 * @return bool no return value, exception is thrown on failure.
 	 */
-	public function addEmptyDir ($dirname) {}
+	public function addEmptyDir(string $dirname): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -1345,7 +1347,7 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * </p>
 	 * @return void no return value, exception is thrown on failure.
 	 */
-	public function addFile ($file, $localname = null) {}
+	public function addFile(string $file, string $localname = null) {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -1359,7 +1361,7 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * </p>
 	 * @return bool no return value, exception is thrown on failure.
 	 */
-	public function addFromString ($localname, $contents) {}
+	public function addFromString(string $localname, string $contents): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -1378,7 +1380,7 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * mapping internal path of file to the full path of the file on the
 	 * filesystem.
 	 */
-	public function buildFromDirectory ($base_dir, $regex = null) {}
+	public function buildFromDirectory(string $base_dir, string $regex = null): array {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -1396,7 +1398,7 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * mapping internal path of file to the full path of the file on the
 	 * filesystem.
 	 */
-	public function buildFromIterator (Iterator $iter, $base_directory = null) {}
+	public function buildFromIterator(Iterator $iter, string $base_directory = null): array {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -1409,7 +1411,7 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function compressFiles ($compression) {}
+	public function compressFiles(int $compression): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -1417,7 +1419,7 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * @link http://php.net/manual/en/phardata.decompressfiles.php
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function decompressFiles () {}
+	public function decompressFiles(): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -1434,7 +1436,7 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * </p>
 	 * @return object A <b>PharData</b> object is returned.
 	 */
-	public function compress ($compression, $extension = null) {}
+	public function compress(int $compression, string $extension = null) {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -1449,7 +1451,7 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * </p>
 	 * @return object A <b>PharData</b> object is returned.
 	 */
-	public function decompress ($extension = null) {}
+	public function decompress(string $extension = null) {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -1482,7 +1484,7 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * @return Phar The method returns a <b>Phar</b> object on success and throws an
 	 * exception on failure.
 	 */
-	public function convertToExecutable ($format = null, $compression = null, $extension = null) {}
+	public function convertToExecutable(int $format = null, int $compression = null, string $extension = null): Phar {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -1513,7 +1515,7 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * @return PharData The method returns a <b>PharData</b> object on success and throws an
 	 * exception on failure.
 	 */
-	public function convertToData ($format = null, $compression = null, $extension = null) {}
+	public function convertToData(int $format = null, int $compression = null, string $extension = null): PharData {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -1524,9 +1526,9 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * @return bool returns <b>TRUE</b> on success, but it is safer to encase method call in a
 	 * try/catch block and assume success if no exception is thrown.
 	 */
-	public function copy ($oldfile, $newfile) {}
+	public function copy(string $oldfile, string $newfile): bool {}
 
-	public function count () {}
+	public function count() {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -1538,7 +1540,7 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * @return bool returns <b>TRUE</b> on success, but it is better to check for thrown exception,
 	 * and assume success if none is thrown.
 	 */
-	public function delete ($entry) {}
+	public function delete(string $entry): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -1547,7 +1549,7 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * @return bool returns <b>TRUE</b> on success, but it is better to check for thrown exception,
 	 * and assume success if none is thrown.
 	 */
-	public function delMetadata () {}
+	public function delMetadata(): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -1565,32 +1567,32 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * @return bool returns <b>TRUE</b> on success, but it is better to check for thrown exception,
 	 * and assume success if none is thrown.
 	 */
-	public function extractTo ($pathto, $files = null, $overwrite = false) {}
+	public function extractTo(string $pathto, $files = null, bool $overwrite = false): bool {}
 
-	public function getAlias () {}
+	public function getAlias() {}
 
-	public function getPath () {}
+	public function getPath() {}
 
-	public function getMetadata () {}
+	public function getMetadata() {}
 
-	public function getModified () {}
+	public function getModified() {}
 
-	public function getSignature () {}
+	public function getSignature() {}
 
-	public function getStub () {}
+	public function getStub() {}
 
-	public function getVersion () {}
+	public function getVersion() {}
 
-	public function hasMetadata () {}
+	public function hasMetadata() {}
 
-	public function isBuffering () {}
+	public function isBuffering() {}
 
-	public function isCompressed () {}
+	public function isCompressed() {}
 
 	/**
 	 * @param $fileformat
 	 */
-	public function isFileFormat ($fileformat) {}
+	public function isFileFormat($fileformat) {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -1598,17 +1600,17 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * @link http://php.net/manual/en/phardata.iswritable.php
 	 * @return bool <b>TRUE</b> if the tar/zip archive can be modified
 	 */
-	public function isWritable () {}
+	public function isWritable(): bool {}
 
 	/**
 	 * @param $entry
 	 */
-	public function offsetExists ($entry) {}
+	public function offsetExists($entry) {}
 
 	/**
 	 * @param $entry
 	 */
-	public function offsetGet ($entry) {}
+	public function offsetGet($entry) {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -1622,7 +1624,7 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * </p>
 	 * @return void No return values.
 	 */
-	public function offsetSet ($offset, $value) {}
+	public function offsetSet(string $offset, string $value) {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -1633,7 +1635,7 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function offsetUnset ($offset) {}
+	public function offsetUnset(string $offset): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -1645,7 +1647,7 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * </p>
 	 * @return bool
 	 */
-	public function setAlias ($alias) {}
+	public function setAlias(string $alias): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -1659,18 +1661,18 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function setDefaultStub ($index = null, $webindex = null) {}
+	public function setDefaultStub(string $index = null, string $webindex = null): bool {}
 
 	/**
 	 * @param $metadata
 	 */
-	public function setMetadata ($metadata) {}
+	public function setMetadata($metadata) {}
 
 	/**
 	 * @param $algorithm
 	 * @param $privatekey [optional]
 	 */
-	public function setSignatureAlgorithm ($algorithm, $privatekey) {}
+	public function setSignatureAlgorithm($algorithm, $privatekey) {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -1684,71 +1686,71 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function setStub ($stub, $len = -1) {}
+	public function setStub(string $stub, int $len = -1): bool {}
 
-	public function startBuffering () {}
+	public function startBuffering() {}
 
-	public function stopBuffering () {}
+	public function stopBuffering() {}
 
-	final public static function apiVersion () {}
+	final public static function apiVersion() {}
 
 	/**
 	 * @param $method [optional]
 	 */
-	final public static function canCompress ($method) {}
+	final public static function canCompress($method) {}
 
-	final public static function canWrite () {}
+	final public static function canWrite() {}
 
 	/**
 	 * @param $index [optional]
 	 * @param $webindex [optional]
 	 */
-	final public static function createDefaultStub ($index, $webindex) {}
+	final public static function createDefaultStub($index, $webindex) {}
 
-	final public static function getSupportedCompression () {}
+	final public static function getSupportedCompression() {}
 
-	final public static function getSupportedSignatures () {}
+	final public static function getSupportedSignatures() {}
 
-	final public static function interceptFileFuncs () {}
+	final public static function interceptFileFuncs() {}
 
 	/**
 	 * @param $filename
 	 * @param $executable [optional]
 	 */
-	final public static function isValidPharFilename ($filename, $executable) {}
+	final public static function isValidPharFilename($filename, $executable) {}
 
 	/**
 	 * @param $filename
 	 * @param $alias [optional]
 	 */
-	final public static function loadPhar ($filename, $alias) {}
+	final public static function loadPhar($filename, $alias) {}
 
 	/**
 	 * @param $alias [optional]
 	 * @param $offset [optional]
 	 */
-	final public static function mapPhar ($alias, $offset) {}
+	final public static function mapPhar($alias, $offset) {}
 
 	/**
 	 * @param $retphar
 	 */
-	final public static function running ($retphar) {}
+	final public static function running($retphar) {}
 
 	/**
 	 * @param $inphar
 	 * @param $externalfile
 	 */
-	final public static function mount ($inphar, $externalfile) {}
+	final public static function mount($inphar, $externalfile) {}
 
 	/**
 	 * @param $munglist
 	 */
-	final public static function mungServer ($munglist) {}
+	final public static function mungServer($munglist) {}
 
 	/**
 	 * @param $archive
 	 */
-	final public static function unlinkArchive ($archive) {}
+	final public static function unlinkArchive($archive) {}
 
 	/**
 	 * @param $alias [optional]
@@ -1757,88 +1759,88 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * @param $mimetypes [optional]
 	 * @param $rewrites [optional]
 	 */
-	final public static function webPhar ($alias, $index, $f404, $mimetypes, $rewrites) {}
+	final public static function webPhar($alias, $index, $f404, $mimetypes, $rewrites) {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Returns whether current entry is a directory and not '.' or '..'
 	 * @link http://php.net/manual/en/recursivedirectoryiterator.haschildren.php
 	 * @param bool $allow_links [optional] <p>
 	 * </p>
 	 * @return bool whether the current entry is a directory, but not '.' or '..'
 	 */
-	public function hasChildren ($allow_links = false) {}
+	public function hasChildren(bool $allow_links = false): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Returns an iterator for the current entry if it is a directory
 	 * @link http://php.net/manual/en/recursivedirectoryiterator.getchildren.php
 	 * @return mixed The filename, file information, or $this depending on the set flags.
 	 * See the FilesystemIterator
 	 * constants.
 	 */
-	public function getChildren () {}
+	public function getChildren() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get sub path
 	 * @link http://php.net/manual/en/recursivedirectoryiterator.getsubpath.php
 	 * @return string The sub path (sub directory).
 	 */
-	public function getSubPath () {}
+	public function getSubPath(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get sub path and name
 	 * @link http://php.net/manual/en/recursivedirectoryiterator.getsubpathname.php
 	 * @return string The sub path (sub directory) and filename.
 	 */
-	public function getSubPathname () {}
+	public function getSubPathname(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Rewinds back to the beginning
 	 * @link http://php.net/manual/en/filesystemiterator.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Move to the next file
 	 * @link http://php.net/manual/en/filesystemiterator.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Retrieve the key for the current file
 	 * @link http://php.net/manual/en/filesystemiterator.key.php
 	 * @return string the pathname or filename depending on the set flags.
 	 * See the FilesystemIterator constants.
 	 */
-	public function key () {}
+	public function key(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * The current file
 	 * @link http://php.net/manual/en/filesystemiterator.current.php
 	 * @return mixed The filename, file information, or $this depending on the set flags.
 	 * See the FilesystemIterator constants.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Get the handling flags
 	 * @link http://php.net/manual/en/filesystemiterator.getflags.php
 	 * @return int The integer value of the set flags.
 	 */
-	public function getFlags () {}
+	public function getFlags(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Sets handling flags
 	 * @link http://php.net/manual/en/filesystemiterator.setflags.php
 	 * @param int $flags [optional] <p>
@@ -1847,27 +1849,27 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setFlags ($flags = null) {}
+	public function setFlags(int $flags = null) {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Return file name of current DirectoryIterator item.
 	 * @link http://php.net/manual/en/directoryiterator.getfilename.php
 	 * @return string the file name of the current <b>DirectoryIterator</b> item.
 	 */
-	public function getFilename () {}
+	public function getFilename(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.6)<br/>
+	 * (PHP 5 &gt;= 5.3.6, PHP 7)<br/>
 	 * Gets the file extension
 	 * @link http://php.net/manual/en/directoryiterator.getextension.php
 	 * @return string a string containing the file extension, or an
 	 * empty string if the file has no extension.
 	 */
-	public function getExtension () {}
+	public function getExtension(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Get base name of current DirectoryIterator item.
 	 * @link http://php.net/manual/en/directoryiterator.getbasename.php
 	 * @param string $suffix [optional] <p>
@@ -1876,27 +1878,27 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * </p>
 	 * @return string The base name of the current <b>DirectoryIterator</b> item.
 	 */
-	public function getBasename ($suffix = null) {}
+	public function getBasename(string $suffix = null): string {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Determine if current DirectoryIterator item is '.' or '..'
 	 * @link http://php.net/manual/en/directoryiterator.isdot.php
 	 * @return bool <b>TRUE</b> if the entry is . or ..,
 	 * otherwise <b>FALSE</b>
 	 */
-	public function isDot () {}
+	public function isDot(): bool {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Check whether current DirectoryIterator position is a valid file
 	 * @link http://php.net/manual/en/directoryiterator.valid.php
 	 * @return bool <b>TRUE</b> if the position is valid, otherwise <b>FALSE</b>
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Seek to a DirectoryIterator item
 	 * @link http://php.net/manual/en/directoryiterator.seek.php
 	 * @param int $position <p>
@@ -1904,156 +1906,156 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function seek ($position) {}
+	public function seek(int $position) {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Get file name as a string
 	 * @link http://php.net/manual/en/directoryiterator.tostring.php
 	 * @return string the file name of the current <b>DirectoryIterator</b> item.
 	 */
-	public function __toString () {}
+	public function __toString(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the path to the file
 	 * @link http://php.net/manual/en/splfileinfo.getpathname.php
 	 * @return string The path to the file.
 	 */
-	public function getPathname () {}
+	public function getPathname(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file permissions
 	 * @link http://php.net/manual/en/splfileinfo.getperms.php
 	 * @return int the file permissions.
 	 */
-	public function getPerms () {}
+	public function getPerms(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the inode for the file
 	 * @link http://php.net/manual/en/splfileinfo.getinode.php
 	 * @return int the inode number for the filesystem object.
 	 */
-	public function getInode () {}
+	public function getInode(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file size
 	 * @link http://php.net/manual/en/splfileinfo.getsize.php
 	 * @return int The filesize in bytes.
 	 */
-	public function getSize () {}
+	public function getSize(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the owner of the file
 	 * @link http://php.net/manual/en/splfileinfo.getowner.php
 	 * @return int The owner id in numerical format.
 	 */
-	public function getOwner () {}
+	public function getOwner(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the file group
 	 * @link http://php.net/manual/en/splfileinfo.getgroup.php
 	 * @return int The group id in numerical format.
 	 */
-	public function getGroup () {}
+	public function getGroup(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets last access time of the file
 	 * @link http://php.net/manual/en/splfileinfo.getatime.php
 	 * @return int the time the file was last accessed.
 	 */
-	public function getATime () {}
+	public function getATime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the last modified time
 	 * @link http://php.net/manual/en/splfileinfo.getmtime.php
 	 * @return int the last modified time for the file, in a Unix timestamp.
 	 */
-	public function getMTime () {}
+	public function getMTime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the inode change time
 	 * @link http://php.net/manual/en/splfileinfo.getctime.php
 	 * @return int The last change time, in a Unix timestamp.
 	 */
-	public function getCTime () {}
+	public function getCTime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file type
 	 * @link http://php.net/manual/en/splfileinfo.gettype.php
 	 * @return string A string representing the type of the entry.
 	 * May be one of file, link,
 	 * or dir
 	 */
-	public function getType () {}
+	public function getType(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if file is readable
 	 * @link http://php.net/manual/en/splfileinfo.isreadable.php
 	 * @return bool <b>TRUE</b> if readable, <b>FALSE</b> otherwise.
 	 */
-	public function isReadable () {}
+	public function isReadable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is executable
 	 * @link http://php.net/manual/en/splfileinfo.isexecutable.php
 	 * @return bool <b>TRUE</b> if executable, <b>FALSE</b> otherwise.
 	 */
-	public function isExecutable () {}
+	public function isExecutable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the object references a regular file
 	 * @link http://php.net/manual/en/splfileinfo.isfile.php
 	 * @return bool <b>TRUE</b> if the file exists and is a regular file (not a link), <b>FALSE</b> otherwise.
 	 */
-	public function isFile () {}
+	public function isFile(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is a directory
 	 * @link http://php.net/manual/en/splfileinfo.isdir.php
 	 * @return bool <b>TRUE</b> if a directory, <b>FALSE</b> otherwise.
 	 */
-	public function isDir () {}
+	public function isDir(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is a link
 	 * @link http://php.net/manual/en/splfileinfo.islink.php
 	 * @return bool <b>TRUE</b> if the file is a link, <b>FALSE</b> otherwise.
 	 */
-	public function isLink () {}
+	public function isLink(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Gets the target of a link
 	 * @link http://php.net/manual/en/splfileinfo.getlinktarget.php
 	 * @return string the target of the filesystem link.
 	 */
-	public function getLinkTarget () {}
+	public function getLinkTarget(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Gets absolute path to file
 	 * @link http://php.net/manual/en/splfileinfo.getrealpath.php
-	 * @return string the path to the file.
+	 * @return string the path to the file, or <b>FALSE</b> if the file does not exist.
 	 */
-	public function getRealPath () {}
+	public function getRealPath(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileInfo object for the file
 	 * @link http://php.net/manual/en/splfileinfo.getfileinfo.php
 	 * @param string $class_name [optional] <p>
@@ -2061,10 +2063,10 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * </p>
 	 * @return SplFileInfo An <b>SplFileInfo</b> object created for the file.
 	 */
-	public function getFileInfo ($class_name = null) {}
+	public function getFileInfo(string $class_name = null): SplFileInfo {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileInfo object for the path
 	 * @link http://php.net/manual/en/splfileinfo.getpathinfo.php
 	 * @param string $class_name [optional] <p>
@@ -2072,10 +2074,10 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * </p>
 	 * @return SplFileInfo an <b>SplFileInfo</b> object for the parent path of the file.
 	 */
-	public function getPathInfo ($class_name = null) {}
+	public function getPathInfo(string $class_name = null): SplFileInfo {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileObject object for the file
 	 * @link http://php.net/manual/en/splfileinfo.openfile.php
 	 * @param string $open_mode [optional] <p>
@@ -2093,10 +2095,10 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * </p>
 	 * @return SplFileObject The opened file as an <b>SplFileObject</b> object.
 	 */
-	public function openFile ($open_mode = "r", $use_include_path = false, $context = null) {}
+	public function openFile(string $open_mode = "r", bool $use_include_path = false, $context = null): SplFileObject {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Sets the class used with <b>SplFileInfo::openFile</b>
 	 * @link http://php.net/manual/en/splfileinfo.setfileclass.php
 	 * @param string $class_name [optional] <p>
@@ -2105,10 +2107,10 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setFileClass ($class_name = "SplFileObject") {}
+	public function setFileClass(string $class_name = "SplFileObject") {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Sets the class used with <b>SplFileInfo::getFileInfo</b> and <b>SplFileInfo::getPathInfo</b>
 	 * @link http://php.net/manual/en/splfileinfo.setinfoclass.php
 	 * @param string $class_name [optional] <p>
@@ -2118,9 +2120,9 @@ class PharData extends RecursiveDirectoryIterator implements RecursiveIterator, 
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setInfoClass ($class_name = "SplFileInfo") {}
+	public function setInfoClass(string $class_name = "SplFileInfo") {}
 
-	final public function _bad_state_ex () {}
+	final public function _bad_state_ex() {}
 
 }
 
@@ -2141,9 +2143,9 @@ class PharFileInfo extends SplFileInfo  {
 	 * the entry should be phar://boo.phar/my/file.php.
 	 * </p>
 	 */
-	public function __construct ($entry) {}
+	public function __construct(string $entry) {}
 
-	public function __destruct () {}
+	public function __destruct() {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -2154,7 +2156,7 @@ class PharFileInfo extends SplFileInfo  {
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function chmod ($permissions) {}
+	public function chmod(int $permissions) {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -2163,7 +2165,7 @@ class PharFileInfo extends SplFileInfo  {
 	 * @param int $compression
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function compress ($compression) {}
+	public function compress(int $compression): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 2.0.0)<br/>
@@ -2171,7 +2173,7 @@ class PharFileInfo extends SplFileInfo  {
 	 * @link http://php.net/manual/en/pharfileinfo.decompress.php
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function decompress () {}
+	public function decompress(): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.2.0)<br/>
@@ -2184,7 +2186,7 @@ class PharFileInfo extends SplFileInfo  {
 	 * archive. Files within <b>PharData</b> archives do not have
 	 * this restriction.
 	 */
-	public function delMetadata () {}
+	public function delMetadata(): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -2192,7 +2194,7 @@ class PharFileInfo extends SplFileInfo  {
 	 * @link http://php.net/manual/en/pharfileinfo.getcompressedsize.php
 	 * @return int The size in bytes of the file within the Phar archive on disk.
 	 */
-	public function getCompressedSize () {}
+	public function getCompressedSize(): int {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -2200,9 +2202,9 @@ class PharFileInfo extends SplFileInfo  {
 	 * @link http://php.net/manual/en/pharfileinfo.getcrc32.php
 	 * @return int The <b>crc32</b> checksum of the file within the Phar archive.
 	 */
-	public function getCRC32 () {}
+	public function getCRC32(): int {}
 
-	public function getContent () {}
+	public function getContent() {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -2211,7 +2213,7 @@ class PharFileInfo extends SplFileInfo  {
 	 * @return mixed any PHP variable that can be serialized and is stored as meta-data for the file,
 	 * or <b>NULL</b> if no meta-data is stored.
 	 */
-	public function getMetadata () {}
+	public function getMetadata() {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -2219,7 +2221,7 @@ class PharFileInfo extends SplFileInfo  {
 	 * @link http://php.net/manual/en/pharfileinfo.getpharflags.php
 	 * @return int The Phar flags (always 0 in the current implementation)
 	 */
-	public function getPharFlags () {}
+	public function getPharFlags(): int {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.2.0)<br/>
@@ -2227,7 +2229,7 @@ class PharFileInfo extends SplFileInfo  {
 	 * @link http://php.net/manual/en/pharfileinfo.hasmetadata.php
 	 * @return bool <b>FALSE</b> if no metadata is set or is <b>NULL</b>, <b>TRUE</b> if metadata is not <b>NULL</b>
 	 */
-	public function hasMetadata () {}
+	public function hasMetadata(): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -2239,7 +2241,7 @@ class PharFileInfo extends SplFileInfo  {
 	 * </p>
 	 * @return bool <b>TRUE</b> if the file is compressed within the Phar archive, <b>FALSE</b> if not.
 	 */
-	public function isCompressed ($compression_type = 9021976) {}
+	public function isCompressed(int $compression_type = 9021976): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -2247,7 +2249,7 @@ class PharFileInfo extends SplFileInfo  {
 	 * @link http://php.net/manual/en/pharfileinfo.iscrcchecked.php
 	 * @return bool <b>TRUE</b> if the file has had its CRC verified, <b>FALSE</b> if not.
 	 */
-	public function isCRCChecked () {}
+	public function isCRCChecked(): bool {}
 
 	/**
 	 * (PHP &gt;= 5.3.0, PECL phar &gt;= 1.0.0)<br/>
@@ -2258,35 +2260,35 @@ class PharFileInfo extends SplFileInfo  {
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setMetadata ($metadata) {}
+	public function setMetadata($metadata) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the path without filename
 	 * @link http://php.net/manual/en/splfileinfo.getpath.php
 	 * @return string the path to the file.
 	 */
-	public function getPath () {}
+	public function getPath(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the filename
 	 * @link http://php.net/manual/en/splfileinfo.getfilename.php
 	 * @return string The filename.
 	 */
-	public function getFilename () {}
+	public function getFilename(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.6)<br/>
+	 * (PHP 5 &gt;= 5.3.6, PHP 7)<br/>
 	 * Gets the file extension
 	 * @link http://php.net/manual/en/splfileinfo.getextension.php
 	 * @return string a string containing the file extension, or an
 	 * empty string if the file has no extension.
 	 */
-	public function getExtension () {}
+	public function getExtension(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Gets the base name of the file
 	 * @link http://php.net/manual/en/splfileinfo.getbasename.php
 	 * @param string $suffix [optional] <p>
@@ -2294,156 +2296,156 @@ class PharFileInfo extends SplFileInfo  {
 	 * </p>
 	 * @return string the base name without path information.
 	 */
-	public function getBasename ($suffix = null) {}
+	public function getBasename(string $suffix = null): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the path to the file
 	 * @link http://php.net/manual/en/splfileinfo.getpathname.php
 	 * @return string The path to the file.
 	 */
-	public function getPathname () {}
+	public function getPathname(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file permissions
 	 * @link http://php.net/manual/en/splfileinfo.getperms.php
 	 * @return int the file permissions.
 	 */
-	public function getPerms () {}
+	public function getPerms(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the inode for the file
 	 * @link http://php.net/manual/en/splfileinfo.getinode.php
 	 * @return int the inode number for the filesystem object.
 	 */
-	public function getInode () {}
+	public function getInode(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file size
 	 * @link http://php.net/manual/en/splfileinfo.getsize.php
 	 * @return int The filesize in bytes.
 	 */
-	public function getSize () {}
+	public function getSize(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the owner of the file
 	 * @link http://php.net/manual/en/splfileinfo.getowner.php
 	 * @return int The owner id in numerical format.
 	 */
-	public function getOwner () {}
+	public function getOwner(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the file group
 	 * @link http://php.net/manual/en/splfileinfo.getgroup.php
 	 * @return int The group id in numerical format.
 	 */
-	public function getGroup () {}
+	public function getGroup(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets last access time of the file
 	 * @link http://php.net/manual/en/splfileinfo.getatime.php
 	 * @return int the time the file was last accessed.
 	 */
-	public function getATime () {}
+	public function getATime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the last modified time
 	 * @link http://php.net/manual/en/splfileinfo.getmtime.php
 	 * @return int the last modified time for the file, in a Unix timestamp.
 	 */
-	public function getMTime () {}
+	public function getMTime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the inode change time
 	 * @link http://php.net/manual/en/splfileinfo.getctime.php
 	 * @return int The last change time, in a Unix timestamp.
 	 */
-	public function getCTime () {}
+	public function getCTime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file type
 	 * @link http://php.net/manual/en/splfileinfo.gettype.php
 	 * @return string A string representing the type of the entry.
 	 * May be one of file, link,
 	 * or dir
 	 */
-	public function getType () {}
+	public function getType(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the entry is writable
 	 * @link http://php.net/manual/en/splfileinfo.iswritable.php
 	 * @return bool <b>TRUE</b> if writable, <b>FALSE</b> otherwise;
 	 */
-	public function isWritable () {}
+	public function isWritable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if file is readable
 	 * @link http://php.net/manual/en/splfileinfo.isreadable.php
 	 * @return bool <b>TRUE</b> if readable, <b>FALSE</b> otherwise.
 	 */
-	public function isReadable () {}
+	public function isReadable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is executable
 	 * @link http://php.net/manual/en/splfileinfo.isexecutable.php
 	 * @return bool <b>TRUE</b> if executable, <b>FALSE</b> otherwise.
 	 */
-	public function isExecutable () {}
+	public function isExecutable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the object references a regular file
 	 * @link http://php.net/manual/en/splfileinfo.isfile.php
 	 * @return bool <b>TRUE</b> if the file exists and is a regular file (not a link), <b>FALSE</b> otherwise.
 	 */
-	public function isFile () {}
+	public function isFile(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is a directory
 	 * @link http://php.net/manual/en/splfileinfo.isdir.php
 	 * @return bool <b>TRUE</b> if a directory, <b>FALSE</b> otherwise.
 	 */
-	public function isDir () {}
+	public function isDir(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is a link
 	 * @link http://php.net/manual/en/splfileinfo.islink.php
 	 * @return bool <b>TRUE</b> if the file is a link, <b>FALSE</b> otherwise.
 	 */
-	public function isLink () {}
+	public function isLink(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Gets the target of a link
 	 * @link http://php.net/manual/en/splfileinfo.getlinktarget.php
 	 * @return string the target of the filesystem link.
 	 */
-	public function getLinkTarget () {}
+	public function getLinkTarget(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Gets absolute path to file
 	 * @link http://php.net/manual/en/splfileinfo.getrealpath.php
-	 * @return string the path to the file.
+	 * @return string the path to the file, or <b>FALSE</b> if the file does not exist.
 	 */
-	public function getRealPath () {}
+	public function getRealPath(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileInfo object for the file
 	 * @link http://php.net/manual/en/splfileinfo.getfileinfo.php
 	 * @param string $class_name [optional] <p>
@@ -2451,10 +2453,10 @@ class PharFileInfo extends SplFileInfo  {
 	 * </p>
 	 * @return SplFileInfo An <b>SplFileInfo</b> object created for the file.
 	 */
-	public function getFileInfo ($class_name = null) {}
+	public function getFileInfo(string $class_name = null): SplFileInfo {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileInfo object for the path
 	 * @link http://php.net/manual/en/splfileinfo.getpathinfo.php
 	 * @param string $class_name [optional] <p>
@@ -2462,10 +2464,10 @@ class PharFileInfo extends SplFileInfo  {
 	 * </p>
 	 * @return SplFileInfo an <b>SplFileInfo</b> object for the parent path of the file.
 	 */
-	public function getPathInfo ($class_name = null) {}
+	public function getPathInfo(string $class_name = null): SplFileInfo {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileObject object for the file
 	 * @link http://php.net/manual/en/splfileinfo.openfile.php
 	 * @param string $open_mode [optional] <p>
@@ -2483,10 +2485,10 @@ class PharFileInfo extends SplFileInfo  {
 	 * </p>
 	 * @return SplFileObject The opened file as an <b>SplFileObject</b> object.
 	 */
-	public function openFile ($open_mode = "r", $use_include_path = false, $context = null) {}
+	public function openFile(string $open_mode = "r", bool $use_include_path = false, $context = null): SplFileObject {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Sets the class used with <b>SplFileInfo::openFile</b>
 	 * @link http://php.net/manual/en/splfileinfo.setfileclass.php
 	 * @param string $class_name [optional] <p>
@@ -2495,10 +2497,10 @@ class PharFileInfo extends SplFileInfo  {
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setFileClass ($class_name = "SplFileObject") {}
+	public function setFileClass(string $class_name = "SplFileObject") {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Sets the class used with <b>SplFileInfo::getFileInfo</b> and <b>SplFileInfo::getPathInfo</b>
 	 * @link http://php.net/manual/en/splfileinfo.setinfoclass.php
 	 * @param string $class_name [optional] <p>
@@ -2508,17 +2510,17 @@ class PharFileInfo extends SplFileInfo  {
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setInfoClass ($class_name = "SplFileInfo") {}
+	public function setInfoClass(string $class_name = "SplFileInfo") {}
 
-	final public function _bad_state_ex () {}
+	final public function _bad_state_ex() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Returns the path to the file as a string
 	 * @link http://php.net/manual/en/splfileinfo.tostring.php
 	 * @return void the path to the file.
 	 */
-	public function __toString () {}
+	public function __toString() {}
 
 }
 // End of Phar v.2.0.2

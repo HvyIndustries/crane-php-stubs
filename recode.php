@@ -1,9 +1,9 @@
 <?php
 
-// Start of recode v.
+// Start of recode v.7.0.4-7ubuntu2
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Recode a string according to a recode request
  * @link http://php.net/manual/en/function.recode-string.php
  * @param string $request <p>
@@ -15,10 +15,10 @@
  * @return string the recoded string or <b>FALSE</b>, if unable to
  * perform the recode request.
  */
-function recode_string ($request, $string) {}
+function recode_string(string $request, string $string): string {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Recode from file to file according to recode request
  * @link http://php.net/manual/en/function.recode-file.php
  * @param string $request <p>
@@ -34,16 +34,16 @@ function recode_string ($request, $string) {}
  * </p>
  * @return bool <b>FALSE</b>, if unable to comply, <b>TRUE</b> otherwise.
  */
-function recode_file ($request, $input, $output) {}
+function recode_file(string $request, $input, $output): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Alias of <b>recode_string</b>
  * @link http://php.net/manual/en/function.recode.php
  * @param $request
  * @param $str
  */
-function recode ($request, $str) {}
+function recode($request, $str) {}
 
-// End of recode v.
+// End of recode v.7.0.4-7ubuntu2
 ?>
