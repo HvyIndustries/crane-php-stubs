@@ -1,13 +1,13 @@
 <?php
 
-// Start of SPL v.0.2
+// Start of SPL v.7.0.4-7ubuntu2
 
 /**
  * Exception that represents error in the program logic. This kind of
  * exception should lead directly to a fix in your code.
  * @link http://php.net/manual/en/class.logicexception.php
  */
-class LogicException extends Exception  {
+class LogicException extends Exception implements Throwable {
 	protected $message;
 	protected $code;
 	protected $file;
@@ -15,15 +15,15 @@ class LogicException extends Exception  {
 
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Clone the exception
 	 * @link http://php.net/manual/en/exception.clone.php
 	 * @return void No value is returned.
 	 */
-	final private function __clone () {}
+	final private function __clone() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Construct the exception
 	 * @link http://php.net/manual/en/exception.construct.php
 	 * @param string $message [optional] <p>
@@ -32,22 +32,24 @@ class LogicException extends Exception  {
 	 * @param int $code [optional] <p>
 	 * The Exception code.
 	 * </p>
-	 * @param Exception $previous [optional] <p>
+	 * @param Throwable $previous [optional] <p>
 	 * The previous exception used for the exception chaining.
 	 * </p>
 	 */
-	public function __construct ($message = "", $code = 0, Exception $previous = null) {}
+	public function __construct(string $message = "", int $code = 0, Throwable $previous = null) {}
+
+	public function __wakeup() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception message
 	 * @link http://php.net/manual/en/exception.getmessage.php
 	 * @return string the Exception message as a string.
 	 */
-	final public function getMessage () {}
+	final public function getMessage(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception code
 	 * @link http://php.net/manual/en/exception.getcode.php
 	 * @return mixed the exception code as integer in
@@ -55,56 +57,56 @@ class LogicException extends Exception  {
 	 * <b>Exception</b> descendants (for example as
 	 * string in <b>PDOException</b>).
 	 */
-	final public function getCode () {}
+	final public function getCode() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the file in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getfile.php
 	 * @return string the filename in which the exception was created.
 	 */
-	final public function getFile () {}
+	final public function getFile(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the line in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getline.php
 	 * @return int the line number where the exception was created.
 	 */
-	final public function getLine () {}
+	final public function getLine(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace
 	 * @link http://php.net/manual/en/exception.gettrace.php
 	 * @return array the Exception stack trace as an array.
 	 */
-	final public function getTrace () {}
+	final public function getTrace(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns previous Exception
 	 * @link http://php.net/manual/en/exception.getprevious.php
 	 * @return Exception the previous <b>Exception</b> if available
 	 * or <b>NULL</b> otherwise.
 	 */
-	final public function getPrevious () {}
+	final public function getPrevious(): Exception {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace as a string
 	 * @link http://php.net/manual/en/exception.gettraceasstring.php
 	 * @return string the Exception stack trace as a string.
 	 */
-	final public function getTraceAsString () {}
+	final public function getTraceAsString(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * String representation of the exception
 	 * @link http://php.net/manual/en/exception.tostring.php
 	 * @return string the string representation of the exception.
 	 */
-	public function __toString () {}
+	public function __toString(): string {}
 
 }
 
@@ -113,7 +115,7 @@ class LogicException extends Exception  {
  * arguments are missing.
  * @link http://php.net/manual/en/class.badfunctioncallexception.php
  */
-class BadFunctionCallException extends LogicException  {
+class BadFunctionCallException extends LogicException implements Throwable {
 	protected $message;
 	protected $code;
 	protected $file;
@@ -121,15 +123,15 @@ class BadFunctionCallException extends LogicException  {
 
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Clone the exception
 	 * @link http://php.net/manual/en/exception.clone.php
 	 * @return void No value is returned.
 	 */
-	final private function __clone () {}
+	final private function __clone() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Construct the exception
 	 * @link http://php.net/manual/en/exception.construct.php
 	 * @param string $message [optional] <p>
@@ -138,22 +140,24 @@ class BadFunctionCallException extends LogicException  {
 	 * @param int $code [optional] <p>
 	 * The Exception code.
 	 * </p>
-	 * @param Exception $previous [optional] <p>
+	 * @param Throwable $previous [optional] <p>
 	 * The previous exception used for the exception chaining.
 	 * </p>
 	 */
-	public function __construct ($message = "", $code = 0, Exception $previous = null) {}
+	public function __construct(string $message = "", int $code = 0, Throwable $previous = null) {}
+
+	public function __wakeup() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception message
 	 * @link http://php.net/manual/en/exception.getmessage.php
 	 * @return string the Exception message as a string.
 	 */
-	final public function getMessage () {}
+	final public function getMessage(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception code
 	 * @link http://php.net/manual/en/exception.getcode.php
 	 * @return mixed the exception code as integer in
@@ -161,56 +165,56 @@ class BadFunctionCallException extends LogicException  {
 	 * <b>Exception</b> descendants (for example as
 	 * string in <b>PDOException</b>).
 	 */
-	final public function getCode () {}
+	final public function getCode() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the file in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getfile.php
 	 * @return string the filename in which the exception was created.
 	 */
-	final public function getFile () {}
+	final public function getFile(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the line in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getline.php
 	 * @return int the line number where the exception was created.
 	 */
-	final public function getLine () {}
+	final public function getLine(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace
 	 * @link http://php.net/manual/en/exception.gettrace.php
 	 * @return array the Exception stack trace as an array.
 	 */
-	final public function getTrace () {}
+	final public function getTrace(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns previous Exception
 	 * @link http://php.net/manual/en/exception.getprevious.php
 	 * @return Exception the previous <b>Exception</b> if available
 	 * or <b>NULL</b> otherwise.
 	 */
-	final public function getPrevious () {}
+	final public function getPrevious(): Exception {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace as a string
 	 * @link http://php.net/manual/en/exception.gettraceasstring.php
 	 * @return string the Exception stack trace as a string.
 	 */
-	final public function getTraceAsString () {}
+	final public function getTraceAsString(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * String representation of the exception
 	 * @link http://php.net/manual/en/exception.tostring.php
 	 * @return string the string representation of the exception.
 	 */
-	public function __toString () {}
+	public function __toString(): string {}
 
 }
 
@@ -219,7 +223,7 @@ class BadFunctionCallException extends LogicException  {
  * arguments are missing.
  * @link http://php.net/manual/en/class.badmethodcallexception.php
  */
-class BadMethodCallException extends BadFunctionCallException  {
+class BadMethodCallException extends BadFunctionCallException implements Throwable {
 	protected $message;
 	protected $code;
 	protected $file;
@@ -227,15 +231,15 @@ class BadMethodCallException extends BadFunctionCallException  {
 
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Clone the exception
 	 * @link http://php.net/manual/en/exception.clone.php
 	 * @return void No value is returned.
 	 */
-	final private function __clone () {}
+	final private function __clone() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Construct the exception
 	 * @link http://php.net/manual/en/exception.construct.php
 	 * @param string $message [optional] <p>
@@ -244,22 +248,24 @@ class BadMethodCallException extends BadFunctionCallException  {
 	 * @param int $code [optional] <p>
 	 * The Exception code.
 	 * </p>
-	 * @param Exception $previous [optional] <p>
+	 * @param Throwable $previous [optional] <p>
 	 * The previous exception used for the exception chaining.
 	 * </p>
 	 */
-	public function __construct ($message = "", $code = 0, Exception $previous = null) {}
+	public function __construct(string $message = "", int $code = 0, Throwable $previous = null) {}
+
+	public function __wakeup() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception message
 	 * @link http://php.net/manual/en/exception.getmessage.php
 	 * @return string the Exception message as a string.
 	 */
-	final public function getMessage () {}
+	final public function getMessage(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception code
 	 * @link http://php.net/manual/en/exception.getcode.php
 	 * @return mixed the exception code as integer in
@@ -267,56 +273,56 @@ class BadMethodCallException extends BadFunctionCallException  {
 	 * <b>Exception</b> descendants (for example as
 	 * string in <b>PDOException</b>).
 	 */
-	final public function getCode () {}
+	final public function getCode() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the file in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getfile.php
 	 * @return string the filename in which the exception was created.
 	 */
-	final public function getFile () {}
+	final public function getFile(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the line in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getline.php
 	 * @return int the line number where the exception was created.
 	 */
-	final public function getLine () {}
+	final public function getLine(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace
 	 * @link http://php.net/manual/en/exception.gettrace.php
 	 * @return array the Exception stack trace as an array.
 	 */
-	final public function getTrace () {}
+	final public function getTrace(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns previous Exception
 	 * @link http://php.net/manual/en/exception.getprevious.php
 	 * @return Exception the previous <b>Exception</b> if available
 	 * or <b>NULL</b> otherwise.
 	 */
-	final public function getPrevious () {}
+	final public function getPrevious(): Exception {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace as a string
 	 * @link http://php.net/manual/en/exception.gettraceasstring.php
 	 * @return string the Exception stack trace as a string.
 	 */
-	final public function getTraceAsString () {}
+	final public function getTraceAsString(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * String representation of the exception
 	 * @link http://php.net/manual/en/exception.tostring.php
 	 * @return string the string representation of the exception.
 	 */
-	public function __toString () {}
+	public function __toString(): string {}
 
 }
 
@@ -324,7 +330,7 @@ class BadMethodCallException extends BadFunctionCallException  {
  * Exception thrown if a value does not adhere to a defined valid data domain.
  * @link http://php.net/manual/en/class.domainexception.php
  */
-class DomainException extends LogicException  {
+class DomainException extends LogicException implements Throwable {
 	protected $message;
 	protected $code;
 	protected $file;
@@ -332,15 +338,15 @@ class DomainException extends LogicException  {
 
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Clone the exception
 	 * @link http://php.net/manual/en/exception.clone.php
 	 * @return void No value is returned.
 	 */
-	final private function __clone () {}
+	final private function __clone() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Construct the exception
 	 * @link http://php.net/manual/en/exception.construct.php
 	 * @param string $message [optional] <p>
@@ -349,22 +355,24 @@ class DomainException extends LogicException  {
 	 * @param int $code [optional] <p>
 	 * The Exception code.
 	 * </p>
-	 * @param Exception $previous [optional] <p>
+	 * @param Throwable $previous [optional] <p>
 	 * The previous exception used for the exception chaining.
 	 * </p>
 	 */
-	public function __construct ($message = "", $code = 0, Exception $previous = null) {}
+	public function __construct(string $message = "", int $code = 0, Throwable $previous = null) {}
+
+	public function __wakeup() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception message
 	 * @link http://php.net/manual/en/exception.getmessage.php
 	 * @return string the Exception message as a string.
 	 */
-	final public function getMessage () {}
+	final public function getMessage(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception code
 	 * @link http://php.net/manual/en/exception.getcode.php
 	 * @return mixed the exception code as integer in
@@ -372,56 +380,56 @@ class DomainException extends LogicException  {
 	 * <b>Exception</b> descendants (for example as
 	 * string in <b>PDOException</b>).
 	 */
-	final public function getCode () {}
+	final public function getCode() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the file in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getfile.php
 	 * @return string the filename in which the exception was created.
 	 */
-	final public function getFile () {}
+	final public function getFile(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the line in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getline.php
 	 * @return int the line number where the exception was created.
 	 */
-	final public function getLine () {}
+	final public function getLine(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace
 	 * @link http://php.net/manual/en/exception.gettrace.php
 	 * @return array the Exception stack trace as an array.
 	 */
-	final public function getTrace () {}
+	final public function getTrace(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns previous Exception
 	 * @link http://php.net/manual/en/exception.getprevious.php
 	 * @return Exception the previous <b>Exception</b> if available
 	 * or <b>NULL</b> otherwise.
 	 */
-	final public function getPrevious () {}
+	final public function getPrevious(): Exception {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace as a string
 	 * @link http://php.net/manual/en/exception.gettraceasstring.php
 	 * @return string the Exception stack trace as a string.
 	 */
-	final public function getTraceAsString () {}
+	final public function getTraceAsString(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * String representation of the exception
 	 * @link http://php.net/manual/en/exception.tostring.php
 	 * @return string the string representation of the exception.
 	 */
-	public function __toString () {}
+	public function __toString(): string {}
 
 }
 
@@ -429,7 +437,7 @@ class DomainException extends LogicException  {
  * Exception thrown if an argument is not of the expected type.
  * @link http://php.net/manual/en/class.invalidargumentexception.php
  */
-class InvalidArgumentException extends LogicException  {
+class InvalidArgumentException extends LogicException implements Throwable {
 	protected $message;
 	protected $code;
 	protected $file;
@@ -437,15 +445,15 @@ class InvalidArgumentException extends LogicException  {
 
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Clone the exception
 	 * @link http://php.net/manual/en/exception.clone.php
 	 * @return void No value is returned.
 	 */
-	final private function __clone () {}
+	final private function __clone() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Construct the exception
 	 * @link http://php.net/manual/en/exception.construct.php
 	 * @param string $message [optional] <p>
@@ -454,22 +462,24 @@ class InvalidArgumentException extends LogicException  {
 	 * @param int $code [optional] <p>
 	 * The Exception code.
 	 * </p>
-	 * @param Exception $previous [optional] <p>
+	 * @param Throwable $previous [optional] <p>
 	 * The previous exception used for the exception chaining.
 	 * </p>
 	 */
-	public function __construct ($message = "", $code = 0, Exception $previous = null) {}
+	public function __construct(string $message = "", int $code = 0, Throwable $previous = null) {}
+
+	public function __wakeup() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception message
 	 * @link http://php.net/manual/en/exception.getmessage.php
 	 * @return string the Exception message as a string.
 	 */
-	final public function getMessage () {}
+	final public function getMessage(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception code
 	 * @link http://php.net/manual/en/exception.getcode.php
 	 * @return mixed the exception code as integer in
@@ -477,56 +487,56 @@ class InvalidArgumentException extends LogicException  {
 	 * <b>Exception</b> descendants (for example as
 	 * string in <b>PDOException</b>).
 	 */
-	final public function getCode () {}
+	final public function getCode() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the file in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getfile.php
 	 * @return string the filename in which the exception was created.
 	 */
-	final public function getFile () {}
+	final public function getFile(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the line in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getline.php
 	 * @return int the line number where the exception was created.
 	 */
-	final public function getLine () {}
+	final public function getLine(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace
 	 * @link http://php.net/manual/en/exception.gettrace.php
 	 * @return array the Exception stack trace as an array.
 	 */
-	final public function getTrace () {}
+	final public function getTrace(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns previous Exception
 	 * @link http://php.net/manual/en/exception.getprevious.php
 	 * @return Exception the previous <b>Exception</b> if available
 	 * or <b>NULL</b> otherwise.
 	 */
-	final public function getPrevious () {}
+	final public function getPrevious(): Exception {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace as a string
 	 * @link http://php.net/manual/en/exception.gettraceasstring.php
 	 * @return string the Exception stack trace as a string.
 	 */
-	final public function getTraceAsString () {}
+	final public function getTraceAsString(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * String representation of the exception
 	 * @link http://php.net/manual/en/exception.tostring.php
 	 * @return string the string representation of the exception.
 	 */
-	public function __toString () {}
+	public function __toString(): string {}
 
 }
 
@@ -534,7 +544,7 @@ class InvalidArgumentException extends LogicException  {
  * Exception thrown if a length is invalid.
  * @link http://php.net/manual/en/class.lengthexception.php
  */
-class LengthException extends LogicException  {
+class LengthException extends LogicException implements Throwable {
 	protected $message;
 	protected $code;
 	protected $file;
@@ -542,15 +552,15 @@ class LengthException extends LogicException  {
 
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Clone the exception
 	 * @link http://php.net/manual/en/exception.clone.php
 	 * @return void No value is returned.
 	 */
-	final private function __clone () {}
+	final private function __clone() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Construct the exception
 	 * @link http://php.net/manual/en/exception.construct.php
 	 * @param string $message [optional] <p>
@@ -559,22 +569,24 @@ class LengthException extends LogicException  {
 	 * @param int $code [optional] <p>
 	 * The Exception code.
 	 * </p>
-	 * @param Exception $previous [optional] <p>
+	 * @param Throwable $previous [optional] <p>
 	 * The previous exception used for the exception chaining.
 	 * </p>
 	 */
-	public function __construct ($message = "", $code = 0, Exception $previous = null) {}
+	public function __construct(string $message = "", int $code = 0, Throwable $previous = null) {}
+
+	public function __wakeup() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception message
 	 * @link http://php.net/manual/en/exception.getmessage.php
 	 * @return string the Exception message as a string.
 	 */
-	final public function getMessage () {}
+	final public function getMessage(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception code
 	 * @link http://php.net/manual/en/exception.getcode.php
 	 * @return mixed the exception code as integer in
@@ -582,56 +594,56 @@ class LengthException extends LogicException  {
 	 * <b>Exception</b> descendants (for example as
 	 * string in <b>PDOException</b>).
 	 */
-	final public function getCode () {}
+	final public function getCode() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the file in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getfile.php
 	 * @return string the filename in which the exception was created.
 	 */
-	final public function getFile () {}
+	final public function getFile(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the line in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getline.php
 	 * @return int the line number where the exception was created.
 	 */
-	final public function getLine () {}
+	final public function getLine(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace
 	 * @link http://php.net/manual/en/exception.gettrace.php
 	 * @return array the Exception stack trace as an array.
 	 */
-	final public function getTrace () {}
+	final public function getTrace(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns previous Exception
 	 * @link http://php.net/manual/en/exception.getprevious.php
 	 * @return Exception the previous <b>Exception</b> if available
 	 * or <b>NULL</b> otherwise.
 	 */
-	final public function getPrevious () {}
+	final public function getPrevious(): Exception {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace as a string
 	 * @link http://php.net/manual/en/exception.gettraceasstring.php
 	 * @return string the Exception stack trace as a string.
 	 */
-	final public function getTraceAsString () {}
+	final public function getTraceAsString(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * String representation of the exception
 	 * @link http://php.net/manual/en/exception.tostring.php
 	 * @return string the string representation of the exception.
 	 */
-	public function __toString () {}
+	public function __toString(): string {}
 
 }
 
@@ -640,7 +652,7 @@ class LengthException extends LogicException  {
  * errors that should be detected at compile time.
  * @link http://php.net/manual/en/class.outofrangeexception.php
  */
-class OutOfRangeException extends LogicException  {
+class OutOfRangeException extends LogicException implements Throwable {
 	protected $message;
 	protected $code;
 	protected $file;
@@ -648,15 +660,15 @@ class OutOfRangeException extends LogicException  {
 
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Clone the exception
 	 * @link http://php.net/manual/en/exception.clone.php
 	 * @return void No value is returned.
 	 */
-	final private function __clone () {}
+	final private function __clone() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Construct the exception
 	 * @link http://php.net/manual/en/exception.construct.php
 	 * @param string $message [optional] <p>
@@ -665,22 +677,24 @@ class OutOfRangeException extends LogicException  {
 	 * @param int $code [optional] <p>
 	 * The Exception code.
 	 * </p>
-	 * @param Exception $previous [optional] <p>
+	 * @param Throwable $previous [optional] <p>
 	 * The previous exception used for the exception chaining.
 	 * </p>
 	 */
-	public function __construct ($message = "", $code = 0, Exception $previous = null) {}
+	public function __construct(string $message = "", int $code = 0, Throwable $previous = null) {}
+
+	public function __wakeup() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception message
 	 * @link http://php.net/manual/en/exception.getmessage.php
 	 * @return string the Exception message as a string.
 	 */
-	final public function getMessage () {}
+	final public function getMessage(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception code
 	 * @link http://php.net/manual/en/exception.getcode.php
 	 * @return mixed the exception code as integer in
@@ -688,56 +702,56 @@ class OutOfRangeException extends LogicException  {
 	 * <b>Exception</b> descendants (for example as
 	 * string in <b>PDOException</b>).
 	 */
-	final public function getCode () {}
+	final public function getCode() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the file in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getfile.php
 	 * @return string the filename in which the exception was created.
 	 */
-	final public function getFile () {}
+	final public function getFile(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the line in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getline.php
 	 * @return int the line number where the exception was created.
 	 */
-	final public function getLine () {}
+	final public function getLine(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace
 	 * @link http://php.net/manual/en/exception.gettrace.php
 	 * @return array the Exception stack trace as an array.
 	 */
-	final public function getTrace () {}
+	final public function getTrace(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns previous Exception
 	 * @link http://php.net/manual/en/exception.getprevious.php
 	 * @return Exception the previous <b>Exception</b> if available
 	 * or <b>NULL</b> otherwise.
 	 */
-	final public function getPrevious () {}
+	final public function getPrevious(): Exception {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace as a string
 	 * @link http://php.net/manual/en/exception.gettraceasstring.php
 	 * @return string the Exception stack trace as a string.
 	 */
-	final public function getTraceAsString () {}
+	final public function getTraceAsString(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * String representation of the exception
 	 * @link http://php.net/manual/en/exception.tostring.php
 	 * @return string the string representation of the exception.
 	 */
-	public function __toString () {}
+	public function __toString(): string {}
 
 }
 
@@ -745,7 +759,7 @@ class OutOfRangeException extends LogicException  {
  * Exception thrown if an error which can only be found on runtime occurs.
  * @link http://php.net/manual/en/class.runtimeexception.php
  */
-class RuntimeException extends Exception  {
+class RuntimeException extends Exception implements Throwable {
 	protected $message;
 	protected $code;
 	protected $file;
@@ -753,15 +767,15 @@ class RuntimeException extends Exception  {
 
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Clone the exception
 	 * @link http://php.net/manual/en/exception.clone.php
 	 * @return void No value is returned.
 	 */
-	final private function __clone () {}
+	final private function __clone() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Construct the exception
 	 * @link http://php.net/manual/en/exception.construct.php
 	 * @param string $message [optional] <p>
@@ -770,22 +784,24 @@ class RuntimeException extends Exception  {
 	 * @param int $code [optional] <p>
 	 * The Exception code.
 	 * </p>
-	 * @param Exception $previous [optional] <p>
+	 * @param Throwable $previous [optional] <p>
 	 * The previous exception used for the exception chaining.
 	 * </p>
 	 */
-	public function __construct ($message = "", $code = 0, Exception $previous = null) {}
+	public function __construct(string $message = "", int $code = 0, Throwable $previous = null) {}
+
+	public function __wakeup() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception message
 	 * @link http://php.net/manual/en/exception.getmessage.php
 	 * @return string the Exception message as a string.
 	 */
-	final public function getMessage () {}
+	final public function getMessage(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception code
 	 * @link http://php.net/manual/en/exception.getcode.php
 	 * @return mixed the exception code as integer in
@@ -793,56 +809,56 @@ class RuntimeException extends Exception  {
 	 * <b>Exception</b> descendants (for example as
 	 * string in <b>PDOException</b>).
 	 */
-	final public function getCode () {}
+	final public function getCode() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the file in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getfile.php
 	 * @return string the filename in which the exception was created.
 	 */
-	final public function getFile () {}
+	final public function getFile(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the line in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getline.php
 	 * @return int the line number where the exception was created.
 	 */
-	final public function getLine () {}
+	final public function getLine(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace
 	 * @link http://php.net/manual/en/exception.gettrace.php
 	 * @return array the Exception stack trace as an array.
 	 */
-	final public function getTrace () {}
+	final public function getTrace(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns previous Exception
 	 * @link http://php.net/manual/en/exception.getprevious.php
 	 * @return Exception the previous <b>Exception</b> if available
 	 * or <b>NULL</b> otherwise.
 	 */
-	final public function getPrevious () {}
+	final public function getPrevious(): Exception {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace as a string
 	 * @link http://php.net/manual/en/exception.gettraceasstring.php
 	 * @return string the Exception stack trace as a string.
 	 */
-	final public function getTraceAsString () {}
+	final public function getTraceAsString(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * String representation of the exception
 	 * @link http://php.net/manual/en/exception.tostring.php
 	 * @return string the string representation of the exception.
 	 */
-	public function __toString () {}
+	public function __toString(): string {}
 
 }
 
@@ -851,7 +867,7 @@ class RuntimeException extends Exception  {
  * that cannot be detected at compile time.
  * @link http://php.net/manual/en/class.outofboundsexception.php
  */
-class OutOfBoundsException extends RuntimeException  {
+class OutOfBoundsException extends RuntimeException implements Throwable {
 	protected $message;
 	protected $code;
 	protected $file;
@@ -859,15 +875,15 @@ class OutOfBoundsException extends RuntimeException  {
 
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Clone the exception
 	 * @link http://php.net/manual/en/exception.clone.php
 	 * @return void No value is returned.
 	 */
-	final private function __clone () {}
+	final private function __clone() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Construct the exception
 	 * @link http://php.net/manual/en/exception.construct.php
 	 * @param string $message [optional] <p>
@@ -876,22 +892,24 @@ class OutOfBoundsException extends RuntimeException  {
 	 * @param int $code [optional] <p>
 	 * The Exception code.
 	 * </p>
-	 * @param Exception $previous [optional] <p>
+	 * @param Throwable $previous [optional] <p>
 	 * The previous exception used for the exception chaining.
 	 * </p>
 	 */
-	public function __construct ($message = "", $code = 0, Exception $previous = null) {}
+	public function __construct(string $message = "", int $code = 0, Throwable $previous = null) {}
+
+	public function __wakeup() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception message
 	 * @link http://php.net/manual/en/exception.getmessage.php
 	 * @return string the Exception message as a string.
 	 */
-	final public function getMessage () {}
+	final public function getMessage(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception code
 	 * @link http://php.net/manual/en/exception.getcode.php
 	 * @return mixed the exception code as integer in
@@ -899,56 +917,56 @@ class OutOfBoundsException extends RuntimeException  {
 	 * <b>Exception</b> descendants (for example as
 	 * string in <b>PDOException</b>).
 	 */
-	final public function getCode () {}
+	final public function getCode() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the file in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getfile.php
 	 * @return string the filename in which the exception was created.
 	 */
-	final public function getFile () {}
+	final public function getFile(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the line in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getline.php
 	 * @return int the line number where the exception was created.
 	 */
-	final public function getLine () {}
+	final public function getLine(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace
 	 * @link http://php.net/manual/en/exception.gettrace.php
 	 * @return array the Exception stack trace as an array.
 	 */
-	final public function getTrace () {}
+	final public function getTrace(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns previous Exception
 	 * @link http://php.net/manual/en/exception.getprevious.php
 	 * @return Exception the previous <b>Exception</b> if available
 	 * or <b>NULL</b> otherwise.
 	 */
-	final public function getPrevious () {}
+	final public function getPrevious(): Exception {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace as a string
 	 * @link http://php.net/manual/en/exception.gettraceasstring.php
 	 * @return string the Exception stack trace as a string.
 	 */
-	final public function getTraceAsString () {}
+	final public function getTraceAsString(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * String representation of the exception
 	 * @link http://php.net/manual/en/exception.tostring.php
 	 * @return string the string representation of the exception.
 	 */
-	public function __toString () {}
+	public function __toString(): string {}
 
 }
 
@@ -956,7 +974,7 @@ class OutOfBoundsException extends RuntimeException  {
  * Exception thrown when adding an element to a full container.
  * @link http://php.net/manual/en/class.overflowexception.php
  */
-class OverflowException extends RuntimeException  {
+class OverflowException extends RuntimeException implements Throwable {
 	protected $message;
 	protected $code;
 	protected $file;
@@ -964,15 +982,15 @@ class OverflowException extends RuntimeException  {
 
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Clone the exception
 	 * @link http://php.net/manual/en/exception.clone.php
 	 * @return void No value is returned.
 	 */
-	final private function __clone () {}
+	final private function __clone() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Construct the exception
 	 * @link http://php.net/manual/en/exception.construct.php
 	 * @param string $message [optional] <p>
@@ -981,22 +999,24 @@ class OverflowException extends RuntimeException  {
 	 * @param int $code [optional] <p>
 	 * The Exception code.
 	 * </p>
-	 * @param Exception $previous [optional] <p>
+	 * @param Throwable $previous [optional] <p>
 	 * The previous exception used for the exception chaining.
 	 * </p>
 	 */
-	public function __construct ($message = "", $code = 0, Exception $previous = null) {}
+	public function __construct(string $message = "", int $code = 0, Throwable $previous = null) {}
+
+	public function __wakeup() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception message
 	 * @link http://php.net/manual/en/exception.getmessage.php
 	 * @return string the Exception message as a string.
 	 */
-	final public function getMessage () {}
+	final public function getMessage(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception code
 	 * @link http://php.net/manual/en/exception.getcode.php
 	 * @return mixed the exception code as integer in
@@ -1004,56 +1024,56 @@ class OverflowException extends RuntimeException  {
 	 * <b>Exception</b> descendants (for example as
 	 * string in <b>PDOException</b>).
 	 */
-	final public function getCode () {}
+	final public function getCode() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the file in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getfile.php
 	 * @return string the filename in which the exception was created.
 	 */
-	final public function getFile () {}
+	final public function getFile(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the line in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getline.php
 	 * @return int the line number where the exception was created.
 	 */
-	final public function getLine () {}
+	final public function getLine(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace
 	 * @link http://php.net/manual/en/exception.gettrace.php
 	 * @return array the Exception stack trace as an array.
 	 */
-	final public function getTrace () {}
+	final public function getTrace(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns previous Exception
 	 * @link http://php.net/manual/en/exception.getprevious.php
 	 * @return Exception the previous <b>Exception</b> if available
 	 * or <b>NULL</b> otherwise.
 	 */
-	final public function getPrevious () {}
+	final public function getPrevious(): Exception {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace as a string
 	 * @link http://php.net/manual/en/exception.gettraceasstring.php
 	 * @return string the Exception stack trace as a string.
 	 */
-	final public function getTraceAsString () {}
+	final public function getTraceAsString(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * String representation of the exception
 	 * @link http://php.net/manual/en/exception.tostring.php
 	 * @return string the string representation of the exception.
 	 */
-	public function __toString () {}
+	public function __toString(): string {}
 
 }
 
@@ -1064,7 +1084,7 @@ class OverflowException extends RuntimeException  {
  * <b>DomainException</b>.
  * @link http://php.net/manual/en/class.rangeexception.php
  */
-class RangeException extends RuntimeException  {
+class RangeException extends RuntimeException implements Throwable {
 	protected $message;
 	protected $code;
 	protected $file;
@@ -1072,15 +1092,15 @@ class RangeException extends RuntimeException  {
 
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Clone the exception
 	 * @link http://php.net/manual/en/exception.clone.php
 	 * @return void No value is returned.
 	 */
-	final private function __clone () {}
+	final private function __clone() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Construct the exception
 	 * @link http://php.net/manual/en/exception.construct.php
 	 * @param string $message [optional] <p>
@@ -1089,22 +1109,24 @@ class RangeException extends RuntimeException  {
 	 * @param int $code [optional] <p>
 	 * The Exception code.
 	 * </p>
-	 * @param Exception $previous [optional] <p>
+	 * @param Throwable $previous [optional] <p>
 	 * The previous exception used for the exception chaining.
 	 * </p>
 	 */
-	public function __construct ($message = "", $code = 0, Exception $previous = null) {}
+	public function __construct(string $message = "", int $code = 0, Throwable $previous = null) {}
+
+	public function __wakeup() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception message
 	 * @link http://php.net/manual/en/exception.getmessage.php
 	 * @return string the Exception message as a string.
 	 */
-	final public function getMessage () {}
+	final public function getMessage(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception code
 	 * @link http://php.net/manual/en/exception.getcode.php
 	 * @return mixed the exception code as integer in
@@ -1112,56 +1134,56 @@ class RangeException extends RuntimeException  {
 	 * <b>Exception</b> descendants (for example as
 	 * string in <b>PDOException</b>).
 	 */
-	final public function getCode () {}
+	final public function getCode() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the file in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getfile.php
 	 * @return string the filename in which the exception was created.
 	 */
-	final public function getFile () {}
+	final public function getFile(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the line in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getline.php
 	 * @return int the line number where the exception was created.
 	 */
-	final public function getLine () {}
+	final public function getLine(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace
 	 * @link http://php.net/manual/en/exception.gettrace.php
 	 * @return array the Exception stack trace as an array.
 	 */
-	final public function getTrace () {}
+	final public function getTrace(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns previous Exception
 	 * @link http://php.net/manual/en/exception.getprevious.php
 	 * @return Exception the previous <b>Exception</b> if available
 	 * or <b>NULL</b> otherwise.
 	 */
-	final public function getPrevious () {}
+	final public function getPrevious(): Exception {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace as a string
 	 * @link http://php.net/manual/en/exception.gettraceasstring.php
 	 * @return string the Exception stack trace as a string.
 	 */
-	final public function getTraceAsString () {}
+	final public function getTraceAsString(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * String representation of the exception
 	 * @link http://php.net/manual/en/exception.tostring.php
 	 * @return string the string representation of the exception.
 	 */
-	public function __toString () {}
+	public function __toString(): string {}
 
 }
 
@@ -1170,7 +1192,7 @@ class RangeException extends RuntimeException  {
  * container, such as removing an element.
  * @link http://php.net/manual/en/class.underflowexception.php
  */
-class UnderflowException extends RuntimeException  {
+class UnderflowException extends RuntimeException implements Throwable {
 	protected $message;
 	protected $code;
 	protected $file;
@@ -1178,15 +1200,15 @@ class UnderflowException extends RuntimeException  {
 
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Clone the exception
 	 * @link http://php.net/manual/en/exception.clone.php
 	 * @return void No value is returned.
 	 */
-	final private function __clone () {}
+	final private function __clone() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Construct the exception
 	 * @link http://php.net/manual/en/exception.construct.php
 	 * @param string $message [optional] <p>
@@ -1195,22 +1217,24 @@ class UnderflowException extends RuntimeException  {
 	 * @param int $code [optional] <p>
 	 * The Exception code.
 	 * </p>
-	 * @param Exception $previous [optional] <p>
+	 * @param Throwable $previous [optional] <p>
 	 * The previous exception used for the exception chaining.
 	 * </p>
 	 */
-	public function __construct ($message = "", $code = 0, Exception $previous = null) {}
+	public function __construct(string $message = "", int $code = 0, Throwable $previous = null) {}
+
+	public function __wakeup() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception message
 	 * @link http://php.net/manual/en/exception.getmessage.php
 	 * @return string the Exception message as a string.
 	 */
-	final public function getMessage () {}
+	final public function getMessage(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception code
 	 * @link http://php.net/manual/en/exception.getcode.php
 	 * @return mixed the exception code as integer in
@@ -1218,56 +1242,56 @@ class UnderflowException extends RuntimeException  {
 	 * <b>Exception</b> descendants (for example as
 	 * string in <b>PDOException</b>).
 	 */
-	final public function getCode () {}
+	final public function getCode() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the file in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getfile.php
 	 * @return string the filename in which the exception was created.
 	 */
-	final public function getFile () {}
+	final public function getFile(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the line in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getline.php
 	 * @return int the line number where the exception was created.
 	 */
-	final public function getLine () {}
+	final public function getLine(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace
 	 * @link http://php.net/manual/en/exception.gettrace.php
 	 * @return array the Exception stack trace as an array.
 	 */
-	final public function getTrace () {}
+	final public function getTrace(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns previous Exception
 	 * @link http://php.net/manual/en/exception.getprevious.php
 	 * @return Exception the previous <b>Exception</b> if available
 	 * or <b>NULL</b> otherwise.
 	 */
-	final public function getPrevious () {}
+	final public function getPrevious(): Exception {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace as a string
 	 * @link http://php.net/manual/en/exception.gettraceasstring.php
 	 * @return string the Exception stack trace as a string.
 	 */
-	final public function getTraceAsString () {}
+	final public function getTraceAsString(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * String representation of the exception
 	 * @link http://php.net/manual/en/exception.tostring.php
 	 * @return string the string representation of the exception.
 	 */
-	public function __toString () {}
+	public function __toString(): string {}
 
 }
 
@@ -1278,7 +1302,7 @@ class UnderflowException extends RuntimeException  {
  * related errors.
  * @link http://php.net/manual/en/class.unexpectedvalueexception.php
  */
-class UnexpectedValueException extends RuntimeException  {
+class UnexpectedValueException extends RuntimeException implements Throwable {
 	protected $message;
 	protected $code;
 	protected $file;
@@ -1286,15 +1310,15 @@ class UnexpectedValueException extends RuntimeException  {
 
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Clone the exception
 	 * @link http://php.net/manual/en/exception.clone.php
 	 * @return void No value is returned.
 	 */
-	final private function __clone () {}
+	final private function __clone() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Construct the exception
 	 * @link http://php.net/manual/en/exception.construct.php
 	 * @param string $message [optional] <p>
@@ -1303,22 +1327,24 @@ class UnexpectedValueException extends RuntimeException  {
 	 * @param int $code [optional] <p>
 	 * The Exception code.
 	 * </p>
-	 * @param Exception $previous [optional] <p>
+	 * @param Throwable $previous [optional] <p>
 	 * The previous exception used for the exception chaining.
 	 * </p>
 	 */
-	public function __construct ($message = "", $code = 0, Exception $previous = null) {}
+	public function __construct(string $message = "", int $code = 0, Throwable $previous = null) {}
+
+	public function __wakeup() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception message
 	 * @link http://php.net/manual/en/exception.getmessage.php
 	 * @return string the Exception message as a string.
 	 */
-	final public function getMessage () {}
+	final public function getMessage(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception code
 	 * @link http://php.net/manual/en/exception.getcode.php
 	 * @return mixed the exception code as integer in
@@ -1326,56 +1352,56 @@ class UnexpectedValueException extends RuntimeException  {
 	 * <b>Exception</b> descendants (for example as
 	 * string in <b>PDOException</b>).
 	 */
-	final public function getCode () {}
+	final public function getCode() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the file in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getfile.php
 	 * @return string the filename in which the exception was created.
 	 */
-	final public function getFile () {}
+	final public function getFile(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the line in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getline.php
 	 * @return int the line number where the exception was created.
 	 */
-	final public function getLine () {}
+	final public function getLine(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace
 	 * @link http://php.net/manual/en/exception.gettrace.php
 	 * @return array the Exception stack trace as an array.
 	 */
-	final public function getTrace () {}
+	final public function getTrace(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns previous Exception
 	 * @link http://php.net/manual/en/exception.getprevious.php
 	 * @return Exception the previous <b>Exception</b> if available
 	 * or <b>NULL</b> otherwise.
 	 */
-	final public function getPrevious () {}
+	final public function getPrevious(): Exception {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace as a string
 	 * @link http://php.net/manual/en/exception.gettraceasstring.php
 	 * @return string the Exception stack trace as a string.
 	 */
-	final public function getTraceAsString () {}
+	final public function getTraceAsString(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * String representation of the exception
 	 * @link http://php.net/manual/en/exception.tostring.php
 	 * @return string the string representation of the exception.
 	 */
-	public function __toString () {}
+	public function __toString(): string {}
 
 }
 
@@ -1387,61 +1413,61 @@ class UnexpectedValueException extends RuntimeException  {
 interface RecursiveIterator extends Iterator, Traversable {
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Returns if an iterator can be created fot the current entry.
 	 * @link http://php.net/manual/en/recursiveiterator.haschildren.php
 	 * @return bool <b>TRUE</b> if the current entry can be iterated over, otherwise returns <b>FALSE</b>.
 	 */
-	abstract public function hasChildren ();
+	abstract public function hasChildren(): bool;
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Returns an iterator for the current entry.
 	 * @link http://php.net/manual/en/recursiveiterator.getchildren.php
 	 * @return RecursiveIterator An iterator for the current entry.
 	 */
-	abstract public function getChildren ();
+	abstract public function getChildren(): RecursiveIterator;
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Return the current element
 	 * @link http://php.net/manual/en/iterator.current.php
 	 * @return mixed Can return any type.
 	 */
-	abstract public function current ();
+	abstract public function current();
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Move forward to next element
 	 * @link http://php.net/manual/en/iterator.next.php
 	 * @return void Any returned value is ignored.
 	 */
-	abstract public function next ();
+	abstract public function next();
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Return the key of the current element
 	 * @link http://php.net/manual/en/iterator.key.php
 	 * @return scalar scalar on success, or <b>NULL</b> on failure.
 	 */
-	abstract public function key ();
+	abstract public function key();
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Checks if current position is valid
 	 * @link http://php.net/manual/en/iterator.valid.php
 	 * @return boolean The return value will be casted to boolean and then evaluated.
 	 * Returns <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	abstract public function valid ();
+	abstract public function valid(): bool;
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Rewind the Iterator to the first element
 	 * @link http://php.net/manual/en/iterator.rewind.php
 	 * @return void Any returned value is ignored.
 	 */
-	abstract public function rewind ();
+	abstract public function rewind();
 
 }
 
@@ -1457,7 +1483,7 @@ class RecursiveIteratorIterator implements Iterator, Traversable, OuterIterator 
 
 
 	/**
-	 * (PHP 5 &gt;= 5.1.3)<br/>
+	 * (PHP 5 &gt;= 5.1.3, PHP 7)<br/>
 	 * Construct a RecursiveIteratorIterator
 	 * @link http://php.net/manual/en/recursiveiteratoriterator.construct.php
 	 * @param Traversable $iterator <p>
@@ -1478,132 +1504,132 @@ class RecursiveIteratorIterator implements Iterator, Traversable, OuterIterator 
 	 * which will then ignore exceptions thrown in calls to <b>RecursiveIteratorIterator::getChildren</b>.
 	 * </p>
 	 */
-	public function __construct (Traversable $iterator, $mode = 'RecursiveIteratorIterator::LEAVES_ONLY', $flags = 0) {}
+	public function __construct(Traversable $iterator, int $mode = RecursiveIteratorIterator::LEAVES_ONLY, int $flags = 0) {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Rewind the iterator to the first element of the top level inner iterator
 	 * @link http://php.net/manual/en/recursiveiteratoriterator.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Check whether the current position is valid
 	 * @link http://php.net/manual/en/recursiveiteratoriterator.valid.php
 	 * @return bool <b>TRUE</b> if the current position is valid, otherwise <b>FALSE</b>
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Access the current key
 	 * @link http://php.net/manual/en/recursiveiteratoriterator.key.php
 	 * @return mixed The current key.
 	 */
-	public function key () {}
+	public function key() {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Access the current element value
 	 * @link http://php.net/manual/en/recursiveiteratoriterator.current.php
 	 * @return mixed The current elements value.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Move forward to the next element
 	 * @link http://php.net/manual/en/recursiveiteratoriterator.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Get the current depth of the recursive iteration
 	 * @link http://php.net/manual/en/recursiveiteratoriterator.getdepth.php
 	 * @return int The current depth of the recursive iteration.
 	 */
-	public function getDepth () {}
+	public function getDepth(): int {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * The current active sub iterator
 	 * @link http://php.net/manual/en/recursiveiteratoriterator.getsubiterator.php
 	 * @param int $level [optional] <p>
 	 * </p>
 	 * @return RecursiveIterator The current active sub iterator.
 	 */
-	public function getSubIterator ($level = null) {}
+	public function getSubIterator(int $level = null): RecursiveIterator {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get inner iterator
 	 * @link http://php.net/manual/en/recursiveiteratoriterator.getinneriterator.php
 	 * @return iterator The current active sub iterator.
 	 */
-	public function getInnerIterator () {}
+	public function getInnerIterator(): iterator {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Begin Iteration
 	 * @link http://php.net/manual/en/recursiveiteratoriterator.beginiteration.php
 	 * @return void No value is returned.
 	 */
-	public function beginIteration () {}
+	public function beginIteration() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * End Iteration
 	 * @link http://php.net/manual/en/recursiveiteratoriterator.enditeration.php
 	 * @return void No value is returned.
 	 */
-	public function endIteration () {}
+	public function endIteration() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Has children
 	 * @link http://php.net/manual/en/recursiveiteratoriterator.callhaschildren.php
 	 * @return bool <b>TRUE</b> if the element has children, otherwise <b>FALSE</b>
 	 */
-	public function callHasChildren () {}
+	public function callHasChildren(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get children
 	 * @link http://php.net/manual/en/recursiveiteratoriterator.callgetchildren.php
 	 * @return RecursiveIterator A <b>RecursiveIterator</b>.
 	 */
-	public function callGetChildren () {}
+	public function callGetChildren(): RecursiveIterator {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Begin children
 	 * @link http://php.net/manual/en/recursiveiteratoriterator.beginchildren.php
 	 * @return void No value is returned.
 	 */
-	public function beginChildren () {}
+	public function beginChildren() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * End children
 	 * @link http://php.net/manual/en/recursiveiteratoriterator.endchildren.php
 	 * @return void No value is returned.
 	 */
-	public function endChildren () {}
+	public function endChildren() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Next element
 	 * @link http://php.net/manual/en/recursiveiteratoriterator.nextelement.php
 	 * @return void No value is returned.
 	 */
-	public function nextElement () {}
+	public function nextElement() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Set max depth
 	 * @link http://php.net/manual/en/recursiveiteratoriterator.setmaxdepth.php
 	 * @param string $max_depth [optional] <p>
@@ -1612,15 +1638,15 @@ class RecursiveIteratorIterator implements Iterator, Traversable, OuterIterator 
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setMaxDepth ($max_depth = -1) {}
+	public function setMaxDepth(string $max_depth = '-1') {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get max depth
 	 * @link http://php.net/manual/en/recursiveiteratoriterator.getmaxdepth.php
 	 * @return mixed The maximum accepted depth, or <b>FALSE</b> if any depth is allowed.
 	 */
-	public function getMaxDepth () {}
+	public function getMaxDepth() {}
 
 }
 
@@ -1632,53 +1658,53 @@ class RecursiveIteratorIterator implements Iterator, Traversable, OuterIterator 
 interface OuterIterator extends Iterator, Traversable {
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Returns the inner iterator for the current entry.
 	 * @link http://php.net/manual/en/outeriterator.getinneriterator.php
 	 * @return Iterator The inner iterator for the current entry.
 	 */
-	abstract public function getInnerIterator ();
+	abstract public function getInnerIterator(): Iterator;
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Return the current element
 	 * @link http://php.net/manual/en/iterator.current.php
 	 * @return mixed Can return any type.
 	 */
-	abstract public function current ();
+	abstract public function current();
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Move forward to next element
 	 * @link http://php.net/manual/en/iterator.next.php
 	 * @return void Any returned value is ignored.
 	 */
-	abstract public function next ();
+	abstract public function next();
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Return the key of the current element
 	 * @link http://php.net/manual/en/iterator.key.php
 	 * @return scalar scalar on success, or <b>NULL</b> on failure.
 	 */
-	abstract public function key ();
+	abstract public function key();
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Checks if current position is valid
 	 * @link http://php.net/manual/en/iterator.valid.php
 	 * @return boolean The return value will be casted to boolean and then evaluated.
 	 * Returns <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	abstract public function valid ();
+	abstract public function valid(): bool;
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Rewind the Iterator to the first element
 	 * @link http://php.net/manual/en/iterator.rewind.php
 	 * @return void Any returned value is ignored.
 	 */
-	abstract public function rewind ();
+	abstract public function rewind();
 
 }
 
@@ -1694,62 +1720,62 @@ interface OuterIterator extends Iterator, Traversable {
 class IteratorIterator implements Iterator, Traversable, OuterIterator {
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Create an iterator from anything that is traversable
 	 * @link http://php.net/manual/en/iteratoriterator.construct.php
 	 * @param Traversable $iterator <p>
 	 * The traversable iterator.
 	 * </p>
 	 */
-	public function __construct (Traversable $iterator) {}
+	public function __construct(Traversable $iterator) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Rewind to the first element
 	 * @link http://php.net/manual/en/iteratoriterator.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Checks if the iterator is valid
 	 * @link http://php.net/manual/en/iteratoriterator.valid.php
 	 * @return bool <b>TRUE</b> if the iterator is valid, otherwise <b>FALSE</b>
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the key of the current element
 	 * @link http://php.net/manual/en/iteratoriterator.key.php
 	 * @return scalar The key of the current element.
 	 */
-	public function key () {}
+	public function key() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the current value
 	 * @link http://php.net/manual/en/iteratoriterator.current.php
 	 * @return mixed The value of the current element.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Forward to the next element
 	 * @link http://php.net/manual/en/iteratoriterator.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the inner iterator
 	 * @link http://php.net/manual/en/iteratoriterator.getinneriterator.php
 	 * @return Traversable The inner iterator as passed to <b>IteratorIterator::__construct</b>.
 	 */
-	public function getInnerIterator () {}
+	public function getInnerIterator(): Traversable {}
 
 }
 
@@ -1762,70 +1788,70 @@ class IteratorIterator implements Iterator, Traversable, OuterIterator {
 class FilterIterator extends IteratorIterator implements OuterIterator, Traversable, Iterator {
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Construct a filterIterator
 	 * @link http://php.net/manual/en/filteriterator.construct.php
 	 * @param Iterator $iterator <p>
 	 * The iterator that is being filtered.
 	 * </p>
 	 */
-	public function __construct (Iterator $iterator) {}
+	public function __construct(Iterator $iterator) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Rewind the iterator
 	 * @link http://php.net/manual/en/filteriterator.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Check whether the current element is valid
 	 * @link http://php.net/manual/en/filteriterator.valid.php
 	 * @return bool <b>TRUE</b> if the current element is valid, otherwise <b>FALSE</b>
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the current key
 	 * @link http://php.net/manual/en/filteriterator.key.php
 	 * @return mixed The current key.
 	 */
-	public function key () {}
+	public function key() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the current element value
 	 * @link http://php.net/manual/en/filteriterator.current.php
 	 * @return mixed The current element value.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Move the iterator forward
 	 * @link http://php.net/manual/en/filteriterator.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the inner iterator
 	 * @link http://php.net/manual/en/filteriterator.getinneriterator.php
 	 * @return Iterator The inner iterator.
 	 */
-	public function getInnerIterator () {}
+	public function getInnerIterator(): Iterator {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Check whether the current element of the iterator is acceptable
 	 * @link http://php.net/manual/en/filteriterator.accept.php
 	 * @return bool <b>TRUE</b> if the current element is acceptable, otherwise <b>FALSE</b>.
 	 */
-	abstract public function accept ();
+	abstract public function accept(): bool;
 
 }
 
@@ -1838,86 +1864,86 @@ class FilterIterator extends IteratorIterator implements OuterIterator, Traversa
 class RecursiveFilterIterator extends FilterIterator implements Iterator, Traversable, OuterIterator, RecursiveIterator {
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Create a RecursiveFilterIterator from a RecursiveIterator
 	 * @link http://php.net/manual/en/recursivefilteriterator.construct.php
 	 * @param RecursiveIterator $iterator <p>
 	 * The <b>RecursiveIterator</b> to be filtered.
 	 * </p>
 	 */
-	public function __construct (RecursiveIterator $iterator) {}
+	public function __construct(RecursiveIterator $iterator) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Check whether the inner iterator's current element has children
 	 * @link http://php.net/manual/en/recursivefilteriterator.haschildren.php
 	 * @return bool <b>TRUE</b> if the inner iterator has children, otherwise <b>FALSE</b>
 	 */
-	public function hasChildren () {}
+	public function hasChildren(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Return the inner iterator's children contained in a RecursiveFilterIterator
 	 * @link http://php.net/manual/en/recursivefilteriterator.getchildren.php
 	 * @return RecursiveFilterIterator a <b>RecursiveFilterIterator</b> containing the inner iterator's children.
 	 */
-	public function getChildren () {}
+	public function getChildren(): RecursiveFilterIterator {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Rewind the iterator
 	 * @link http://php.net/manual/en/filteriterator.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Check whether the current element is valid
 	 * @link http://php.net/manual/en/filteriterator.valid.php
 	 * @return bool <b>TRUE</b> if the current element is valid, otherwise <b>FALSE</b>
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the current key
 	 * @link http://php.net/manual/en/filteriterator.key.php
 	 * @return mixed The current key.
 	 */
-	public function key () {}
+	public function key() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the current element value
 	 * @link http://php.net/manual/en/filteriterator.current.php
 	 * @return mixed The current element value.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Move the iterator forward
 	 * @link http://php.net/manual/en/filteriterator.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the inner iterator
 	 * @link http://php.net/manual/en/filteriterator.getinneriterator.php
 	 * @return Iterator The inner iterator.
 	 */
-	public function getInnerIterator () {}
+	public function getInnerIterator(): Iterator {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Check whether the current element of the iterator is acceptable
 	 * @link http://php.net/manual/en/filteriterator.accept.php
 	 * @return bool <b>TRUE</b> if the current element is acceptable, otherwise <b>FALSE</b>.
 	 */
-	abstract public function accept ();
+	abstract public function accept(): bool;
 
 }
 
@@ -1927,69 +1953,69 @@ class RecursiveFilterIterator extends FilterIterator implements Iterator, Traver
 class CallbackFilterIterator extends FilterIterator implements Iterator, Traversable, OuterIterator {
 
 	/**
-	 * (PHP 5 &gt;= 5.4.0)<br/>
+	 * (PHP 5 &gt;= 5.4.0, PHP 7)<br/>
 	 * Create a filtered iterator from another iterator
 	 * @link http://php.net/manual/en/callbackfilteriterator.construct.php
 	 * @param Iterator $iterator
 	 * @param $callback
 	 */
-	public function __construct (Iterator $iterator, $callback) {}
+	public function __construct(Iterator $iterator, $callback) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.4.0)<br/>
+	 * (PHP 5 &gt;= 5.4.0, PHP 7)<br/>
 	 * Calls the callback with the current value, the current key and the inner iterator as arguments
 	 * @link http://php.net/manual/en/callbackfilteriterator.accept.php
 	 * @return string <b>TRUE</b> to accept the current item, or <b>FALSE</b> otherwise.
 	 */
-	public function accept () {}
+	public function accept(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Rewind the iterator
 	 * @link http://php.net/manual/en/filteriterator.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Check whether the current element is valid
 	 * @link http://php.net/manual/en/filteriterator.valid.php
 	 * @return bool <b>TRUE</b> if the current element is valid, otherwise <b>FALSE</b>
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the current key
 	 * @link http://php.net/manual/en/filteriterator.key.php
 	 * @return mixed The current key.
 	 */
-	public function key () {}
+	public function key() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the current element value
 	 * @link http://php.net/manual/en/filteriterator.current.php
 	 * @return mixed The current element value.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Move the iterator forward
 	 * @link http://php.net/manual/en/filteriterator.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the inner iterator
 	 * @link http://php.net/manual/en/filteriterator.getinneriterator.php
 	 * @return Iterator The inner iterator.
 	 */
-	public function getInnerIterator () {}
+	public function getInnerIterator(): Iterator {}
 
 }
 
@@ -1999,86 +2025,86 @@ class CallbackFilterIterator extends FilterIterator implements Iterator, Travers
 class RecursiveCallbackFilterIterator extends CallbackFilterIterator implements OuterIterator, Traversable, Iterator, RecursiveIterator {
 
 	/**
-	 * (PHP 5 &gt;= 5.4.0)<br/>
+	 * (PHP 5 &gt;= 5.4.0, PHP 7)<br/>
 	 * Create a RecursiveCallbackFilterIterator from a RecursiveIterator
 	 * @link http://php.net/manual/en/recursivecallbackfilteriterator.construct.php
 	 * @param RecursiveIterator $iterator
 	 * @param $callback
 	 */
-	public function __construct (RecursiveIterator $iterator, $callback) {}
+	public function __construct(RecursiveIterator $iterator, $callback) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.4.0)<br/>
+	 * (PHP 5 &gt;= 5.4.0, PHP 7)<br/>
 	 * Check whether the inner iterator's current element has children
 	 * @link http://php.net/manual/en/recursivecallbackfilteriterator.haschildren.php
-	 * @return void <b>TRUE</b> if the current element has children, <b>FALSE</b> otherwise.
+	 * @return bool <b>TRUE</b> if the current element has children, <b>FALSE</b> otherwise.
 	 */
-	public function hasChildren () {}
+	public function hasChildren(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.4.0)<br/>
+	 * (PHP 5 &gt;= 5.4.0, PHP 7)<br/>
 	 * Return the inner iterator's children contained in a RecursiveCallbackFilterIterator
 	 * @link http://php.net/manual/en/recursivecallbackfilteriterator.getchildren.php
 	 * @return RecursiveCallbackFilterIterator a <b>RecursiveCallbackFilterIterator</b> containing
 	 * the children.
 	 */
-	public function getChildren () {}
+	public function getChildren(): RecursiveCallbackFilterIterator {}
 
 	/**
-	 * (PHP 5 &gt;= 5.4.0)<br/>
+	 * (PHP 5 &gt;= 5.4.0, PHP 7)<br/>
 	 * Calls the callback with the current value, the current key and the inner iterator as arguments
 	 * @link http://php.net/manual/en/callbackfilteriterator.accept.php
 	 * @return string <b>TRUE</b> to accept the current item, or <b>FALSE</b> otherwise.
 	 */
-	public function accept () {}
+	public function accept(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Rewind the iterator
 	 * @link http://php.net/manual/en/filteriterator.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Check whether the current element is valid
 	 * @link http://php.net/manual/en/filteriterator.valid.php
 	 * @return bool <b>TRUE</b> if the current element is valid, otherwise <b>FALSE</b>
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the current key
 	 * @link http://php.net/manual/en/filteriterator.key.php
 	 * @return mixed The current key.
 	 */
-	public function key () {}
+	public function key() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the current element value
 	 * @link http://php.net/manual/en/filteriterator.current.php
 	 * @return mixed The current element value.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Move the iterator forward
 	 * @link http://php.net/manual/en/filteriterator.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the inner iterator
 	 * @link http://php.net/manual/en/filteriterator.getinneriterator.php
 	 * @return Iterator The inner iterator.
 	 */
-	public function getInnerIterator () {}
+	public function getInnerIterator(): Iterator {}
 
 }
 
@@ -2091,86 +2117,86 @@ class RecursiveCallbackFilterIterator extends CallbackFilterIterator implements 
 class ParentIterator extends RecursiveFilterIterator implements RecursiveIterator, OuterIterator, Traversable, Iterator {
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Constructs a ParentIterator
 	 * @link http://php.net/manual/en/parentiterator.construct.php
 	 * @param RecursiveIterator $iterator <p>
 	 * The iterator being constructed upon.
 	 * </p>
 	 */
-	public function __construct (RecursiveIterator $iterator) {}
+	public function __construct(RecursiveIterator $iterator) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Determines acceptability
 	 * @link http://php.net/manual/en/parentiterator.accept.php
 	 * @return bool <b>TRUE</b> if the current element is acceptable, otherwise <b>FALSE</b>.
 	 */
-	public function accept () {}
+	public function accept(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Check whether the inner iterator's current element has children
 	 * @link http://php.net/manual/en/recursivefilteriterator.haschildren.php
 	 * @return bool <b>TRUE</b> if the inner iterator has children, otherwise <b>FALSE</b>
 	 */
-	public function hasChildren () {}
+	public function hasChildren(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Return the inner iterator's children contained in a RecursiveFilterIterator
 	 * @link http://php.net/manual/en/recursivefilteriterator.getchildren.php
 	 * @return RecursiveFilterIterator a <b>RecursiveFilterIterator</b> containing the inner iterator's children.
 	 */
-	public function getChildren () {}
+	public function getChildren(): RecursiveFilterIterator {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Rewind the iterator
 	 * @link http://php.net/manual/en/filteriterator.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Check whether the current element is valid
 	 * @link http://php.net/manual/en/filteriterator.valid.php
 	 * @return bool <b>TRUE</b> if the current element is valid, otherwise <b>FALSE</b>
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the current key
 	 * @link http://php.net/manual/en/filteriterator.key.php
 	 * @return mixed The current key.
 	 */
-	public function key () {}
+	public function key() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the current element value
 	 * @link http://php.net/manual/en/filteriterator.current.php
 	 * @return mixed The current element value.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Move the iterator forward
 	 * @link http://php.net/manual/en/filteriterator.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the inner iterator
 	 * @link http://php.net/manual/en/filteriterator.getinneriterator.php
 	 * @return Iterator The inner iterator.
 	 */
-	public function getInnerIterator () {}
+	public function getInnerIterator(): Iterator {}
 
 }
 
@@ -2182,7 +2208,7 @@ class ParentIterator extends RecursiveFilterIterator implements RecursiveIterato
 interface Countable  {
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Count elements of an object
 	 * @link http://php.net/manual/en/countable.count.php
 	 * @return int The custom count as an integer.
@@ -2190,7 +2216,7 @@ interface Countable  {
 	 * <p>
 	 * The return value is cast to an integer.
 	 */
-	abstract public function count ();
+	abstract public function count(): int;
 
 }
 
@@ -2201,7 +2227,7 @@ interface Countable  {
 interface SeekableIterator extends Iterator, Traversable {
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Seeks to a position
 	 * @link http://php.net/manual/en/seekableiterator.seek.php
 	 * @param int $position <p>
@@ -2209,48 +2235,48 @@ interface SeekableIterator extends Iterator, Traversable {
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	abstract public function seek ($position);
+	abstract public function seek(int $position);
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Return the current element
 	 * @link http://php.net/manual/en/iterator.current.php
 	 * @return mixed Can return any type.
 	 */
-	abstract public function current ();
+	abstract public function current();
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Move forward to next element
 	 * @link http://php.net/manual/en/iterator.next.php
 	 * @return void Any returned value is ignored.
 	 */
-	abstract public function next ();
+	abstract public function next();
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Return the key of the current element
 	 * @link http://php.net/manual/en/iterator.key.php
 	 * @return scalar scalar on success, or <b>NULL</b> on failure.
 	 */
-	abstract public function key ();
+	abstract public function key();
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Checks if current position is valid
 	 * @link http://php.net/manual/en/iterator.valid.php
 	 * @return boolean The return value will be casted to boolean and then evaluated.
 	 * Returns <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	abstract public function valid ();
+	abstract public function valid(): bool;
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Rewind the Iterator to the first element
 	 * @link http://php.net/manual/en/iterator.rewind.php
 	 * @return void Any returned value is ignored.
 	 */
-	abstract public function rewind ();
+	abstract public function rewind();
 
 }
 
@@ -2262,7 +2288,7 @@ interface SeekableIterator extends Iterator, Traversable {
 class LimitIterator extends IteratorIterator implements OuterIterator, Traversable, Iterator {
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Construct a LimitIterator
 	 * @link http://php.net/manual/en/limititerator.construct.php
 	 * @param Iterator $iterator <p>
@@ -2275,50 +2301,50 @@ class LimitIterator extends IteratorIterator implements OuterIterator, Traversab
 	 * Optional count of the limit.
 	 * </p>
 	 */
-	public function __construct (Iterator $iterator, $offset = 0, $count = -1) {}
+	public function __construct(Iterator $iterator, int $offset = 0, int $count = -1) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Rewind the iterator to the specified starting offset
 	 * @link http://php.net/manual/en/limititerator.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Check whether the current element is valid
 	 * @link http://php.net/manual/en/limititerator.valid.php
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get current key
 	 * @link http://php.net/manual/en/limititerator.key.php
 	 * @return mixed the key for the current item.
 	 */
-	public function key () {}
+	public function key() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get current element
 	 * @link http://php.net/manual/en/limititerator.current.php
 	 * @return mixed the current element or <b>NULL</b> if there is none.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Move the iterator forward
 	 * @link http://php.net/manual/en/limititerator.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Seek to the given position
 	 * @link http://php.net/manual/en/limititerator.seek.php
 	 * @param int $position <p>
@@ -2326,23 +2352,23 @@ class LimitIterator extends IteratorIterator implements OuterIterator, Traversab
 	 * </p>
 	 * @return int the offset position after seeking.
 	 */
-	public function seek ($position) {}
+	public function seek(int $position): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Return the current position
 	 * @link http://php.net/manual/en/limititerator.getposition.php
 	 * @return int The current position.
 	 */
-	public function getPosition () {}
+	public function getPosition(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get inner iterator
 	 * @link http://php.net/manual/en/limititerator.getinneriterator.php
 	 * @return Iterator The inner iterator passed to <b>LimitIterator::__construct</b>.
 	 */
-	public function getInnerIterator () {}
+	public function getInnerIterator(): Iterator {}
 
 }
 
@@ -2360,7 +2386,7 @@ class CachingIterator extends IteratorIterator implements OuterIterator, Travers
 
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Construct a new CachingIterator object for the iterator.
 	 * @link http://php.net/manual/en/cachingiterator.construct.php
 	 * @param Iterator $iterator <p>
@@ -2370,82 +2396,82 @@ class CachingIterator extends IteratorIterator implements OuterIterator, Travers
 	 * Bitmask of flags.
 	 * </p>
 	 */
-	public function __construct (Iterator $iterator, $flags = 'self::CALL_TOSTRING') {}
+	public function __construct(Iterator $iterator, int $flags = self::CALL_TOSTRING) {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Rewind the iterator
 	 * @link http://php.net/manual/en/cachingiterator.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Check whether the current element is valid
 	 * @link http://php.net/manual/en/cachingiterator.valid.php
 	 * @return void <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function valid () {}
+	public function valid() {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Return the key for the current element
 	 * @link http://php.net/manual/en/cachingiterator.key.php
 	 * @return scalar
 	 */
-	public function key () {}
+	public function key() {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Return the current element
 	 * @link http://php.net/manual/en/cachingiterator.current.php
 	 * @return void Mixed
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Move the iterator forward
 	 * @link http://php.net/manual/en/cachingiterator.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Check whether the inner iterator has a valid next element
 	 * @link http://php.net/manual/en/cachingiterator.hasnext.php
 	 * @return void <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function hasNext () {}
+	public function hasNext() {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Return the string representation of the current element
 	 * @link http://php.net/manual/en/cachingiterator.tostring.php
 	 * @return void The string representation of the current element.
 	 */
-	public function __toString () {}
+	public function __toString() {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Returns the inner iterator
 	 * @link http://php.net/manual/en/cachingiterator.getinneriterator.php
 	 * @return Iterator an object implementing the Iterator interface.
 	 */
-	public function getInnerIterator () {}
+	public function getInnerIterator(): Iterator {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Get flags used
 	 * @link http://php.net/manual/en/cachingiterator.getflags.php
 	 * @return int Description...
 	 */
-	public function getFlags () {}
+	public function getFlags(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * The setFlags purpose
 	 * @link http://php.net/manual/en/cachingiterator.setflags.php
 	 * @param int $flags <p>
@@ -2453,10 +2479,10 @@ class CachingIterator extends IteratorIterator implements OuterIterator, Travers
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setFlags ($flags) {}
+	public function setFlags(int $flags) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * The offsetGet purpose
 	 * @link http://php.net/manual/en/cachingiterator.offsetget.php
 	 * @param string $index <p>
@@ -2464,10 +2490,10 @@ class CachingIterator extends IteratorIterator implements OuterIterator, Travers
 	 * </p>
 	 * @return void Description...
 	 */
-	public function offsetGet ($index) {}
+	public function offsetGet(string $index) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * The offsetSet purpose
 	 * @link http://php.net/manual/en/cachingiterator.offsetset.php
 	 * @param string $index <p>
@@ -2478,10 +2504,10 @@ class CachingIterator extends IteratorIterator implements OuterIterator, Travers
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function offsetSet ($index, $newval) {}
+	public function offsetSet(string $index, string $newval) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * The offsetUnset purpose
 	 * @link http://php.net/manual/en/cachingiterator.offsetunset.php
 	 * @param string $index <p>
@@ -2489,10 +2515,10 @@ class CachingIterator extends IteratorIterator implements OuterIterator, Travers
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function offsetUnset ($index) {}
+	public function offsetUnset(string $index) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * The offsetExists purpose
 	 * @link http://php.net/manual/en/cachingiterator.offsetexists.php
 	 * @param string $index <p>
@@ -2500,23 +2526,23 @@ class CachingIterator extends IteratorIterator implements OuterIterator, Travers
 	 * </p>
 	 * @return void <b>TRUE</b> if an entry referenced by the offset exists, <b>FALSE</b> otherwise.
 	 */
-	public function offsetExists ($index) {}
+	public function offsetExists(string $index) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Retrieve the contents of the cache
 	 * @link http://php.net/manual/en/cachingiterator.getcache.php
 	 * @return array An array containing the cache items.
 	 */
-	public function getCache () {}
+	public function getCache(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * The number of elements in the iterator
 	 * @link http://php.net/manual/en/cachingiterator.count.php
 	 * @return int The count of the elements iterated over.
 	 */
-	public function count () {}
+	public function count(): int {}
 
 }
 
@@ -2534,7 +2560,7 @@ class RecursiveCachingIterator extends CachingIterator implements Countable, Arr
 
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Construct
 	 * @link http://php.net/manual/en/recursivecachingiterator.construct.php
 	 * @param Iterator $iterator <p>
@@ -2546,98 +2572,98 @@ class RecursiveCachingIterator extends CachingIterator implements Countable, Arr
 	 * and/or <b>CATCH_GET_CHILD</b> to catch exceptions when trying to get children.
 	 * </p>
 	 */
-	public function __construct (Iterator $iterator, $flags = 'self::CALL_TOSTRING') {}
+	public function __construct(Iterator $iterator, string $flags = self::CALL_TOSTRING) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Check whether the current element of the inner iterator has children
 	 * @link http://php.net/manual/en/recursivecachingiterator.haschildren.php
 	 * @return bool <b>TRUE</b> if the inner iterator has children, otherwise <b>FALSE</b>
 	 */
-	public function hasChildren () {}
+	public function hasChildren(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Return the inner iterator's children as a RecursiveCachingIterator
 	 * @link http://php.net/manual/en/recursivecachingiterator.getchildren.php
 	 * @return RecursiveCachingIterator The inner iterator's children, as a RecursiveCachingIterator.
 	 */
-	public function getChildren () {}
+	public function getChildren(): RecursiveCachingIterator {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Rewind the iterator
 	 * @link http://php.net/manual/en/cachingiterator.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Check whether the current element is valid
 	 * @link http://php.net/manual/en/cachingiterator.valid.php
 	 * @return void <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function valid () {}
+	public function valid() {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Return the key for the current element
 	 * @link http://php.net/manual/en/cachingiterator.key.php
 	 * @return scalar
 	 */
-	public function key () {}
+	public function key() {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Return the current element
 	 * @link http://php.net/manual/en/cachingiterator.current.php
 	 * @return void Mixed
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Move the iterator forward
 	 * @link http://php.net/manual/en/cachingiterator.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Check whether the inner iterator has a valid next element
 	 * @link http://php.net/manual/en/cachingiterator.hasnext.php
 	 * @return void <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function hasNext () {}
+	public function hasNext() {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Return the string representation of the current element
 	 * @link http://php.net/manual/en/cachingiterator.tostring.php
 	 * @return void The string representation of the current element.
 	 */
-	public function __toString () {}
+	public function __toString() {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Returns the inner iterator
 	 * @link http://php.net/manual/en/cachingiterator.getinneriterator.php
 	 * @return Iterator an object implementing the Iterator interface.
 	 */
-	public function getInnerIterator () {}
+	public function getInnerIterator(): Iterator {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Get flags used
 	 * @link http://php.net/manual/en/cachingiterator.getflags.php
 	 * @return int Description...
 	 */
-	public function getFlags () {}
+	public function getFlags(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * The setFlags purpose
 	 * @link http://php.net/manual/en/cachingiterator.setflags.php
 	 * @param int $flags <p>
@@ -2645,10 +2671,10 @@ class RecursiveCachingIterator extends CachingIterator implements Countable, Arr
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setFlags ($flags) {}
+	public function setFlags(int $flags) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * The offsetGet purpose
 	 * @link http://php.net/manual/en/cachingiterator.offsetget.php
 	 * @param string $index <p>
@@ -2656,10 +2682,10 @@ class RecursiveCachingIterator extends CachingIterator implements Countable, Arr
 	 * </p>
 	 * @return void Description...
 	 */
-	public function offsetGet ($index) {}
+	public function offsetGet(string $index) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * The offsetSet purpose
 	 * @link http://php.net/manual/en/cachingiterator.offsetset.php
 	 * @param string $index <p>
@@ -2670,10 +2696,10 @@ class RecursiveCachingIterator extends CachingIterator implements Countable, Arr
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function offsetSet ($index, $newval) {}
+	public function offsetSet(string $index, string $newval) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * The offsetUnset purpose
 	 * @link http://php.net/manual/en/cachingiterator.offsetunset.php
 	 * @param string $index <p>
@@ -2681,10 +2707,10 @@ class RecursiveCachingIterator extends CachingIterator implements Countable, Arr
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function offsetUnset ($index) {}
+	public function offsetUnset(string $index) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * The offsetExists purpose
 	 * @link http://php.net/manual/en/cachingiterator.offsetexists.php
 	 * @param string $index <p>
@@ -2692,23 +2718,23 @@ class RecursiveCachingIterator extends CachingIterator implements Countable, Arr
 	 * </p>
 	 * @return void <b>TRUE</b> if an entry referenced by the offset exists, <b>FALSE</b> otherwise.
 	 */
-	public function offsetExists ($index) {}
+	public function offsetExists(string $index) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Retrieve the contents of the cache
 	 * @link http://php.net/manual/en/cachingiterator.getcache.php
 	 * @return array An array containing the cache items.
 	 */
-	public function getCache () {}
+	public function getCache(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * The number of elements in the iterator
 	 * @link http://php.net/manual/en/cachingiterator.count.php
 	 * @return int The count of the elements iterated over.
 	 */
-	public function count () {}
+	public function count(): int {}
 
 }
 
@@ -2719,62 +2745,62 @@ class RecursiveCachingIterator extends CachingIterator implements Countable, Arr
 class NoRewindIterator extends IteratorIterator implements OuterIterator, Traversable, Iterator {
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Construct a NoRewindIterator
 	 * @link http://php.net/manual/en/norewinditerator.construct.php
 	 * @param Iterator $iterator <p>
 	 * The iterator being used.
 	 * </p>
 	 */
-	public function __construct (Iterator $iterator) {}
+	public function __construct(Iterator $iterator) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Prevents the rewind operation on the inner iterator.
 	 * @link http://php.net/manual/en/norewinditerator.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Validates the iterator
 	 * @link http://php.net/manual/en/norewinditerator.valid.php
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the current key
 	 * @link http://php.net/manual/en/norewinditerator.key.php
 	 * @return mixed The current key.
 	 */
-	public function key () {}
+	public function key() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the current value
 	 * @link http://php.net/manual/en/norewinditerator.current.php
 	 * @return mixed The current value.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Forward to the next element
 	 * @link http://php.net/manual/en/norewinditerator.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the inner iterator
 	 * @link http://php.net/manual/en/norewinditerator.getinneriterator.php
 	 * @return iterator The inner iterator, as passed to <b>NoRewindIterator::__construct</b>.
 	 */
-	public function getInnerIterator () {}
+	public function getInnerIterator(): iterator {}
 
 }
 
@@ -2785,14 +2811,14 @@ class NoRewindIterator extends IteratorIterator implements OuterIterator, Traver
 class AppendIterator extends IteratorIterator implements OuterIterator, Traversable, Iterator {
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Constructs an AppendIterator
 	 * @link http://php.net/manual/en/appenditerator.construct.php
 	 */
-	public function __construct () {}
+	public function __construct() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Appends an iterator
 	 * @link http://php.net/manual/en/appenditerator.append.php
 	 * @param Iterator $iterator <p>
@@ -2800,73 +2826,73 @@ class AppendIterator extends IteratorIterator implements OuterIterator, Traversa
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function append (Iterator $iterator) {}
+	public function append(Iterator $iterator) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Rewinds the Iterator
 	 * @link http://php.net/manual/en/appenditerator.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Checks validity of the current element
 	 * @link http://php.net/manual/en/appenditerator.valid.php
 	 * @return bool <b>TRUE</b> if the current iteration is valid, <b>FALSE</b> otherwise.
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the current key
 	 * @link http://php.net/manual/en/appenditerator.key.php
 	 * @return scalar The current key if it is valid or <b>NULL</b> otherwise.
 	 */
-	public function key () {}
+	public function key() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the current value
 	 * @link http://php.net/manual/en/appenditerator.current.php
 	 * @return mixed The current value if it is valid or <b>NULL</b> otherwise.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Moves to the next element
 	 * @link http://php.net/manual/en/appenditerator.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the inner iterator
 	 * @link http://php.net/manual/en/appenditerator.getinneriterator.php
 	 * @return Iterator The current inner iterator, or <b>NULL</b> if there is not one.
 	 */
-	public function getInnerIterator () {}
+	public function getInnerIterator(): Iterator {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets an index of iterators
 	 * @link http://php.net/manual/en/appenditerator.getiteratorindex.php
 	 * @return int an integer, which is the zero-based index
 	 * of the current inner iterator.
 	 */
-	public function getIteratorIndex () {}
+	public function getIteratorIndex(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the ArrayIterator
 	 * @link http://php.net/manual/en/appenditerator.getarrayiterator.php
 	 * @return void an <b>ArrayIterator</b> containing
 	 * the appended iterators.
 	 */
-	public function getArrayIterator () {}
+	public function getArrayIterator() {}
 
 }
 
@@ -2879,62 +2905,62 @@ class AppendIterator extends IteratorIterator implements OuterIterator, Traversa
 class InfiniteIterator extends IteratorIterator implements OuterIterator, Traversable, Iterator {
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Constructs an InfiniteIterator
 	 * @link http://php.net/manual/en/infiniteiterator.construct.php
 	 * @param Iterator $iterator <p>
 	 * The iterator to infinitely iterate over.
 	 * </p>
 	 */
-	public function __construct (Iterator $iterator) {}
+	public function __construct(Iterator $iterator) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Moves the inner Iterator forward or rewinds it
 	 * @link http://php.net/manual/en/infiniteiterator.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Rewind to the first element
 	 * @link http://php.net/manual/en/iteratoriterator.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Checks if the iterator is valid
 	 * @link http://php.net/manual/en/iteratoriterator.valid.php
 	 * @return bool <b>TRUE</b> if the iterator is valid, otherwise <b>FALSE</b>
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the key of the current element
 	 * @link http://php.net/manual/en/iteratoriterator.key.php
 	 * @return scalar The key of the current element.
 	 */
-	public function key () {}
+	public function key() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the current value
 	 * @link http://php.net/manual/en/iteratoriterator.current.php
 	 * @return mixed The value of the current element.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the inner iterator
 	 * @link http://php.net/manual/en/iteratoriterator.getinneriterator.php
 	 * @return Traversable The inner iterator as passed to <b>IteratorIterator::__construct</b>.
 	 */
-	public function getInnerIterator () {}
+	public function getInnerIterator(): Traversable {}
 
 }
 
@@ -2955,7 +2981,7 @@ class RegexIterator extends FilterIterator implements Iterator, Traversable, Out
 
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Create a new RegexIterator
 	 * @link http://php.net/manual/en/regexiterator.construct.php
 	 * @param Iterator $iterator <p>
@@ -3015,26 +3041,26 @@ class RegexIterator extends FilterIterator implements Iterator, Traversable, Out
 	 * </table>
 	 * </p>
 	 */
-	public function __construct (Iterator $iterator, $regex, $mode = 'self::MATCH', $flags = 0, $preg_flags = 0) {}
+	public function __construct(Iterator $iterator, string $regex, int $mode = self::MATCH, int $flags = 0, int $preg_flags = 0) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Get accept status
 	 * @link http://php.net/manual/en/regexiterator.accept.php
 	 * @return bool <b>TRUE</b> if a match, <b>FALSE</b> otherwise.
 	 */
-	public function accept () {}
+	public function accept(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Returns operation mode.
 	 * @link http://php.net/manual/en/regexiterator.getmode.php
 	 * @return int the operation mode.
 	 */
-	public function getMode () {}
+	public function getMode(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Sets the operation mode.
 	 * @link http://php.net/manual/en/regexiterator.setmode.php
 	 * @param int $mode <p>
@@ -3084,18 +3110,18 @@ class RegexIterator extends FilterIterator implements Iterator, Traversable, Out
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setMode ($mode) {}
+	public function setMode(int $mode) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Get flags
 	 * @link http://php.net/manual/en/regexiterator.getflags.php
 	 * @return int the set flags.
 	 */
-	public function getFlags () {}
+	public function getFlags(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Sets the flags.
 	 * @link http://php.net/manual/en/regexiterator.setflags.php
 	 * @param int $flags <p>
@@ -3121,18 +3147,18 @@ class RegexIterator extends FilterIterator implements Iterator, Traversable, Out
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setFlags ($flags) {}
+	public function setFlags(int $flags) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Returns the regular expression flags.
 	 * @link http://php.net/manual/en/regexiterator.getpregflags.php
 	 * @return int a bitmask of the regular expression flags.
 	 */
-	public function getPregFlags () {}
+	public function getPregFlags(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Sets the regular expression flags.
 	 * @link http://php.net/manual/en/regexiterator.setpregflags.php
 	 * @param int $preg_flags <p>
@@ -3141,63 +3167,63 @@ class RegexIterator extends FilterIterator implements Iterator, Traversable, Out
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setPregFlags ($preg_flags) {}
+	public function setPregFlags(int $preg_flags) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.4.0)<br/>
+	 * (PHP 5 &gt;= 5.4.0, PHP 7)<br/>
 	 * Returns current regular expression
 	 * @link http://php.net/manual/en/regexiterator.getregex.php
 	 * @return string
 	 */
-	public function getRegex () {}
+	public function getRegex(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Rewind the iterator
 	 * @link http://php.net/manual/en/filteriterator.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Check whether the current element is valid
 	 * @link http://php.net/manual/en/filteriterator.valid.php
 	 * @return bool <b>TRUE</b> if the current element is valid, otherwise <b>FALSE</b>
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the current key
 	 * @link http://php.net/manual/en/filteriterator.key.php
 	 * @return mixed The current key.
 	 */
-	public function key () {}
+	public function key() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the current element value
 	 * @link http://php.net/manual/en/filteriterator.current.php
 	 * @return mixed The current element value.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Move the iterator forward
 	 * @link http://php.net/manual/en/filteriterator.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the inner iterator
 	 * @link http://php.net/manual/en/filteriterator.getinneriterator.php
 	 * @return Iterator The inner iterator.
 	 */
-	public function getInnerIterator () {}
+	public function getInnerIterator(): Iterator {}
 
 }
 
@@ -3218,7 +3244,7 @@ class RecursiveRegexIterator extends RegexIterator implements OuterIterator, Tra
 
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Creates a new RecursiveRegexIterator.
 	 * @link http://php.net/manual/en/recursiveregexiterator.construct.php
 	 * @param RecursiveIterator $iterator <p>
@@ -3278,36 +3304,36 @@ class RecursiveRegexIterator extends RegexIterator implements OuterIterator, Tra
 	 * </table>
 	 * </p>
 	 */
-	public function __construct (RecursiveIterator $iterator, $regex, $mode = 'self::MATCH', $flags = 0, $preg_flags = 0) {}
+	public function __construct(RecursiveIterator $iterator, string $regex, int $mode = self::MATCH, int $flags = 0, int $preg_flags = 0) {}
 
-	public function accept () {}
+	public function accept() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Returns whether an iterator can be obtained for the current entry.
 	 * @link http://php.net/manual/en/recursiveregexiterator.haschildren.php
 	 * @return bool <b>TRUE</b> if an iterator can be obtained for the current entry, otherwise returns <b>FALSE</b>.
 	 */
-	public function hasChildren () {}
+	public function hasChildren(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Returns an iterator for the current entry.
 	 * @link http://php.net/manual/en/recursiveregexiterator.getchildren.php
 	 * @return RecursiveRegexIterator An iterator for the current entry, if it can be iterated over by the inner iterator.
 	 */
-	public function getChildren () {}
+	public function getChildren(): RecursiveRegexIterator {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Returns operation mode.
 	 * @link http://php.net/manual/en/regexiterator.getmode.php
 	 * @return int the operation mode.
 	 */
-	public function getMode () {}
+	public function getMode(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Sets the operation mode.
 	 * @link http://php.net/manual/en/regexiterator.setmode.php
 	 * @param int $mode <p>
@@ -3357,18 +3383,18 @@ class RecursiveRegexIterator extends RegexIterator implements OuterIterator, Tra
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setMode ($mode) {}
+	public function setMode(int $mode) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Get flags
 	 * @link http://php.net/manual/en/regexiterator.getflags.php
 	 * @return int the set flags.
 	 */
-	public function getFlags () {}
+	public function getFlags(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Sets the flags.
 	 * @link http://php.net/manual/en/regexiterator.setflags.php
 	 * @param int $flags <p>
@@ -3394,18 +3420,18 @@ class RecursiveRegexIterator extends RegexIterator implements OuterIterator, Tra
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setFlags ($flags) {}
+	public function setFlags(int $flags) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Returns the regular expression flags.
 	 * @link http://php.net/manual/en/regexiterator.getpregflags.php
 	 * @return int a bitmask of the regular expression flags.
 	 */
-	public function getPregFlags () {}
+	public function getPregFlags(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Sets the regular expression flags.
 	 * @link http://php.net/manual/en/regexiterator.setpregflags.php
 	 * @param int $preg_flags <p>
@@ -3414,63 +3440,63 @@ class RecursiveRegexIterator extends RegexIterator implements OuterIterator, Tra
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setPregFlags ($preg_flags) {}
+	public function setPregFlags(int $preg_flags) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.4.0)<br/>
+	 * (PHP 5 &gt;= 5.4.0, PHP 7)<br/>
 	 * Returns current regular expression
 	 * @link http://php.net/manual/en/regexiterator.getregex.php
 	 * @return string
 	 */
-	public function getRegex () {}
+	public function getRegex(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Rewind the iterator
 	 * @link http://php.net/manual/en/filteriterator.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Check whether the current element is valid
 	 * @link http://php.net/manual/en/filteriterator.valid.php
 	 * @return bool <b>TRUE</b> if the current element is valid, otherwise <b>FALSE</b>
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the current key
 	 * @link http://php.net/manual/en/filteriterator.key.php
 	 * @return mixed The current key.
 	 */
-	public function key () {}
+	public function key() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the current element value
 	 * @link http://php.net/manual/en/filteriterator.current.php
 	 * @return mixed The current element value.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Move the iterator forward
 	 * @link http://php.net/manual/en/filteriterator.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get the inner iterator
 	 * @link http://php.net/manual/en/filteriterator.getinneriterator.php
 	 * @return Iterator The inner iterator.
 	 */
-	public function getInnerIterator () {}
+	public function getInnerIterator(): Iterator {}
 
 }
 
@@ -3481,44 +3507,44 @@ class RecursiveRegexIterator extends RegexIterator implements OuterIterator, Tra
 class EmptyIterator implements Iterator, Traversable {
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * The rewind() method
 	 * @link http://php.net/manual/en/emptyiterator.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * The valid() method
 	 * @link http://php.net/manual/en/emptyiterator.valid.php
-	 * @return void <b>FALSE</b>
+	 * @return bool <b>FALSE</b>
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * The key() method
 	 * @link http://php.net/manual/en/emptyiterator.key.php
-	 * @return void No value is returned.
+	 * @return scalar No value is returned.
 	 */
-	public function key () {}
+	public function key() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * The current() method
 	 * @link http://php.net/manual/en/emptyiterator.current.php
-	 * @return void No value is returned.
+	 * @return mixed No value is returned.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * The next() method
 	 * @link http://php.net/manual/en/emptyiterator.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 }
 
@@ -3542,7 +3568,7 @@ class RecursiveTreeIterator extends RecursiveIteratorIterator implements OuterIt
 
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Construct a RecursiveTreeIterator
 	 * @link http://php.net/manual/en/recursivetreeiterator.construct.php
 	 * @param RecursiveIterator|IteratorAggregate $it <p>
@@ -3557,114 +3583,114 @@ class RecursiveTreeIterator extends RecursiveIteratorIterator implements OuterIt
 	 * Flags to affect the behavior of the <b>RecursiveIteratorIterator</b> used internally.
 	 * </p>
 	 */
-	public function __construct ($it, $flags = 'RecursiveTreeIterator::BYPASS_KEY', $cit_flags = 'CachingIterator::CATCH_GET_CHILD', $mode = 'RecursiveIteratorIterator::SELF_FIRST') {}
+	public function __construct($it, int $flags = RecursiveTreeIterator::BYPASS_KEY, int $cit_flags = CachingIterator::CATCH_GET_CHILD, int $mode = RecursiveIteratorIterator::SELF_FIRST) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Rewind iterator
 	 * @link http://php.net/manual/en/recursivetreeiterator.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Check validity
 	 * @link http://php.net/manual/en/recursivetreeiterator.valid.php
 	 * @return bool <b>TRUE</b> if the current position is valid, otherwise <b>FALSE</b>
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Get the key of the current element
 	 * @link http://php.net/manual/en/recursivetreeiterator.key.php
 	 * @return string the current key prefixed and postfixed.
 	 */
-	public function key () {}
+	public function key(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Get current element
 	 * @link http://php.net/manual/en/recursivetreeiterator.current.php
 	 * @return string the current element prefixed and postfixed.
 	 */
-	public function current () {}
+	public function current(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Move to next element
 	 * @link http://php.net/manual/en/recursivetreeiterator.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Begin iteration
 	 * @link http://php.net/manual/en/recursivetreeiterator.beginiteration.php
 	 * @return RecursiveIterator A <b>RecursiveIterator</b>.
 	 */
-	public function beginIteration () {}
+	public function beginIteration(): RecursiveIterator {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * End iteration
 	 * @link http://php.net/manual/en/recursivetreeiterator.enditeration.php
 	 * @return void No value is returned.
 	 */
-	public function endIteration () {}
+	public function endIteration() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Has children
 	 * @link http://php.net/manual/en/recursivetreeiterator.callhaschildren.php
 	 * @return bool <b>TRUE</b> if there are children, otherwise <b>FALSE</b>
 	 */
-	public function callHasChildren () {}
+	public function callHasChildren(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Get children
 	 * @link http://php.net/manual/en/recursivetreeiterator.callgetchildren.php
 	 * @return RecursiveIterator A <b>RecursiveIterator</b>.
 	 */
-	public function callGetChildren () {}
+	public function callGetChildren(): RecursiveIterator {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Begin children
 	 * @link http://php.net/manual/en/recursivetreeiterator.beginchildren.php
 	 * @return void No value is returned.
 	 */
-	public function beginChildren () {}
+	public function beginChildren() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * End children
 	 * @link http://php.net/manual/en/recursivetreeiterator.endchildren.php
 	 * @return void No value is returned.
 	 */
-	public function endChildren () {}
+	public function endChildren() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Next element
 	 * @link http://php.net/manual/en/recursivetreeiterator.nextelement.php
 	 * @return void No value is returned.
 	 */
-	public function nextElement () {}
+	public function nextElement() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Get the prefix
 	 * @link http://php.net/manual/en/recursivetreeiterator.getprefix.php
 	 * @return string the string to place in front of current element
 	 */
-	public function getPrefix () {}
+	public function getPrefix(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Set a part of the prefix
 	 * @link http://php.net/manual/en/recursivetreeiterator.setprefixpart.php
 	 * @param int $part <p>
@@ -3675,54 +3701,54 @@ class RecursiveTreeIterator extends RecursiveIteratorIterator implements OuterIt
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setPrefixPart ($part, $value) {}
+	public function setPrefixPart(int $part, string $value) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Get current entry
 	 * @link http://php.net/manual/en/recursivetreeiterator.getentry.php
 	 * @return string the part of the tree built for the current element.
 	 */
-	public function getEntry () {}
+	public function getEntry(): string {}
 
-	public function setPostfix () {}
+	public function setPostfix() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Get the postfix
 	 * @link http://php.net/manual/en/recursivetreeiterator.getpostfix.php
 	 * @return void the string to place after the current element.
 	 */
-	public function getPostfix () {}
+	public function getPostfix() {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Get the current depth of the recursive iteration
 	 * @link http://php.net/manual/en/recursiveiteratoriterator.getdepth.php
 	 * @return int The current depth of the recursive iteration.
 	 */
-	public function getDepth () {}
+	public function getDepth(): int {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * The current active sub iterator
 	 * @link http://php.net/manual/en/recursiveiteratoriterator.getsubiterator.php
 	 * @param int $level [optional] <p>
 	 * </p>
 	 * @return RecursiveIterator The current active sub iterator.
 	 */
-	public function getSubIterator ($level = null) {}
+	public function getSubIterator(int $level = null): RecursiveIterator {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get inner iterator
 	 * @link http://php.net/manual/en/recursiveiteratoriterator.getinneriterator.php
 	 * @return iterator The current active sub iterator.
 	 */
-	public function getInnerIterator () {}
+	public function getInnerIterator(): iterator {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Set max depth
 	 * @link http://php.net/manual/en/recursiveiteratoriterator.setmaxdepth.php
 	 * @param string $max_depth [optional] <p>
@@ -3731,15 +3757,15 @@ class RecursiveTreeIterator extends RecursiveIteratorIterator implements OuterIt
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setMaxDepth ($max_depth = -1) {}
+	public function setMaxDepth(string $max_depth = '-1') {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get max depth
 	 * @link http://php.net/manual/en/recursiveiteratoriterator.getmaxdepth.php
 	 * @return mixed The maximum accepted depth, or <b>FALSE</b> if any depth is allowed.
 	 */
-	public function getMaxDepth () {}
+	public function getMaxDepth() {}
 
 }
 
@@ -3753,7 +3779,7 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
 
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Construct a new array object
 	 * @link http://php.net/manual/en/arrayobject.construct.php
 	 * @param mixed $input [optional] <p>
@@ -3768,10 +3794,10 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
 	 * Specify the class that will be used for iteration of the <b>ArrayObject</b> object.
 	 * </p>
 	 */
-	public function __construct ($input = '[]', $flags = 0, $iterator_class = "ArrayIterator") {}
+	public function __construct($input = '[]', int $flags = 0, string $iterator_class = "ArrayIterator") {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Returns whether the requested index exists
 	 * @link http://php.net/manual/en/arrayobject.offsetexists.php
 	 * @param mixed $index <p>
@@ -3779,10 +3805,10 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
 	 * </p>
 	 * @return bool <b>TRUE</b> if the requested index exists, otherwise <b>FALSE</b>
 	 */
-	public function offsetExists ($index) {}
+	public function offsetExists($index): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Returns the value at the specified index
 	 * @link http://php.net/manual/en/arrayobject.offsetget.php
 	 * @param mixed $index <p>
@@ -3790,10 +3816,10 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
 	 * </p>
 	 * @return mixed The value at the specified index or <b>NULL</b>.
 	 */
-	public function offsetGet ($index) {}
+	public function offsetGet($index) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Sets the value at the specified index to newval
 	 * @link http://php.net/manual/en/arrayobject.offsetset.php
 	 * @param mixed $index <p>
@@ -3804,10 +3830,10 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function offsetSet ($index, $newval) {}
+	public function offsetSet($index, $newval) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Unsets the value at the specified index
 	 * @link http://php.net/manual/en/arrayobject.offsetunset.php
 	 * @param mixed $index <p>
@@ -3815,10 +3841,10 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function offsetUnset ($index) {}
+	public function offsetUnset($index) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Appends the value
 	 * @link http://php.net/manual/en/arrayobject.append.php
 	 * @param mixed $value <p>
@@ -3826,19 +3852,19 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function append ($value) {}
+	public function append($value) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Creates a copy of the ArrayObject.
 	 * @link http://php.net/manual/en/arrayobject.getarraycopy.php
 	 * @return array a copy of the array. When the <b>ArrayObject</b> refers to an object
 	 * an array of the public properties of that object will be returned.
 	 */
-	public function getArrayCopy () {}
+	public function getArrayCopy(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Get the number of public properties in the ArrayObject
 	 * @link http://php.net/manual/en/arrayobject.count.php
 	 * @return int The number of public properties in the <b>ArrayObject</b>.
@@ -3846,18 +3872,18 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
 	 * <p>
 	 * When the <b>ArrayObject</b> is constructed from an array all properties are public.
 	 */
-	public function count () {}
+	public function count(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the behavior flags.
 	 * @link http://php.net/manual/en/arrayobject.getflags.php
 	 * @return int the behavior flags of the ArrayObject.
 	 */
-	public function getFlags () {}
+	public function getFlags(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Sets the behavior flags.
 	 * @link http://php.net/manual/en/arrayobject.setflags.php
 	 * @param int $flags <p>
@@ -3892,26 +3918,26 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setFlags ($flags) {}
+	public function setFlags(int $flags) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Sort the entries by value
 	 * @link http://php.net/manual/en/arrayobject.asort.php
 	 * @return void No value is returned.
 	 */
-	public function asort () {}
+	public function asort() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Sort the entries by key
 	 * @link http://php.net/manual/en/arrayobject.ksort.php
 	 * @return void No value is returned.
 	 */
-	public function ksort () {}
+	public function ksort() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Sort the entries with a user-defined comparison function and maintain key association
 	 * @link http://php.net/manual/en/arrayobject.uasort.php
 	 * @param callable $cmp_function <p>
@@ -3924,10 +3950,10 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function uasort (callable $cmp_function) {}
+	public function uasort(callable $cmp_function) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Sort the entries by keys using a user-defined comparison function
 	 * @link http://php.net/manual/en/arrayobject.uksort.php
 	 * @param callable $cmp_function <p>
@@ -3943,26 +3969,26 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function uksort (callable $cmp_function) {}
+	public function uksort(callable $cmp_function) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Sort entries using a "natural order" algorithm
 	 * @link http://php.net/manual/en/arrayobject.natsort.php
 	 * @return void No value is returned.
 	 */
-	public function natsort () {}
+	public function natsort() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Sort an array using a case insensitive "natural order" algorithm
 	 * @link http://php.net/manual/en/arrayobject.natcasesort.php
 	 * @return void No value is returned.
 	 */
-	public function natcasesort () {}
+	public function natcasesort() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Unserialize an ArrayObject
 	 * @link http://php.net/manual/en/arrayobject.unserialize.php
 	 * @param string $serialized <p>
@@ -3970,26 +3996,26 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
 	 * </p>
 	 * @return void The unserialized <b>ArrayObject</b>.
 	 */
-	public function unserialize ($serialized) {}
+	public function unserialize(string $serialized) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Serialize an ArrayObject
 	 * @link http://php.net/manual/en/arrayobject.serialize.php
 	 * @return string The serialized representation of the <b>ArrayObject</b>.
 	 */
-	public function serialize () {}
+	public function serialize(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Create a new iterator from an ArrayObject instance
 	 * @link http://php.net/manual/en/arrayobject.getiterator.php
 	 * @return ArrayIterator An iterator from an <b>ArrayObject</b>.
 	 */
-	public function getIterator () {}
+	public function getIterator(): ArrayIterator {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Exchange the array for another one.
 	 * @link http://php.net/manual/en/arrayobject.exchangearray.php
 	 * @param mixed $input <p>
@@ -3997,10 +4023,10 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
 	 * </p>
 	 * @return array the old array.
 	 */
-	public function exchangeArray ($input) {}
+	public function exchangeArray($input): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Sets the iterator classname for the ArrayObject.
 	 * @link http://php.net/manual/en/arrayobject.setiteratorclass.php
 	 * @param string $iterator_class <p>
@@ -4008,15 +4034,15 @@ class ArrayObject implements IteratorAggregate, Traversable, ArrayAccess, Serial
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setIteratorClass ($iterator_class) {}
+	public function setIteratorClass(string $iterator_class) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the iterator classname for the ArrayObject.
 	 * @link http://php.net/manual/en/arrayobject.getiteratorclass.php
 	 * @return string the iterator class name that is used to iterate over this object.
 	 */
-	public function getIteratorClass () {}
+	public function getIteratorClass(): string {}
 
 }
 
@@ -4031,7 +4057,7 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
 
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Construct an ArrayIterator
 	 * @link http://php.net/manual/en/arrayiterator.construct.php
 	 * @param mixed $array [optional] <p>
@@ -4042,10 +4068,10 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
 	 * See <b>ArrayIterator::setFlags</b>.
 	 * </p>
 	 */
-	public function __construct ($array = 'array()', $flags = 0) {}
+	public function __construct($array = array(), int $flags = 0) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Check if offset exists
 	 * @link http://php.net/manual/en/arrayiterator.offsetexists.php
 	 * @param string $index <p>
@@ -4053,10 +4079,10 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
 	 * </p>
 	 * @return void <b>TRUE</b> if the offset exists, otherwise <b>FALSE</b>
 	 */
-	public function offsetExists ($index) {}
+	public function offsetExists(string $index) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Get value for an offset
 	 * @link http://php.net/manual/en/arrayiterator.offsetget.php
 	 * @param string $index <p>
@@ -4064,10 +4090,10 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
 	 * </p>
 	 * @return mixed The value at offset <i>index</i>.
 	 */
-	public function offsetGet ($index) {}
+	public function offsetGet(string $index) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Set value for an offset
 	 * @link http://php.net/manual/en/arrayiterator.offsetset.php
 	 * @param string $index <p>
@@ -4078,10 +4104,10 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function offsetSet ($index, $newval) {}
+	public function offsetSet(string $index, string $newval) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Unset value for an offset
 	 * @link http://php.net/manual/en/arrayiterator.offsetunset.php
 	 * @param string $index <p>
@@ -4089,10 +4115,10 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function offsetUnset ($index) {}
+	public function offsetUnset(string $index) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Append an element
 	 * @link http://php.net/manual/en/arrayiterator.append.php
 	 * @param mixed $value <p>
@@ -4100,36 +4126,36 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function append ($value) {}
+	public function append($value) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Get array copy
 	 * @link http://php.net/manual/en/arrayiterator.getarraycopy.php
 	 * @return array A copy of the array, or array of public properties
 	 * if ArrayIterator refers to an object.
 	 */
-	public function getArrayCopy () {}
+	public function getArrayCopy(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Count elements
 	 * @link http://php.net/manual/en/arrayiterator.count.php
 	 * @return int The number of elements or public properties in the associated
 	 * array or object, respectively.
 	 */
-	public function count () {}
+	public function count(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get flags
 	 * @link http://php.net/manual/en/arrayiterator.getflags.php
 	 * @return void The current flags.
 	 */
-	public function getFlags () {}
+	public function getFlags() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Set behaviour flags
 	 * @link http://php.net/manual/en/arrayiterator.setflags.php
 	 * @param string $flags <p>
@@ -4140,26 +4166,26 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setFlags ($flags) {}
+	public function setFlags(string $flags) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Sort array by values
 	 * @link http://php.net/manual/en/arrayiterator.asort.php
 	 * @return void No value is returned.
 	 */
-	public function asort () {}
+	public function asort() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Sort array by keys
 	 * @link http://php.net/manual/en/arrayiterator.ksort.php
 	 * @return void No value is returned.
 	 */
-	public function ksort () {}
+	public function ksort() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * User defined sort
 	 * @link http://php.net/manual/en/arrayiterator.uasort.php
 	 * @param string $cmp_function <p>
@@ -4167,10 +4193,10 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function uasort ($cmp_function) {}
+	public function uasort(string $cmp_function) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * User defined sort
 	 * @link http://php.net/manual/en/arrayiterator.uksort.php
 	 * @param string $cmp_function <p>
@@ -4178,26 +4204,26 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function uksort ($cmp_function) {}
+	public function uksort(string $cmp_function) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Sort an array naturally
 	 * @link http://php.net/manual/en/arrayiterator.natsort.php
 	 * @return void No value is returned.
 	 */
-	public function natsort () {}
+	public function natsort() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Sort an array naturally, case insensitive
 	 * @link http://php.net/manual/en/arrayiterator.natcasesort.php
 	 * @return void No value is returned.
 	 */
-	public function natcasesort () {}
+	public function natcasesort() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Unserialize
 	 * @link http://php.net/manual/en/arrayiterator.unserialize.php
 	 * @param string $serialized <p>
@@ -4205,58 +4231,58 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
 	 * </p>
 	 * @return string The <b>ArrayIterator</b>.
 	 */
-	public function unserialize ($serialized) {}
+	public function unserialize(string $serialized): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Serialize
 	 * @link http://php.net/manual/en/arrayiterator.serialize.php
 	 * @return string The serialized <b>ArrayIterator</b>.
 	 */
-	public function serialize () {}
+	public function serialize(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Rewind array back to the start
 	 * @link http://php.net/manual/en/arrayiterator.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Return current array entry
 	 * @link http://php.net/manual/en/arrayiterator.current.php
 	 * @return mixed The current array entry.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Return current array key
 	 * @link http://php.net/manual/en/arrayiterator.key.php
 	 * @return mixed The current array key.
 	 */
-	public function key () {}
+	public function key() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Move to next entry
 	 * @link http://php.net/manual/en/arrayiterator.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Check whether array contains more entries
 	 * @link http://php.net/manual/en/arrayiterator.valid.php
-	 * @return bool No value is returned.
+	 * @return bool <b>TRUE</b> if the iterator is valid, otherwise <b>FALSE</b>
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Seek to position
 	 * @link http://php.net/manual/en/arrayiterator.seek.php
 	 * @param int $position <p>
@@ -4264,7 +4290,7 @@ class ArrayIterator implements Iterator, Traversable, ArrayAccess, SeekableItera
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function seek ($position) {}
+	public function seek(int $position) {}
 
 }
 
@@ -4279,24 +4305,24 @@ class RecursiveArrayIterator extends ArrayIterator implements Countable, Seriali
 
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Returns whether current entry is an array or an object.
 	 * @link http://php.net/manual/en/recursivearrayiterator.haschildren.php
 	 * @return bool <b>TRUE</b> if the current entry is an array or an object,
 	 * otherwise <b>FALSE</b> is returned.
 	 */
-	public function hasChildren () {}
+	public function hasChildren(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Returns an iterator for the current entry if it is an array or an object.
 	 * @link http://php.net/manual/en/recursivearrayiterator.getchildren.php
 	 * @return RecursiveArrayIterator An iterator for the current entry, if it is an array or object.
 	 */
-	public function getChildren () {}
+	public function getChildren(): RecursiveArrayIterator {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Construct an ArrayIterator
 	 * @link http://php.net/manual/en/arrayiterator.construct.php
 	 * @param mixed $array [optional] <p>
@@ -4307,10 +4333,10 @@ class RecursiveArrayIterator extends ArrayIterator implements Countable, Seriali
 	 * See <b>ArrayIterator::setFlags</b>.
 	 * </p>
 	 */
-	public function __construct ($array = 'array()', $flags = 0) {}
+	public function __construct($array = array(), int $flags = 0) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Check if offset exists
 	 * @link http://php.net/manual/en/arrayiterator.offsetexists.php
 	 * @param string $index <p>
@@ -4318,10 +4344,10 @@ class RecursiveArrayIterator extends ArrayIterator implements Countable, Seriali
 	 * </p>
 	 * @return void <b>TRUE</b> if the offset exists, otherwise <b>FALSE</b>
 	 */
-	public function offsetExists ($index) {}
+	public function offsetExists(string $index) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Get value for an offset
 	 * @link http://php.net/manual/en/arrayiterator.offsetget.php
 	 * @param string $index <p>
@@ -4329,10 +4355,10 @@ class RecursiveArrayIterator extends ArrayIterator implements Countable, Seriali
 	 * </p>
 	 * @return mixed The value at offset <i>index</i>.
 	 */
-	public function offsetGet ($index) {}
+	public function offsetGet(string $index) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Set value for an offset
 	 * @link http://php.net/manual/en/arrayiterator.offsetset.php
 	 * @param string $index <p>
@@ -4343,10 +4369,10 @@ class RecursiveArrayIterator extends ArrayIterator implements Countable, Seriali
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function offsetSet ($index, $newval) {}
+	public function offsetSet(string $index, string $newval) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Unset value for an offset
 	 * @link http://php.net/manual/en/arrayiterator.offsetunset.php
 	 * @param string $index <p>
@@ -4354,10 +4380,10 @@ class RecursiveArrayIterator extends ArrayIterator implements Countable, Seriali
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function offsetUnset ($index) {}
+	public function offsetUnset(string $index) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Append an element
 	 * @link http://php.net/manual/en/arrayiterator.append.php
 	 * @param mixed $value <p>
@@ -4365,36 +4391,36 @@ class RecursiveArrayIterator extends ArrayIterator implements Countable, Seriali
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function append ($value) {}
+	public function append($value) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Get array copy
 	 * @link http://php.net/manual/en/arrayiterator.getarraycopy.php
 	 * @return array A copy of the array, or array of public properties
 	 * if ArrayIterator refers to an object.
 	 */
-	public function getArrayCopy () {}
+	public function getArrayCopy(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Count elements
 	 * @link http://php.net/manual/en/arrayiterator.count.php
 	 * @return int The number of elements or public properties in the associated
 	 * array or object, respectively.
 	 */
-	public function count () {}
+	public function count(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get flags
 	 * @link http://php.net/manual/en/arrayiterator.getflags.php
 	 * @return void The current flags.
 	 */
-	public function getFlags () {}
+	public function getFlags() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Set behaviour flags
 	 * @link http://php.net/manual/en/arrayiterator.setflags.php
 	 * @param string $flags <p>
@@ -4405,26 +4431,26 @@ class RecursiveArrayIterator extends ArrayIterator implements Countable, Seriali
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setFlags ($flags) {}
+	public function setFlags(string $flags) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Sort array by values
 	 * @link http://php.net/manual/en/arrayiterator.asort.php
 	 * @return void No value is returned.
 	 */
-	public function asort () {}
+	public function asort() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Sort array by keys
 	 * @link http://php.net/manual/en/arrayiterator.ksort.php
 	 * @return void No value is returned.
 	 */
-	public function ksort () {}
+	public function ksort() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * User defined sort
 	 * @link http://php.net/manual/en/arrayiterator.uasort.php
 	 * @param string $cmp_function <p>
@@ -4432,10 +4458,10 @@ class RecursiveArrayIterator extends ArrayIterator implements Countable, Seriali
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function uasort ($cmp_function) {}
+	public function uasort(string $cmp_function) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * User defined sort
 	 * @link http://php.net/manual/en/arrayiterator.uksort.php
 	 * @param string $cmp_function <p>
@@ -4443,26 +4469,26 @@ class RecursiveArrayIterator extends ArrayIterator implements Countable, Seriali
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function uksort ($cmp_function) {}
+	public function uksort(string $cmp_function) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Sort an array naturally
 	 * @link http://php.net/manual/en/arrayiterator.natsort.php
 	 * @return void No value is returned.
 	 */
-	public function natsort () {}
+	public function natsort() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Sort an array naturally, case insensitive
 	 * @link http://php.net/manual/en/arrayiterator.natcasesort.php
 	 * @return void No value is returned.
 	 */
-	public function natcasesort () {}
+	public function natcasesort() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Unserialize
 	 * @link http://php.net/manual/en/arrayiterator.unserialize.php
 	 * @param string $serialized <p>
@@ -4470,58 +4496,58 @@ class RecursiveArrayIterator extends ArrayIterator implements Countable, Seriali
 	 * </p>
 	 * @return string The <b>ArrayIterator</b>.
 	 */
-	public function unserialize ($serialized) {}
+	public function unserialize(string $serialized): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Serialize
 	 * @link http://php.net/manual/en/arrayiterator.serialize.php
 	 * @return string The serialized <b>ArrayIterator</b>.
 	 */
-	public function serialize () {}
+	public function serialize(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Rewind array back to the start
 	 * @link http://php.net/manual/en/arrayiterator.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Return current array entry
 	 * @link http://php.net/manual/en/arrayiterator.current.php
 	 * @return mixed The current array entry.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Return current array key
 	 * @link http://php.net/manual/en/arrayiterator.key.php
 	 * @return mixed The current array key.
 	 */
-	public function key () {}
+	public function key() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Move to next entry
 	 * @link http://php.net/manual/en/arrayiterator.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Check whether array contains more entries
 	 * @link http://php.net/manual/en/arrayiterator.valid.php
-	 * @return bool No value is returned.
+	 * @return bool <b>TRUE</b> if the iterator is valid, otherwise <b>FALSE</b>
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.0)<br/>
+	 * (PHP 5 &gt;= 5.0.0, PHP 7)<br/>
 	 * Seek to position
 	 * @link http://php.net/manual/en/arrayiterator.seek.php
 	 * @param int $position <p>
@@ -4529,7 +4555,7 @@ class RecursiveArrayIterator extends ArrayIterator implements Countable, Seriali
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function seek ($position) {}
+	public function seek(int $position) {}
 
 }
 
@@ -4541,42 +4567,42 @@ class RecursiveArrayIterator extends ArrayIterator implements Countable, Seriali
 class SplFileInfo  {
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Construct a new SplFileInfo object
 	 * @link http://php.net/manual/en/splfileinfo.construct.php
 	 * @param string $file_name <p>
 	 * Path to the file.
 	 * </p>
 	 */
-	public function __construct ($file_name) {}
+	public function __construct(string $file_name) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the path without filename
 	 * @link http://php.net/manual/en/splfileinfo.getpath.php
 	 * @return string the path to the file.
 	 */
-	public function getPath () {}
+	public function getPath(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the filename
 	 * @link http://php.net/manual/en/splfileinfo.getfilename.php
 	 * @return string The filename.
 	 */
-	public function getFilename () {}
+	public function getFilename(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.6)<br/>
+	 * (PHP 5 &gt;= 5.3.6, PHP 7)<br/>
 	 * Gets the file extension
 	 * @link http://php.net/manual/en/splfileinfo.getextension.php
 	 * @return string a string containing the file extension, or an
 	 * empty string if the file has no extension.
 	 */
-	public function getExtension () {}
+	public function getExtension(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Gets the base name of the file
 	 * @link http://php.net/manual/en/splfileinfo.getbasename.php
 	 * @param string $suffix [optional] <p>
@@ -4584,156 +4610,156 @@ class SplFileInfo  {
 	 * </p>
 	 * @return string the base name without path information.
 	 */
-	public function getBasename ($suffix = null) {}
+	public function getBasename(string $suffix = null): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the path to the file
 	 * @link http://php.net/manual/en/splfileinfo.getpathname.php
 	 * @return string The path to the file.
 	 */
-	public function getPathname () {}
+	public function getPathname(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file permissions
 	 * @link http://php.net/manual/en/splfileinfo.getperms.php
 	 * @return int the file permissions.
 	 */
-	public function getPerms () {}
+	public function getPerms(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the inode for the file
 	 * @link http://php.net/manual/en/splfileinfo.getinode.php
 	 * @return int the inode number for the filesystem object.
 	 */
-	public function getInode () {}
+	public function getInode(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file size
 	 * @link http://php.net/manual/en/splfileinfo.getsize.php
 	 * @return int The filesize in bytes.
 	 */
-	public function getSize () {}
+	public function getSize(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the owner of the file
 	 * @link http://php.net/manual/en/splfileinfo.getowner.php
 	 * @return int The owner id in numerical format.
 	 */
-	public function getOwner () {}
+	public function getOwner(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the file group
 	 * @link http://php.net/manual/en/splfileinfo.getgroup.php
 	 * @return int The group id in numerical format.
 	 */
-	public function getGroup () {}
+	public function getGroup(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets last access time of the file
 	 * @link http://php.net/manual/en/splfileinfo.getatime.php
 	 * @return int the time the file was last accessed.
 	 */
-	public function getATime () {}
+	public function getATime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the last modified time
 	 * @link http://php.net/manual/en/splfileinfo.getmtime.php
 	 * @return int the last modified time for the file, in a Unix timestamp.
 	 */
-	public function getMTime () {}
+	public function getMTime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the inode change time
 	 * @link http://php.net/manual/en/splfileinfo.getctime.php
 	 * @return int The last change time, in a Unix timestamp.
 	 */
-	public function getCTime () {}
+	public function getCTime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file type
 	 * @link http://php.net/manual/en/splfileinfo.gettype.php
 	 * @return string A string representing the type of the entry.
 	 * May be one of file, link,
 	 * or dir
 	 */
-	public function getType () {}
+	public function getType(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the entry is writable
 	 * @link http://php.net/manual/en/splfileinfo.iswritable.php
 	 * @return bool <b>TRUE</b> if writable, <b>FALSE</b> otherwise;
 	 */
-	public function isWritable () {}
+	public function isWritable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if file is readable
 	 * @link http://php.net/manual/en/splfileinfo.isreadable.php
 	 * @return bool <b>TRUE</b> if readable, <b>FALSE</b> otherwise.
 	 */
-	public function isReadable () {}
+	public function isReadable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is executable
 	 * @link http://php.net/manual/en/splfileinfo.isexecutable.php
 	 * @return bool <b>TRUE</b> if executable, <b>FALSE</b> otherwise.
 	 */
-	public function isExecutable () {}
+	public function isExecutable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the object references a regular file
 	 * @link http://php.net/manual/en/splfileinfo.isfile.php
 	 * @return bool <b>TRUE</b> if the file exists and is a regular file (not a link), <b>FALSE</b> otherwise.
 	 */
-	public function isFile () {}
+	public function isFile(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is a directory
 	 * @link http://php.net/manual/en/splfileinfo.isdir.php
 	 * @return bool <b>TRUE</b> if a directory, <b>FALSE</b> otherwise.
 	 */
-	public function isDir () {}
+	public function isDir(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is a link
 	 * @link http://php.net/manual/en/splfileinfo.islink.php
 	 * @return bool <b>TRUE</b> if the file is a link, <b>FALSE</b> otherwise.
 	 */
-	public function isLink () {}
+	public function isLink(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Gets the target of a link
 	 * @link http://php.net/manual/en/splfileinfo.getlinktarget.php
 	 * @return string the target of the filesystem link.
 	 */
-	public function getLinkTarget () {}
+	public function getLinkTarget(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Gets absolute path to file
 	 * @link http://php.net/manual/en/splfileinfo.getrealpath.php
-	 * @return string the path to the file.
+	 * @return string the path to the file, or <b>FALSE</b> if the file does not exist.
 	 */
-	public function getRealPath () {}
+	public function getRealPath(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileInfo object for the file
 	 * @link http://php.net/manual/en/splfileinfo.getfileinfo.php
 	 * @param string $class_name [optional] <p>
@@ -4741,10 +4767,10 @@ class SplFileInfo  {
 	 * </p>
 	 * @return SplFileInfo An <b>SplFileInfo</b> object created for the file.
 	 */
-	public function getFileInfo ($class_name = null) {}
+	public function getFileInfo(string $class_name = null): SplFileInfo {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileInfo object for the path
 	 * @link http://php.net/manual/en/splfileinfo.getpathinfo.php
 	 * @param string $class_name [optional] <p>
@@ -4752,10 +4778,10 @@ class SplFileInfo  {
 	 * </p>
 	 * @return SplFileInfo an <b>SplFileInfo</b> object for the parent path of the file.
 	 */
-	public function getPathInfo ($class_name = null) {}
+	public function getPathInfo(string $class_name = null): SplFileInfo {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileObject object for the file
 	 * @link http://php.net/manual/en/splfileinfo.openfile.php
 	 * @param string $open_mode [optional] <p>
@@ -4773,10 +4799,10 @@ class SplFileInfo  {
 	 * </p>
 	 * @return SplFileObject The opened file as an <b>SplFileObject</b> object.
 	 */
-	public function openFile ($open_mode = "r", $use_include_path = false, $context = null) {}
+	public function openFile(string $open_mode = "r", bool $use_include_path = false, $context = null): SplFileObject {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Sets the class used with <b>SplFileInfo::openFile</b>
 	 * @link http://php.net/manual/en/splfileinfo.setfileclass.php
 	 * @param string $class_name [optional] <p>
@@ -4785,10 +4811,10 @@ class SplFileInfo  {
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setFileClass ($class_name = "SplFileObject") {}
+	public function setFileClass(string $class_name = "SplFileObject") {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Sets the class used with <b>SplFileInfo::getFileInfo</b> and <b>SplFileInfo::getPathInfo</b>
 	 * @link http://php.net/manual/en/splfileinfo.setinfoclass.php
 	 * @param string $class_name [optional] <p>
@@ -4798,17 +4824,17 @@ class SplFileInfo  {
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setInfoClass ($class_name = "SplFileInfo") {}
+	public function setInfoClass(string $class_name = "SplFileInfo") {}
 
-	final public function _bad_state_ex () {}
+	final public function _bad_state_ex() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Returns the path to the file as a string
 	 * @link http://php.net/manual/en/splfileinfo.tostring.php
 	 * @return void the path to the file.
 	 */
-	public function __toString () {}
+	public function __toString() {}
 
 }
 
@@ -4820,34 +4846,34 @@ class SplFileInfo  {
 class DirectoryIterator extends SplFileInfo implements Iterator, Traversable, SeekableIterator {
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Constructs a new directory iterator from a path
 	 * @link http://php.net/manual/en/directoryiterator.construct.php
 	 * @param string $path <p>
 	 * The path of the directory to traverse.
 	 * </p>
 	 */
-	public function __construct ($path) {}
+	public function __construct(string $path) {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Return file name of current DirectoryIterator item.
 	 * @link http://php.net/manual/en/directoryiterator.getfilename.php
 	 * @return string the file name of the current <b>DirectoryIterator</b> item.
 	 */
-	public function getFilename () {}
+	public function getFilename(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.6)<br/>
+	 * (PHP 5 &gt;= 5.3.6, PHP 7)<br/>
 	 * Gets the file extension
 	 * @link http://php.net/manual/en/directoryiterator.getextension.php
 	 * @return string a string containing the file extension, or an
 	 * empty string if the file has no extension.
 	 */
-	public function getExtension () {}
+	public function getExtension(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Get base name of current DirectoryIterator item.
 	 * @link http://php.net/manual/en/directoryiterator.getbasename.php
 	 * @param string $suffix [optional] <p>
@@ -4856,59 +4882,59 @@ class DirectoryIterator extends SplFileInfo implements Iterator, Traversable, Se
 	 * </p>
 	 * @return string The base name of the current <b>DirectoryIterator</b> item.
 	 */
-	public function getBasename ($suffix = null) {}
+	public function getBasename(string $suffix = null): string {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Determine if current DirectoryIterator item is '.' or '..'
 	 * @link http://php.net/manual/en/directoryiterator.isdot.php
 	 * @return bool <b>TRUE</b> if the entry is . or ..,
 	 * otherwise <b>FALSE</b>
 	 */
-	public function isDot () {}
+	public function isDot(): bool {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Rewind the DirectoryIterator back to the start
 	 * @link http://php.net/manual/en/directoryiterator.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Check whether current DirectoryIterator position is a valid file
 	 * @link http://php.net/manual/en/directoryiterator.valid.php
 	 * @return bool <b>TRUE</b> if the position is valid, otherwise <b>FALSE</b>
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Return the key for the current DirectoryIterator item
 	 * @link http://php.net/manual/en/directoryiterator.key.php
 	 * @return string The key for the current <b>DirectoryIterator</b> item.
 	 */
-	public function key () {}
+	public function key(): string {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Return the current DirectoryIterator item.
 	 * @link http://php.net/manual/en/directoryiterator.current.php
 	 * @return DirectoryIterator The current <b>DirectoryIterator</b> item.
 	 */
-	public function current () {}
+	public function current(): DirectoryIterator {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Move forward to next DirectoryIterator item
 	 * @link http://php.net/manual/en/directoryiterator.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Seek to a DirectoryIterator item
 	 * @link http://php.net/manual/en/directoryiterator.seek.php
 	 * @param int $position <p>
@@ -4916,172 +4942,172 @@ class DirectoryIterator extends SplFileInfo implements Iterator, Traversable, Se
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function seek ($position) {}
+	public function seek(int $position) {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Get file name as a string
 	 * @link http://php.net/manual/en/directoryiterator.tostring.php
 	 * @return string the file name of the current <b>DirectoryIterator</b> item.
 	 */
-	public function __toString () {}
+	public function __toString(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the path without filename
 	 * @link http://php.net/manual/en/splfileinfo.getpath.php
 	 * @return string the path to the file.
 	 */
-	public function getPath () {}
+	public function getPath(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the path to the file
 	 * @link http://php.net/manual/en/splfileinfo.getpathname.php
 	 * @return string The path to the file.
 	 */
-	public function getPathname () {}
+	public function getPathname(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file permissions
 	 * @link http://php.net/manual/en/splfileinfo.getperms.php
 	 * @return int the file permissions.
 	 */
-	public function getPerms () {}
+	public function getPerms(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the inode for the file
 	 * @link http://php.net/manual/en/splfileinfo.getinode.php
 	 * @return int the inode number for the filesystem object.
 	 */
-	public function getInode () {}
+	public function getInode(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file size
 	 * @link http://php.net/manual/en/splfileinfo.getsize.php
 	 * @return int The filesize in bytes.
 	 */
-	public function getSize () {}
+	public function getSize(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the owner of the file
 	 * @link http://php.net/manual/en/splfileinfo.getowner.php
 	 * @return int The owner id in numerical format.
 	 */
-	public function getOwner () {}
+	public function getOwner(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the file group
 	 * @link http://php.net/manual/en/splfileinfo.getgroup.php
 	 * @return int The group id in numerical format.
 	 */
-	public function getGroup () {}
+	public function getGroup(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets last access time of the file
 	 * @link http://php.net/manual/en/splfileinfo.getatime.php
 	 * @return int the time the file was last accessed.
 	 */
-	public function getATime () {}
+	public function getATime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the last modified time
 	 * @link http://php.net/manual/en/splfileinfo.getmtime.php
 	 * @return int the last modified time for the file, in a Unix timestamp.
 	 */
-	public function getMTime () {}
+	public function getMTime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the inode change time
 	 * @link http://php.net/manual/en/splfileinfo.getctime.php
 	 * @return int The last change time, in a Unix timestamp.
 	 */
-	public function getCTime () {}
+	public function getCTime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file type
 	 * @link http://php.net/manual/en/splfileinfo.gettype.php
 	 * @return string A string representing the type of the entry.
 	 * May be one of file, link,
 	 * or dir
 	 */
-	public function getType () {}
+	public function getType(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the entry is writable
 	 * @link http://php.net/manual/en/splfileinfo.iswritable.php
 	 * @return bool <b>TRUE</b> if writable, <b>FALSE</b> otherwise;
 	 */
-	public function isWritable () {}
+	public function isWritable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if file is readable
 	 * @link http://php.net/manual/en/splfileinfo.isreadable.php
 	 * @return bool <b>TRUE</b> if readable, <b>FALSE</b> otherwise.
 	 */
-	public function isReadable () {}
+	public function isReadable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is executable
 	 * @link http://php.net/manual/en/splfileinfo.isexecutable.php
 	 * @return bool <b>TRUE</b> if executable, <b>FALSE</b> otherwise.
 	 */
-	public function isExecutable () {}
+	public function isExecutable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the object references a regular file
 	 * @link http://php.net/manual/en/splfileinfo.isfile.php
 	 * @return bool <b>TRUE</b> if the file exists and is a regular file (not a link), <b>FALSE</b> otherwise.
 	 */
-	public function isFile () {}
+	public function isFile(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is a directory
 	 * @link http://php.net/manual/en/splfileinfo.isdir.php
 	 * @return bool <b>TRUE</b> if a directory, <b>FALSE</b> otherwise.
 	 */
-	public function isDir () {}
+	public function isDir(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is a link
 	 * @link http://php.net/manual/en/splfileinfo.islink.php
 	 * @return bool <b>TRUE</b> if the file is a link, <b>FALSE</b> otherwise.
 	 */
-	public function isLink () {}
+	public function isLink(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Gets the target of a link
 	 * @link http://php.net/manual/en/splfileinfo.getlinktarget.php
 	 * @return string the target of the filesystem link.
 	 */
-	public function getLinkTarget () {}
+	public function getLinkTarget(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Gets absolute path to file
 	 * @link http://php.net/manual/en/splfileinfo.getrealpath.php
-	 * @return string the path to the file.
+	 * @return string the path to the file, or <b>FALSE</b> if the file does not exist.
 	 */
-	public function getRealPath () {}
+	public function getRealPath(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileInfo object for the file
 	 * @link http://php.net/manual/en/splfileinfo.getfileinfo.php
 	 * @param string $class_name [optional] <p>
@@ -5089,10 +5115,10 @@ class DirectoryIterator extends SplFileInfo implements Iterator, Traversable, Se
 	 * </p>
 	 * @return SplFileInfo An <b>SplFileInfo</b> object created for the file.
 	 */
-	public function getFileInfo ($class_name = null) {}
+	public function getFileInfo(string $class_name = null): SplFileInfo {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileInfo object for the path
 	 * @link http://php.net/manual/en/splfileinfo.getpathinfo.php
 	 * @param string $class_name [optional] <p>
@@ -5100,10 +5126,10 @@ class DirectoryIterator extends SplFileInfo implements Iterator, Traversable, Se
 	 * </p>
 	 * @return SplFileInfo an <b>SplFileInfo</b> object for the parent path of the file.
 	 */
-	public function getPathInfo ($class_name = null) {}
+	public function getPathInfo(string $class_name = null): SplFileInfo {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileObject object for the file
 	 * @link http://php.net/manual/en/splfileinfo.openfile.php
 	 * @param string $open_mode [optional] <p>
@@ -5121,10 +5147,10 @@ class DirectoryIterator extends SplFileInfo implements Iterator, Traversable, Se
 	 * </p>
 	 * @return SplFileObject The opened file as an <b>SplFileObject</b> object.
 	 */
-	public function openFile ($open_mode = "r", $use_include_path = false, $context = null) {}
+	public function openFile(string $open_mode = "r", bool $use_include_path = false, $context = null): SplFileObject {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Sets the class used with <b>SplFileInfo::openFile</b>
 	 * @link http://php.net/manual/en/splfileinfo.setfileclass.php
 	 * @param string $class_name [optional] <p>
@@ -5133,10 +5159,10 @@ class DirectoryIterator extends SplFileInfo implements Iterator, Traversable, Se
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setFileClass ($class_name = "SplFileObject") {}
+	public function setFileClass(string $class_name = "SplFileObject") {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Sets the class used with <b>SplFileInfo::getFileInfo</b> and <b>SplFileInfo::getPathInfo</b>
 	 * @link http://php.net/manual/en/splfileinfo.setinfoclass.php
 	 * @param string $class_name [optional] <p>
@@ -5146,9 +5172,9 @@ class DirectoryIterator extends SplFileInfo implements Iterator, Traversable, Se
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setInfoClass ($class_name = "SplFileInfo") {}
+	public function setInfoClass(string $class_name = "SplFileInfo") {}
 
-	final public function _bad_state_ex () {}
+	final public function _bad_state_ex() {}
 
 }
 
@@ -5172,7 +5198,7 @@ class FilesystemIterator extends DirectoryIterator implements SeekableIterator, 
 
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Constructs a new filesystem iterator
 	 * @link http://php.net/manual/en/filesystemiterator.construct.php
 	 * @param string $path <p>
@@ -5184,52 +5210,52 @@ class FilesystemIterator extends DirectoryIterator implements SeekableIterator, 
 	 * They can also be set later with <b>FilesystemIterator::setFlags</b>
 	 * </p>
 	 */
-	public function __construct ($path, $flags = 'FilesystemIterator::KEY_AS_PATHNAME | FilesystemIterator::CURRENT_AS_FILEINFO | FilesystemIterator::SKIP_DOTS') {}
+	public function __construct(string $path, int $flags = FilesystemIterator::KEY_AS_PATHNAME | FilesystemIterator::CURRENT_AS_FILEINFO | FilesystemIterator::SKIP_DOTS) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Rewinds back to the beginning
 	 * @link http://php.net/manual/en/filesystemiterator.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Move to the next file
 	 * @link http://php.net/manual/en/filesystemiterator.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Retrieve the key for the current file
 	 * @link http://php.net/manual/en/filesystemiterator.key.php
 	 * @return string the pathname or filename depending on the set flags.
 	 * See the FilesystemIterator constants.
 	 */
-	public function key () {}
+	public function key(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * The current file
 	 * @link http://php.net/manual/en/filesystemiterator.current.php
 	 * @return mixed The filename, file information, or $this depending on the set flags.
 	 * See the FilesystemIterator constants.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Get the handling flags
 	 * @link http://php.net/manual/en/filesystemiterator.getflags.php
 	 * @return int The integer value of the set flags.
 	 */
-	public function getFlags () {}
+	public function getFlags(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Sets handling flags
 	 * @link http://php.net/manual/en/filesystemiterator.setflags.php
 	 * @param int $flags [optional] <p>
@@ -5238,27 +5264,27 @@ class FilesystemIterator extends DirectoryIterator implements SeekableIterator, 
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setFlags ($flags = null) {}
+	public function setFlags(int $flags = null) {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Return file name of current DirectoryIterator item.
 	 * @link http://php.net/manual/en/directoryiterator.getfilename.php
 	 * @return string the file name of the current <b>DirectoryIterator</b> item.
 	 */
-	public function getFilename () {}
+	public function getFilename(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.6)<br/>
+	 * (PHP 5 &gt;= 5.3.6, PHP 7)<br/>
 	 * Gets the file extension
 	 * @link http://php.net/manual/en/directoryiterator.getextension.php
 	 * @return string a string containing the file extension, or an
 	 * empty string if the file has no extension.
 	 */
-	public function getExtension () {}
+	public function getExtension(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Get base name of current DirectoryIterator item.
 	 * @link http://php.net/manual/en/directoryiterator.getbasename.php
 	 * @param string $suffix [optional] <p>
@@ -5267,27 +5293,27 @@ class FilesystemIterator extends DirectoryIterator implements SeekableIterator, 
 	 * </p>
 	 * @return string The base name of the current <b>DirectoryIterator</b> item.
 	 */
-	public function getBasename ($suffix = null) {}
+	public function getBasename(string $suffix = null): string {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Determine if current DirectoryIterator item is '.' or '..'
 	 * @link http://php.net/manual/en/directoryiterator.isdot.php
 	 * @return bool <b>TRUE</b> if the entry is . or ..,
 	 * otherwise <b>FALSE</b>
 	 */
-	public function isDot () {}
+	public function isDot(): bool {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Check whether current DirectoryIterator position is a valid file
 	 * @link http://php.net/manual/en/directoryiterator.valid.php
 	 * @return bool <b>TRUE</b> if the position is valid, otherwise <b>FALSE</b>
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Seek to a DirectoryIterator item
 	 * @link http://php.net/manual/en/directoryiterator.seek.php
 	 * @param int $position <p>
@@ -5295,172 +5321,172 @@ class FilesystemIterator extends DirectoryIterator implements SeekableIterator, 
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function seek ($position) {}
+	public function seek(int $position) {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Get file name as a string
 	 * @link http://php.net/manual/en/directoryiterator.tostring.php
 	 * @return string the file name of the current <b>DirectoryIterator</b> item.
 	 */
-	public function __toString () {}
+	public function __toString(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the path without filename
 	 * @link http://php.net/manual/en/splfileinfo.getpath.php
 	 * @return string the path to the file.
 	 */
-	public function getPath () {}
+	public function getPath(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the path to the file
 	 * @link http://php.net/manual/en/splfileinfo.getpathname.php
 	 * @return string The path to the file.
 	 */
-	public function getPathname () {}
+	public function getPathname(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file permissions
 	 * @link http://php.net/manual/en/splfileinfo.getperms.php
 	 * @return int the file permissions.
 	 */
-	public function getPerms () {}
+	public function getPerms(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the inode for the file
 	 * @link http://php.net/manual/en/splfileinfo.getinode.php
 	 * @return int the inode number for the filesystem object.
 	 */
-	public function getInode () {}
+	public function getInode(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file size
 	 * @link http://php.net/manual/en/splfileinfo.getsize.php
 	 * @return int The filesize in bytes.
 	 */
-	public function getSize () {}
+	public function getSize(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the owner of the file
 	 * @link http://php.net/manual/en/splfileinfo.getowner.php
 	 * @return int The owner id in numerical format.
 	 */
-	public function getOwner () {}
+	public function getOwner(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the file group
 	 * @link http://php.net/manual/en/splfileinfo.getgroup.php
 	 * @return int The group id in numerical format.
 	 */
-	public function getGroup () {}
+	public function getGroup(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets last access time of the file
 	 * @link http://php.net/manual/en/splfileinfo.getatime.php
 	 * @return int the time the file was last accessed.
 	 */
-	public function getATime () {}
+	public function getATime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the last modified time
 	 * @link http://php.net/manual/en/splfileinfo.getmtime.php
 	 * @return int the last modified time for the file, in a Unix timestamp.
 	 */
-	public function getMTime () {}
+	public function getMTime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the inode change time
 	 * @link http://php.net/manual/en/splfileinfo.getctime.php
 	 * @return int The last change time, in a Unix timestamp.
 	 */
-	public function getCTime () {}
+	public function getCTime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file type
 	 * @link http://php.net/manual/en/splfileinfo.gettype.php
 	 * @return string A string representing the type of the entry.
 	 * May be one of file, link,
 	 * or dir
 	 */
-	public function getType () {}
+	public function getType(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the entry is writable
 	 * @link http://php.net/manual/en/splfileinfo.iswritable.php
 	 * @return bool <b>TRUE</b> if writable, <b>FALSE</b> otherwise;
 	 */
-	public function isWritable () {}
+	public function isWritable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if file is readable
 	 * @link http://php.net/manual/en/splfileinfo.isreadable.php
 	 * @return bool <b>TRUE</b> if readable, <b>FALSE</b> otherwise.
 	 */
-	public function isReadable () {}
+	public function isReadable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is executable
 	 * @link http://php.net/manual/en/splfileinfo.isexecutable.php
 	 * @return bool <b>TRUE</b> if executable, <b>FALSE</b> otherwise.
 	 */
-	public function isExecutable () {}
+	public function isExecutable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the object references a regular file
 	 * @link http://php.net/manual/en/splfileinfo.isfile.php
 	 * @return bool <b>TRUE</b> if the file exists and is a regular file (not a link), <b>FALSE</b> otherwise.
 	 */
-	public function isFile () {}
+	public function isFile(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is a directory
 	 * @link http://php.net/manual/en/splfileinfo.isdir.php
 	 * @return bool <b>TRUE</b> if a directory, <b>FALSE</b> otherwise.
 	 */
-	public function isDir () {}
+	public function isDir(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is a link
 	 * @link http://php.net/manual/en/splfileinfo.islink.php
 	 * @return bool <b>TRUE</b> if the file is a link, <b>FALSE</b> otherwise.
 	 */
-	public function isLink () {}
+	public function isLink(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Gets the target of a link
 	 * @link http://php.net/manual/en/splfileinfo.getlinktarget.php
 	 * @return string the target of the filesystem link.
 	 */
-	public function getLinkTarget () {}
+	public function getLinkTarget(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Gets absolute path to file
 	 * @link http://php.net/manual/en/splfileinfo.getrealpath.php
-	 * @return string the path to the file.
+	 * @return string the path to the file, or <b>FALSE</b> if the file does not exist.
 	 */
-	public function getRealPath () {}
+	public function getRealPath(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileInfo object for the file
 	 * @link http://php.net/manual/en/splfileinfo.getfileinfo.php
 	 * @param string $class_name [optional] <p>
@@ -5468,10 +5494,10 @@ class FilesystemIterator extends DirectoryIterator implements SeekableIterator, 
 	 * </p>
 	 * @return SplFileInfo An <b>SplFileInfo</b> object created for the file.
 	 */
-	public function getFileInfo ($class_name = null) {}
+	public function getFileInfo(string $class_name = null): SplFileInfo {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileInfo object for the path
 	 * @link http://php.net/manual/en/splfileinfo.getpathinfo.php
 	 * @param string $class_name [optional] <p>
@@ -5479,10 +5505,10 @@ class FilesystemIterator extends DirectoryIterator implements SeekableIterator, 
 	 * </p>
 	 * @return SplFileInfo an <b>SplFileInfo</b> object for the parent path of the file.
 	 */
-	public function getPathInfo ($class_name = null) {}
+	public function getPathInfo(string $class_name = null): SplFileInfo {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileObject object for the file
 	 * @link http://php.net/manual/en/splfileinfo.openfile.php
 	 * @param string $open_mode [optional] <p>
@@ -5500,10 +5526,10 @@ class FilesystemIterator extends DirectoryIterator implements SeekableIterator, 
 	 * </p>
 	 * @return SplFileObject The opened file as an <b>SplFileObject</b> object.
 	 */
-	public function openFile ($open_mode = "r", $use_include_path = false, $context = null) {}
+	public function openFile(string $open_mode = "r", bool $use_include_path = false, $context = null): SplFileObject {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Sets the class used with <b>SplFileInfo::openFile</b>
 	 * @link http://php.net/manual/en/splfileinfo.setfileclass.php
 	 * @param string $class_name [optional] <p>
@@ -5512,10 +5538,10 @@ class FilesystemIterator extends DirectoryIterator implements SeekableIterator, 
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setFileClass ($class_name = "SplFileObject") {}
+	public function setFileClass(string $class_name = "SplFileObject") {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Sets the class used with <b>SplFileInfo::getFileInfo</b> and <b>SplFileInfo::getPathInfo</b>
 	 * @link http://php.net/manual/en/splfileinfo.setinfoclass.php
 	 * @param string $class_name [optional] <p>
@@ -5525,9 +5551,9 @@ class FilesystemIterator extends DirectoryIterator implements SeekableIterator, 
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setInfoClass ($class_name = "SplFileInfo") {}
+	public function setInfoClass(string $class_name = "SplFileInfo") {}
 
-	final public function _bad_state_ex () {}
+	final public function _bad_state_ex() {}
 
 }
 
@@ -5552,7 +5578,7 @@ class RecursiveDirectoryIterator extends FilesystemIterator implements Iterator,
 
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Constructs a RecursiveDirectoryIterator
 	 * @link http://php.net/manual/en/recursivedirectoryiterator.construct.php
 	 * @param string $path <p>
@@ -5565,88 +5591,88 @@ class RecursiveDirectoryIterator extends FilesystemIterator implements Iterator,
 	 * They can also be set later with <b>FilesystemIterator::setFlags</b>.
 	 * </p>
 	 */
-	public function __construct ($path, $flags = 'FilesystemIterator::KEY_AS_PATHNAME | FilesystemIterator::CURRENT_AS_FILEINFO') {}
+	public function __construct(string $path, int $flags = FilesystemIterator::KEY_AS_PATHNAME | FilesystemIterator::CURRENT_AS_FILEINFO) {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Returns whether current entry is a directory and not '.' or '..'
 	 * @link http://php.net/manual/en/recursivedirectoryiterator.haschildren.php
 	 * @param bool $allow_links [optional] <p>
 	 * </p>
 	 * @return bool whether the current entry is a directory, but not '.' or '..'
 	 */
-	public function hasChildren ($allow_links = false) {}
+	public function hasChildren(bool $allow_links = false): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Returns an iterator for the current entry if it is a directory
 	 * @link http://php.net/manual/en/recursivedirectoryiterator.getchildren.php
 	 * @return mixed The filename, file information, or $this depending on the set flags.
 	 * See the FilesystemIterator
 	 * constants.
 	 */
-	public function getChildren () {}
+	public function getChildren() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get sub path
 	 * @link http://php.net/manual/en/recursivedirectoryiterator.getsubpath.php
 	 * @return string The sub path (sub directory).
 	 */
-	public function getSubPath () {}
+	public function getSubPath(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get sub path and name
 	 * @link http://php.net/manual/en/recursivedirectoryiterator.getsubpathname.php
 	 * @return string The sub path (sub directory) and filename.
 	 */
-	public function getSubPathname () {}
+	public function getSubPathname(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Rewinds back to the beginning
 	 * @link http://php.net/manual/en/filesystemiterator.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Move to the next file
 	 * @link http://php.net/manual/en/filesystemiterator.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Retrieve the key for the current file
 	 * @link http://php.net/manual/en/filesystemiterator.key.php
 	 * @return string the pathname or filename depending on the set flags.
 	 * See the FilesystemIterator constants.
 	 */
-	public function key () {}
+	public function key(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * The current file
 	 * @link http://php.net/manual/en/filesystemiterator.current.php
 	 * @return mixed The filename, file information, or $this depending on the set flags.
 	 * See the FilesystemIterator constants.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Get the handling flags
 	 * @link http://php.net/manual/en/filesystemiterator.getflags.php
 	 * @return int The integer value of the set flags.
 	 */
-	public function getFlags () {}
+	public function getFlags(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Sets handling flags
 	 * @link http://php.net/manual/en/filesystemiterator.setflags.php
 	 * @param int $flags [optional] <p>
@@ -5655,27 +5681,27 @@ class RecursiveDirectoryIterator extends FilesystemIterator implements Iterator,
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setFlags ($flags = null) {}
+	public function setFlags(int $flags = null) {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Return file name of current DirectoryIterator item.
 	 * @link http://php.net/manual/en/directoryiterator.getfilename.php
 	 * @return string the file name of the current <b>DirectoryIterator</b> item.
 	 */
-	public function getFilename () {}
+	public function getFilename(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.6)<br/>
+	 * (PHP 5 &gt;= 5.3.6, PHP 7)<br/>
 	 * Gets the file extension
 	 * @link http://php.net/manual/en/directoryiterator.getextension.php
 	 * @return string a string containing the file extension, or an
 	 * empty string if the file has no extension.
 	 */
-	public function getExtension () {}
+	public function getExtension(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Get base name of current DirectoryIterator item.
 	 * @link http://php.net/manual/en/directoryiterator.getbasename.php
 	 * @param string $suffix [optional] <p>
@@ -5684,27 +5710,27 @@ class RecursiveDirectoryIterator extends FilesystemIterator implements Iterator,
 	 * </p>
 	 * @return string The base name of the current <b>DirectoryIterator</b> item.
 	 */
-	public function getBasename ($suffix = null) {}
+	public function getBasename(string $suffix = null): string {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Determine if current DirectoryIterator item is '.' or '..'
 	 * @link http://php.net/manual/en/directoryiterator.isdot.php
 	 * @return bool <b>TRUE</b> if the entry is . or ..,
 	 * otherwise <b>FALSE</b>
 	 */
-	public function isDot () {}
+	public function isDot(): bool {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Check whether current DirectoryIterator position is a valid file
 	 * @link http://php.net/manual/en/directoryiterator.valid.php
 	 * @return bool <b>TRUE</b> if the position is valid, otherwise <b>FALSE</b>
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Seek to a DirectoryIterator item
 	 * @link http://php.net/manual/en/directoryiterator.seek.php
 	 * @param int $position <p>
@@ -5712,172 +5738,172 @@ class RecursiveDirectoryIterator extends FilesystemIterator implements Iterator,
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function seek ($position) {}
+	public function seek(int $position) {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Get file name as a string
 	 * @link http://php.net/manual/en/directoryiterator.tostring.php
 	 * @return string the file name of the current <b>DirectoryIterator</b> item.
 	 */
-	public function __toString () {}
+	public function __toString(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the path without filename
 	 * @link http://php.net/manual/en/splfileinfo.getpath.php
 	 * @return string the path to the file.
 	 */
-	public function getPath () {}
+	public function getPath(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the path to the file
 	 * @link http://php.net/manual/en/splfileinfo.getpathname.php
 	 * @return string The path to the file.
 	 */
-	public function getPathname () {}
+	public function getPathname(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file permissions
 	 * @link http://php.net/manual/en/splfileinfo.getperms.php
 	 * @return int the file permissions.
 	 */
-	public function getPerms () {}
+	public function getPerms(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the inode for the file
 	 * @link http://php.net/manual/en/splfileinfo.getinode.php
 	 * @return int the inode number for the filesystem object.
 	 */
-	public function getInode () {}
+	public function getInode(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file size
 	 * @link http://php.net/manual/en/splfileinfo.getsize.php
 	 * @return int The filesize in bytes.
 	 */
-	public function getSize () {}
+	public function getSize(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the owner of the file
 	 * @link http://php.net/manual/en/splfileinfo.getowner.php
 	 * @return int The owner id in numerical format.
 	 */
-	public function getOwner () {}
+	public function getOwner(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the file group
 	 * @link http://php.net/manual/en/splfileinfo.getgroup.php
 	 * @return int The group id in numerical format.
 	 */
-	public function getGroup () {}
+	public function getGroup(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets last access time of the file
 	 * @link http://php.net/manual/en/splfileinfo.getatime.php
 	 * @return int the time the file was last accessed.
 	 */
-	public function getATime () {}
+	public function getATime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the last modified time
 	 * @link http://php.net/manual/en/splfileinfo.getmtime.php
 	 * @return int the last modified time for the file, in a Unix timestamp.
 	 */
-	public function getMTime () {}
+	public function getMTime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the inode change time
 	 * @link http://php.net/manual/en/splfileinfo.getctime.php
 	 * @return int The last change time, in a Unix timestamp.
 	 */
-	public function getCTime () {}
+	public function getCTime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file type
 	 * @link http://php.net/manual/en/splfileinfo.gettype.php
 	 * @return string A string representing the type of the entry.
 	 * May be one of file, link,
 	 * or dir
 	 */
-	public function getType () {}
+	public function getType(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the entry is writable
 	 * @link http://php.net/manual/en/splfileinfo.iswritable.php
 	 * @return bool <b>TRUE</b> if writable, <b>FALSE</b> otherwise;
 	 */
-	public function isWritable () {}
+	public function isWritable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if file is readable
 	 * @link http://php.net/manual/en/splfileinfo.isreadable.php
 	 * @return bool <b>TRUE</b> if readable, <b>FALSE</b> otherwise.
 	 */
-	public function isReadable () {}
+	public function isReadable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is executable
 	 * @link http://php.net/manual/en/splfileinfo.isexecutable.php
 	 * @return bool <b>TRUE</b> if executable, <b>FALSE</b> otherwise.
 	 */
-	public function isExecutable () {}
+	public function isExecutable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the object references a regular file
 	 * @link http://php.net/manual/en/splfileinfo.isfile.php
 	 * @return bool <b>TRUE</b> if the file exists and is a regular file (not a link), <b>FALSE</b> otherwise.
 	 */
-	public function isFile () {}
+	public function isFile(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is a directory
 	 * @link http://php.net/manual/en/splfileinfo.isdir.php
 	 * @return bool <b>TRUE</b> if a directory, <b>FALSE</b> otherwise.
 	 */
-	public function isDir () {}
+	public function isDir(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is a link
 	 * @link http://php.net/manual/en/splfileinfo.islink.php
 	 * @return bool <b>TRUE</b> if the file is a link, <b>FALSE</b> otherwise.
 	 */
-	public function isLink () {}
+	public function isLink(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Gets the target of a link
 	 * @link http://php.net/manual/en/splfileinfo.getlinktarget.php
 	 * @return string the target of the filesystem link.
 	 */
-	public function getLinkTarget () {}
+	public function getLinkTarget(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Gets absolute path to file
 	 * @link http://php.net/manual/en/splfileinfo.getrealpath.php
-	 * @return string the path to the file.
+	 * @return string the path to the file, or <b>FALSE</b> if the file does not exist.
 	 */
-	public function getRealPath () {}
+	public function getRealPath(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileInfo object for the file
 	 * @link http://php.net/manual/en/splfileinfo.getfileinfo.php
 	 * @param string $class_name [optional] <p>
@@ -5885,10 +5911,10 @@ class RecursiveDirectoryIterator extends FilesystemIterator implements Iterator,
 	 * </p>
 	 * @return SplFileInfo An <b>SplFileInfo</b> object created for the file.
 	 */
-	public function getFileInfo ($class_name = null) {}
+	public function getFileInfo(string $class_name = null): SplFileInfo {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileInfo object for the path
 	 * @link http://php.net/manual/en/splfileinfo.getpathinfo.php
 	 * @param string $class_name [optional] <p>
@@ -5896,10 +5922,10 @@ class RecursiveDirectoryIterator extends FilesystemIterator implements Iterator,
 	 * </p>
 	 * @return SplFileInfo an <b>SplFileInfo</b> object for the parent path of the file.
 	 */
-	public function getPathInfo ($class_name = null) {}
+	public function getPathInfo(string $class_name = null): SplFileInfo {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileObject object for the file
 	 * @link http://php.net/manual/en/splfileinfo.openfile.php
 	 * @param string $open_mode [optional] <p>
@@ -5917,10 +5943,10 @@ class RecursiveDirectoryIterator extends FilesystemIterator implements Iterator,
 	 * </p>
 	 * @return SplFileObject The opened file as an <b>SplFileObject</b> object.
 	 */
-	public function openFile ($open_mode = "r", $use_include_path = false, $context = null) {}
+	public function openFile(string $open_mode = "r", bool $use_include_path = false, $context = null): SplFileObject {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Sets the class used with <b>SplFileInfo::openFile</b>
 	 * @link http://php.net/manual/en/splfileinfo.setfileclass.php
 	 * @param string $class_name [optional] <p>
@@ -5929,10 +5955,10 @@ class RecursiveDirectoryIterator extends FilesystemIterator implements Iterator,
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setFileClass ($class_name = "SplFileObject") {}
+	public function setFileClass(string $class_name = "SplFileObject") {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Sets the class used with <b>SplFileInfo::getFileInfo</b> and <b>SplFileInfo::getPathInfo</b>
 	 * @link http://php.net/manual/en/splfileinfo.setinfoclass.php
 	 * @param string $class_name [optional] <p>
@@ -5942,9 +5968,9 @@ class RecursiveDirectoryIterator extends FilesystemIterator implements Iterator,
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setInfoClass ($class_name = "SplFileInfo") {}
+	public function setInfoClass(string $class_name = "SplFileInfo") {}
 
-	final public function _bad_state_ex () {}
+	final public function _bad_state_ex() {}
 
 }
 
@@ -5969,7 +5995,7 @@ class GlobIterator extends FilesystemIterator implements Iterator, Traversable, 
 
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Construct a directory using glob
 	 * @link http://php.net/manual/en/globiterator.construct.php
 	 * @param string $path <p>
@@ -5980,61 +6006,61 @@ class GlobIterator extends FilesystemIterator implements Iterator, Traversable, 
 	 * <b>FilesystemIterator</b> constants.
 	 * </p>
 	 */
-	public function __construct ($path, $flags = 'FilesystemIterator::KEY_AS_PATHNAME | FilesystemIterator::CURRENT_AS_FILEINFO') {}
+	public function __construct(string $path, int $flags = FilesystemIterator::KEY_AS_PATHNAME | FilesystemIterator::CURRENT_AS_FILEINFO) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Get the number of directories and files
 	 * @link http://php.net/manual/en/globiterator.count.php
 	 * @return int The number of returned directories and files, as an
 	 * integer.
 	 */
-	public function count () {}
+	public function count(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Rewinds back to the beginning
 	 * @link http://php.net/manual/en/filesystemiterator.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Move to the next file
 	 * @link http://php.net/manual/en/filesystemiterator.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Retrieve the key for the current file
 	 * @link http://php.net/manual/en/filesystemiterator.key.php
 	 * @return string the pathname or filename depending on the set flags.
 	 * See the FilesystemIterator constants.
 	 */
-	public function key () {}
+	public function key(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * The current file
 	 * @link http://php.net/manual/en/filesystemiterator.current.php
 	 * @return mixed The filename, file information, or $this depending on the set flags.
 	 * See the FilesystemIterator constants.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Get the handling flags
 	 * @link http://php.net/manual/en/filesystemiterator.getflags.php
 	 * @return int The integer value of the set flags.
 	 */
-	public function getFlags () {}
+	public function getFlags(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Sets handling flags
 	 * @link http://php.net/manual/en/filesystemiterator.setflags.php
 	 * @param int $flags [optional] <p>
@@ -6043,27 +6069,27 @@ class GlobIterator extends FilesystemIterator implements Iterator, Traversable, 
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setFlags ($flags = null) {}
+	public function setFlags(int $flags = null) {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Return file name of current DirectoryIterator item.
 	 * @link http://php.net/manual/en/directoryiterator.getfilename.php
 	 * @return string the file name of the current <b>DirectoryIterator</b> item.
 	 */
-	public function getFilename () {}
+	public function getFilename(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.6)<br/>
+	 * (PHP 5 &gt;= 5.3.6, PHP 7)<br/>
 	 * Gets the file extension
 	 * @link http://php.net/manual/en/directoryiterator.getextension.php
 	 * @return string a string containing the file extension, or an
 	 * empty string if the file has no extension.
 	 */
-	public function getExtension () {}
+	public function getExtension(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Get base name of current DirectoryIterator item.
 	 * @link http://php.net/manual/en/directoryiterator.getbasename.php
 	 * @param string $suffix [optional] <p>
@@ -6072,27 +6098,27 @@ class GlobIterator extends FilesystemIterator implements Iterator, Traversable, 
 	 * </p>
 	 * @return string The base name of the current <b>DirectoryIterator</b> item.
 	 */
-	public function getBasename ($suffix = null) {}
+	public function getBasename(string $suffix = null): string {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Determine if current DirectoryIterator item is '.' or '..'
 	 * @link http://php.net/manual/en/directoryiterator.isdot.php
 	 * @return bool <b>TRUE</b> if the entry is . or ..,
 	 * otherwise <b>FALSE</b>
 	 */
-	public function isDot () {}
+	public function isDot(): bool {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Check whether current DirectoryIterator position is a valid file
 	 * @link http://php.net/manual/en/directoryiterator.valid.php
 	 * @return bool <b>TRUE</b> if the position is valid, otherwise <b>FALSE</b>
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Seek to a DirectoryIterator item
 	 * @link http://php.net/manual/en/directoryiterator.seek.php
 	 * @param int $position <p>
@@ -6100,172 +6126,172 @@ class GlobIterator extends FilesystemIterator implements Iterator, Traversable, 
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function seek ($position) {}
+	public function seek(int $position) {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Get file name as a string
 	 * @link http://php.net/manual/en/directoryiterator.tostring.php
 	 * @return string the file name of the current <b>DirectoryIterator</b> item.
 	 */
-	public function __toString () {}
+	public function __toString(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the path without filename
 	 * @link http://php.net/manual/en/splfileinfo.getpath.php
 	 * @return string the path to the file.
 	 */
-	public function getPath () {}
+	public function getPath(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the path to the file
 	 * @link http://php.net/manual/en/splfileinfo.getpathname.php
 	 * @return string The path to the file.
 	 */
-	public function getPathname () {}
+	public function getPathname(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file permissions
 	 * @link http://php.net/manual/en/splfileinfo.getperms.php
 	 * @return int the file permissions.
 	 */
-	public function getPerms () {}
+	public function getPerms(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the inode for the file
 	 * @link http://php.net/manual/en/splfileinfo.getinode.php
 	 * @return int the inode number for the filesystem object.
 	 */
-	public function getInode () {}
+	public function getInode(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file size
 	 * @link http://php.net/manual/en/splfileinfo.getsize.php
 	 * @return int The filesize in bytes.
 	 */
-	public function getSize () {}
+	public function getSize(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the owner of the file
 	 * @link http://php.net/manual/en/splfileinfo.getowner.php
 	 * @return int The owner id in numerical format.
 	 */
-	public function getOwner () {}
+	public function getOwner(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the file group
 	 * @link http://php.net/manual/en/splfileinfo.getgroup.php
 	 * @return int The group id in numerical format.
 	 */
-	public function getGroup () {}
+	public function getGroup(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets last access time of the file
 	 * @link http://php.net/manual/en/splfileinfo.getatime.php
 	 * @return int the time the file was last accessed.
 	 */
-	public function getATime () {}
+	public function getATime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the last modified time
 	 * @link http://php.net/manual/en/splfileinfo.getmtime.php
 	 * @return int the last modified time for the file, in a Unix timestamp.
 	 */
-	public function getMTime () {}
+	public function getMTime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the inode change time
 	 * @link http://php.net/manual/en/splfileinfo.getctime.php
 	 * @return int The last change time, in a Unix timestamp.
 	 */
-	public function getCTime () {}
+	public function getCTime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file type
 	 * @link http://php.net/manual/en/splfileinfo.gettype.php
 	 * @return string A string representing the type of the entry.
 	 * May be one of file, link,
 	 * or dir
 	 */
-	public function getType () {}
+	public function getType(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the entry is writable
 	 * @link http://php.net/manual/en/splfileinfo.iswritable.php
 	 * @return bool <b>TRUE</b> if writable, <b>FALSE</b> otherwise;
 	 */
-	public function isWritable () {}
+	public function isWritable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if file is readable
 	 * @link http://php.net/manual/en/splfileinfo.isreadable.php
 	 * @return bool <b>TRUE</b> if readable, <b>FALSE</b> otherwise.
 	 */
-	public function isReadable () {}
+	public function isReadable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is executable
 	 * @link http://php.net/manual/en/splfileinfo.isexecutable.php
 	 * @return bool <b>TRUE</b> if executable, <b>FALSE</b> otherwise.
 	 */
-	public function isExecutable () {}
+	public function isExecutable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the object references a regular file
 	 * @link http://php.net/manual/en/splfileinfo.isfile.php
 	 * @return bool <b>TRUE</b> if the file exists and is a regular file (not a link), <b>FALSE</b> otherwise.
 	 */
-	public function isFile () {}
+	public function isFile(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is a directory
 	 * @link http://php.net/manual/en/splfileinfo.isdir.php
 	 * @return bool <b>TRUE</b> if a directory, <b>FALSE</b> otherwise.
 	 */
-	public function isDir () {}
+	public function isDir(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is a link
 	 * @link http://php.net/manual/en/splfileinfo.islink.php
 	 * @return bool <b>TRUE</b> if the file is a link, <b>FALSE</b> otherwise.
 	 */
-	public function isLink () {}
+	public function isLink(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Gets the target of a link
 	 * @link http://php.net/manual/en/splfileinfo.getlinktarget.php
 	 * @return string the target of the filesystem link.
 	 */
-	public function getLinkTarget () {}
+	public function getLinkTarget(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Gets absolute path to file
 	 * @link http://php.net/manual/en/splfileinfo.getrealpath.php
-	 * @return string the path to the file.
+	 * @return string the path to the file, or <b>FALSE</b> if the file does not exist.
 	 */
-	public function getRealPath () {}
+	public function getRealPath(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileInfo object for the file
 	 * @link http://php.net/manual/en/splfileinfo.getfileinfo.php
 	 * @param string $class_name [optional] <p>
@@ -6273,10 +6299,10 @@ class GlobIterator extends FilesystemIterator implements Iterator, Traversable, 
 	 * </p>
 	 * @return SplFileInfo An <b>SplFileInfo</b> object created for the file.
 	 */
-	public function getFileInfo ($class_name = null) {}
+	public function getFileInfo(string $class_name = null): SplFileInfo {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileInfo object for the path
 	 * @link http://php.net/manual/en/splfileinfo.getpathinfo.php
 	 * @param string $class_name [optional] <p>
@@ -6284,10 +6310,10 @@ class GlobIterator extends FilesystemIterator implements Iterator, Traversable, 
 	 * </p>
 	 * @return SplFileInfo an <b>SplFileInfo</b> object for the parent path of the file.
 	 */
-	public function getPathInfo ($class_name = null) {}
+	public function getPathInfo(string $class_name = null): SplFileInfo {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileObject object for the file
 	 * @link http://php.net/manual/en/splfileinfo.openfile.php
 	 * @param string $open_mode [optional] <p>
@@ -6305,10 +6331,10 @@ class GlobIterator extends FilesystemIterator implements Iterator, Traversable, 
 	 * </p>
 	 * @return SplFileObject The opened file as an <b>SplFileObject</b> object.
 	 */
-	public function openFile ($open_mode = "r", $use_include_path = false, $context = null) {}
+	public function openFile(string $open_mode = "r", bool $use_include_path = false, $context = null): SplFileObject {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Sets the class used with <b>SplFileInfo::openFile</b>
 	 * @link http://php.net/manual/en/splfileinfo.setfileclass.php
 	 * @param string $class_name [optional] <p>
@@ -6317,10 +6343,10 @@ class GlobIterator extends FilesystemIterator implements Iterator, Traversable, 
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setFileClass ($class_name = "SplFileObject") {}
+	public function setFileClass(string $class_name = "SplFileObject") {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Sets the class used with <b>SplFileInfo::getFileInfo</b> and <b>SplFileInfo::getPathInfo</b>
 	 * @link http://php.net/manual/en/splfileinfo.setinfoclass.php
 	 * @param string $class_name [optional] <p>
@@ -6330,9 +6356,9 @@ class GlobIterator extends FilesystemIterator implements Iterator, Traversable, 
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setInfoClass ($class_name = "SplFileInfo") {}
+	public function setInfoClass(string $class_name = "SplFileInfo") {}
 
-	final public function _bad_state_ex () {}
+	final public function _bad_state_ex() {}
 
 }
 
@@ -6348,7 +6374,7 @@ class SplFileObject extends SplFileInfo implements RecursiveIterator, Traversabl
 
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Construct a new file object.
 	 * @link http://php.net/manual/en/splfileobject.construct.php
 	 * @param string $filename <p>
@@ -6371,42 +6397,42 @@ class SplFileObject extends SplFileInfo implements RecursiveIterator, Traversabl
 	 * A valid context resource created with <b>stream_context_create</b>.
 	 * </p>
 	 */
-	public function __construct ($filename, $open_mode = "r", $use_include_path = false, $context = null) {}
+	public function __construct(string $filename, string $open_mode = "r", bool $use_include_path = false, $context = null) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Rewind the file to the first line
 	 * @link http://php.net/manual/en/splfileobject.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Reached end of file
 	 * @link http://php.net/manual/en/splfileobject.eof.php
 	 * @return bool <b>TRUE</b> if file is at EOF, <b>FALSE</b> otherwise.
 	 */
-	public function eof () {}
+	public function eof(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Not at EOF
 	 * @link http://php.net/manual/en/splfileobject.valid.php
 	 * @return bool <b>TRUE</b> if not reached EOF, <b>FALSE</b> otherwise.
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets line from file
 	 * @link http://php.net/manual/en/splfileobject.fgets.php
 	 * @return string a string containing the next line from the file, or <b>FALSE</b> on error.
 	 */
-	public function fgets () {}
+	public function fgets(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets line from file and parse as CSV fields
 	 * @link http://php.net/manual/en/splfileobject.fgetcsv.php
 	 * @param string $delimiter [optional] <p>
@@ -6425,10 +6451,10 @@ class SplFileObject extends SplFileInfo implements RecursiveIterator, Traversabl
 	 * comprising a single <b>NULL</b> field unless using <b>SplFileObject::SKIP_EMPTY | SplFileObject::DROP_NEW_LINE</b>,
 	 * in which case empty lines are skipped.
 	 */
-	public function fgetcsv ($delimiter = ",", $enclosure = "\"", $escape = "\\") {}
+	public function fgetcsv(string $delimiter = ",", string $enclosure = "\"", string $escape = "\\"): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.4.0)<br/>
+	 * (PHP 5 &gt;= 5.4.0, PHP 7)<br/>
 	 * Write a field array as a CSV line
 	 * @link http://php.net/manual/en/splfileobject.fputcsv.php
 	 * @param array $fields <p>
@@ -6453,10 +6479,10 @@ class SplFileObject extends SplFileInfo implements RecursiveIterator, Traversabl
 	 * <i>delimiter</i> or <i>enclosure</i>
 	 * parameter is not a single character.
 	 */
-	public function fputcsv (array $fields, $delimiter = ",", $enclosure = '"', $escape = "\\") {}
+	public function fputcsv(array $fields, string $delimiter = ",", string $enclosure = '"', string $escape = "\\"): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Set the delimiter and enclosure character for CSV
 	 * @link http://php.net/manual/en/splfileobject.setcsvcontrol.php
 	 * @param string $delimiter [optional] <p>
@@ -6470,18 +6496,18 @@ class SplFileObject extends SplFileInfo implements RecursiveIterator, Traversabl
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setCsvControl ($delimiter = ",", $enclosure = "\"", $escape = "\\") {}
+	public function setCsvControl(string $delimiter = ",", string $enclosure = "\"", string $escape = "\\") {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Get the delimiter and enclosure character for CSV
 	 * @link http://php.net/manual/en/splfileobject.getcsvcontrol.php
 	 * @return array an indexed array containing the delimiter and enclosure character.
 	 */
-	public function getCsvControl () {}
+	public function getCsvControl(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Portable file locking
 	 * @link http://php.net/manual/en/splfileobject.flock.php
 	 * @param int $operation <p>
@@ -6492,26 +6518,26 @@ class SplFileObject extends SplFileInfo implements RecursiveIterator, Traversabl
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function flock ($operation, &$wouldblock = null) {}
+	public function flock(int $operation, int &$wouldblock = null): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Flushes the output to the file
 	 * @link http://php.net/manual/en/splfileobject.fflush.php
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function fflush () {}
+	public function fflush(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Return current file position
 	 * @link http://php.net/manual/en/splfileobject.ftell.php
 	 * @return int the position of the file pointer as an integer, or <b>FALSE</b> on error.
 	 */
-	public function ftell () {}
+	public function ftell(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Seek to a position
 	 * @link http://php.net/manual/en/splfileobject.fseek.php
 	 * @param int $offset <p>
@@ -6530,27 +6556,27 @@ class SplFileObject extends SplFileInfo implements RecursiveIterator, Traversabl
 	 * @return int 0 if the seek was successful, -1 otherwise. Note that seeking
 	 * past EOF is not considered an error.
 	 */
-	public function fseek ($offset, $whence = 'SEEK_SET') {}
+	public function fseek(int $offset, int $whence = SEEK_SET): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets character from file
 	 * @link http://php.net/manual/en/splfileobject.fgetc.php
 	 * @return string a string containing a single character read from the file or <b>FALSE</b> on EOF.
 	 */
-	public function fgetc () {}
+	public function fgetc(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Output all remaining data on a file pointer
 	 * @link http://php.net/manual/en/splfileobject.fpassthru.php
 	 * @return int the number of characters read from <i>handle</i>
 	 * and passed through to the output.
 	 */
-	public function fpassthru () {}
+	public function fpassthru(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets line from file and strip HTML tags
 	 * @link http://php.net/manual/en/splfileobject.fgetss.php
 	 * @param string $allowable_tags [optional] <p>
@@ -6559,10 +6585,10 @@ class SplFileObject extends SplFileInfo implements RecursiveIterator, Traversabl
 	 * @return string a string containing the next line of the file with HTML and PHP
 	 * code stripped, or <b>FALSE</b> on error.
 	 */
-	public function fgetss ($allowable_tags = null) {}
+	public function fgetss(string $allowable_tags = null): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Parses input from file according to a format
 	 * @link http://php.net/manual/en/splfileobject.fscanf.php
 	 * @param string $format <p>
@@ -6576,10 +6602,10 @@ class SplFileObject extends SplFileInfo implements RecursiveIterator, Traversabl
 	 * function will return the number of assigned values. The optional
 	 * parameters must be passed by reference.
 	 */
-	public function fscanf ($format, &$_ = null) {}
+	public function fscanf(string $format, &$_ = null) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Write to file
 	 * @link http://php.net/manual/en/splfileobject.fwrite.php
 	 * @param string $str <p>
@@ -6593,10 +6619,10 @@ class SplFileObject extends SplFileInfo implements RecursiveIterator, Traversabl
 	 * </p>
 	 * @return int the number of bytes written, or <b>NULL</b> on error.
 	 */
-	public function fwrite ($str, $length = null) {}
+	public function fwrite(string $str, int $length = null): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.5.11)<br/>
+	 * (PHP 5 &gt;= 5.5.11, PHP 7)<br/>
 	 * Read from file
 	 * @link http://php.net/manual/en/splfileobject.fread.php
 	 * @param int $length <p>
@@ -6604,19 +6630,19 @@ class SplFileObject extends SplFileInfo implements RecursiveIterator, Traversabl
 	 * </p>
 	 * @return string the string read from the file or <b>FALSE</b> on failure.
 	 */
-	public function fread ($length) {}
+	public function fread(int $length): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets information about the file
 	 * @link http://php.net/manual/en/splfileobject.fstat.php
 	 * @return array an array with the statistics of the file; the format of the array
 	 * is described in detail on the <b>stat</b> manual page.
 	 */
-	public function fstat () {}
+	public function fstat(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Truncates the file to a given length
 	 * @link http://php.net/manual/en/splfileobject.ftruncate.php
 	 * @param int $size <p>
@@ -6630,34 +6656,34 @@ class SplFileObject extends SplFileInfo implements RecursiveIterator, Traversabl
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function ftruncate ($size) {}
+	public function ftruncate(int $size): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Retrieve current line of file
 	 * @link http://php.net/manual/en/splfileobject.current.php
 	 * @return string|array Retrieves the current line of the file. If the <b>SplFileObject::READ_CSV</b> flag is set, this method returns an array containing the current line parsed as CSV data.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get line number
 	 * @link http://php.net/manual/en/splfileobject.key.php
 	 * @return int the current line number.
 	 */
-	public function key () {}
+	public function key(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Read next line
 	 * @link http://php.net/manual/en/splfileobject.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Sets flags for the SplFileObject
 	 * @link http://php.net/manual/en/splfileobject.setflags.php
 	 * @param int $flags <p>
@@ -6667,18 +6693,18 @@ class SplFileObject extends SplFileInfo implements RecursiveIterator, Traversabl
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setFlags ($flags) {}
+	public function setFlags(int $flags) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets flags for the SplFileObject
 	 * @link http://php.net/manual/en/splfileobject.getflags.php
 	 * @return int an integer representing the flags.
 	 */
-	public function getFlags () {}
+	public function getFlags(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Set maximum line length
 	 * @link http://php.net/manual/en/splfileobject.setmaxlinelen.php
 	 * @param int $max_len <p>
@@ -6686,35 +6712,35 @@ class SplFileObject extends SplFileInfo implements RecursiveIterator, Traversabl
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setMaxLineLen ($max_len) {}
+	public function setMaxLineLen(int $max_len) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get maximum line length
 	 * @link http://php.net/manual/en/splfileobject.getmaxlinelen.php
 	 * @return int the maximum line length if one has been set with
 	 * <b>SplFileObject::setMaxLineLen</b>, default is 0.
 	 */
-	public function getMaxLineLen () {}
+	public function getMaxLineLen(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * SplFileObject does not have children
 	 * @link http://php.net/manual/en/splfileobject.haschildren.php
 	 * @return bool <b>FALSE</b>
 	 */
-	public function hasChildren () {}
+	public function hasChildren(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * No purpose
 	 * @link http://php.net/manual/en/splfileobject.getchildren.php
 	 * @return void No value is returned.
 	 */
-	public function getChildren () {}
+	public function getChildren() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Seek to specified line
 	 * @link http://php.net/manual/en/splfileobject.seek.php
 	 * @param int $line_pos <p>
@@ -6722,50 +6748,50 @@ class SplFileObject extends SplFileInfo implements RecursiveIterator, Traversabl
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function seek ($line_pos) {}
+	public function seek(int $line_pos) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Alias of <b>SplFileObject::fgets</b>
 	 * @link http://php.net/manual/en/splfileobject.getcurrentline.php
 	 */
-	public function getCurrentLine () {}
+	public function getCurrentLine() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Alias of <b>SplFileObject::current</b>
 	 * @link http://php.net/manual/en/splfileobject.tostring.php
 	 * @return void
 	 */
-	public function __toString () {}
+	public function __toString() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the path without filename
 	 * @link http://php.net/manual/en/splfileinfo.getpath.php
 	 * @return string the path to the file.
 	 */
-	public function getPath () {}
+	public function getPath(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the filename
 	 * @link http://php.net/manual/en/splfileinfo.getfilename.php
 	 * @return string The filename.
 	 */
-	public function getFilename () {}
+	public function getFilename(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.6)<br/>
+	 * (PHP 5 &gt;= 5.3.6, PHP 7)<br/>
 	 * Gets the file extension
 	 * @link http://php.net/manual/en/splfileinfo.getextension.php
 	 * @return string a string containing the file extension, or an
 	 * empty string if the file has no extension.
 	 */
-	public function getExtension () {}
+	public function getExtension(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Gets the base name of the file
 	 * @link http://php.net/manual/en/splfileinfo.getbasename.php
 	 * @param string $suffix [optional] <p>
@@ -6773,156 +6799,156 @@ class SplFileObject extends SplFileInfo implements RecursiveIterator, Traversabl
 	 * </p>
 	 * @return string the base name without path information.
 	 */
-	public function getBasename ($suffix = null) {}
+	public function getBasename(string $suffix = null): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the path to the file
 	 * @link http://php.net/manual/en/splfileinfo.getpathname.php
 	 * @return string The path to the file.
 	 */
-	public function getPathname () {}
+	public function getPathname(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file permissions
 	 * @link http://php.net/manual/en/splfileinfo.getperms.php
 	 * @return int the file permissions.
 	 */
-	public function getPerms () {}
+	public function getPerms(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the inode for the file
 	 * @link http://php.net/manual/en/splfileinfo.getinode.php
 	 * @return int the inode number for the filesystem object.
 	 */
-	public function getInode () {}
+	public function getInode(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file size
 	 * @link http://php.net/manual/en/splfileinfo.getsize.php
 	 * @return int The filesize in bytes.
 	 */
-	public function getSize () {}
+	public function getSize(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the owner of the file
 	 * @link http://php.net/manual/en/splfileinfo.getowner.php
 	 * @return int The owner id in numerical format.
 	 */
-	public function getOwner () {}
+	public function getOwner(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the file group
 	 * @link http://php.net/manual/en/splfileinfo.getgroup.php
 	 * @return int The group id in numerical format.
 	 */
-	public function getGroup () {}
+	public function getGroup(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets last access time of the file
 	 * @link http://php.net/manual/en/splfileinfo.getatime.php
 	 * @return int the time the file was last accessed.
 	 */
-	public function getATime () {}
+	public function getATime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the last modified time
 	 * @link http://php.net/manual/en/splfileinfo.getmtime.php
 	 * @return int the last modified time for the file, in a Unix timestamp.
 	 */
-	public function getMTime () {}
+	public function getMTime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the inode change time
 	 * @link http://php.net/manual/en/splfileinfo.getctime.php
 	 * @return int The last change time, in a Unix timestamp.
 	 */
-	public function getCTime () {}
+	public function getCTime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file type
 	 * @link http://php.net/manual/en/splfileinfo.gettype.php
 	 * @return string A string representing the type of the entry.
 	 * May be one of file, link,
 	 * or dir
 	 */
-	public function getType () {}
+	public function getType(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the entry is writable
 	 * @link http://php.net/manual/en/splfileinfo.iswritable.php
 	 * @return bool <b>TRUE</b> if writable, <b>FALSE</b> otherwise;
 	 */
-	public function isWritable () {}
+	public function isWritable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if file is readable
 	 * @link http://php.net/manual/en/splfileinfo.isreadable.php
 	 * @return bool <b>TRUE</b> if readable, <b>FALSE</b> otherwise.
 	 */
-	public function isReadable () {}
+	public function isReadable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is executable
 	 * @link http://php.net/manual/en/splfileinfo.isexecutable.php
 	 * @return bool <b>TRUE</b> if executable, <b>FALSE</b> otherwise.
 	 */
-	public function isExecutable () {}
+	public function isExecutable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the object references a regular file
 	 * @link http://php.net/manual/en/splfileinfo.isfile.php
 	 * @return bool <b>TRUE</b> if the file exists and is a regular file (not a link), <b>FALSE</b> otherwise.
 	 */
-	public function isFile () {}
+	public function isFile(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is a directory
 	 * @link http://php.net/manual/en/splfileinfo.isdir.php
 	 * @return bool <b>TRUE</b> if a directory, <b>FALSE</b> otherwise.
 	 */
-	public function isDir () {}
+	public function isDir(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is a link
 	 * @link http://php.net/manual/en/splfileinfo.islink.php
 	 * @return bool <b>TRUE</b> if the file is a link, <b>FALSE</b> otherwise.
 	 */
-	public function isLink () {}
+	public function isLink(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Gets the target of a link
 	 * @link http://php.net/manual/en/splfileinfo.getlinktarget.php
 	 * @return string the target of the filesystem link.
 	 */
-	public function getLinkTarget () {}
+	public function getLinkTarget(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Gets absolute path to file
 	 * @link http://php.net/manual/en/splfileinfo.getrealpath.php
-	 * @return string the path to the file.
+	 * @return string the path to the file, or <b>FALSE</b> if the file does not exist.
 	 */
-	public function getRealPath () {}
+	public function getRealPath(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileInfo object for the file
 	 * @link http://php.net/manual/en/splfileinfo.getfileinfo.php
 	 * @param string $class_name [optional] <p>
@@ -6930,10 +6956,10 @@ class SplFileObject extends SplFileInfo implements RecursiveIterator, Traversabl
 	 * </p>
 	 * @return SplFileInfo An <b>SplFileInfo</b> object created for the file.
 	 */
-	public function getFileInfo ($class_name = null) {}
+	public function getFileInfo(string $class_name = null): SplFileInfo {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileInfo object for the path
 	 * @link http://php.net/manual/en/splfileinfo.getpathinfo.php
 	 * @param string $class_name [optional] <p>
@@ -6941,10 +6967,10 @@ class SplFileObject extends SplFileInfo implements RecursiveIterator, Traversabl
 	 * </p>
 	 * @return SplFileInfo an <b>SplFileInfo</b> object for the parent path of the file.
 	 */
-	public function getPathInfo ($class_name = null) {}
+	public function getPathInfo(string $class_name = null): SplFileInfo {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileObject object for the file
 	 * @link http://php.net/manual/en/splfileinfo.openfile.php
 	 * @param string $open_mode [optional] <p>
@@ -6962,10 +6988,10 @@ class SplFileObject extends SplFileInfo implements RecursiveIterator, Traversabl
 	 * </p>
 	 * @return SplFileObject The opened file as an <b>SplFileObject</b> object.
 	 */
-	public function openFile ($open_mode = "r", $use_include_path = false, $context = null) {}
+	public function openFile(string $open_mode = "r", bool $use_include_path = false, $context = null): SplFileObject {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Sets the class used with <b>SplFileInfo::openFile</b>
 	 * @link http://php.net/manual/en/splfileinfo.setfileclass.php
 	 * @param string $class_name [optional] <p>
@@ -6974,10 +7000,10 @@ class SplFileObject extends SplFileInfo implements RecursiveIterator, Traversabl
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setFileClass ($class_name = "SplFileObject") {}
+	public function setFileClass(string $class_name = "SplFileObject") {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Sets the class used with <b>SplFileInfo::getFileInfo</b> and <b>SplFileInfo::getPathInfo</b>
 	 * @link http://php.net/manual/en/splfileinfo.setinfoclass.php
 	 * @param string $class_name [optional] <p>
@@ -6987,9 +7013,9 @@ class SplFileObject extends SplFileInfo implements RecursiveIterator, Traversabl
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setInfoClass ($class_name = "SplFileInfo") {}
+	public function setInfoClass(string $class_name = "SplFileInfo") {}
 
-	final public function _bad_state_ex () {}
+	final public function _bad_state_ex() {}
 
 }
 
@@ -7005,7 +7031,7 @@ class SplTempFileObject extends SplFileObject implements SeekableIterator, Itera
 
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Construct a new temporary file object
 	 * @link http://php.net/manual/en/spltempfileobject.construct.php
 	 * @param int $max_memory [optional] <p>
@@ -7019,42 +7045,42 @@ class SplTempFileObject extends SplFileObject implements SeekableIterator, Itera
 	 * no memory will be used.
 	 * </p>
 	 */
-	public function __construct ($max_memory = null) {}
+	public function __construct(int $max_memory = null) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Rewind the file to the first line
 	 * @link http://php.net/manual/en/splfileobject.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Reached end of file
 	 * @link http://php.net/manual/en/splfileobject.eof.php
 	 * @return bool <b>TRUE</b> if file is at EOF, <b>FALSE</b> otherwise.
 	 */
-	public function eof () {}
+	public function eof(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Not at EOF
 	 * @link http://php.net/manual/en/splfileobject.valid.php
 	 * @return bool <b>TRUE</b> if not reached EOF, <b>FALSE</b> otherwise.
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets line from file
 	 * @link http://php.net/manual/en/splfileobject.fgets.php
 	 * @return string a string containing the next line from the file, or <b>FALSE</b> on error.
 	 */
-	public function fgets () {}
+	public function fgets(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets line from file and parse as CSV fields
 	 * @link http://php.net/manual/en/splfileobject.fgetcsv.php
 	 * @param string $delimiter [optional] <p>
@@ -7073,10 +7099,10 @@ class SplTempFileObject extends SplFileObject implements SeekableIterator, Itera
 	 * comprising a single <b>NULL</b> field unless using <b>SplFileObject::SKIP_EMPTY | SplFileObject::DROP_NEW_LINE</b>,
 	 * in which case empty lines are skipped.
 	 */
-	public function fgetcsv ($delimiter = ",", $enclosure = "\"", $escape = "\\") {}
+	public function fgetcsv(string $delimiter = ",", string $enclosure = "\"", string $escape = "\\"): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.4.0)<br/>
+	 * (PHP 5 &gt;= 5.4.0, PHP 7)<br/>
 	 * Write a field array as a CSV line
 	 * @link http://php.net/manual/en/splfileobject.fputcsv.php
 	 * @param array $fields <p>
@@ -7101,10 +7127,10 @@ class SplTempFileObject extends SplFileObject implements SeekableIterator, Itera
 	 * <i>delimiter</i> or <i>enclosure</i>
 	 * parameter is not a single character.
 	 */
-	public function fputcsv (array $fields, $delimiter = ",", $enclosure = '"', $escape = "\\") {}
+	public function fputcsv(array $fields, string $delimiter = ",", string $enclosure = '"', string $escape = "\\"): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Set the delimiter and enclosure character for CSV
 	 * @link http://php.net/manual/en/splfileobject.setcsvcontrol.php
 	 * @param string $delimiter [optional] <p>
@@ -7118,18 +7144,18 @@ class SplTempFileObject extends SplFileObject implements SeekableIterator, Itera
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setCsvControl ($delimiter = ",", $enclosure = "\"", $escape = "\\") {}
+	public function setCsvControl(string $delimiter = ",", string $enclosure = "\"", string $escape = "\\") {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Get the delimiter and enclosure character for CSV
 	 * @link http://php.net/manual/en/splfileobject.getcsvcontrol.php
 	 * @return array an indexed array containing the delimiter and enclosure character.
 	 */
-	public function getCsvControl () {}
+	public function getCsvControl(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Portable file locking
 	 * @link http://php.net/manual/en/splfileobject.flock.php
 	 * @param int $operation <p>
@@ -7140,26 +7166,26 @@ class SplTempFileObject extends SplFileObject implements SeekableIterator, Itera
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function flock ($operation, &$wouldblock = null) {}
+	public function flock(int $operation, int &$wouldblock = null): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Flushes the output to the file
 	 * @link http://php.net/manual/en/splfileobject.fflush.php
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function fflush () {}
+	public function fflush(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Return current file position
 	 * @link http://php.net/manual/en/splfileobject.ftell.php
 	 * @return int the position of the file pointer as an integer, or <b>FALSE</b> on error.
 	 */
-	public function ftell () {}
+	public function ftell(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Seek to a position
 	 * @link http://php.net/manual/en/splfileobject.fseek.php
 	 * @param int $offset <p>
@@ -7178,27 +7204,27 @@ class SplTempFileObject extends SplFileObject implements SeekableIterator, Itera
 	 * @return int 0 if the seek was successful, -1 otherwise. Note that seeking
 	 * past EOF is not considered an error.
 	 */
-	public function fseek ($offset, $whence = 'SEEK_SET') {}
+	public function fseek(int $offset, int $whence = SEEK_SET): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets character from file
 	 * @link http://php.net/manual/en/splfileobject.fgetc.php
 	 * @return string a string containing a single character read from the file or <b>FALSE</b> on EOF.
 	 */
-	public function fgetc () {}
+	public function fgetc(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Output all remaining data on a file pointer
 	 * @link http://php.net/manual/en/splfileobject.fpassthru.php
 	 * @return int the number of characters read from <i>handle</i>
 	 * and passed through to the output.
 	 */
-	public function fpassthru () {}
+	public function fpassthru(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets line from file and strip HTML tags
 	 * @link http://php.net/manual/en/splfileobject.fgetss.php
 	 * @param string $allowable_tags [optional] <p>
@@ -7207,10 +7233,10 @@ class SplTempFileObject extends SplFileObject implements SeekableIterator, Itera
 	 * @return string a string containing the next line of the file with HTML and PHP
 	 * code stripped, or <b>FALSE</b> on error.
 	 */
-	public function fgetss ($allowable_tags = null) {}
+	public function fgetss(string $allowable_tags = null): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Parses input from file according to a format
 	 * @link http://php.net/manual/en/splfileobject.fscanf.php
 	 * @param string $format <p>
@@ -7224,10 +7250,10 @@ class SplTempFileObject extends SplFileObject implements SeekableIterator, Itera
 	 * function will return the number of assigned values. The optional
 	 * parameters must be passed by reference.
 	 */
-	public function fscanf ($format, &$_ = null) {}
+	public function fscanf(string $format, &$_ = null) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Write to file
 	 * @link http://php.net/manual/en/splfileobject.fwrite.php
 	 * @param string $str <p>
@@ -7241,10 +7267,10 @@ class SplTempFileObject extends SplFileObject implements SeekableIterator, Itera
 	 * </p>
 	 * @return int the number of bytes written, or <b>NULL</b> on error.
 	 */
-	public function fwrite ($str, $length = null) {}
+	public function fwrite(string $str, int $length = null): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.5.11)<br/>
+	 * (PHP 5 &gt;= 5.5.11, PHP 7)<br/>
 	 * Read from file
 	 * @link http://php.net/manual/en/splfileobject.fread.php
 	 * @param int $length <p>
@@ -7252,19 +7278,19 @@ class SplTempFileObject extends SplFileObject implements SeekableIterator, Itera
 	 * </p>
 	 * @return string the string read from the file or <b>FALSE</b> on failure.
 	 */
-	public function fread ($length) {}
+	public function fread(int $length): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets information about the file
 	 * @link http://php.net/manual/en/splfileobject.fstat.php
 	 * @return array an array with the statistics of the file; the format of the array
 	 * is described in detail on the <b>stat</b> manual page.
 	 */
-	public function fstat () {}
+	public function fstat(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Truncates the file to a given length
 	 * @link http://php.net/manual/en/splfileobject.ftruncate.php
 	 * @param int $size <p>
@@ -7278,34 +7304,34 @@ class SplTempFileObject extends SplFileObject implements SeekableIterator, Itera
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function ftruncate ($size) {}
+	public function ftruncate(int $size): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Retrieve current line of file
 	 * @link http://php.net/manual/en/splfileobject.current.php
 	 * @return string|array Retrieves the current line of the file. If the <b>SplFileObject::READ_CSV</b> flag is set, this method returns an array containing the current line parsed as CSV data.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get line number
 	 * @link http://php.net/manual/en/splfileobject.key.php
 	 * @return int the current line number.
 	 */
-	public function key () {}
+	public function key(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Read next line
 	 * @link http://php.net/manual/en/splfileobject.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Sets flags for the SplFileObject
 	 * @link http://php.net/manual/en/splfileobject.setflags.php
 	 * @param int $flags <p>
@@ -7315,18 +7341,18 @@ class SplTempFileObject extends SplFileObject implements SeekableIterator, Itera
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setFlags ($flags) {}
+	public function setFlags(int $flags) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets flags for the SplFileObject
 	 * @link http://php.net/manual/en/splfileobject.getflags.php
 	 * @return int an integer representing the flags.
 	 */
-	public function getFlags () {}
+	public function getFlags(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Set maximum line length
 	 * @link http://php.net/manual/en/splfileobject.setmaxlinelen.php
 	 * @param int $max_len <p>
@@ -7334,35 +7360,35 @@ class SplTempFileObject extends SplFileObject implements SeekableIterator, Itera
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setMaxLineLen ($max_len) {}
+	public function setMaxLineLen(int $max_len) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Get maximum line length
 	 * @link http://php.net/manual/en/splfileobject.getmaxlinelen.php
 	 * @return int the maximum line length if one has been set with
 	 * <b>SplFileObject::setMaxLineLen</b>, default is 0.
 	 */
-	public function getMaxLineLen () {}
+	public function getMaxLineLen(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * SplFileObject does not have children
 	 * @link http://php.net/manual/en/splfileobject.haschildren.php
 	 * @return bool <b>FALSE</b>
 	 */
-	public function hasChildren () {}
+	public function hasChildren(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * No purpose
 	 * @link http://php.net/manual/en/splfileobject.getchildren.php
 	 * @return void No value is returned.
 	 */
-	public function getChildren () {}
+	public function getChildren() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Seek to specified line
 	 * @link http://php.net/manual/en/splfileobject.seek.php
 	 * @param int $line_pos <p>
@@ -7370,50 +7396,50 @@ class SplTempFileObject extends SplFileObject implements SeekableIterator, Itera
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function seek ($line_pos) {}
+	public function seek(int $line_pos) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Alias of <b>SplFileObject::fgets</b>
 	 * @link http://php.net/manual/en/splfileobject.getcurrentline.php
 	 */
-	public function getCurrentLine () {}
+	public function getCurrentLine() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Alias of <b>SplFileObject::current</b>
 	 * @link http://php.net/manual/en/splfileobject.tostring.php
 	 * @return void
 	 */
-	public function __toString () {}
+	public function __toString() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the path without filename
 	 * @link http://php.net/manual/en/splfileinfo.getpath.php
 	 * @return string the path to the file.
 	 */
-	public function getPath () {}
+	public function getPath(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the filename
 	 * @link http://php.net/manual/en/splfileinfo.getfilename.php
 	 * @return string The filename.
 	 */
-	public function getFilename () {}
+	public function getFilename(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.6)<br/>
+	 * (PHP 5 &gt;= 5.3.6, PHP 7)<br/>
 	 * Gets the file extension
 	 * @link http://php.net/manual/en/splfileinfo.getextension.php
 	 * @return string a string containing the file extension, or an
 	 * empty string if the file has no extension.
 	 */
-	public function getExtension () {}
+	public function getExtension(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Gets the base name of the file
 	 * @link http://php.net/manual/en/splfileinfo.getbasename.php
 	 * @param string $suffix [optional] <p>
@@ -7421,156 +7447,156 @@ class SplTempFileObject extends SplFileObject implements SeekableIterator, Itera
 	 * </p>
 	 * @return string the base name without path information.
 	 */
-	public function getBasename ($suffix = null) {}
+	public function getBasename(string $suffix = null): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the path to the file
 	 * @link http://php.net/manual/en/splfileinfo.getpathname.php
 	 * @return string The path to the file.
 	 */
-	public function getPathname () {}
+	public function getPathname(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file permissions
 	 * @link http://php.net/manual/en/splfileinfo.getperms.php
 	 * @return int the file permissions.
 	 */
-	public function getPerms () {}
+	public function getPerms(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the inode for the file
 	 * @link http://php.net/manual/en/splfileinfo.getinode.php
 	 * @return int the inode number for the filesystem object.
 	 */
-	public function getInode () {}
+	public function getInode(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file size
 	 * @link http://php.net/manual/en/splfileinfo.getsize.php
 	 * @return int The filesize in bytes.
 	 */
-	public function getSize () {}
+	public function getSize(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the owner of the file
 	 * @link http://php.net/manual/en/splfileinfo.getowner.php
 	 * @return int The owner id in numerical format.
 	 */
-	public function getOwner () {}
+	public function getOwner(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the file group
 	 * @link http://php.net/manual/en/splfileinfo.getgroup.php
 	 * @return int The group id in numerical format.
 	 */
-	public function getGroup () {}
+	public function getGroup(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets last access time of the file
 	 * @link http://php.net/manual/en/splfileinfo.getatime.php
 	 * @return int the time the file was last accessed.
 	 */
-	public function getATime () {}
+	public function getATime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the last modified time
 	 * @link http://php.net/manual/en/splfileinfo.getmtime.php
 	 * @return int the last modified time for the file, in a Unix timestamp.
 	 */
-	public function getMTime () {}
+	public function getMTime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets the inode change time
 	 * @link http://php.net/manual/en/splfileinfo.getctime.php
 	 * @return int The last change time, in a Unix timestamp.
 	 */
-	public function getCTime () {}
+	public function getCTime(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets file type
 	 * @link http://php.net/manual/en/splfileinfo.gettype.php
 	 * @return string A string representing the type of the entry.
 	 * May be one of file, link,
 	 * or dir
 	 */
-	public function getType () {}
+	public function getType(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the entry is writable
 	 * @link http://php.net/manual/en/splfileinfo.iswritable.php
 	 * @return bool <b>TRUE</b> if writable, <b>FALSE</b> otherwise;
 	 */
-	public function isWritable () {}
+	public function isWritable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if file is readable
 	 * @link http://php.net/manual/en/splfileinfo.isreadable.php
 	 * @return bool <b>TRUE</b> if readable, <b>FALSE</b> otherwise.
 	 */
-	public function isReadable () {}
+	public function isReadable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is executable
 	 * @link http://php.net/manual/en/splfileinfo.isexecutable.php
 	 * @return bool <b>TRUE</b> if executable, <b>FALSE</b> otherwise.
 	 */
-	public function isExecutable () {}
+	public function isExecutable(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the object references a regular file
 	 * @link http://php.net/manual/en/splfileinfo.isfile.php
 	 * @return bool <b>TRUE</b> if the file exists and is a regular file (not a link), <b>FALSE</b> otherwise.
 	 */
-	public function isFile () {}
+	public function isFile(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is a directory
 	 * @link http://php.net/manual/en/splfileinfo.isdir.php
 	 * @return bool <b>TRUE</b> if a directory, <b>FALSE</b> otherwise.
 	 */
-	public function isDir () {}
+	public function isDir(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Tells if the file is a link
 	 * @link http://php.net/manual/en/splfileinfo.islink.php
 	 * @return bool <b>TRUE</b> if the file is a link, <b>FALSE</b> otherwise.
 	 */
-	public function isLink () {}
+	public function isLink(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Gets the target of a link
 	 * @link http://php.net/manual/en/splfileinfo.getlinktarget.php
 	 * @return string the target of the filesystem link.
 	 */
-	public function getLinkTarget () {}
+	public function getLinkTarget(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Gets absolute path to file
 	 * @link http://php.net/manual/en/splfileinfo.getrealpath.php
-	 * @return string the path to the file.
+	 * @return string the path to the file, or <b>FALSE</b> if the file does not exist.
 	 */
-	public function getRealPath () {}
+	public function getRealPath(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileInfo object for the file
 	 * @link http://php.net/manual/en/splfileinfo.getfileinfo.php
 	 * @param string $class_name [optional] <p>
@@ -7578,10 +7604,10 @@ class SplTempFileObject extends SplFileObject implements SeekableIterator, Itera
 	 * </p>
 	 * @return SplFileInfo An <b>SplFileInfo</b> object created for the file.
 	 */
-	public function getFileInfo ($class_name = null) {}
+	public function getFileInfo(string $class_name = null): SplFileInfo {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileInfo object for the path
 	 * @link http://php.net/manual/en/splfileinfo.getpathinfo.php
 	 * @param string $class_name [optional] <p>
@@ -7589,10 +7615,10 @@ class SplTempFileObject extends SplFileObject implements SeekableIterator, Itera
 	 * </p>
 	 * @return SplFileInfo an <b>SplFileInfo</b> object for the parent path of the file.
 	 */
-	public function getPathInfo ($class_name = null) {}
+	public function getPathInfo(string $class_name = null): SplFileInfo {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Gets an SplFileObject object for the file
 	 * @link http://php.net/manual/en/splfileinfo.openfile.php
 	 * @param string $open_mode [optional] <p>
@@ -7610,10 +7636,10 @@ class SplTempFileObject extends SplFileObject implements SeekableIterator, Itera
 	 * </p>
 	 * @return SplFileObject The opened file as an <b>SplFileObject</b> object.
 	 */
-	public function openFile ($open_mode = "r", $use_include_path = false, $context = null) {}
+	public function openFile(string $open_mode = "r", bool $use_include_path = false, $context = null): SplFileObject {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Sets the class used with <b>SplFileInfo::openFile</b>
 	 * @link http://php.net/manual/en/splfileinfo.setfileclass.php
 	 * @param string $class_name [optional] <p>
@@ -7622,10 +7648,10 @@ class SplTempFileObject extends SplFileObject implements SeekableIterator, Itera
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setFileClass ($class_name = "SplFileObject") {}
+	public function setFileClass(string $class_name = "SplFileObject") {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Sets the class used with <b>SplFileInfo::getFileInfo</b> and <b>SplFileInfo::getPathInfo</b>
 	 * @link http://php.net/manual/en/splfileinfo.setinfoclass.php
 	 * @param string $class_name [optional] <p>
@@ -7635,9 +7661,9 @@ class SplTempFileObject extends SplFileObject implements SeekableIterator, Itera
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setInfoClass ($class_name = "SplFileInfo") {}
+	public function setInfoClass(string $class_name = "SplFileInfo") {}
 
-	final public function _bad_state_ex () {}
+	final public function _bad_state_ex() {}
 
 }
 
@@ -7653,23 +7679,23 @@ class SplDoublyLinkedList implements Iterator, Traversable, Countable, ArrayAcce
 
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Pops a node from the end of the doubly linked list
 	 * @link http://php.net/manual/en/spldoublylinkedlist.pop.php
 	 * @return mixed The value of the popped node.
 	 */
-	public function pop () {}
+	public function pop() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Shifts a node from the beginning of the doubly linked list
 	 * @link http://php.net/manual/en/spldoublylinkedlist.shift.php
 	 * @return mixed The value of the shifted node.
 	 */
-	public function shift () {}
+	public function shift() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Pushes an element at the end of the doubly linked list
 	 * @link http://php.net/manual/en/spldoublylinkedlist.push.php
 	 * @param mixed $value <p>
@@ -7677,10 +7703,10 @@ class SplDoublyLinkedList implements Iterator, Traversable, Countable, ArrayAcce
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function push ($value) {}
+	public function push($value) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Prepends the doubly linked list with an element
 	 * @link http://php.net/manual/en/spldoublylinkedlist.unshift.php
 	 * @param mixed $value <p>
@@ -7688,34 +7714,34 @@ class SplDoublyLinkedList implements Iterator, Traversable, Countable, ArrayAcce
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function unshift ($value) {}
+	public function unshift($value) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Peeks at the node from the end of the doubly linked list
 	 * @link http://php.net/manual/en/spldoublylinkedlist.top.php
 	 * @return mixed The value of the last node.
 	 */
-	public function top () {}
+	public function top() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Peeks at the node from the beginning of the doubly linked list
 	 * @link http://php.net/manual/en/spldoublylinkedlist.bottom.php
 	 * @return mixed The value of the first node.
 	 */
-	public function bottom () {}
+	public function bottom() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Checks whether the doubly linked list is empty.
 	 * @link http://php.net/manual/en/spldoublylinkedlist.isempty.php
 	 * @return bool whether the doubly linked list is empty.
 	 */
-	public function isEmpty () {}
+	public function isEmpty(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Sets the mode of iteration
 	 * @link http://php.net/manual/en/spldoublylinkedlist.setiteratormode.php
 	 * @param int $mode <p>
@@ -7725,26 +7751,26 @@ class SplDoublyLinkedList implements Iterator, Traversable, Countable, ArrayAcce
 	 * <b>SplDoublyLinkedList::IT_MODE_LIFO</b> (Stack style)
 	 * @return void No value is returned.
 	 */
-	public function setIteratorMode ($mode) {}
+	public function setIteratorMode(int $mode) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns the mode of iteration
 	 * @link http://php.net/manual/en/spldoublylinkedlist.getiteratormode.php
 	 * @return int the different modes and flags that affect the iteration.
 	 */
-	public function getIteratorMode () {}
+	public function getIteratorMode(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Counts the number of elements in the doubly linked list.
 	 * @link http://php.net/manual/en/spldoublylinkedlist.count.php
 	 * @return int the number of elements in the doubly linked list.
 	 */
-	public function count () {}
+	public function count(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns whether the requested $index exists
 	 * @link http://php.net/manual/en/spldoublylinkedlist.offsetexists.php
 	 * @param mixed $index <p>
@@ -7752,10 +7778,10 @@ class SplDoublyLinkedList implements Iterator, Traversable, Countable, ArrayAcce
 	 * </p>
 	 * @return bool <b>TRUE</b> if the requested <i>index</i> exists, otherwise <b>FALSE</b>
 	 */
-	public function offsetExists ($index) {}
+	public function offsetExists($index): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns the value at the specified $index
 	 * @link http://php.net/manual/en/spldoublylinkedlist.offsetget.php
 	 * @param mixed $index <p>
@@ -7763,10 +7789,10 @@ class SplDoublyLinkedList implements Iterator, Traversable, Countable, ArrayAcce
 	 * </p>
 	 * @return mixed The value at the specified <i>index</i>.
 	 */
-	public function offsetGet ($index) {}
+	public function offsetGet($index) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Sets the value at the specified $index to $newval
 	 * @link http://php.net/manual/en/spldoublylinkedlist.offsetset.php
 	 * @param mixed $index <p>
@@ -7777,10 +7803,10 @@ class SplDoublyLinkedList implements Iterator, Traversable, Countable, ArrayAcce
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function offsetSet ($index, $newval) {}
+	public function offsetSet($index, $newval) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Unsets the value at the specified $index
 	 * @link http://php.net/manual/en/spldoublylinkedlist.offsetunset.php
 	 * @param mixed $index <p>
@@ -7788,10 +7814,10 @@ class SplDoublyLinkedList implements Iterator, Traversable, Countable, ArrayAcce
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function offsetUnset ($index) {}
+	public function offsetUnset($index) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.5.0)<br/>
+	 * (PHP 5 &gt;= 5.5.0, PHP 7)<br/>
 	 * Add/insert a new value at the specified index
 	 * @link http://php.net/manual/en/spldoublylinkedlist.add.php
 	 * @param mixed $index <p>
@@ -7802,58 +7828,58 @@ class SplDoublyLinkedList implements Iterator, Traversable, Countable, ArrayAcce
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function add ($index, $newval) {}
+	public function add($index, $newval) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Rewind iterator back to the start
 	 * @link http://php.net/manual/en/spldoublylinkedlist.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Return current array entry
 	 * @link http://php.net/manual/en/spldoublylinkedlist.current.php
 	 * @return mixed The current node value.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Return current node index
 	 * @link http://php.net/manual/en/spldoublylinkedlist.key.php
 	 * @return mixed The current node index.
 	 */
-	public function key () {}
+	public function key() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Move to next entry
 	 * @link http://php.net/manual/en/spldoublylinkedlist.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Move to previous entry
 	 * @link http://php.net/manual/en/spldoublylinkedlist.prev.php
 	 * @return void No value is returned.
 	 */
-	public function prev () {}
+	public function prev() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Check whether the doubly linked list contains more nodes
 	 * @link http://php.net/manual/en/spldoublylinkedlist.valid.php
 	 * @return bool <b>TRUE</b> if the doubly linked list contains any more nodes, <b>FALSE</b> otherwise.
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.4.0)<br/>
+	 * (PHP 5 &gt;= 5.4.0, PHP 7)<br/>
 	 * Unserializes the storage
 	 * @link http://php.net/manual/en/spldoublylinkedlist.unserialize.php
 	 * @param string $serialized <p>
@@ -7861,15 +7887,15 @@ class SplDoublyLinkedList implements Iterator, Traversable, Countable, ArrayAcce
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function unserialize ($serialized) {}
+	public function unserialize(string $serialized) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.4.0)<br/>
+	 * (PHP 5 &gt;= 5.4.0, PHP 7)<br/>
 	 * Serializes the storage
 	 * @link http://php.net/manual/en/spldoublylinkedlist.serialize.php
 	 * @return string The serialized string.
 	 */
-	public function serialize () {}
+	public function serialize(): string {}
 
 }
 
@@ -7885,7 +7911,7 @@ class SplQueue extends SplDoublyLinkedList implements Serializable, ArrayAccess,
 
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Adds an element to the queue.
 	 * @link http://php.net/manual/en/splqueue.enqueue.php
 	 * @param mixed $value <p>
@@ -7893,34 +7919,34 @@ class SplQueue extends SplDoublyLinkedList implements Serializable, ArrayAccess,
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function enqueue ($value) {}
+	public function enqueue($value) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Dequeues a node from the queue
 	 * @link http://php.net/manual/en/splqueue.dequeue.php
 	 * @return mixed The value of the dequeued node.
 	 */
-	public function dequeue () {}
+	public function dequeue() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Pops a node from the end of the doubly linked list
 	 * @link http://php.net/manual/en/spldoublylinkedlist.pop.php
 	 * @return mixed The value of the popped node.
 	 */
-	public function pop () {}
+	public function pop() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Shifts a node from the beginning of the doubly linked list
 	 * @link http://php.net/manual/en/spldoublylinkedlist.shift.php
 	 * @return mixed The value of the shifted node.
 	 */
-	public function shift () {}
+	public function shift() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Pushes an element at the end of the doubly linked list
 	 * @link http://php.net/manual/en/spldoublylinkedlist.push.php
 	 * @param mixed $value <p>
@@ -7928,10 +7954,10 @@ class SplQueue extends SplDoublyLinkedList implements Serializable, ArrayAccess,
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function push ($value) {}
+	public function push($value) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Prepends the doubly linked list with an element
 	 * @link http://php.net/manual/en/spldoublylinkedlist.unshift.php
 	 * @param mixed $value <p>
@@ -7939,34 +7965,34 @@ class SplQueue extends SplDoublyLinkedList implements Serializable, ArrayAccess,
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function unshift ($value) {}
+	public function unshift($value) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Peeks at the node from the end of the doubly linked list
 	 * @link http://php.net/manual/en/spldoublylinkedlist.top.php
 	 * @return mixed The value of the last node.
 	 */
-	public function top () {}
+	public function top() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Peeks at the node from the beginning of the doubly linked list
 	 * @link http://php.net/manual/en/spldoublylinkedlist.bottom.php
 	 * @return mixed The value of the first node.
 	 */
-	public function bottom () {}
+	public function bottom() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Checks whether the doubly linked list is empty.
 	 * @link http://php.net/manual/en/spldoublylinkedlist.isempty.php
 	 * @return bool whether the doubly linked list is empty.
 	 */
-	public function isEmpty () {}
+	public function isEmpty(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Sets the mode of iteration
 	 * @link http://php.net/manual/en/spldoublylinkedlist.setiteratormode.php
 	 * @param int $mode <p>
@@ -7976,26 +8002,26 @@ class SplQueue extends SplDoublyLinkedList implements Serializable, ArrayAccess,
 	 * <b>SplDoublyLinkedList::IT_MODE_LIFO</b> (Stack style)
 	 * @return void No value is returned.
 	 */
-	public function setIteratorMode ($mode) {}
+	public function setIteratorMode(int $mode) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns the mode of iteration
 	 * @link http://php.net/manual/en/spldoublylinkedlist.getiteratormode.php
 	 * @return int the different modes and flags that affect the iteration.
 	 */
-	public function getIteratorMode () {}
+	public function getIteratorMode(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Counts the number of elements in the doubly linked list.
 	 * @link http://php.net/manual/en/spldoublylinkedlist.count.php
 	 * @return int the number of elements in the doubly linked list.
 	 */
-	public function count () {}
+	public function count(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns whether the requested $index exists
 	 * @link http://php.net/manual/en/spldoublylinkedlist.offsetexists.php
 	 * @param mixed $index <p>
@@ -8003,10 +8029,10 @@ class SplQueue extends SplDoublyLinkedList implements Serializable, ArrayAccess,
 	 * </p>
 	 * @return bool <b>TRUE</b> if the requested <i>index</i> exists, otherwise <b>FALSE</b>
 	 */
-	public function offsetExists ($index) {}
+	public function offsetExists($index): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns the value at the specified $index
 	 * @link http://php.net/manual/en/spldoublylinkedlist.offsetget.php
 	 * @param mixed $index <p>
@@ -8014,10 +8040,10 @@ class SplQueue extends SplDoublyLinkedList implements Serializable, ArrayAccess,
 	 * </p>
 	 * @return mixed The value at the specified <i>index</i>.
 	 */
-	public function offsetGet ($index) {}
+	public function offsetGet($index) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Sets the value at the specified $index to $newval
 	 * @link http://php.net/manual/en/spldoublylinkedlist.offsetset.php
 	 * @param mixed $index <p>
@@ -8028,10 +8054,10 @@ class SplQueue extends SplDoublyLinkedList implements Serializable, ArrayAccess,
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function offsetSet ($index, $newval) {}
+	public function offsetSet($index, $newval) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Unsets the value at the specified $index
 	 * @link http://php.net/manual/en/spldoublylinkedlist.offsetunset.php
 	 * @param mixed $index <p>
@@ -8039,10 +8065,10 @@ class SplQueue extends SplDoublyLinkedList implements Serializable, ArrayAccess,
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function offsetUnset ($index) {}
+	public function offsetUnset($index) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.5.0)<br/>
+	 * (PHP 5 &gt;= 5.5.0, PHP 7)<br/>
 	 * Add/insert a new value at the specified index
 	 * @link http://php.net/manual/en/spldoublylinkedlist.add.php
 	 * @param mixed $index <p>
@@ -8053,58 +8079,58 @@ class SplQueue extends SplDoublyLinkedList implements Serializable, ArrayAccess,
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function add ($index, $newval) {}
+	public function add($index, $newval) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Rewind iterator back to the start
 	 * @link http://php.net/manual/en/spldoublylinkedlist.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Return current array entry
 	 * @link http://php.net/manual/en/spldoublylinkedlist.current.php
 	 * @return mixed The current node value.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Return current node index
 	 * @link http://php.net/manual/en/spldoublylinkedlist.key.php
 	 * @return mixed The current node index.
 	 */
-	public function key () {}
+	public function key() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Move to next entry
 	 * @link http://php.net/manual/en/spldoublylinkedlist.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Move to previous entry
 	 * @link http://php.net/manual/en/spldoublylinkedlist.prev.php
 	 * @return void No value is returned.
 	 */
-	public function prev () {}
+	public function prev() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Check whether the doubly linked list contains more nodes
 	 * @link http://php.net/manual/en/spldoublylinkedlist.valid.php
 	 * @return bool <b>TRUE</b> if the doubly linked list contains any more nodes, <b>FALSE</b> otherwise.
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.4.0)<br/>
+	 * (PHP 5 &gt;= 5.4.0, PHP 7)<br/>
 	 * Unserializes the storage
 	 * @link http://php.net/manual/en/spldoublylinkedlist.unserialize.php
 	 * @param string $serialized <p>
@@ -8112,15 +8138,15 @@ class SplQueue extends SplDoublyLinkedList implements Serializable, ArrayAccess,
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function unserialize ($serialized) {}
+	public function unserialize(string $serialized) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.4.0)<br/>
+	 * (PHP 5 &gt;= 5.4.0, PHP 7)<br/>
 	 * Serializes the storage
 	 * @link http://php.net/manual/en/spldoublylinkedlist.serialize.php
 	 * @return string The serialized string.
 	 */
-	public function serialize () {}
+	public function serialize(): string {}
 
 }
 
@@ -8136,23 +8162,23 @@ class SplStack extends SplDoublyLinkedList implements Serializable, ArrayAccess,
 
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Pops a node from the end of the doubly linked list
 	 * @link http://php.net/manual/en/spldoublylinkedlist.pop.php
 	 * @return mixed The value of the popped node.
 	 */
-	public function pop () {}
+	public function pop() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Shifts a node from the beginning of the doubly linked list
 	 * @link http://php.net/manual/en/spldoublylinkedlist.shift.php
 	 * @return mixed The value of the shifted node.
 	 */
-	public function shift () {}
+	public function shift() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Pushes an element at the end of the doubly linked list
 	 * @link http://php.net/manual/en/spldoublylinkedlist.push.php
 	 * @param mixed $value <p>
@@ -8160,10 +8186,10 @@ class SplStack extends SplDoublyLinkedList implements Serializable, ArrayAccess,
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function push ($value) {}
+	public function push($value) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Prepends the doubly linked list with an element
 	 * @link http://php.net/manual/en/spldoublylinkedlist.unshift.php
 	 * @param mixed $value <p>
@@ -8171,34 +8197,34 @@ class SplStack extends SplDoublyLinkedList implements Serializable, ArrayAccess,
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function unshift ($value) {}
+	public function unshift($value) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Peeks at the node from the end of the doubly linked list
 	 * @link http://php.net/manual/en/spldoublylinkedlist.top.php
 	 * @return mixed The value of the last node.
 	 */
-	public function top () {}
+	public function top() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Peeks at the node from the beginning of the doubly linked list
 	 * @link http://php.net/manual/en/spldoublylinkedlist.bottom.php
 	 * @return mixed The value of the first node.
 	 */
-	public function bottom () {}
+	public function bottom() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Checks whether the doubly linked list is empty.
 	 * @link http://php.net/manual/en/spldoublylinkedlist.isempty.php
 	 * @return bool whether the doubly linked list is empty.
 	 */
-	public function isEmpty () {}
+	public function isEmpty(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Sets the mode of iteration
 	 * @link http://php.net/manual/en/spldoublylinkedlist.setiteratormode.php
 	 * @param int $mode <p>
@@ -8208,26 +8234,26 @@ class SplStack extends SplDoublyLinkedList implements Serializable, ArrayAccess,
 	 * <b>SplDoublyLinkedList::IT_MODE_LIFO</b> (Stack style)
 	 * @return void No value is returned.
 	 */
-	public function setIteratorMode ($mode) {}
+	public function setIteratorMode(int $mode) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns the mode of iteration
 	 * @link http://php.net/manual/en/spldoublylinkedlist.getiteratormode.php
 	 * @return int the different modes and flags that affect the iteration.
 	 */
-	public function getIteratorMode () {}
+	public function getIteratorMode(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Counts the number of elements in the doubly linked list.
 	 * @link http://php.net/manual/en/spldoublylinkedlist.count.php
 	 * @return int the number of elements in the doubly linked list.
 	 */
-	public function count () {}
+	public function count(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns whether the requested $index exists
 	 * @link http://php.net/manual/en/spldoublylinkedlist.offsetexists.php
 	 * @param mixed $index <p>
@@ -8235,10 +8261,10 @@ class SplStack extends SplDoublyLinkedList implements Serializable, ArrayAccess,
 	 * </p>
 	 * @return bool <b>TRUE</b> if the requested <i>index</i> exists, otherwise <b>FALSE</b>
 	 */
-	public function offsetExists ($index) {}
+	public function offsetExists($index): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns the value at the specified $index
 	 * @link http://php.net/manual/en/spldoublylinkedlist.offsetget.php
 	 * @param mixed $index <p>
@@ -8246,10 +8272,10 @@ class SplStack extends SplDoublyLinkedList implements Serializable, ArrayAccess,
 	 * </p>
 	 * @return mixed The value at the specified <i>index</i>.
 	 */
-	public function offsetGet ($index) {}
+	public function offsetGet($index) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Sets the value at the specified $index to $newval
 	 * @link http://php.net/manual/en/spldoublylinkedlist.offsetset.php
 	 * @param mixed $index <p>
@@ -8260,10 +8286,10 @@ class SplStack extends SplDoublyLinkedList implements Serializable, ArrayAccess,
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function offsetSet ($index, $newval) {}
+	public function offsetSet($index, $newval) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Unsets the value at the specified $index
 	 * @link http://php.net/manual/en/spldoublylinkedlist.offsetunset.php
 	 * @param mixed $index <p>
@@ -8271,10 +8297,10 @@ class SplStack extends SplDoublyLinkedList implements Serializable, ArrayAccess,
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function offsetUnset ($index) {}
+	public function offsetUnset($index) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.5.0)<br/>
+	 * (PHP 5 &gt;= 5.5.0, PHP 7)<br/>
 	 * Add/insert a new value at the specified index
 	 * @link http://php.net/manual/en/spldoublylinkedlist.add.php
 	 * @param mixed $index <p>
@@ -8285,58 +8311,58 @@ class SplStack extends SplDoublyLinkedList implements Serializable, ArrayAccess,
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function add ($index, $newval) {}
+	public function add($index, $newval) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Rewind iterator back to the start
 	 * @link http://php.net/manual/en/spldoublylinkedlist.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Return current array entry
 	 * @link http://php.net/manual/en/spldoublylinkedlist.current.php
 	 * @return mixed The current node value.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Return current node index
 	 * @link http://php.net/manual/en/spldoublylinkedlist.key.php
 	 * @return mixed The current node index.
 	 */
-	public function key () {}
+	public function key() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Move to next entry
 	 * @link http://php.net/manual/en/spldoublylinkedlist.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Move to previous entry
 	 * @link http://php.net/manual/en/spldoublylinkedlist.prev.php
 	 * @return void No value is returned.
 	 */
-	public function prev () {}
+	public function prev() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Check whether the doubly linked list contains more nodes
 	 * @link http://php.net/manual/en/spldoublylinkedlist.valid.php
 	 * @return bool <b>TRUE</b> if the doubly linked list contains any more nodes, <b>FALSE</b> otherwise.
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.4.0)<br/>
+	 * (PHP 5 &gt;= 5.4.0, PHP 7)<br/>
 	 * Unserializes the storage
 	 * @link http://php.net/manual/en/spldoublylinkedlist.unserialize.php
 	 * @param string $serialized <p>
@@ -8344,15 +8370,15 @@ class SplStack extends SplDoublyLinkedList implements Serializable, ArrayAccess,
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function unserialize ($serialized) {}
+	public function unserialize(string $serialized) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.4.0)<br/>
+	 * (PHP 5 &gt;= 5.4.0, PHP 7)<br/>
 	 * Serializes the storage
 	 * @link http://php.net/manual/en/spldoublylinkedlist.serialize.php
 	 * @return string The serialized string.
 	 */
-	public function serialize () {}
+	public function serialize(): string {}
 
 }
 
@@ -8363,15 +8389,15 @@ class SplStack extends SplDoublyLinkedList implements Serializable, ArrayAccess,
 class SplHeap implements Iterator, Traversable, Countable {
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Extracts a node from top of the heap and sift up.
 	 * @link http://php.net/manual/en/splheap.extract.php
 	 * @return mixed The value of the extracted node.
 	 */
-	public function extract () {}
+	public function extract() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Inserts an element in the heap by sifting it up.
 	 * @link http://php.net/manual/en/splheap.insert.php
 	 * @param mixed $value <p>
@@ -8379,82 +8405,84 @@ class SplHeap implements Iterator, Traversable, Countable {
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function insert ($value) {}
+	public function insert($value) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Peeks at the node from the top of the heap
 	 * @link http://php.net/manual/en/splheap.top.php
 	 * @return mixed The value of the node on the top.
 	 */
-	public function top () {}
+	public function top() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Counts the number of elements in the heap.
 	 * @link http://php.net/manual/en/splheap.count.php
 	 * @return int the number of elements in the heap.
 	 */
-	public function count () {}
+	public function count(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Checks whether the heap is empty.
 	 * @link http://php.net/manual/en/splheap.isempty.php
 	 * @return bool whether the heap is empty.
 	 */
-	public function isEmpty () {}
+	public function isEmpty(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Rewind iterator back to the start (no-op)
 	 * @link http://php.net/manual/en/splheap.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Return current node pointed by the iterator
 	 * @link http://php.net/manual/en/splheap.current.php
 	 * @return mixed The current node value.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Return current node index
 	 * @link http://php.net/manual/en/splheap.key.php
 	 * @return mixed The current node index.
 	 */
-	public function key () {}
+	public function key() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Move to the next node
 	 * @link http://php.net/manual/en/splheap.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Check whether the heap contains more nodes
 	 * @link http://php.net/manual/en/splheap.valid.php
 	 * @return bool <b>TRUE</b> if the heap contains any more nodes, <b>FALSE</b> otherwise.
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Recover from the corrupted state and allow further actions on the heap.
 	 * @link http://php.net/manual/en/splheap.recoverfromcorruption.php
 	 * @return void No value is returned.
 	 */
-	public function recoverFromCorruption () {}
+	public function recoverFromCorruption() {}
+
+	public function isCorrupted() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Compare elements in order to place them correctly in the heap while sifting up.
 	 * @link http://php.net/manual/en/splheap.compare.php
 	 * @param mixed $value1 <p>
@@ -8468,7 +8496,7 @@ class SplHeap implements Iterator, Traversable, Countable {
 	 * <p>
 	 * Having multiple elements with the same value in a Heap is not recommended. They will end up in an arbitrary relative position.
 	 */
-	abstract protected function compare ($value1, $value2);
+	abstract protected function compare($value1, $value2): int;
 
 }
 
@@ -8479,7 +8507,7 @@ class SplHeap implements Iterator, Traversable, Countable {
 class SplMinHeap extends SplHeap implements Countable, Traversable, Iterator {
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Compare elements in order to place them correctly in the heap while sifting up.
 	 * @link http://php.net/manual/en/splminheap.compare.php
 	 * @param mixed $value1 <p>
@@ -8493,18 +8521,18 @@ class SplMinHeap extends SplHeap implements Countable, Traversable, Iterator {
 	 * <p>
 	 * Having multiple elements with the same value in a Heap is not recommended. They will end up in an arbitrary relative position.
 	 */
-	protected function compare ($value1, $value2) {}
+	protected function compare($value1, $value2): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Extracts a node from top of the heap and sift up.
 	 * @link http://php.net/manual/en/splheap.extract.php
 	 * @return mixed The value of the extracted node.
 	 */
-	public function extract () {}
+	public function extract() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Inserts an element in the heap by sifting it up.
 	 * @link http://php.net/manual/en/splheap.insert.php
 	 * @param mixed $value <p>
@@ -8512,79 +8540,81 @@ class SplMinHeap extends SplHeap implements Countable, Traversable, Iterator {
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function insert ($value) {}
+	public function insert($value) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Peeks at the node from the top of the heap
 	 * @link http://php.net/manual/en/splheap.top.php
 	 * @return mixed The value of the node on the top.
 	 */
-	public function top () {}
+	public function top() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Counts the number of elements in the heap.
 	 * @link http://php.net/manual/en/splheap.count.php
 	 * @return int the number of elements in the heap.
 	 */
-	public function count () {}
+	public function count(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Checks whether the heap is empty.
 	 * @link http://php.net/manual/en/splheap.isempty.php
 	 * @return bool whether the heap is empty.
 	 */
-	public function isEmpty () {}
+	public function isEmpty(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Rewind iterator back to the start (no-op)
 	 * @link http://php.net/manual/en/splheap.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Return current node pointed by the iterator
 	 * @link http://php.net/manual/en/splheap.current.php
 	 * @return mixed The current node value.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Return current node index
 	 * @link http://php.net/manual/en/splheap.key.php
 	 * @return mixed The current node index.
 	 */
-	public function key () {}
+	public function key() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Move to the next node
 	 * @link http://php.net/manual/en/splheap.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Check whether the heap contains more nodes
 	 * @link http://php.net/manual/en/splheap.valid.php
 	 * @return bool <b>TRUE</b> if the heap contains any more nodes, <b>FALSE</b> otherwise.
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Recover from the corrupted state and allow further actions on the heap.
 	 * @link http://php.net/manual/en/splheap.recoverfromcorruption.php
 	 * @return void No value is returned.
 	 */
-	public function recoverFromCorruption () {}
+	public function recoverFromCorruption() {}
+
+	public function isCorrupted() {}
 
 }
 
@@ -8595,7 +8625,7 @@ class SplMinHeap extends SplHeap implements Countable, Traversable, Iterator {
 class SplMaxHeap extends SplHeap implements Countable, Traversable, Iterator {
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Compare elements in order to place them correctly in the heap while sifting up.
 	 * @link http://php.net/manual/en/splmaxheap.compare.php
 	 * @param mixed $value1 <p>
@@ -8609,18 +8639,18 @@ class SplMaxHeap extends SplHeap implements Countable, Traversable, Iterator {
 	 * <p>
 	 * Having multiple elements with the same value in a Heap is not recommended. They will end up in an arbitrary relative position.
 	 */
-	protected function compare ($value1, $value2) {}
+	protected function compare($value1, $value2): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Extracts a node from top of the heap and sift up.
 	 * @link http://php.net/manual/en/splheap.extract.php
 	 * @return mixed The value of the extracted node.
 	 */
-	public function extract () {}
+	public function extract() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Inserts an element in the heap by sifting it up.
 	 * @link http://php.net/manual/en/splheap.insert.php
 	 * @param mixed $value <p>
@@ -8628,79 +8658,81 @@ class SplMaxHeap extends SplHeap implements Countable, Traversable, Iterator {
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function insert ($value) {}
+	public function insert($value) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Peeks at the node from the top of the heap
 	 * @link http://php.net/manual/en/splheap.top.php
 	 * @return mixed The value of the node on the top.
 	 */
-	public function top () {}
+	public function top() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Counts the number of elements in the heap.
 	 * @link http://php.net/manual/en/splheap.count.php
 	 * @return int the number of elements in the heap.
 	 */
-	public function count () {}
+	public function count(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Checks whether the heap is empty.
 	 * @link http://php.net/manual/en/splheap.isempty.php
 	 * @return bool whether the heap is empty.
 	 */
-	public function isEmpty () {}
+	public function isEmpty(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Rewind iterator back to the start (no-op)
 	 * @link http://php.net/manual/en/splheap.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Return current node pointed by the iterator
 	 * @link http://php.net/manual/en/splheap.current.php
 	 * @return mixed The current node value.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Return current node index
 	 * @link http://php.net/manual/en/splheap.key.php
 	 * @return mixed The current node index.
 	 */
-	public function key () {}
+	public function key() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Move to the next node
 	 * @link http://php.net/manual/en/splheap.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Check whether the heap contains more nodes
 	 * @link http://php.net/manual/en/splheap.valid.php
 	 * @return bool <b>TRUE</b> if the heap contains any more nodes, <b>FALSE</b> otherwise.
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Recover from the corrupted state and allow further actions on the heap.
 	 * @link http://php.net/manual/en/splheap.recoverfromcorruption.php
 	 * @return void No value is returned.
 	 */
-	public function recoverFromCorruption () {}
+	public function recoverFromCorruption() {}
+
+	public function isCorrupted() {}
 
 }
 
@@ -8716,7 +8748,7 @@ class SplPriorityQueue implements Iterator, Traversable, Countable {
 
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Compare priorities in order to place elements correctly in the heap while sifting up.
 	 * @link http://php.net/manual/en/splpriorityqueue.compare.php
 	 * @param mixed $priority1 <p>
@@ -8730,10 +8762,10 @@ class SplPriorityQueue implements Iterator, Traversable, Countable {
 	 * <p>
 	 * Multiple elements with the same priority will get dequeued in no particular order.
 	 */
-	public function compare ($priority1, $priority2) {}
+	public function compare($priority1, $priority2): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Inserts an element in the queue by sifting it up.
 	 * @link http://php.net/manual/en/splpriorityqueue.insert.php
 	 * @param mixed $value <p>
@@ -8744,10 +8776,10 @@ class SplPriorityQueue implements Iterator, Traversable, Countable {
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function insert ($value, $priority) {}
+	public function insert($value, $priority) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Sets the mode of extraction
 	 * @link http://php.net/manual/en/splpriorityqueue.setextractflags.php
 	 * @param int $flags <p>
@@ -8758,87 +8790,91 @@ class SplPriorityQueue implements Iterator, Traversable, Countable {
 	 * <b>SplPriorityQueue::EXTR_DATA</b> (0x00000001): Extract the data
 	 * @return void No value is returned.
 	 */
-	public function setExtractFlags ($flags) {}
+	public function setExtractFlags(int $flags) {}
+
+	public function getExtractFlags() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Peeks at the node from the top of the queue
 	 * @link http://php.net/manual/en/splpriorityqueue.top.php
 	 * @return mixed The value or priority (or both) of the top node, depending on the extract flag.
 	 */
-	public function top () {}
+	public function top() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Extracts a node from top of the heap and sift up.
 	 * @link http://php.net/manual/en/splpriorityqueue.extract.php
 	 * @return mixed The value or priority (or both) of the extracted node, depending on the extract flag.
 	 */
-	public function extract () {}
+	public function extract() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Counts the number of elements in the queue.
 	 * @link http://php.net/manual/en/splpriorityqueue.count.php
 	 * @return int the number of elements in the queue.
 	 */
-	public function count () {}
+	public function count(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Checks whether the queue is empty.
 	 * @link http://php.net/manual/en/splpriorityqueue.isempty.php
 	 * @return bool whether the queue is empty.
 	 */
-	public function isEmpty () {}
+	public function isEmpty(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Rewind iterator back to the start (no-op)
 	 * @link http://php.net/manual/en/splpriorityqueue.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Return current node pointed by the iterator
 	 * @link http://php.net/manual/en/splpriorityqueue.current.php
 	 * @return mixed The value or priority (or both) of the current node, depending on the extract flag.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Return current node index
 	 * @link http://php.net/manual/en/splpriorityqueue.key.php
 	 * @return mixed The current node index.
 	 */
-	public function key () {}
+	public function key() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Move to the next node
 	 * @link http://php.net/manual/en/splpriorityqueue.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Check whether the queue contains more nodes
 	 * @link http://php.net/manual/en/splpriorityqueue.valid.php
 	 * @return bool <b>TRUE</b> if the queue contains any more nodes, <b>FALSE</b> otherwise.
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Recover from the corrupted state and allow further actions on the queue.
 	 * @link http://php.net/manual/en/splpriorityqueue.recoverfromcorruption.php
 	 * @return void No value is returned.
 	 */
-	public function recoverFromCorruption () {}
+	public function recoverFromCorruption() {}
+
+	public function isCorrupted() {}
 
 }
 
@@ -8853,7 +8889,7 @@ class SplPriorityQueue implements Iterator, Traversable, Countable {
 class SplFixedArray implements Iterator, Traversable, ArrayAccess, Countable {
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Constructs a new fixed array
 	 * @link http://php.net/manual/en/splfixedarray.construct.php
 	 * @param int $size [optional] <p>
@@ -8861,34 +8897,34 @@ class SplFixedArray implements Iterator, Traversable, ArrayAccess, Countable {
 	 * This expects a number between 0 and <b>PHP_INT_MAX</b>.
 	 * </p>
 	 */
-	public function __construct ($size = 0) {}
+	public function __construct(int $size = 0) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.5.0)<br/>
+	 * (PHP 5 &gt;= 5.5.0, PHP 7)<br/>
 	 * Reinitialises the array after being unserialised
 	 * @link http://php.net/manual/en/splfixedarray.wakeup.php
 	 * @return void No value is returned.
 	 */
-	public function __wakeup () {}
+	public function __wakeup() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns the size of the array
 	 * @link http://php.net/manual/en/splfixedarray.count.php
 	 * @return int the size of the array.
 	 */
-	public function count () {}
+	public function count(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns a PHP array from the fixed array
 	 * @link http://php.net/manual/en/splfixedarray.toarray.php
 	 * @return array a PHP array, similar to the fixed array.
 	 */
-	public function toArray () {}
+	public function toArray(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Import a PHP array in a <b>SplFixedArray</b> instance
 	 * @link http://php.net/manual/en/splfixedarray.fromarray.php
 	 * @param array $array <p>
@@ -8900,18 +8936,18 @@ class SplFixedArray implements Iterator, Traversable, ArrayAccess, Countable {
 	 * @return SplFixedArray an instance of <b>SplFixedArray</b>
 	 * containing the array content.
 	 */
-	public static function fromArray (array $array, $save_indexes = true) {}
+	public static function fromArray(array $array, bool $save_indexes = true): SplFixedArray {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Gets the size of the array
 	 * @link http://php.net/manual/en/splfixedarray.getsize.php
 	 * @return int the size of the array, as an integer.
 	 */
-	public function getSize () {}
+	public function getSize(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Change the size of an array
 	 * @link http://php.net/manual/en/splfixedarray.setsize.php
 	 * @param int $size <p>
@@ -8919,10 +8955,10 @@ class SplFixedArray implements Iterator, Traversable, ArrayAccess, Countable {
 	 * </p>
 	 * @return int No value is returned.
 	 */
-	public function setSize ($size) {}
+	public function setSize(int $size): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns whether the requested index exists
 	 * @link http://php.net/manual/en/splfixedarray.offsetexists.php
 	 * @param int $index <p>
@@ -8930,10 +8966,10 @@ class SplFixedArray implements Iterator, Traversable, ArrayAccess, Countable {
 	 * </p>
 	 * @return bool <b>TRUE</b> if the requested <i>index</i> exists, otherwise <b>FALSE</b>
 	 */
-	public function offsetExists ($index) {}
+	public function offsetExists(int $index): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns the value at the specified index
 	 * @link http://php.net/manual/en/splfixedarray.offsetget.php
 	 * @param int $index <p>
@@ -8941,10 +8977,10 @@ class SplFixedArray implements Iterator, Traversable, ArrayAccess, Countable {
 	 * </p>
 	 * @return mixed The value at the specified <i>index</i>.
 	 */
-	public function offsetGet ($index) {}
+	public function offsetGet(int $index) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Sets a new value at a specified index
 	 * @link http://php.net/manual/en/splfixedarray.offsetset.php
 	 * @param int $index <p>
@@ -8955,10 +8991,10 @@ class SplFixedArray implements Iterator, Traversable, ArrayAccess, Countable {
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function offsetSet ($index, $newval) {}
+	public function offsetSet(int $index, $newval) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Unsets the value at the specified $index
 	 * @link http://php.net/manual/en/splfixedarray.offsetunset.php
 	 * @param int $index <p>
@@ -8966,47 +9002,47 @@ class SplFixedArray implements Iterator, Traversable, ArrayAccess, Countable {
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function offsetUnset ($index) {}
+	public function offsetUnset(int $index) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Rewind iterator back to the start
 	 * @link http://php.net/manual/en/splfixedarray.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Return current array entry
 	 * @link http://php.net/manual/en/splfixedarray.current.php
 	 * @return mixed The current element value.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Return current array index
 	 * @link http://php.net/manual/en/splfixedarray.key.php
 	 * @return int The current array index.
 	 */
-	public function key () {}
+	public function key(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Move to next entry
 	 * @link http://php.net/manual/en/splfixedarray.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Check whether the array contains more elements
 	 * @link http://php.net/manual/en/splfixedarray.valid.php
 	 * @return bool <b>TRUE</b> if the array contains any more elements, <b>FALSE</b> otherwise.
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 }
 
@@ -9018,7 +9054,7 @@ class SplFixedArray implements Iterator, Traversable, ArrayAccess, Countable {
 interface SplObserver  {
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Receive update from subject
 	 * @link http://php.net/manual/en/splobserver.update.php
 	 * @param SplSubject $subject <p>
@@ -9026,7 +9062,7 @@ interface SplObserver  {
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	abstract public function update (SplSubject $subject);
+	abstract public function update(SplSubject $subject);
 
 }
 
@@ -9038,7 +9074,7 @@ interface SplObserver  {
 interface SplSubject  {
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Attach an SplObserver
 	 * @link http://php.net/manual/en/splsubject.attach.php
 	 * @param SplObserver $observer <p>
@@ -9046,10 +9082,10 @@ interface SplSubject  {
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	abstract public function attach (SplObserver $observer);
+	abstract public function attach(SplObserver $observer);
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Detach an observer
 	 * @link http://php.net/manual/en/splsubject.detach.php
 	 * @param SplObserver $observer <p>
@@ -9057,15 +9093,15 @@ interface SplSubject  {
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	abstract public function detach (SplObserver $observer);
+	abstract public function detach(SplObserver $observer);
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Notify an observer
 	 * @link http://php.net/manual/en/splsubject.notify.php
 	 * @return void No value is returned.
 	 */
-	abstract public function notify ();
+	abstract public function notify();
 
 }
 
@@ -9078,7 +9114,7 @@ interface SplSubject  {
 class SplObjectStorage implements Countable, Iterator, Traversable, Serializable, ArrayAccess {
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Adds an object in the storage
 	 * @link http://php.net/manual/en/splobjectstorage.attach.php
 	 * @param object $object <p>
@@ -9089,10 +9125,10 @@ class SplObjectStorage implements Countable, Iterator, Traversable, Serializable
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function attach ($object, $data = null) {}
+	public function attach($object, $data = null) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Removes an object from the storage
 	 * @link http://php.net/manual/en/splobjectstorage.detach.php
 	 * @param object $object <p>
@@ -9100,10 +9136,10 @@ class SplObjectStorage implements Countable, Iterator, Traversable, Serializable
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function detach ($object) {}
+	public function detach($object) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Checks if the storage contains a specific object
 	 * @link http://php.net/manual/en/splobjectstorage.contains.php
 	 * @param object $object <p>
@@ -9111,10 +9147,10 @@ class SplObjectStorage implements Countable, Iterator, Traversable, Serializable
 	 * </p>
 	 * @return bool <b>TRUE</b> if the object is in the storage, <b>FALSE</b> otherwise.
 	 */
-	public function contains ($object) {}
+	public function contains($object): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Adds all objects from another storage
 	 * @link http://php.net/manual/en/splobjectstorage.addall.php
 	 * @param SplObjectStorage $storage <p>
@@ -9122,10 +9158,10 @@ class SplObjectStorage implements Countable, Iterator, Traversable, Serializable
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function addAll (SplObjectStorage $storage) {}
+	public function addAll(SplObjectStorage $storage) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Removes objects contained in another storage from the current storage
 	 * @link http://php.net/manual/en/splobjectstorage.removeall.php
 	 * @param SplObjectStorage $storage <p>
@@ -9133,10 +9169,10 @@ class SplObjectStorage implements Countable, Iterator, Traversable, Serializable
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function removeAll (SplObjectStorage $storage) {}
+	public function removeAll(SplObjectStorage $storage) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.6)<br/>
+	 * (PHP 5 &gt;= 5.3.6, PHP 7)<br/>
 	 * Removes all objects except for those contained in another storage from the current storage
 	 * @link http://php.net/manual/en/splobjectstorage.removeallexcept.php
 	 * @param SplObjectStorage $storage <p>
@@ -9144,18 +9180,18 @@ class SplObjectStorage implements Countable, Iterator, Traversable, Serializable
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function removeAllExcept (SplObjectStorage $storage) {}
+	public function removeAllExcept(SplObjectStorage $storage) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns the data associated with the current iterator entry
 	 * @link http://php.net/manual/en/splobjectstorage.getinfo.php
 	 * @return mixed The data associated with the current iterator position.
 	 */
-	public function getInfo () {}
+	public function getInfo() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Sets the data associated with the current iterator entry
 	 * @link http://php.net/manual/en/splobjectstorage.setinfo.php
 	 * @param mixed $data <p>
@@ -9163,10 +9199,10 @@ class SplObjectStorage implements Countable, Iterator, Traversable, Serializable
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setInfo ($data) {}
+	public function setInfo($data) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.4.0)<br/>
+	 * (PHP 5 &gt;= 5.4.0, PHP 7)<br/>
 	 * Calculate a unique identifier for the contained objects
 	 * @link http://php.net/manual/en/splobjectstorage.gethash.php
 	 * @param object $object <p>
@@ -9174,58 +9210,58 @@ class SplObjectStorage implements Countable, Iterator, Traversable, Serializable
 	 * </p>
 	 * @return string A string with the calculated identifier.
 	 */
-	public function getHash ($object) {}
+	public function getHash($object): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Returns the number of objects in the storage
 	 * @link http://php.net/manual/en/splobjectstorage.count.php
 	 * @return int The number of objects in the storage.
 	 */
-	public function count () {}
+	public function count(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Rewind the iterator to the first storage element
 	 * @link http://php.net/manual/en/splobjectstorage.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Returns if the current iterator entry is valid
 	 * @link http://php.net/manual/en/splobjectstorage.valid.php
 	 * @return bool <b>TRUE</b> if the iterator entry is valid, <b>FALSE</b> otherwise.
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Returns the index at which the iterator currently is
 	 * @link http://php.net/manual/en/splobjectstorage.key.php
 	 * @return int The index corresponding to the position of the iterator.
 	 */
-	public function key () {}
+	public function key(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Returns the current storage entry
 	 * @link http://php.net/manual/en/splobjectstorage.current.php
 	 * @return object The object at the current iterator position.
 	 */
-	public function current () {}
+	public function current() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Move to the next entry
 	 * @link http://php.net/manual/en/splobjectstorage.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Unserializes a storage from its string representation
 	 * @link http://php.net/manual/en/splobjectstorage.unserialize.php
 	 * @param string $serialized <p>
@@ -9233,18 +9269,18 @@ class SplObjectStorage implements Countable, Iterator, Traversable, Serializable
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function unserialize ($serialized) {}
+	public function unserialize(string $serialized) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.2)<br/>
+	 * (PHP 5 &gt;= 5.2.2, PHP 7)<br/>
 	 * Serializes the storage
 	 * @link http://php.net/manual/en/splobjectstorage.serialize.php
 	 * @return string A string representing the storage.
 	 */
-	public function serialize () {}
+	public function serialize(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Checks whether an object exists in the storage
 	 * @link http://php.net/manual/en/splobjectstorage.offsetexists.php
 	 * @param object $object <p>
@@ -9253,10 +9289,10 @@ class SplObjectStorage implements Countable, Iterator, Traversable, Serializable
 	 * @return bool <b>TRUE</b> if the object exists in the storage,
 	 * and <b>FALSE</b> otherwise.
 	 */
-	public function offsetExists ($object) {}
+	public function offsetExists($object): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Associates data to an object in the storage
 	 * @link http://php.net/manual/en/splobjectstorage.offsetset.php
 	 * @param object $object <p>
@@ -9267,10 +9303,10 @@ class SplObjectStorage implements Countable, Iterator, Traversable, Serializable
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function offsetSet ($object, $data = null) {}
+	public function offsetSet($object, $data = null) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Removes an object from the storage
 	 * @link http://php.net/manual/en/splobjectstorage.offsetunset.php
 	 * @param object $object <p>
@@ -9278,10 +9314,10 @@ class SplObjectStorage implements Countable, Iterator, Traversable, Serializable
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function offsetUnset ($object) {}
+	public function offsetUnset($object) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns the data associated with an object
 	 * @link http://php.net/manual/en/splobjectstorage.offsetget.php
 	 * @param object $object <p>
@@ -9289,7 +9325,7 @@ class SplObjectStorage implements Countable, Iterator, Traversable, Serializable
 	 * </p>
 	 * @return mixed The data previously associated with the object in the storage.
 	 */
-	public function offsetGet ($object) {}
+	public function offsetGet($object) {}
 
 }
 
@@ -9305,7 +9341,7 @@ class MultipleIterator implements Iterator, Traversable {
 
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Constructs a new MultipleIterator
 	 * @link http://php.net/manual/en/multipleiterator.construct.php
 	 * @param int $flags [optional] <p>
@@ -9316,18 +9352,18 @@ class MultipleIterator implements Iterator, Traversable {
 	 * </p>
 	 * <p> Defaults to <b>MultipleIterator::MIT_NEED_ALL</b>|<b>MultipleIterator::MIT_KEYS_NUMERIC</b>.</p>
 	 */
-	public function __construct ($flags = null) {}
+	public function __construct(int $flags = null) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Gets the flag information
 	 * @link http://php.net/manual/en/multipleiterator.getflags.php
-	 * @return void Information about the flags, as an integer.
+	 * @return int Information about the flags, as an integer.
 	 */
-	public function getFlags () {}
+	public function getFlags(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Sets flags
 	 * @link http://php.net/manual/en/multipleiterator.setflags.php
 	 * @param int $flags <p>
@@ -9336,10 +9372,10 @@ class MultipleIterator implements Iterator, Traversable {
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setFlags ($flags) {}
+	public function setFlags(int $flags) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Attaches iterator information
 	 * @link http://php.net/manual/en/multipleiterator.attachiterator.php
 	 * @param Iterator $iterator <p>
@@ -9351,10 +9387,10 @@ class MultipleIterator implements Iterator, Traversable {
 	 * </p>
 	 * @return void Description...
 	 */
-	public function attachIterator (Iterator $iterator, $infos = null) {}
+	public function attachIterator(Iterator $iterator, string $infos = null) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Detaches an iterator
 	 * @link http://php.net/manual/en/multipleiterator.detachiterator.php
 	 * @param Iterator $iterator <p>
@@ -9362,82 +9398,82 @@ class MultipleIterator implements Iterator, Traversable {
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function detachIterator (Iterator $iterator) {}
+	public function detachIterator(Iterator $iterator) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Checks if an iterator is attached
 	 * @link http://php.net/manual/en/multipleiterator.containsiterator.php
 	 * @param Iterator $iterator <p>
 	 * The iterator to check.
 	 * </p>
-	 * @return void <b>TRUE</b> on success or <b>FALSE</b> on failure.
+	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function containsIterator (Iterator $iterator) {}
+	public function containsIterator(Iterator $iterator): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Gets the number of attached iterator instances
 	 * @link http://php.net/manual/en/multipleiterator.countiterators.php
-	 * @return void The number of attached iterator instances (as an integer).
+	 * @return int The number of attached iterator instances (as an integer).
 	 */
-	public function countIterators () {}
+	public function countIterators(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Rewinds all attached iterator instances
 	 * @link http://php.net/manual/en/multipleiterator.rewind.php
 	 * @return void No value is returned.
 	 */
-	public function rewind () {}
+	public function rewind() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Checks the validity of sub iterators
 	 * @link http://php.net/manual/en/multipleiterator.valid.php
-	 * @return void <b>TRUE</b> if one or all sub iterators are valid depending on flags,
+	 * @return bool <b>TRUE</b> if one or all sub iterators are valid depending on flags,
 	 * otherwise <b>FALSE</b>
 	 */
-	public function valid () {}
+	public function valid(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Gets the registered iterator instances
 	 * @link http://php.net/manual/en/multipleiterator.key.php
 	 * @return array An array of all registered iterator instances,
 	 * or <b>FALSE</b> if no sub iterator is attached.
 	 */
-	public function key () {}
+	public function key(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Gets the registered iterator instances
 	 * @link http://php.net/manual/en/multipleiterator.current.php
 	 * @return array An array containing the current values of each attached iterator,
 	 * or <b>FALSE</b> if no iterators are attached.
 	 */
-	public function current () {}
+	public function current(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Moves all attached iterator instances forward
 	 * @link http://php.net/manual/en/multipleiterator.next.php
 	 * @return void No value is returned.
 	 */
-	public function next () {}
+	public function next() {}
 
 }
 
 /**
- * (PHP 5)<br/>
+ * (PHP 5, PHP 7)<br/>
  * Return available SPL classes
  * @link http://php.net/manual/en/function.spl-classes.php
  * @return array an array containing the currently available SPL classes.
  */
-function spl_classes () {}
+function spl_classes(): array {}
 
 /**
- * (PHP 5 &gt;= 5.1.2)<br/>
+ * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
  * Default implementation for __autoload()
  * @link http://php.net/manual/en/function.spl-autoload.php
  * @param string $class_name <p>
@@ -9450,10 +9486,10 @@ function spl_classes () {}
  * </p>
  * @return void No value is returned.
  */
-function spl_autoload ($class_name, $file_extensions = 'spl_autoload_extensions()') {}
+function spl_autoload(string $class_name, string $file_extensions = 'spl_autoload_extensions()') {}
 
 /**
- * (PHP 5 &gt;= 5.1.2)<br/>
+ * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
  * Register and return default file extensions for spl_autoload
  * @link http://php.net/manual/en/function.spl-autoload-extensions.php
  * @param string $file_extensions [optional] <p>
@@ -9466,10 +9502,10 @@ function spl_autoload ($class_name, $file_extensions = 'spl_autoload_extensions(
  * @return string A comma delimited list of default file extensions for
  * <b>spl_autoload</b>.
  */
-function spl_autoload_extensions ($file_extensions = null) {}
+function spl_autoload_extensions(string $file_extensions = null): string {}
 
 /**
- * (PHP 5 &gt;= 5.1.2)<br/>
+ * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
  * Register given function as __autoload() implementation
  * @link http://php.net/manual/en/function.spl-autoload-register.php
  * @param callable $autoload_function [optional] <p>
@@ -9489,10 +9525,10 @@ function spl_autoload_extensions ($file_extensions = null) {}
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function spl_autoload_register (callable $autoload_function = null, $throw = true, $prepend = false) {}
+function spl_autoload_register(callable $autoload_function = null, bool $throw = true, bool $prepend = false): bool {}
 
 /**
- * (PHP 5 &gt;= 5.1.2)<br/>
+ * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
  * Unregister given function as __autoload() implementation
  * @link http://php.net/manual/en/function.spl-autoload-unregister.php
  * @param mixed $autoload_function <p>
@@ -9500,20 +9536,20 @@ function spl_autoload_register (callable $autoload_function = null, $throw = tru
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function spl_autoload_unregister ($autoload_function) {}
+function spl_autoload_unregister($autoload_function): bool {}
 
 /**
- * (PHP 5 &gt;= 5.1.2)<br/>
+ * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
  * Return all registered __autoload() functions
  * @link http://php.net/manual/en/function.spl-autoload-functions.php
  * @return array An array of all registered __autoload functions.
  * If the autoload queue is not activated then the return value is <b>FALSE</b>.
  * If no function is registered the return value will be an empty array.
  */
-function spl_autoload_functions () {}
+function spl_autoload_functions(): array {}
 
 /**
- * (PHP 5 &gt;= 5.1.2)<br/>
+ * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
  * Try all registered __autoload() function to load the requested class
  * @link http://php.net/manual/en/function.spl-autoload-call.php
  * @param string $class_name <p>
@@ -9521,10 +9557,10 @@ function spl_autoload_functions () {}
  * </p>
  * @return void No value is returned.
  */
-function spl_autoload_call ($class_name) {}
+function spl_autoload_call(string $class_name) {}
 
 /**
- * (PHP 5 &gt;= 5.1.0)<br/>
+ * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
  * Return the parent classes of the given class
  * @link http://php.net/manual/en/function.class-parents.php
  * @param mixed $class <p>
@@ -9536,10 +9572,10 @@ function spl_autoload_call ($class_name) {}
  * </p>
  * @return array An array on success, or <b>FALSE</b> on error.
  */
-function class_parents ($class, $autoload = true) {}
+function class_parents($class, bool $autoload = true): array {}
 
 /**
- * (PHP 5 &gt;= 5.1.0)<br/>
+ * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
  * Return the interfaces which are implemented by the given class or interface
  * @link http://php.net/manual/en/function.class-implements.php
  * @param mixed $class <p>
@@ -9551,10 +9587,10 @@ function class_parents ($class, $autoload = true) {}
  * </p>
  * @return array An array on success, or <b>FALSE</b> on error.
  */
-function class_implements ($class, $autoload = true) {}
+function class_implements($class, bool $autoload = true): array {}
 
 /**
- * (PHP 5 &gt;= 5.4.0)<br/>
+ * (PHP 5 &gt;= 5.4.0, PHP 7)<br/>
  * Return the traits used by the given class
  * @link http://php.net/manual/en/function.class-uses.php
  * @param mixed $class <p>
@@ -9566,20 +9602,20 @@ function class_implements ($class, $autoload = true) {}
  * </p>
  * @return array An array on success, or <b>FALSE</b> on error.
  */
-function class_uses ($class, $autoload = true) {}
+function class_uses($class, bool $autoload = true): array {}
 
 /**
- * (PHP 5 &gt;= 5.2.0)<br/>
+ * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
  * Return hash id for given object
  * @link http://php.net/manual/en/function.spl-object-hash.php
  * @param object $obj
  * @return string A string that is unique for each currently existing object and is always
  * the same for each object.
  */
-function spl_object_hash ($obj) {}
+function spl_object_hash($obj): string {}
 
 /**
- * (PHP 5 &gt;= 5.1.0)<br/>
+ * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
  * Copy the iterator into an array
  * @link http://php.net/manual/en/function.iterator-to-array.php
  * @param Traversable $iterator <p>
@@ -9599,10 +9635,10 @@ function spl_object_hash ($obj) {}
  * </p>
  * @return array An array containing the elements of the <i>iterator</i>.
  */
-function iterator_to_array (Traversable $iterator, $use_keys = true) {}
+function iterator_to_array(Traversable $iterator, bool $use_keys = true): array {}
 
 /**
- * (PHP 5 &gt;= 5.1.0)<br/>
+ * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
  * Count the elements in an iterator
  * @link http://php.net/manual/en/function.iterator-count.php
  * @param Traversable $iterator <p>
@@ -9610,10 +9646,10 @@ function iterator_to_array (Traversable $iterator, $use_keys = true) {}
  * </p>
  * @return int The number of elements in <i>iterator</i>.
  */
-function iterator_count (Traversable $iterator) {}
+function iterator_count(Traversable $iterator): int {}
 
 /**
- * (PHP 5 &gt;= 5.1.0)<br/>
+ * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
  * Call a function for every element in an iterator
  * @link http://php.net/manual/en/function.iterator-apply.php
  * @param Traversable $iterator <p>
@@ -9629,7 +9665,7 @@ function iterator_count (Traversable $iterator) {}
  * </p>
  * @return int the iteration count.
  */
-function iterator_apply (Traversable $iterator, callable $function, array $args = null) {}
+function iterator_apply(Traversable $iterator, callable $function, array $args = null): int {}
 
-// End of SPL v.0.2
+// End of SPL v.7.0.4-7ubuntu2
 ?>

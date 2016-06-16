@@ -1,9 +1,9 @@
 <?php
 
-// Start of bcmath v.
+// Start of bcmath v.7.0.4-7ubuntu2
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Add two arbitrary precision numbers
  * @link http://php.net/manual/en/function.bcadd.php
  * @param string $left_operand <p>
@@ -15,10 +15,10 @@
  * @param int $scale [optional]
  * @return string The sum of the two operands, as a string.
  */
-function bcadd ($left_operand, $right_operand, $scale = null) {}
+function bcadd(string $left_operand, string $right_operand, int $scale = 0): string {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Subtract one arbitrary precision number from another
  * @link http://php.net/manual/en/function.bcsub.php
  * @param string $left_operand <p>
@@ -30,10 +30,10 @@ function bcadd ($left_operand, $right_operand, $scale = null) {}
  * @param int $scale [optional]
  * @return string The result of the subtraction, as a string.
  */
-function bcsub ($left_operand, $right_operand, $scale = 'int') {}
+function bcsub(string $left_operand, string $right_operand, int $scale = 0): string {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Multiply two arbitrary precision numbers
  * @link http://php.net/manual/en/function.bcmul.php
  * @param string $left_operand <p>
@@ -45,10 +45,10 @@ function bcsub ($left_operand, $right_operand, $scale = 'int') {}
  * @param int $scale [optional]
  * @return string the result as a string.
  */
-function bcmul ($left_operand, $right_operand, $scale = 'int') {}
+function bcmul(string $left_operand, string $right_operand, int $scale = 0): string {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Divide two arbitrary precision numbers
  * @link http://php.net/manual/en/function.bcdiv.php
  * @param string $left_operand <p>
@@ -61,10 +61,10 @@ function bcmul ($left_operand, $right_operand, $scale = 'int') {}
  * @return string the result of the division as a string, or <b>NULL</b> if
  * <i>right_operand</i> is 0.
  */
-function bcdiv ($left_operand, $right_operand, $scale = 'int') {}
+function bcdiv(string $left_operand, string $right_operand, int $scale = 0): string {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Get modulus of an arbitrary precision number
  * @link http://php.net/manual/en/function.bcmod.php
  * @param string $left_operand <p>
@@ -76,10 +76,10 @@ function bcdiv ($left_operand, $right_operand, $scale = 'int') {}
  * @return string the modulus as a string, or <b>NULL</b> if
  * <i>modulus</i> is 0.
  */
-function bcmod ($left_operand, $modulus) {}
+function bcmod(string $left_operand, string $modulus): string {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Raise an arbitrary precision number to another
  * @link http://php.net/manual/en/function.bcpow.php
  * @param string $left_operand <p>
@@ -91,10 +91,10 @@ function bcmod ($left_operand, $modulus) {}
  * @param int $scale [optional]
  * @return string the result as a string.
  */
-function bcpow ($left_operand, $right_operand, $scale = null) {}
+function bcpow(string $left_operand, string $right_operand, int $scale = 0): string {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Get the square root of an arbitrary precision number
  * @link http://php.net/manual/en/function.bcsqrt.php
  * @param string $operand <p>
@@ -104,10 +104,10 @@ function bcpow ($left_operand, $right_operand, $scale = null) {}
  * @return string the square root as a string, or <b>NULL</b> if
  * <i>operand</i> is negative.
  */
-function bcsqrt ($operand, $scale = null) {}
+function bcsqrt(string $operand, int $scale = 0): string {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Set default scale parameter for all bc math functions
  * @link http://php.net/manual/en/function.bcscale.php
  * @param int $scale <p>
@@ -115,10 +115,10 @@ function bcsqrt ($operand, $scale = null) {}
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function bcscale ($scale) {}
+function bcscale(int $scale): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Compare two arbitrary precision numbers
  * @link http://php.net/manual/en/function.bccomp.php
  * @param string $left_operand <p>
@@ -136,10 +136,10 @@ function bcscale ($scale) {}
  * <i>left_operand</i> is larger than the
  * <i>right_operand</i>, -1 otherwise.
  */
-function bccomp ($left_operand, $right_operand, $scale = 'int') {}
+function bccomp(string $left_operand, string $right_operand, int $scale = 0): int {}
 
 /**
- * (PHP 5)<br/>
+ * (PHP 5, PHP 7)<br/>
  * Raise an arbitrary precision number to another, reduced by a specified modulus
  * @link http://php.net/manual/en/function.bcpowmod.php
  * @param string $left_operand <p>
@@ -155,7 +155,7 @@ function bccomp ($left_operand, $right_operand, $scale = 'int') {}
  * @return string the result as a string, or <b>NULL</b> if <i>modulus</i>
  * is 0.
  */
-function bcpowmod ($left_operand, $right_operand, $modulus, $scale = 'int') {}
+function bcpowmod(string $left_operand, string $right_operand, string $modulus, int $scale = 0): string {}
 
-// End of bcmath v.
+// End of bcmath v.7.0.4-7ubuntu2
 ?>

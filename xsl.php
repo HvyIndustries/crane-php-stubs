@@ -1,6 +1,6 @@
 <?php
 
-// Start of xsl v.0.1
+// Start of xsl v.7.0.4-7ubuntu2
 
 /**
  * @link http://php.net/manual/en/class.xsltprocessor.php
@@ -8,7 +8,7 @@
 class XSLTProcessor  {
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Import stylesheet
 	 * @link http://php.net/manual/en/xsltprocessor.importstylesheet.php
 	 * @param object $stylesheet <p>
@@ -17,10 +17,10 @@ class XSLTProcessor  {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function importStylesheet ($stylesheet) {}
+	public function importStylesheet($stylesheet): bool {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Transform to a DOMDocument
 	 * @link http://php.net/manual/en/xsltprocessor.transformtodoc.php
 	 * @param DOMNode $doc <p>
@@ -28,10 +28,10 @@ class XSLTProcessor  {
 	 * </p>
 	 * @return DOMDocument The resulting <b>DOMDocument</b> or <b>FALSE</b> on error.
 	 */
-	public function transformToDoc (DOMNode $doc) {}
+	public function transformToDoc(DOMNode $doc): DOMDocument {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Transform to URI
 	 * @link http://php.net/manual/en/xsltprocessor.transformtouri.php
 	 * @param DOMDocument $doc <p>
@@ -42,10 +42,10 @@ class XSLTProcessor  {
 	 * </p>
 	 * @return int the number of bytes written or <b>FALSE</b> if an error occurred.
 	 */
-	public function transformToUri (DOMDocument $doc, $uri) {}
+	public function transformToUri(DOMDocument $doc, string $uri): int {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Transform to XML
 	 * @link http://php.net/manual/en/xsltprocessor.transformtoxml.php
 	 * @param object $doc <p>
@@ -54,10 +54,10 @@ class XSLTProcessor  {
 	 * </p>
 	 * @return string The result of the transformation as a string or <b>FALSE</b> on error.
 	 */
-	public function transformToXml ($doc) {}
+	public function transformToXml($doc): string {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Set value for a parameter
 	 * @link http://php.net/manual/en/xsltprocessor.setparameter.php
 	 * @param string $namespace <p>
@@ -71,10 +71,10 @@ class XSLTProcessor  {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function setParameter ($namespace, $name, $value) {}
+	public function setParameter(string $namespace, string $name, string $value): bool {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Get value of a parameter
 	 * @link http://php.net/manual/en/xsltprocessor.getparameter.php
 	 * @param string $namespaceURI <p>
@@ -85,10 +85,10 @@ class XSLTProcessor  {
 	 * </p>
 	 * @return string The value of the parameter (as a string), or <b>FALSE</b> if it's not set.
 	 */
-	public function getParameter ($namespaceURI, $localName) {}
+	public function getParameter(string $namespaceURI, string $localName): string {}
 
 	/**
-	 * (PHP 5)<br/>
+	 * (PHP 5, PHP 7)<br/>
 	 * Remove parameter
 	 * @link http://php.net/manual/en/xsltprocessor.removeparameter.php
 	 * @param string $namespaceURI <p>
@@ -99,18 +99,18 @@ class XSLTProcessor  {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function removeParameter ($namespaceURI, $localName) {}
+	public function removeParameter(string $namespaceURI, string $localName): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.4)<br/>
+	 * (PHP 5 &gt;= 5.0.4, PHP 7)<br/>
 	 * Determine if PHP has EXSLT support
 	 * @link http://php.net/manual/en/xsltprocessor.hasexsltsupport.php
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function hasExsltSupport () {}
+	public function hasExsltSupport(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.4)<br/>
+	 * (PHP 5 &gt;= 5.0.4, PHP 7)<br/>
 	 * Enables the ability to use PHP functions as XSLT functions
 	 * @link http://php.net/manual/en/xsltprocessor.registerphpfunctions.php
 	 * @param mixed $restrict [optional] <p>
@@ -123,7 +123,7 @@ class XSLTProcessor  {
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function registerPHPFunctions ($restrict = null) {}
+	public function registerPHPFunctions($restrict = null) {}
 
 	/**
 	 * (PHP &gt;= 5.3.0)<br/>
@@ -134,7 +134,7 @@ class XSLTProcessor  {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function setProfiling ($filename) {}
+	public function setProfiling(string $filename): bool {}
 
 	/**
 	 * (PHP &gt;= 5.4.0)<br/>
@@ -152,7 +152,7 @@ class XSLTProcessor  {
 	 * </p>
 	 * @return int the old security preferences.
 	 */
-	public function setSecurityPrefs ($securityPrefs) {}
+	public function setSecurityPrefs(int $securityPrefs): int {}
 
 	/**
 	 * (PHP &gt;= 5.4.0)<br/>
@@ -164,7 +164,7 @@ class XSLTProcessor  {
 	 * <b>XSL_SECPREF_READ_NETWORK</b>,
 	 * <b>XSL_SECPREF_WRITE_NETWORK</b>.
 	 */
-	public function getSecurityPrefs () {}
+	public function getSecurityPrefs(): int {}
 
 }
 define ('XSL_CLONE_AUTO', 0);
@@ -240,5 +240,5 @@ define ('LIBEXSLT_VERSION', 817);
  */
 define ('LIBEXSLT_DOTTED_VERSION', "1.1.28");
 
-// End of xsl v.0.1
+// End of xsl v.7.0.4-7ubuntu2
 ?>

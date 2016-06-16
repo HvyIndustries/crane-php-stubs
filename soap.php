@@ -1,6 +1,6 @@
 <?php
 
-// Start of soap v.
+// Start of soap v.7.0.4-7ubuntu2
 
 /**
  * The SoapClient class provides a client for SOAP 1.1, SOAP 1.2 servers. It can be used in WSDL
@@ -10,7 +10,7 @@
 class SoapClient  {
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * SoapClient constructor
 	 * @link http://php.net/manual/en/soapclient.soapclient.php
 	 * @param mixed $wsdl <p>
@@ -132,20 +132,20 @@ class SoapClient  {
 	 * <b>SOAP_SSL_METHOD_SSLv23</b>.
 	 * </p>
 	 */
-	public function SoapClient ($wsdl, array $options = null) {}
+	public function SoapClient($wsdl, array $options = null) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * Calls a SOAP function (deprecated)
 	 * @link http://php.net/manual/en/soapclient.call.php
 	 * @param string $function_name
 	 * @param string $arguments
 	 * @return mixed
 	 */
-	public function __call ($function_name, $arguments) {}
+	public function __call(string $function_name, string $arguments) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * Calls a SOAP function
 	 * @link http://php.net/manual/en/soapclient.soapcall.php
 	 * @param string $function_name <p>
@@ -185,59 +185,59 @@ class SoapClient  {
 	 * On error, if the SoapClient object was constructed with the exceptions
 	 * option set to <b>FALSE</b>, a SoapFault object will be returned.
 	 */
-	public function __soapCall ($function_name, array $arguments, array $options = null, $input_headers = null, array &$output_headers = null) {}
+	public function __soapCall(string $function_name, array $arguments, array $options = null, $input_headers = null, array &$output_headers = null) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * Returns last SOAP request
 	 * @link http://php.net/manual/en/soapclient.getlastrequest.php
 	 * @return string The last SOAP request, as an XML string.
 	 */
-	public function __getLastRequest () {}
+	public function __getLastRequest(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * Returns last SOAP response
 	 * @link http://php.net/manual/en/soapclient.getlastresponse.php
 	 * @return string The last SOAP response, as an XML string.
 	 */
-	public function __getLastResponse () {}
+	public function __getLastResponse(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * Returns the SOAP headers from the last request
 	 * @link http://php.net/manual/en/soapclient.getlastrequestheaders.php
 	 * @return string The last SOAP request headers.
 	 */
-	public function __getLastRequestHeaders () {}
+	public function __getLastRequestHeaders(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * Returns the SOAP headers from the last response
 	 * @link http://php.net/manual/en/soapclient.getlastresponseheaders.php
 	 * @return string The last SOAP response headers.
 	 */
-	public function __getLastResponseHeaders () {}
+	public function __getLastResponseHeaders(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * Returns list of available SOAP functions
 	 * @link http://php.net/manual/en/soapclient.getfunctions.php
 	 * @return array The array of SOAP function prototypes, detailing the return type,
 	 * the function name and type-hinted paramaters.
 	 */
-	public function __getFunctions () {}
+	public function __getFunctions(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * Returns a list of SOAP types
 	 * @link http://php.net/manual/en/soapclient.gettypes.php
 	 * @return array The array of SOAP types, detailing all structures and types.
 	 */
-	public function __getTypes () {}
+	public function __getTypes(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * Performs a SOAP request
 	 * @link http://php.net/manual/en/soapclient.dorequest.php
 	 * @param string $request <p>
@@ -258,10 +258,10 @@ class SoapClient  {
 	 * </p>
 	 * @return string The XML SOAP response.
 	 */
-	public function __doRequest ($request, $location, $action, $version, $one_way = 0) {}
+	public function __doRequest(string $request, string $location, string $action, int $version, int $one_way = 0): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.4)<br/>
+	 * (PHP 5 &gt;= 5.0.4, PHP 7)<br/>
 	 * The __setCookie purpose
 	 * @link http://php.net/manual/en/soapclient.setcookie.php
 	 * @param string $name <p>
@@ -272,12 +272,12 @@ class SoapClient  {
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function __setCookie ($name, $value = null) {}
+	public function __setCookie(string $name, string $value = null) {}
 
-	public function __getCookies () {}
+	public function __getCookies() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * Sets the location of the Web service to use
 	 * @link http://php.net/manual/en/soapclient.setlocation.php
 	 * @param string $new_location [optional] <p>
@@ -285,10 +285,10 @@ class SoapClient  {
 	 * </p>
 	 * @return string The old endpoint URL.
 	 */
-	public function __setLocation ($new_location = null) {}
+	public function __setLocation(string $new_location = null): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.5)<br/>
+	 * (PHP 5 &gt;= 5.0.5, PHP 7)<br/>
 	 * Sets SOAP headers for subsequent calls
 	 * @link http://php.net/manual/en/soapclient.setsoapheaders.php
 	 * @param mixed $soapheaders [optional] <p>
@@ -298,7 +298,7 @@ class SoapClient  {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function __setSoapHeaders ($soapheaders = null) {}
+	public function __setSoapHeaders($soapheaders = null): bool {}
 
 }
 
@@ -309,7 +309,7 @@ class SoapClient  {
 class SoapVar  {
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * SoapVar constructor
 	 * @link http://php.net/manual/en/soapvar.soapvar.php
 	 * @param mixed $data <p>
@@ -331,7 +331,7 @@ class SoapVar  {
 	 * The XML node namespace.
 	 * </p>
 	 */
-	public function SoapVar ($data, $encoding, $type_name = null, $type_namespace = null, $node_name = null, $node_namespace = null) {}
+	public function SoapVar($data, string $encoding, string $type_name = null, string $type_namespace = null, string $node_name = null, string $node_namespace = null) {}
 
 }
 
@@ -342,7 +342,7 @@ class SoapVar  {
 class SoapServer  {
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * SoapServer constructor
 	 * @link http://php.net/manual/en/soapserver.soapserver.php
 	 * @param mixed $wsdl <p>
@@ -386,10 +386,10 @@ class SoapServer  {
 	 * message sent otherwise.
 	 * </p>
 	 */
-	public function SoapServer ($wsdl, array $options = null) {}
+	public function SoapServer($wsdl, array $options = null) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.2)<br/>
+	 * (PHP 5 &gt;= 5.1.2, PHP 7)<br/>
 	 * Sets SoapServer persistence mode
 	 * @link http://php.net/manual/en/soapserver.setpersistence.php
 	 * @param int $mode <p>
@@ -408,10 +408,10 @@ class SoapServer  {
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setPersistence ($mode) {}
+	public function setPersistence(int $mode) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * Sets the class which handles SOAP requests
 	 * @link http://php.net/manual/en/soapserver.setclass.php
 	 * @param string $class_name <p>
@@ -424,10 +424,10 @@ class SoapServer  {
 	 * @param mixed $_ [optional]
 	 * @return void No value is returned.
 	 */
-	public function setClass ($class_name, $args = null, $_ = null) {}
+	public function setClass(string $class_name, $args = null, $_ = null) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
 	 * Sets the object which will be used to handle SOAP requests
 	 * @link http://php.net/manual/en/soapserver.setobject.php
 	 * @param object $object <p>
@@ -435,10 +435,10 @@ class SoapServer  {
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function setObject ($object) {}
+	public function setObject($object) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * Adds one or more functions to handle SOAP requests
 	 * @link http://php.net/manual/en/soapserver.addfunction.php
 	 * @param mixed $functions <p>
@@ -459,18 +459,18 @@ class SoapServer  {
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function addFunction ($functions) {}
+	public function addFunction($functions) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * Returns list of defined functions
 	 * @link http://php.net/manual/en/soapserver.getfunctions.php
 	 * @return array An array of the defined functions.
 	 */
-	public function getFunctions () {}
+	public function getFunctions(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * Handles a SOAP request
 	 * @link http://php.net/manual/en/soapserver.handle.php
 	 * @param string $soap_request [optional] <p>
@@ -479,10 +479,10 @@ class SoapServer  {
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function handle ($soap_request = null) {}
+	public function handle(string $soap_request = null) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * Issue SoapServer fault indicating an error
 	 * @link http://php.net/manual/en/soapserver.fault.php
 	 * @param string $code <p>
@@ -502,10 +502,10 @@ class SoapServer  {
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function fault ($code, $string, $actor = null, $details = null, $name = null) {}
+	public function fault(string $code, string $string, string $actor = null, string $details = null, string $name = null) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * Add a SOAP header to the response
 	 * @link http://php.net/manual/en/soapserver.addsoapheader.php
 	 * @param SoapHeader $object <p>
@@ -513,7 +513,7 @@ class SoapServer  {
 	 * </p>
 	 * @return void No value is returned.
 	 */
-	public function addSoapHeader (SoapHeader $object) {}
+	public function addSoapHeader(SoapHeader $object) {}
 
 }
 
@@ -521,7 +521,7 @@ class SoapServer  {
  * Represents a SOAP fault.
  * @link http://php.net/manual/en/class.soapfault.php
  */
-class SoapFault extends Exception  {
+class SoapFault extends Exception implements Throwable {
 	protected $message;
 	protected $code;
 	protected $file;
@@ -529,7 +529,7 @@ class SoapFault extends Exception  {
 
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * SoapFault constructor
 	 * @link http://php.net/manual/en/soapfault.soapfault.php
 	 * @param string $faultcode <p>
@@ -552,26 +552,26 @@ class SoapFault extends Exception  {
 	 * response header.
 	 * </p>
 	 */
-	public function SoapFault ($faultcode, $faultstring, $faultactor = null, $detail = null, $faultname = null, $headerfault = null) {}
+	public function SoapFault(string $faultcode, string $faultstring, string $faultactor = null, string $detail = null, string $faultname = null, string $headerfault = null) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * Obtain a string representation of a SoapFault
 	 * @link http://php.net/manual/en/soapfault.tostring.php
 	 * @return string A string describing the SoapFault.
 	 */
-	public function __toString () {}
+	public function __toString(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Clone the exception
 	 * @link http://php.net/manual/en/exception.clone.php
 	 * @return void No value is returned.
 	 */
-	final private function __clone () {}
+	final private function __clone() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Construct the exception
 	 * @link http://php.net/manual/en/exception.construct.php
 	 * @param string $message [optional] <p>
@@ -580,22 +580,24 @@ class SoapFault extends Exception  {
 	 * @param int $code [optional] <p>
 	 * The Exception code.
 	 * </p>
-	 * @param Exception $previous [optional] <p>
+	 * @param Throwable $previous [optional] <p>
 	 * The previous exception used for the exception chaining.
 	 * </p>
 	 */
-	public function __construct ($message = "", $code = 0, Exception $previous = null) {}
+	public function __construct(string $message = "", int $code = 0, Throwable $previous = null) {}
+
+	public function __wakeup() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception message
 	 * @link http://php.net/manual/en/exception.getmessage.php
 	 * @return string the Exception message as a string.
 	 */
-	final public function getMessage () {}
+	final public function getMessage(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception code
 	 * @link http://php.net/manual/en/exception.getcode.php
 	 * @return mixed the exception code as integer in
@@ -603,48 +605,48 @@ class SoapFault extends Exception  {
 	 * <b>Exception</b> descendants (for example as
 	 * string in <b>PDOException</b>).
 	 */
-	final public function getCode () {}
+	final public function getCode() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the file in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getfile.php
 	 * @return string the filename in which the exception was created.
 	 */
-	final public function getFile () {}
+	final public function getFile(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the line in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getline.php
 	 * @return int the line number where the exception was created.
 	 */
-	final public function getLine () {}
+	final public function getLine(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace
 	 * @link http://php.net/manual/en/exception.gettrace.php
 	 * @return array the Exception stack trace as an array.
 	 */
-	final public function getTrace () {}
+	final public function getTrace(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns previous Exception
 	 * @link http://php.net/manual/en/exception.getprevious.php
 	 * @return Exception the previous <b>Exception</b> if available
 	 * or <b>NULL</b> otherwise.
 	 */
-	final public function getPrevious () {}
+	final public function getPrevious(): Exception {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace as a string
 	 * @link http://php.net/manual/en/exception.gettraceasstring.php
 	 * @return string the Exception stack trace as a string.
 	 */
-	final public function getTraceAsString () {}
+	final public function getTraceAsString(): string {}
 
 }
 
@@ -655,7 +657,7 @@ class SoapFault extends Exception  {
 class SoapParam  {
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * SoapParam constructor
 	 * @link http://php.net/manual/en/soapparam.soapparam.php
 	 * @param mixed $data <p>
@@ -667,7 +669,7 @@ class SoapParam  {
 	 * The parameter name.
 	 * </p>
 	 */
-	public function SoapParam ($data, $name) {}
+	public function SoapParam($data, string $name) {}
 
 }
 
@@ -678,7 +680,7 @@ class SoapParam  {
 class SoapHeader  {
 
 	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
+	 * (PHP 5 &gt;= 5.0.1, PHP 7)<br/>
 	 * SoapHeader constructor
 	 * @link http://php.net/manual/en/soapheader.soapheader.php
 	 * @param string $namespace <p>
@@ -697,7 +699,7 @@ class SoapHeader  {
 	 * element.
 	 * </p>
 	 */
-	public function SoapHeader ($namespace, $name, $data = null, $mustunderstand = false, $actor = null) {}
+	public function SoapHeader(string $namespace, string $name, $data = null, bool $mustunderstand = false, string $actor = null) {}
 
 }
 
@@ -710,7 +712,7 @@ class SoapHeader  {
  * </p>
  * @return bool the original value.
  */
-function use_soap_error_handler ($handler = true) {}
+function use_soap_error_handler(bool $handler = true): bool {}
 
 /**
  * (Unknown)<br/>
@@ -721,7 +723,7 @@ function use_soap_error_handler ($handler = true) {}
  * </p>
  * @return bool This will return <b>TRUE</b> on error, and <b>FALSE</b> otherwise.
  */
-function is_soap_fault ($object) {}
+function is_soap_fault($object): bool {}
 
 define ('SOAP_1_1', 1);
 define ('SOAP_1_2', 2);
@@ -825,5 +827,5 @@ define ('SOAP_SSL_METHOD_SSLv3', 2);
  */
 define ('SOAP_SSL_METHOD_SSLv23', 3);
 
-// End of soap v.
+// End of soap v.7.0.4-7ubuntu2
 ?>

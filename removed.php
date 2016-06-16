@@ -1,7 +1,7 @@
 <?php
 
 /**
- * (PHP 4 &gt;= 4.0.5, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.5, PHP 5, PHP 7)<br/>
  * Convert character encoding as output buffer handler
  * @link http://php.net/manual/en/function.ob-iconv-handler.php
  * @param string $contents
@@ -9,10 +9,10 @@
  * @return string See <b>ob_start</b> for information about this handler
  * return values.
  */
-function ob_iconv_handler ($contents, $status) {}
+function ob_iconv_handler(string $contents, int $status): string {}
 
 /**
- * (PHP 5)<br/>
+ * (PHP 5, PHP 7)<br/>
  * ob_start callback function to repair the buffer
  * @link http://php.net/manual/en/function.ob-tidyhandler.php
  * @param string $input <p>
@@ -23,7 +23,7 @@ function ob_iconv_handler ($contents, $status) {}
  * </p>
  * @return string the modified buffer.
  */
-function ob_tidyhandler ($input, $mode = null) {}
+function ob_tidyhandler(string $input, int $mode = null): string {}
 
 /**
  * (PHP 4, PHP 5 &lt; 5.4.0)<br/>
@@ -36,7 +36,7 @@ function ob_tidyhandler ($input, $mode = null) {}
  * @param mixed $_ [optional]
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function session_register ($name, $_ = null) {}
+function session_register($name, $_ = null): bool {}
 
 /**
  * (PHP 4, PHP 5 &lt; 5.4.0)<br/>
@@ -47,7 +47,7 @@ function session_register ($name, $_ = null) {}
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function session_unregister ($name) {}
+function session_unregister(string $name): bool {}
 
 /**
  * (PHP 4, PHP 5 &lt; 5.4.0)<br/>
@@ -60,5 +60,5 @@ function session_unregister ($name) {}
  * global variable with the name <i>name</i> registered in
  * the current session, <b>FALSE</b> otherwise.
  */
-function session_is_registered ($name) {}
+function session_is_registered(string $name): bool {}
 ?>

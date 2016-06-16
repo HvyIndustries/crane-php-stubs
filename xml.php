@@ -1,9 +1,9 @@
 <?php
 
-// Start of xml v.
+// Start of xml v.7.0.4-7ubuntu2
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Create an XML parser
  * @link http://php.net/manual/en/function.xml-parser-create.php
  * @param string $encoding [optional] <p>
@@ -21,10 +21,10 @@
  * </p>
  * @return resource a resource handle for the new XML parser.
  */
-function xml_parser_create ($encoding = null) {}
+function xml_parser_create(string $encoding = null) {}
 
 /**
- * (PHP 4 &gt;= 4.0.5, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.5, PHP 5, PHP 7)<br/>
  * Create an XML parser with namespace support
  * @link http://php.net/manual/en/function.xml-parser-create-ns.php
  * @param string $encoding [optional] <p>
@@ -45,10 +45,10 @@ function xml_parser_create ($encoding = null) {}
  * </p>
  * @return resource a resource handle for the new XML parser.
  */
-function xml_parser_create_ns ($encoding = null, $separator = ":") {}
+function xml_parser_create_ns(string $encoding = null, string $separator = ":") {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Use XML Parser within an object
  * @link http://php.net/manual/en/function.xml-set-object.php
  * @param resource $parser <p>
@@ -59,10 +59,10 @@ function xml_parser_create_ns ($encoding = null, $separator = ":") {}
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function xml_set_object ($parser, &$object) {}
+function xml_set_object($parser, &$object): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Set up start and end element handlers
  * @link http://php.net/manual/en/function.xml-set-element-handler.php
  * @param resource $parser <p>
@@ -89,10 +89,10 @@ function xml_set_object ($parser, &$object) {}
  * reference to the XML parser calling the handler.
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function xml_set_element_handler ($parser, callable $start_element_handler, callable $end_element_handler) {}
+function xml_set_element_handler($parser, callable $start_element_handler, callable $end_element_handler): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Set up character data handler
  * @link http://php.net/manual/en/function.xml-set-character-data-handler.php
  * @param resource $parser <p>
@@ -114,10 +114,10 @@ function xml_set_element_handler ($parser, callable $start_element_handler, call
  * reference to the XML parser calling the handler.
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function xml_set_character_data_handler ($parser, callable $handler) {}
+function xml_set_character_data_handler($parser, callable $handler): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Set up processing instruction (PI) handler
  * @link http://php.net/manual/en/function.xml-set-processing-instruction-handler.php
  * @param resource $parser <p>
@@ -140,10 +140,10 @@ function xml_set_character_data_handler ($parser, callable $handler) {}
  * reference to the XML parser calling the handler.
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function xml_set_processing_instruction_handler ($parser, callable $handler) {}
+function xml_set_processing_instruction_handler($parser, callable $handler): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Set up default handler
  * @link http://php.net/manual/en/function.xml-set-default-handler.php
  * @param resource $parser <p>
@@ -165,10 +165,10 @@ function xml_set_processing_instruction_handler ($parser, callable $handler) {}
  * reference to the XML parser calling the handler.
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function xml_set_default_handler ($parser, callable $handler) {}
+function xml_set_default_handler($parser, callable $handler): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Set up unparsed entity declaration handler
  * @link http://php.net/manual/en/function.xml-set-unparsed-entity-decl-handler.php
  * @param resource $parser <p>
@@ -195,10 +195,10 @@ function xml_set_default_handler ($parser, callable $handler) {}
  * handler.
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function xml_set_unparsed_entity_decl_handler ($parser, callable $handler) {}
+function xml_set_unparsed_entity_decl_handler($parser, callable $handler): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Set up notation declaration handler
  * @link http://php.net/manual/en/function.xml-set-notation-decl-handler.php
  * @param resource $parser <p>
@@ -223,10 +223,10 @@ function xml_set_unparsed_entity_decl_handler ($parser, callable $handler) {}
  * reference to the XML parser calling the handler.
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function xml_set_notation_decl_handler ($parser, callable $handler) {}
+function xml_set_notation_decl_handler($parser, callable $handler): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Set up external entity reference handler
  * @link http://php.net/manual/en/function.xml-set-external-entity-ref-handler.php
  * @param resource $parser <p>
@@ -255,10 +255,10 @@ function xml_set_notation_decl_handler ($parser, callable $handler) {}
  * reference to the XML parser calling the handler.
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function xml_set_external_entity_ref_handler ($parser, callable $handler) {}
+function xml_set_external_entity_ref_handler($parser, callable $handler): bool {}
 
 /**
- * (PHP 4 &gt;= 4.0.5, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.5, PHP 5, PHP 7)<br/>
  * Set up start namespace declaration handler
  * @link http://php.net/manual/en/function.xml-set-start-namespace-decl-handler.php
  * @param resource $parser <p>
@@ -285,10 +285,10 @@ function xml_set_external_entity_ref_handler ($parser, callable $handler) {}
  * reference to the XML parser calling the handler.
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function xml_set_start_namespace_decl_handler ($parser, callable $handler) {}
+function xml_set_start_namespace_decl_handler($parser, callable $handler): bool {}
 
 /**
- * (PHP 4 &gt;= 4.0.5, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.5, PHP 5, PHP 7)<br/>
  * Set up end namespace declaration handler
  * @link http://php.net/manual/en/function.xml-set-end-namespace-decl-handler.php
  * @param resource $parser <p>
@@ -314,10 +314,10 @@ function xml_set_start_namespace_decl_handler ($parser, callable $handler) {}
  * reference to the XML parser calling the handler.
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function xml_set_end_namespace_decl_handler ($parser, callable $handler) {}
+function xml_set_end_namespace_decl_handler($parser, callable $handler): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Start parsing an XML document
  * @link http://php.net/manual/en/function.xml-parse.php
  * @param resource $parser <p>
@@ -347,10 +347,10 @@ function xml_set_end_namespace_decl_handler ($parser, callable $handler) {}
  * Entity errors are reported at the end of the data thus only if
  * <i>is_final</i> is set and <b>TRUE</b>.
  */
-function xml_parse ($parser, $data, $is_final = false) {}
+function xml_parse($parser, string $data, bool $is_final = false): int {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Parse XML data into an array structure
  * @link http://php.net/manual/en/function.xml-parse-into-struct.php
  * @param resource $parser <p>
@@ -369,10 +369,10 @@ function xml_parse ($parser, $data, $is_final = false) {}
  * success. This is not the same as <b>FALSE</b> and <b>TRUE</b>, be careful with
  * operators such as ===.
  */
-function xml_parse_into_struct ($parser, $data, array &$values, array &$index = null) {}
+function xml_parse_into_struct($parser, string $data, array &$values, array &$index = null): int {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Get XML parser error code
  * @link http://php.net/manual/en/function.xml-get-error-code.php
  * @param resource $parser <p>
@@ -383,10 +383,10 @@ function xml_parse_into_struct ($parser, $data, array &$values, array &$index = 
  * codes listed in the error codes
  * section.
  */
-function xml_get_error_code ($parser) {}
+function xml_get_error_code($parser): int {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Get XML parser error string
  * @link http://php.net/manual/en/function.xml-error-string.php
  * @param int $code <p>
@@ -395,10 +395,10 @@ function xml_get_error_code ($parser) {}
  * @return string a string with a textual description of the error
  * <i>code</i>, or <b>FALSE</b> if no description was found.
  */
-function xml_error_string ($code) {}
+function xml_error_string(int $code): string {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Get current line number for an XML parser
  * @link http://php.net/manual/en/function.xml-get-current-line-number.php
  * @param resource $parser <p>
@@ -408,10 +408,10 @@ function xml_error_string ($code) {}
  * not refer to a valid parser, or else it returns which line the
  * parser is currently at in its data buffer.
  */
-function xml_get_current_line_number ($parser) {}
+function xml_get_current_line_number($parser): int {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Get current column number for an XML parser
  * @link http://php.net/manual/en/function.xml-get-current-column-number.php
  * @param resource $parser <p>
@@ -423,10 +423,10 @@ function xml_get_current_line_number ($parser) {}
  * <b>xml_get_current_line_number</b>) the parser is
  * currently at.
  */
-function xml_get_current_column_number ($parser) {}
+function xml_get_current_column_number($parser): int {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Get current byte index for an XML parser
  * @link http://php.net/manual/en/function.xml-get-current-byte-index.php
  * @param resource $parser <p>
@@ -436,20 +436,20 @@ function xml_get_current_column_number ($parser) {}
  * not refer to a valid parser, or else it returns which byte index
  * the parser is currently at in its data buffer (starting at 0).
  */
-function xml_get_current_byte_index ($parser) {}
+function xml_get_current_byte_index($parser): int {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Free an XML parser
  * @link http://php.net/manual/en/function.xml-parser-free.php
  * @param resource $parser A reference to the XML parser to free.
  * @return bool This function returns <b>FALSE</b> if <i>parser</i> does not
  * refer to a valid parser, or else it frees the parser and returns <b>TRUE</b>.
  */
-function xml_parser_free ($parser) {}
+function xml_parser_free($parser): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Set options in an XML parser
  * @link http://php.net/manual/en/function.xml-parser-set-option.php
  * @param resource $parser <p>
@@ -510,10 +510,10 @@ function xml_parser_free ($parser) {}
  * refer to a valid parser, or if the option could not be set. Else the
  * option is set and <b>TRUE</b> is returned.
  */
-function xml_parser_set_option ($parser, $option, $value) {}
+function xml_parser_set_option($parser, int $option, $value): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Get options from an XML parser
  * @link http://php.net/manual/en/function.xml-parser-get-option.php
  * @param resource $parser A reference to the XML parser to get an option from.
@@ -525,10 +525,10 @@ function xml_parser_set_option ($parser, $option, $value) {}
  * valid (generates also a <b>E_WARNING</b>).
  * Else the option's value is returned.
  */
-function xml_parser_get_option ($parser, $option) {}
+function xml_parser_get_option($parser, int $option) {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Encodes an ISO-8859-1 string to UTF-8
  * @link http://php.net/manual/en/function.utf8-encode.php
  * @param string $data <p>
@@ -536,10 +536,10 @@ function xml_parser_get_option ($parser, $option) {}
  * </p>
  * @return string the UTF-8 translation of <i>data</i>.
  */
-function utf8_encode ($data) {}
+function utf8_encode(string $data): string {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Converts a string with ISO-8859-1 characters encoded with UTF-8
 to single-byte ISO-8859-1
  * @link http://php.net/manual/en/function.utf8-decode.php
@@ -548,7 +548,7 @@ to single-byte ISO-8859-1
  * </p>
  * @return string the ISO-8859-1 translation of <i>data</i>.
  */
-function utf8_decode ($data) {}
+function utf8_decode(string $data): string {}
 
 define ('XML_ERROR_NONE', 0);
 define ('XML_ERROR_NO_MEMORY', 1);
@@ -584,5 +584,5 @@ define ('XML_OPTION_SKIP_WHITE', 4);
  */
 define ('XML_SAX_IMPL', "libxml");
 
-// End of xml v.
+// End of xml v.7.0.4-7ubuntu2
 ?>

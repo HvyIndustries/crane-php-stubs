@@ -1,9 +1,9 @@
 <?php
 
-// Start of exif v.1.4 $Id: ab2a50435139d06a6aaac1b47adb458267625069 $
+// Start of exif v.1.4 $Id: 8bdc0c8f27c2c9dd1f7551f1f9fe3ab57a06a4b1 $
 
 /**
- * (PHP 4 &gt;= 4.2.0, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.2.0, PHP 5, PHP 7)<br/>
  * Reads the EXIF headers from JPEG or TIFF
  * @link http://php.net/manual/en/function.exif-read-data.php
  * @param string $filename <p>
@@ -76,10 +76,10 @@
  * those headers. If no data can be returned,
  * <b>exif_read_data</b> will return <b>FALSE</b>.
  */
-function exif_read_data ($filename, $sections = null, $arrays = false, $thumbnail = false) {}
+function exif_read_data(string $filename, string $sections = null, bool $arrays = false, bool $thumbnail = false): array {}
 
 /**
- * (PHP 4 &gt;= 4.0.1, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.1, PHP 5, PHP 7)<br/>
  * Alias of <b>exif_read_data</b>
  * @link http://php.net/manual/en/function.read-exif-data.php
  * @param $filename
@@ -87,10 +87,10 @@ function exif_read_data ($filename, $sections = null, $arrays = false, $thumbnai
  * @param $sub_arrays [optional]
  * @param $read_thumbnail [optional]
  */
-function read_exif_data ($filename, $sections_needed, $sub_arrays, $read_thumbnail) {}
+function read_exif_data($filename, $sections_needed, $sub_arrays, $read_thumbnail) {}
 
 /**
- * (PHP 4 &gt;= 4.2.0, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.2.0, PHP 5, PHP 7)<br/>
  * Get the header name for an index
  * @link http://php.net/manual/en/function.exif-tagname.php
  * @param int $index <p>
@@ -99,10 +99,10 @@ function read_exif_data ($filename, $sections_needed, $sub_arrays, $read_thumbna
  * @return string the header name, or <b>FALSE</b> if <i>index</i> is
  * not a defined EXIF tag id.
  */
-function exif_tagname ($index) {}
+function exif_tagname(int $index): string {}
 
 /**
- * (PHP 4 &gt;= 4.2.0, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.2.0, PHP 5, PHP 7)<br/>
  * Retrieve the embedded thumbnail of a TIFF or JPEG image
  * @link http://php.net/manual/en/function.exif-thumbnail.php
  * @param string $filename <p>
@@ -122,10 +122,10 @@ function exif_tagname ($index) {}
  * @return string the embedded thumbnail, or <b>FALSE</b> if the image contains no
  * thumbnail.
  */
-function exif_thumbnail ($filename, &$width = null, &$height = null, &$imagetype = null) {}
+function exif_thumbnail(string $filename, int &$width = null, int &$height = null, int &$imagetype = null): string {}
 
 /**
- * (PHP 4 &gt;= 4.3.0, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.3.0, PHP 5, PHP 7)<br/>
  * Determine the type of an image
  * @link http://php.net/manual/en/function.exif-imagetype.php
  * @param string $filename The image being checked.
@@ -139,9 +139,9 @@ function exif_thumbnail ($filename, &$width = null, &$height = null, &$imagetype
  * and return <b>FALSE</b> if it is unable to read enough bytes from the file to
  * determine the image type.
  */
-function exif_imagetype ($filename) {}
+function exif_imagetype(string $filename): int {}
 
 define ('EXIF_USE_MBSTRING', 1);
 
-// End of exif v.1.4 $Id: ab2a50435139d06a6aaac1b47adb458267625069 $
+// End of exif v.1.4 $Id: 8bdc0c8f27c2c9dd1f7551f1f9fe3ab57a06a4b1 $
 ?>

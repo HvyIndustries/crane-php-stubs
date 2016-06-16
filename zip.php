@@ -1,6 +1,6 @@
 <?php
 
-// Start of zip v.1.12.4
+// Start of zip v.1.13.0
 
 /**
  * A file archive, compressed with Zip.
@@ -332,7 +332,7 @@ class ZipArchive  {
 
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.1.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.1.0)<br/>
 	 * Open a ZIP file archive
 	 * @link http://php.net/manual/en/ziparchive.open.php
 	 * @param string $filename <p>
@@ -402,10 +402,10 @@ class ZipArchive  {
 	 * </p>
 	 * </p>
 	 */
-	public function open ($filename, $flags = null) {}
+	public function open(string $filename, int $flags = null) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.6.0, PECL zip &gt;= 1.12.4)<br/>
+	 * (PHP 5 &gt;= 5.6.0, PHP 7, PECL zip &gt;= 1.12.4)<br/>
 	 * Set the password for the active archive
 	 * @link http://php.net/manual/en/ziparchive.setpassword.php
 	 * @param string $password <p>
@@ -413,26 +413,26 @@ class ZipArchive  {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function setPassword ($password) {}
+	public function setPassword(string $password): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.1.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.1.0)<br/>
 	 * Close the active archive (opened or newly created)
 	 * @link http://php.net/manual/en/ziparchive.close.php
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function close () {}
+	public function close(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.7)<br/>
+	 * (PHP 5 &gt;= 5.2.7, PHP 7)<br/>
 	 * Returns the status error message, system and/or zip messages
 	 * @link http://php.net/manual/en/ziparchive.getstatusstring.php
 	 * @return string a string with the status message on success or <b>FALSE</b> on failure.
 	 */
-	public function getStatusString () {}
+	public function getStatusString(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.8.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.8.0)<br/>
 	 * Add a new directory
 	 * @link http://php.net/manual/en/ziparchive.addemptydir.php
 	 * @param string $dirname <p>
@@ -440,10 +440,10 @@ class ZipArchive  {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function addEmptyDir ($dirname) {}
+	public function addEmptyDir(string $dirname): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.1.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.1.0)<br/>
 	 * Add a file to a ZIP archive using its contents
 	 * @link http://php.net/manual/en/ziparchive.addfromstring.php
 	 * @param string $localname <p>
@@ -455,10 +455,10 @@ class ZipArchive  {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function addFromString ($localname, $contents) {}
+	public function addFromString(string $localname, string $contents): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.1.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.1.0)<br/>
 	 * Adds a file to a ZIP archive from the given path
 	 * @link http://php.net/manual/en/ziparchive.addfile.php
 	 * @param string $filename <p>
@@ -475,10 +475,10 @@ class ZipArchive  {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function addFile ($filename, $localname = null, $start = 0, $length = 0) {}
+	public function addFile(string $filename, string $localname = null, int $start = 0, int $length = 0): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0, PECL zip &gt;= 1.9.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7, PECL zip &gt;= 1.9.0)<br/>
 	 * Add files from a directory by glob pattern
 	 * @link http://php.net/manual/en/ziparchive.addglob.php
 	 * @param string $pattern <p>
@@ -500,10 +500,10 @@ class ZipArchive  {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function addGlob ($pattern, $flags = 0, array $options = 'array()') {}
+	public function addGlob(string $pattern, int $flags = 0, array $options = array()): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0, PECL zip &gt;= 1.9.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7, PECL zip &gt;= 1.9.0)<br/>
 	 * Add files from a directory by PCRE pattern
 	 * @link http://php.net/manual/en/ziparchive.addpattern.php
 	 * @param string $pattern <p>
@@ -517,10 +517,10 @@ class ZipArchive  {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function addPattern ($pattern, $path = ".", array $options = 'array()') {}
+	public function addPattern(string $pattern, string $path = ".", array $options = array()): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.5.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.5.0)<br/>
 	 * Renames an entry defined by its index
 	 * @link http://php.net/manual/en/ziparchive.renameindex.php
 	 * @param int $index <p>
@@ -531,10 +531,10 @@ class ZipArchive  {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function renameIndex ($index, $newname) {}
+	public function renameIndex(int $index, string $newname): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.5.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.5.0)<br/>
 	 * Renames an entry defined by its name
 	 * @link http://php.net/manual/en/ziparchive.renamename.php
 	 * @param string $name <p>
@@ -545,10 +545,10 @@ class ZipArchive  {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function renameName ($name, $newname) {}
+	public function renameName(string $name, string $newname): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.4.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.4.0)<br/>
 	 * Set the comment of a ZIP archive
 	 * @link http://php.net/manual/en/ziparchive.setarchivecomment.php
 	 * @param string $comment <p>
@@ -556,10 +556,10 @@ class ZipArchive  {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function setArchiveComment ($comment) {}
+	public function setArchiveComment(string $comment): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.1.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.1.0)<br/>
 	 * Returns the Zip archive comment
 	 * @link http://php.net/manual/en/ziparchive.getarchivecomment.php
 	 * @param int $flags [optional] <p>
@@ -568,10 +568,10 @@ class ZipArchive  {
 	 * </p>
 	 * @return string the Zip archive comment or <b>FALSE</b> on failure.
 	 */
-	public function getArchiveComment ($flags = null) {}
+	public function getArchiveComment(int $flags = null): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.4.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.4.0)<br/>
 	 * Set the comment of an entry defined by its index
 	 * @link http://php.net/manual/en/ziparchive.setcommentindex.php
 	 * @param int $index <p>
@@ -582,10 +582,10 @@ class ZipArchive  {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function setCommentIndex ($index, $comment) {}
+	public function setCommentIndex(int $index, string $comment): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.4.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.4.0)<br/>
 	 * Set the comment of an entry defined by its name
 	 * @link http://php.net/manual/en/ziparchive.setcommentname.php
 	 * @param string $name <p>
@@ -596,10 +596,10 @@ class ZipArchive  {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function setCommentName ($name, $comment) {}
+	public function setCommentName(string $name, string $comment): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.4.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.4.0)<br/>
 	 * Returns the comment of an entry using the entry index
 	 * @link http://php.net/manual/en/ziparchive.getcommentindex.php
 	 * @param int $index <p>
@@ -611,10 +611,10 @@ class ZipArchive  {
 	 * </p>
 	 * @return string the comment on success or <b>FALSE</b> on failure.
 	 */
-	public function getCommentIndex ($index, $flags = null) {}
+	public function getCommentIndex(int $index, int $flags = null): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.4.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.4.0)<br/>
 	 * Returns the comment of an entry using the entry name
 	 * @link http://php.net/manual/en/ziparchive.getcommentname.php
 	 * @param string $name <p>
@@ -626,10 +626,10 @@ class ZipArchive  {
 	 * </p>
 	 * @return string the comment on success or <b>FALSE</b> on failure.
 	 */
-	public function getCommentName ($name, $flags = null) {}
+	public function getCommentName(string $name, int $flags = null): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.5.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.5.0)<br/>
 	 * delete an entry in the archive using its index
 	 * @link http://php.net/manual/en/ziparchive.deleteindex.php
 	 * @param int $index <p>
@@ -637,10 +637,10 @@ class ZipArchive  {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function deleteIndex ($index) {}
+	public function deleteIndex(int $index): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.5.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.5.0)<br/>
 	 * delete an entry in the archive using its name
 	 * @link http://php.net/manual/en/ziparchive.deletename.php
 	 * @param string $name <p>
@@ -648,10 +648,10 @@ class ZipArchive  {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function deleteName ($name) {}
+	public function deleteName(string $name): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.5.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.5.0)<br/>
 	 * Get the details of an entry defined by its name.
 	 * @link http://php.net/manual/en/ziparchive.statname.php
 	 * @param string $name <p>
@@ -667,10 +667,10 @@ class ZipArchive  {
 	 * </p>
 	 * @return array an array containing the entry details or <b>FALSE</b> on failure.
 	 */
-	public function statName ($name, $flags = null) {}
+	public function statName(string $name, int $flags = null): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.1.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.1.0)<br/>
 	 * Get the details of an entry defined by its index.
 	 * @link http://php.net/manual/en/ziparchive.statindex.php
 	 * @param int $index <p>
@@ -683,10 +683,10 @@ class ZipArchive  {
 	 * </p>
 	 * @return array an array containing the entry details or <b>FALSE</b> on failure.
 	 */
-	public function statIndex ($index, $flags = null) {}
+	public function statIndex(int $index, int $flags = null): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.5.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.5.0)<br/>
 	 * Returns the index of the entry in the archive
 	 * @link http://php.net/manual/en/ziparchive.locatename.php
 	 * @param string $name <p>
@@ -700,10 +700,10 @@ class ZipArchive  {
 	 * </p>
 	 * @return int the index of the entry on success or <b>FALSE</b> on failure.
 	 */
-	public function locateName ($name, $flags = null) {}
+	public function locateName(string $name, int $flags = null): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.5.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.5.0)<br/>
 	 * Returns the name of an entry using its index
 	 * @link http://php.net/manual/en/ziparchive.getnameindex.php
 	 * @param int $index <p>
@@ -715,26 +715,26 @@ class ZipArchive  {
 	 * </p>
 	 * @return string the name on success or <b>FALSE</b> on failure.
 	 */
-	public function getNameIndex ($index, $flags = null) {}
+	public function getNameIndex(int $index, int $flags = null): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.1.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.1.0)<br/>
 	 * Revert all global changes done in the archive.
 	 * @link http://php.net/manual/en/ziparchive.unchangearchive.php
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function unchangeArchive () {}
+	public function unchangeArchive(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.1.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.1.0)<br/>
 	 * Undo all changes done in the archive
 	 * @link http://php.net/manual/en/ziparchive.unchangeall.php
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function unchangeAll () {}
+	public function unchangeAll(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.1.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.1.0)<br/>
 	 * Revert all changes done to an entry at the given index
 	 * @link http://php.net/manual/en/ziparchive.unchangeindex.php
 	 * @param int $index <p>
@@ -742,10 +742,10 @@ class ZipArchive  {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function unchangeIndex ($index) {}
+	public function unchangeIndex(int $index): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.5.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.5.0)<br/>
 	 * Revert all changes done to an entry with the given name.
 	 * @link http://php.net/manual/en/ziparchive.unchangename.php
 	 * @param string $name <p>
@@ -753,10 +753,10 @@ class ZipArchive  {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function unchangeName ($name) {}
+	public function unchangeName(string $name): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.1.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.1.0)<br/>
 	 * Extract the archive contents
 	 * @link http://php.net/manual/en/ziparchive.extractto.php
 	 * @param string $destination <p>
@@ -768,10 +768,10 @@ class ZipArchive  {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function extractTo ($destination, $entries = null) {}
+	public function extractTo(string $destination, $entries = null): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.1.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.1.0)<br/>
 	 * Returns the entry contents using its name
 	 * @link http://php.net/manual/en/ziparchive.getfromname.php
 	 * @param string $name <p>
@@ -789,7 +789,7 @@ class ZipArchive  {
 	 * </p>
 	 * @return string the contents of the entry on success or <b>FALSE</b> on failure.
 	 */
-	public function getFromName ($name, $length = 0, $flags = null) {}
+	public function getFromName(string $name, int $length = 0, int $flags = null): string {}
 
 	/**
 	 * (No version information available, might only be in Git)<br/>
@@ -810,10 +810,10 @@ class ZipArchive  {
 	 * </p>
 	 * @return string the contents of the entry on success or <b>FALSE</b> on failure.
 	 */
-	public function getFromIndex ($index, $length = 0, $flags = null) {}
+	public function getFromIndex(int $index, int $length = 0, int $flags = null): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.1.0)<br/>
+	 * (PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.1.0)<br/>
 	 * Get a file handler to the entry defined by its name (read only).
 	 * @link http://php.net/manual/en/ziparchive.getstream.php
 	 * @param string $name <p>
@@ -821,10 +821,10 @@ class ZipArchive  {
 	 * </p>
 	 * @return resource a file pointer (resource) on success or <b>FALSE</b> on failure.
 	 */
-	public function getStream ($name) {}
+	public function getStream(string $name) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.6.0, PECL zip &gt;= 1.12.4)<br/>
+	 * (PHP 5 &gt;= 5.6.0, PHP 7, PECL zip &gt;= 1.12.4)<br/>
 	 * Set the external attributes of an entry defined by its name
 	 * @link http://php.net/manual/en/ziparchive.setexternalattributesname.php
 	 * @param string $name <p>
@@ -841,10 +841,10 @@ class ZipArchive  {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function setExternalAttributesName ($name, $opsys, $attr, $flags = null) {}
+	public function setExternalAttributesName(string $name, int $opsys, int $attr, int $flags = null): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.6.0, PECL zip &gt;= 1.12.4)<br/>
+	 * (PHP 5 &gt;= 5.6.0, PHP 7, PECL zip &gt;= 1.12.4)<br/>
 	 * Set the external attributes of an entry defined by its index
 	 * @link http://php.net/manual/en/ziparchive.setexternalattributesindex.php
 	 * @param int $index <p>
@@ -861,10 +861,10 @@ class ZipArchive  {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function setExternalAttributesIndex ($index, $opsys, $attr, $flags = null) {}
+	public function setExternalAttributesIndex(int $index, int $opsys, int $attr, int $flags = null): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.6.0, PECL zip &gt;= 1.12.4)<br/>
+	 * (PHP 5 &gt;= 5.6.0, PHP 7, PECL zip &gt;= 1.12.4)<br/>
 	 * Retrieve the external attributes of an entry defined by its name
 	 * @link http://php.net/manual/en/ziparchive.getexternalattributesname.php
 	 * @param string $name <p>
@@ -882,10 +882,10 @@ class ZipArchive  {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function getExternalAttributesName ($name, &$opsys, &$attr, $flags = null) {}
+	public function getExternalAttributesName(string $name, int &$opsys, int &$attr, int $flags = null): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.6.0, PECL zip &gt;= 1.12.4)<br/>
+	 * (PHP 5 &gt;= 5.6.0, PHP 7, PECL zip &gt;= 1.12.4)<br/>
 	 * Retrieve the external attributes of an entry defined by its index
 	 * @link http://php.net/manual/en/ziparchive.getexternalattributesindex.php
 	 * @param int $index <p>
@@ -903,12 +903,52 @@ class ZipArchive  {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function getExternalAttributesIndex ($index, &$opsys, &$attr, $flags = null) {}
+	public function getExternalAttributesIndex(int $index, int &$opsys, int &$attr, int $flags = null): bool {}
+
+	/**
+	 * (PHP 7, PECL zip &gt;= 1.13.0)<br/>
+	 * Set the compression method of an entry defined by its name
+	 * @link http://php.net/manual/en/ziparchive.setcompressionname.php
+	 * @param string $name <p>
+	 * Name of the entry.
+	 * </p>
+	 * @param int $comp_method <p>
+	 * The compression method. Either
+	 * <b>ZipArchive::CM_DEFAULT</b>,
+	 * <b>ZipArchive::CM_STORE</b> or
+	 * <b>ZipArchive::CM_DEFLATE</b>.
+	 * </p>
+	 * @param int $comp_flags [optional] <p>
+	 * Compression flags. Currently unused.
+	 * </p>
+	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
+	 */
+	public function setCompressionName(string $name, int $comp_method, int $comp_flags = 0): bool {}
+
+	/**
+	 * (PHP 7, PECL zip &gt;= 1.13.0)<br/>
+	 * Set the compression method of an entry defined by its index
+	 * @link http://php.net/manual/en/ziparchive.setcompressionindex.php
+	 * @param int $index <p>
+	 * Index of the entry.
+	 * </p>
+	 * @param int $comp_method <p>
+	 * The compression method. Either
+	 * <b>ZipArchive::CM_DEFAULT</b>,
+	 * <b>ZipArchive::CM_STORE</b> or
+	 * <b>ZipArchive::CM_DEFLATE</b>.
+	 * </p>
+	 * @param int $comp_flags [optional] <p>
+	 * Compression flags. Currently unused.
+	 * </p>
+	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
+	 */
+	public function setCompressionIndex(int $index, int $comp_method, int $comp_flags = 0): bool {}
 
 }
 
 /**
- * (PHP 4 &gt;= 4.1.0, PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.0.0)<br/>
+ * (PHP 4 &gt;= 4.1.0, PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.0.0)<br/>
  * Open a ZIP file archive
  * @link http://php.net/manual/en/function.zip-open.php
  * @param string $filename <p>
@@ -919,10 +959,10 @@ class ZipArchive  {
  * or returns the number of error if <i>filename</i> does not
  * exist or in case of other error.
  */
-function zip_open ($filename) {}
+function zip_open(string $filename) {}
 
 /**
- * (PHP 4 &gt;= 4.1.0, PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.0.0)<br/>
+ * (PHP 4 &gt;= 4.1.0, PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.0.0)<br/>
  * Close a ZIP file archive
  * @link http://php.net/manual/en/function.zip-close.php
  * @param resource $zip <p>
@@ -930,10 +970,10 @@ function zip_open ($filename) {}
  * </p>
  * @return void No value is returned.
  */
-function zip_close ($zip) {}
+function zip_close($zip) {}
 
 /**
- * (PHP 4 &gt;= 4.1.0, PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.0.0)<br/>
+ * (PHP 4 &gt;= 4.1.0, PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.0.0)<br/>
  * Read next entry in a ZIP file archive
  * @link http://php.net/manual/en/function.zip-read.php
  * @param resource $zip <p>
@@ -944,10 +984,10 @@ function zip_close ($zip) {}
  * there are no more entries to read, or an error code if an error
  * occurred.
  */
-function zip_read ($zip) {}
+function zip_read($zip) {}
 
 /**
- * (PHP 4 &gt;= 4.1.0, PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.0.0)<br/>
+ * (PHP 4 &gt;= 4.1.0, PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.0.0)<br/>
  * Open a directory entry for reading
  * @link http://php.net/manual/en/function.zip-entry-open.php
  * @param resource $zip <p>
@@ -973,10 +1013,10 @@ function zip_read ($zip) {}
  * indicates the result of the operation and is not needed for
  * reading or closing the directory entry.
  */
-function zip_entry_open ($zip, $zip_entry, $mode = null) {}
+function zip_entry_open($zip, $zip_entry, string $mode = null): bool {}
 
 /**
- * (PHP 4 &gt;= 4.1.0, PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.0.0)<br/>
+ * (PHP 4 &gt;= 4.1.0, PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.0.0)<br/>
  * Close a directory entry
  * @link http://php.net/manual/en/function.zip-entry-close.php
  * @param resource $zip_entry <p>
@@ -984,10 +1024,10 @@ function zip_entry_open ($zip, $zip_entry, $mode = null) {}
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function zip_entry_close ($zip_entry) {}
+function zip_entry_close($zip_entry): bool {}
 
 /**
- * (PHP 4 &gt;= 4.1.0, PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.0.0)<br/>
+ * (PHP 4 &gt;= 4.1.0, PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.0.0)<br/>
  * Read from an open directory entry
  * @link http://php.net/manual/en/function.zip-entry-read.php
  * @param resource $zip_entry <p>
@@ -1001,10 +1041,10 @@ function zip_entry_close ($zip_entry) {}
  * </p>
  * @return string the data read, empty string on end of a file, or <b>FALSE</b> on error.
  */
-function zip_entry_read ($zip_entry, $length = 1024) {}
+function zip_entry_read($zip_entry, int $length = 1024): string {}
 
 /**
- * (PHP 4 &gt;= 4.1.0, PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.0.0)<br/>
+ * (PHP 4 &gt;= 4.1.0, PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.0.0)<br/>
  * Retrieve the actual file size of a directory entry
  * @link http://php.net/manual/en/function.zip-entry-filesize.php
  * @param resource $zip_entry <p>
@@ -1012,10 +1052,10 @@ function zip_entry_read ($zip_entry, $length = 1024) {}
  * </p>
  * @return int The size of the directory entry.
  */
-function zip_entry_filesize ($zip_entry) {}
+function zip_entry_filesize($zip_entry): int {}
 
 /**
- * (PHP 4 &gt;= 4.1.0, PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.0.0)<br/>
+ * (PHP 4 &gt;= 4.1.0, PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.0.0)<br/>
  * Retrieve the name of a directory entry
  * @link http://php.net/manual/en/function.zip-entry-name.php
  * @param resource $zip_entry <p>
@@ -1023,10 +1063,10 @@ function zip_entry_filesize ($zip_entry) {}
  * </p>
  * @return string The name of the directory entry.
  */
-function zip_entry_name ($zip_entry) {}
+function zip_entry_name($zip_entry): string {}
 
 /**
- * (PHP 4 &gt;= 4.1.0, PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.0.0)<br/>
+ * (PHP 4 &gt;= 4.1.0, PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.0.0)<br/>
  * Retrieve the compressed size of a directory entry
  * @link http://php.net/manual/en/function.zip-entry-compressedsize.php
  * @param resource $zip_entry <p>
@@ -1034,10 +1074,10 @@ function zip_entry_name ($zip_entry) {}
  * </p>
  * @return int The compressed size.
  */
-function zip_entry_compressedsize ($zip_entry) {}
+function zip_entry_compressedsize($zip_entry): int {}
 
 /**
- * (PHP 4 &gt;= 4.1.0, PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.0.0)<br/>
+ * (PHP 4 &gt;= 4.1.0, PHP 5 &gt;= 5.2.0, PHP 7, PECL zip &gt;= 1.0.0)<br/>
  * Retrieve the compression method of a directory entry
  * @link http://php.net/manual/en/function.zip-entry-compressionmethod.php
  * @param resource $zip_entry <p>
@@ -1045,7 +1085,7 @@ function zip_entry_compressedsize ($zip_entry) {}
  * </p>
  * @return string The compression method.
  */
-function zip_entry_compressionmethod ($zip_entry) {}
+function zip_entry_compressionmethod($zip_entry): string {}
 
-// End of zip v.1.12.4
+// End of zip v.1.13.0
 ?>

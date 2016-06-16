@@ -1,9 +1,9 @@
 <?php
 
-// Start of filter v.0.11.0
+// Start of filter v.7.0.4-7ubuntu2
 
 /**
- * (PHP 5 &gt;= 5.2.0)<br/>
+ * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
  * Gets a specific external variable by name and optionally filters it
  * @link http://php.net/manual/en/function.filter-input.php
  * @param int $type <p>
@@ -24,10 +24,10 @@
  * If the flag <b>FILTER_NULL_ON_FAILURE</b> is used, it
  * returns <b>FALSE</b> if the variable is not set and <b>NULL</b> if the filter fails.
  */
-function filter_input ($type, $variable_name, $filter = 'FILTER_DEFAULT', $options = null) {}
+function filter_input(int $type, string $variable_name, int $filter = FILTER_DEFAULT, $options = null) {}
 
 /**
- * (PHP 5 &gt;= 5.2.0)<br/>
+ * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
  * Filters a variable with a specified filter
  * @link http://php.net/manual/en/function.filter-var.php
  * @param mixed $variable <p>
@@ -77,10 +77,10 @@ function filter_input ($type, $variable_name, $filter = 'FILTER_DEFAULT', $optio
  * </p>
  * @return mixed the filtered data, or <b>FALSE</b> if the filter fails.
  */
-function filter_var ($variable, $filter = 'FILTER_DEFAULT', $options = null) {}
+function filter_var($variable, int $filter = FILTER_DEFAULT, $options = null) {}
 
 /**
- * (PHP 5 &gt;= 5.2.0)<br/>
+ * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
  * Gets external variables and optionally filters them
  * @link http://php.net/manual/en/function.filter-input-array.php
  * @param int $type <p>
@@ -111,10 +111,10 @@ function filter_var ($variable, $filter = 'FILTER_DEFAULT', $options = null) {}
  * is used, it returns <b>FALSE</b> if the variable is not set and <b>NULL</b> if the filter
  * fails.
  */
-function filter_input_array ($type, $definition = null, $add_empty = true) {}
+function filter_input_array(int $type, $definition = null, bool $add_empty = true) {}
 
 /**
- * (PHP 5 &gt;= 5.2.0)<br/>
+ * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
  * Gets multiple variables and optionally filters them
  * @link http://php.net/manual/en/function.filter-var-array.php
  * @param array $data <p>
@@ -142,20 +142,20 @@ function filter_input_array ($type, $definition = null, $add_empty = true) {}
  * on failure. An array value will be <b>FALSE</b> if the filter fails, or <b>NULL</b> if
  * the variable is not set.
  */
-function filter_var_array (array $data, $definition = null, $add_empty = true) {}
+function filter_var_array(array $data, $definition = null, bool $add_empty = true) {}
 
 /**
- * (PHP 5 &gt;= 5.2.0)<br/>
+ * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
  * Returns a list of all supported filters
  * @link http://php.net/manual/en/function.filter-list.php
  * @return array an array of names of all supported filters, empty array if there
  * are no such filters. Indexes of this array are not filter IDs, they can be
  * obtained with <b>filter_id</b> from a name instead.
  */
-function filter_list () {}
+function filter_list(): array {}
 
 /**
- * (PHP 5 &gt;= 5.2.0)<br/>
+ * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
  * Checks if variable of specified type exists
  * @link http://php.net/manual/en/function.filter-has-var.php
  * @param int $type <p>
@@ -168,10 +168,10 @@ function filter_list () {}
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function filter_has_var ($type, $variable_name) {}
+function filter_has_var(int $type, string $variable_name): bool {}
 
 /**
- * (PHP 5 &gt;= 5.2.0)<br/>
+ * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
  * Returns the filter ID belonging to a named filter
  * @link http://php.net/manual/en/function.filter-id.php
  * @param string $filtername <p>
@@ -179,7 +179,7 @@ function filter_has_var ($type, $variable_name) {}
  * </p>
  * @return int ID of a filter on success or <b>FALSE</b> if filter doesn't exist.
  */
-function filter_id ($filtername) {}
+function filter_id(string $filtername): int {}
 
 
 /**
@@ -279,6 +279,7 @@ define ('FILTER_VALIDATE_FLOAT', 259);
  * @link http://php.net/manual/en/filter.constants.php
  */
 define ('FILTER_VALIDATE_REGEXP', 272);
+define ('FILTER_VALIDATE_DOMAIN', 277);
 
 /**
  * ID of "validate_url" filter.
@@ -490,6 +491,7 @@ define ('FILTER_FLAG_NO_RES_RANGE', 4194304);
  * @link http://php.net/manual/en/filter.constants.php
  */
 define ('FILTER_FLAG_NO_PRIV_RANGE', 8388608);
+define ('FILTER_FLAG_HOSTNAME', 1048576);
 
-// End of filter v.0.11.0
+// End of filter v.7.0.4-7ubuntu2
 ?>

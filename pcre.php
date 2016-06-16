@@ -1,9 +1,9 @@
 <?php
 
-// Start of pcre v.
+// Start of pcre v.7.0.4-7ubuntu2
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Perform a regular expression match
  * @link http://php.net/manual/en/function.preg-match.php
  * @param string $pattern <p>
@@ -79,10 +79,10 @@
  * matches given <i>subject</i>, 0 if it does not, or <b>FALSE</b>
  * if an error occurred.
  */
-function preg_match ($pattern, $subject, array &$matches = null, $flags = 0, $offset = 0) {}
+function preg_match(string $pattern, string $subject, array &$matches = null, int $flags = 0, int $offset = 0): int {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Perform a global regular expression match
  * @link http://php.net/manual/en/function.preg-match-all.php
  * @param string $pattern <p>
@@ -137,10 +137,10 @@ function preg_match ($pattern, $subject, array &$matches = null, $flags = 0, $of
  * @return int the number of full pattern matches (which might be zero),
  * or <b>FALSE</b> if an error occurred.
  */
-function preg_match_all ($pattern, $subject, array &$matches = null, $flags = 'PREG_PATTERN_ORDER', $offset = 0) {}
+function preg_match_all(string $pattern, string $subject, array &$matches = null, int $flags = PREG_PATTERN_ORDER, int $offset = 0): int {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Perform a regular expression search and replace
  * @link http://php.net/manual/en/function.preg-replace.php
  * @param mixed $pattern <p>
@@ -225,10 +225,10 @@ function preg_match_all ($pattern, $subject, array &$matches = null, $flags = 'P
  * be returned, otherwise <i>subject</i> will be
  * returned unchanged or <b>NULL</b> if an error occurred.
  */
-function preg_replace ($pattern, $replacement, $subject, $limit = -1, &$count = null) {}
+function preg_replace($pattern, $replacement, $subject, int $limit = -1, int &$count = null) {}
 
 /**
- * (PHP 4 &gt;= 4.0.5, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.5, PHP 5, PHP 7)<br/>
  * Perform a regular expression search and replace using a callback
  * @link http://php.net/manual/en/function.preg-replace-callback.php
  * @param mixed $pattern <p>
@@ -296,10 +296,39 @@ function preg_replace ($pattern, $replacement, $subject, $limit = -1, &$count = 
  * If matches are found, the new subject will be returned, otherwise
  * <i>subject</i> will be returned unchanged.
  */
-function preg_replace_callback ($pattern, callable $callback, $subject, $limit = -1, &$count = null) {}
+function preg_replace_callback($pattern, callable $callback, $subject, int $limit = -1, int &$count = null) {}
 
 /**
- * (PHP 5 &gt;= 5.3.0)<br/>
+ * (PHP 7)<br/>
+ * Perform a regular expression search and replace using callbacks
+ * @link http://php.net/manual/en/function.preg-replace-callback-array.php
+ * @param array $patterns_and_callbacks <p>
+ * An associative array mapping patterns (keys) to callbacks (values).
+ * </p>
+ * @param mixed $subject <p>
+ * The string or an array with strings to search and replace.
+ * </p>
+ * @param int $limit [optional] <p>
+ * The maximum possible replacements for each pattern in each
+ * <i>subject</i> string. Defaults to
+ * -1 (no limit).
+ * </p>
+ * @param int $count [optional] <p>
+ * If specified, this variable will be filled with the number of
+ * replacements done.
+ * </p>
+ * @return mixed <b>preg_replace_callback_array</b> returns an array if the
+ * <i>subject</i> parameter is an array, or a string
+ * otherwise. On errors the return value is <b>NULL</b>
+ * </p>
+ * <p>
+ * If matches are found, the new subject will be returned, otherwise
+ * <i>subject</i> will be returned unchanged.
+ */
+function preg_replace_callback_array(array $patterns_and_callbacks, $subject, int $limit = -1, int &$count = null) {}
+
+/**
+ * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
  * Perform a regular expression search and replace
  * @link http://php.net/manual/en/function.preg-filter.php
  * @param mixed $pattern
@@ -315,10 +344,10 @@ function preg_replace_callback ($pattern, callable $callback, $subject, $limit =
  * is returned when <i>subject</i> is an array
  * or <b>NULL</b> otherwise.
  */
-function preg_filter ($pattern, $replacement, $subject, $limit = -1, &$count = null) {}
+function preg_filter($pattern, $replacement, $subject, int $limit = -1, int &$count = null) {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Split string by a regular expression
  * @link http://php.net/manual/en/function.preg-split.php
  * @param string $pattern <p>
@@ -343,10 +372,10 @@ function preg_filter ($pattern, $replacement, $subject, $limit = -1, &$count = n
  * @return array an array containing substrings of <i>subject</i>
  * split along boundaries matched by <i>pattern</i>.
  */
-function preg_split ($pattern, $subject, $limit = -1, $flags = 0) {}
+function preg_split(string $pattern, string $subject, int $limit = -1, int $flags = 0): array {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Quote regular expression characters
  * @link http://php.net/manual/en/function.preg-quote.php
  * @param string $str <p>
@@ -360,10 +389,10 @@ function preg_split ($pattern, $subject, $limit = -1, $flags = 0) {}
  * </p>
  * @return string the quoted (escaped) string.
  */
-function preg_quote ($str, $delimiter = null) {}
+function preg_quote(string $str, string $delimiter = null): string {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Return array entries that match the pattern
  * @link http://php.net/manual/en/function.preg-grep.php
  * @param string $pattern <p>
@@ -380,10 +409,10 @@ function preg_quote ($str, $delimiter = null) {}
  * @return array an array indexed using the keys from the
  * <i>input</i> array.
  */
-function preg_grep ($pattern, array $input, $flags = 0) {}
+function preg_grep(string $pattern, array $input, int $flags = 0): array {}
 
 /**
- * (PHP 5 &gt;= 5.2.0)<br/>
+ * (PHP 5 &gt;= 5.2.0, PHP 7)<br/>
  * Returns the error code of the last PCRE regex execution
  * @link http://php.net/manual/en/function.preg-last-error.php
  * @return int one of the following constants (explained on their own page):
@@ -395,7 +424,7 @@ function preg_grep ($pattern, array $input, $flags = 0) {}
  * <b>PREG_BAD_UTF8_OFFSET_ERROR</b> (since PHP 5.3.0)
  * <b>PREG_JIT_STACKLIMIT_ERROR</b> (since PHP 7.0.0)
  */
-function preg_last_error () {}
+function preg_last_error(): int {}
 
 
 /**
@@ -490,10 +519,17 @@ define ('PREG_BAD_UTF8_ERROR', 4);
 define ('PREG_BAD_UTF8_OFFSET_ERROR', 5);
 
 /**
+ * Returned by <b>preg_last_error</b> if the last PCRE function
+ * failed due to limited JIT stack space.
+ * @link http://php.net/manual/en/pcre.constants.php
+ */
+define ('PREG_JIT_STACKLIMIT_ERROR', 6);
+
+/**
  * PCRE version and release date (e.g. "7.0 18-Dec-2006").
  * @link http://php.net/manual/en/pcre.constants.php
  */
-define ('PCRE_VERSION', "8.35 2014-04-04");
+define ('PCRE_VERSION', "8.38 2015-11-23");
 
-// End of pcre v.
+// End of pcre v.7.0.4-7ubuntu2
 ?>

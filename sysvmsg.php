@@ -1,9 +1,9 @@
 <?php
 
-// Start of sysvmsg v.
+// Start of sysvmsg v.7.0.4-7ubuntu2
 
 /**
- * (PHP 4 &gt;= 4.3.0, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.3.0, PHP 5, PHP 7)<br/>
  * Create or attach to a message queue
  * @link http://php.net/manual/en/function.msg-get-queue.php
  * @param int $key <p>
@@ -15,10 +15,10 @@
  * </p>
  * @return resource a resource handle that can be used to access the System V message queue.
  */
-function msg_get_queue ($key, $perms = 0666) {}
+function msg_get_queue(int $key, int $perms = 0666) {}
 
 /**
- * (PHP 4 &gt;= 4.3.0, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.3.0, PHP 5, PHP 7)<br/>
  * Send a message to a message queue
  * @link http://php.net/manual/en/function.msg-send.php
  * @param resource $queue
@@ -54,10 +54,10 @@ function msg_get_queue ($key, $perms = 0666) {}
  * calling process, <i>msg_qnum</i> is incremented by 1 and
  * <i>msg_stime</i> is set to the current time.
  */
-function msg_send ($queue, $msgtype, $message, $serialize = true, $blocking = true, &$errorcode = null) {}
+function msg_send($queue, int $msgtype, $message, bool $serialize = true, bool $blocking = true, int &$errorcode = null): bool {}
 
 /**
- * (PHP 4 &gt;= 4.3.0, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.3.0, PHP 5, PHP 7)<br/>
  * Receive a message from a message queue
  * @link http://php.net/manual/en/function.msg-receive.php
  * @param resource $queue
@@ -142,10 +142,10 @@ function msg_send ($queue, $msgtype, $message, $serialize = true, $blocking = tr
  * calling process, msg_qnum is decremented by 1 and
  * msg_rtime is set to the current time.
  */
-function msg_receive ($queue, $desiredmsgtype, &$msgtype, $maxsize, &$message, $unserialize = true, $flags = 0, &$errorcode = null) {}
+function msg_receive($queue, int $desiredmsgtype, int &$msgtype, int $maxsize, &$message, bool $unserialize = true, int $flags = 0, int &$errorcode = null): bool {}
 
 /**
- * (PHP 4 &gt;= 4.3.0, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.3.0, PHP 5, PHP 7)<br/>
  * Destroy a message queue
  * @link http://php.net/manual/en/function.msg-remove-queue.php
  * @param resource $queue <p>
@@ -153,10 +153,10 @@ function msg_receive ($queue, $desiredmsgtype, &$msgtype, $maxsize, &$message, $
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function msg_remove_queue ($queue) {}
+function msg_remove_queue($queue): bool {}
 
 /**
- * (PHP 4 &gt;= 4.3.0, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.3.0, PHP 5, PHP 7)<br/>
  * Returns information from the message queue data structure
  * @link http://php.net/manual/en/function.msg-stat-queue.php
  * @param resource $queue <p>
@@ -230,10 +230,10 @@ function msg_remove_queue ($queue) {}
  * </tr>
  * </table>
  */
-function msg_stat_queue ($queue) {}
+function msg_stat_queue($queue): array {}
 
 /**
- * (PHP 4 &gt;= 4.3.0, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.3.0, PHP 5, PHP 7)<br/>
  * Set information in the message queue data structure
  * @link http://php.net/manual/en/function.msg-set-queue.php
  * @param resource $queue <p>
@@ -245,10 +245,10 @@ function msg_stat_queue ($queue) {}
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function msg_set_queue ($queue, array $data) {}
+function msg_set_queue($queue, array $data): bool {}
 
 /**
- * (PHP 5 &gt;= 5.3.0)<br/>
+ * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
  * Check whether a message queue exists
  * @link http://php.net/manual/en/function.msg-queue-exists.php
  * @param int $key <p>
@@ -256,7 +256,7 @@ function msg_set_queue ($queue, array $data) {}
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function msg_queue_exists ($key) {}
+function msg_queue_exists(int $key): bool {}
 
 define ('MSG_IPC_NOWAIT', 1);
 define ('MSG_EAGAIN', 11);
@@ -264,5 +264,5 @@ define ('MSG_ENOMSG', 42);
 define ('MSG_NOERROR', 2);
 define ('MSG_EXCEPT', 4);
 
-// End of sysvmsg v.
+// End of sysvmsg v.7.0.4-7ubuntu2
 ?>

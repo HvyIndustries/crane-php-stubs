@@ -1,9 +1,9 @@
 <?php
 
-// Start of odbc v.1.0
+// Start of odbc v.7.0.4-7ubuntu2
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Toggle autocommit behaviour
  * @link http://php.net/manual/en/function.odbc-autocommit.php
  * @param resource $connection_id The ODBC connection identifier,
@@ -21,10 +21,10 @@
  * If <i>OnOff</i> is set, this function returns <b>TRUE</b> on
  * success and <b>FALSE</b> on failure.
  */
-function odbc_autocommit ($connection_id, $OnOff = false) {}
+function odbc_autocommit($connection_id, bool $OnOff = false) {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Handling of binary column data
  * @link http://php.net/manual/en/function.odbc-binmode.php
  * @param resource $result_id <p>
@@ -43,28 +43,28 @@ function odbc_autocommit ($connection_id, $OnOff = false) {}
  * <b>ODBC_BINMODE_PASSTHRU</b>: Passthru BINARY data
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function odbc_binmode ($result_id, $mode) {}
+function odbc_binmode($result_id, int $mode): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Close an ODBC connection
  * @link http://php.net/manual/en/function.odbc-close.php
  * @param resource $connection_id The ODBC connection identifier,
  * see <b>odbc_connect</b> for details.</p>
  * @return void No value is returned.
  */
-function odbc_close ($connection_id) {}
+function odbc_close($connection_id) {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Close all ODBC connections
  * @link http://php.net/manual/en/function.odbc-close-all.php
  * @return void No value is returned.
  */
-function odbc_close_all () {}
+function odbc_close_all() {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Lists the column names in specified tables
  * @link http://php.net/manual/en/function.odbc-columns.php
  * @param resource $connection_id The ODBC connection identifier,
@@ -102,20 +102,20 @@ function odbc_close_all () {}
  * The result set is ordered by TABLE_QUALIFIER, TABLE_SCHEM and
  * TABLE_NAME.
  */
-function odbc_columns ($connection_id, $qualifier = null, $schema = null, $table_name = null, $column_name = null) {}
+function odbc_columns($connection_id, string $qualifier = null, string $schema = null, string $table_name = null, string $column_name = null) {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Commit an ODBC transaction
  * @link http://php.net/manual/en/function.odbc-commit.php
  * @param resource $connection_id The ODBC connection identifier,
  * see <b>odbc_connect</b> for details.</p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function odbc_commit ($connection_id) {}
+function odbc_commit($connection_id): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Connect to a datasource
  * @link http://php.net/manual/en/function.odbc-connect.php
  * @param string $dsn <p>
@@ -138,10 +138,10 @@ function odbc_commit ($connection_id) {}
  * SQL_CUR_USE_IF_NEEDED
  * @return resource an ODBC connection or (<b>FALSE</b>) on error.
  */
-function odbc_connect ($dsn, $user, $password, $cursor_type = null) {}
+function odbc_connect(string $dsn, string $user, string $password, int $cursor_type = null) {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Get cursorname
  * @link http://php.net/manual/en/function.odbc-cursor.php
  * @param resource $result_id <p>
@@ -149,10 +149,10 @@ function odbc_connect ($dsn, $user, $password, $cursor_type = null) {}
  * </p>
  * @return string the cursor name, as a string.
  */
-function odbc_cursor ($result_id) {}
+function odbc_cursor($result_id): string {}
 
 /**
- * (PHP 4 &gt;= 4.3.0, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.3.0, PHP 5, PHP 7)<br/>
  * Returns information about a current connection
  * @link http://php.net/manual/en/function.odbc-data-source.php
  * @param resource $connection_id The ODBC connection identifier,
@@ -165,10 +165,10 @@ function odbc_cursor ($result_id) {}
  * </p>
  * @return array <b>FALSE</b> on error, and an array upon success.
  */
-function odbc_data_source ($connection_id, $fetch_type) {}
+function odbc_data_source($connection_id, int $fetch_type): array {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Execute a prepared statement
  * @link http://php.net/manual/en/function.odbc-execute.php
  * @param resource $result_id <p>
@@ -194,10 +194,10 @@ function odbc_data_source ($connection_id, $fetch_type) {}
  * executing the query directly with <b>odbc_exec</b>).
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function odbc_execute ($result_id, array $parameters_array = null) {}
+function odbc_execute($result_id, array $parameters_array = null): bool {}
 
 /**
- * (PHP 4 &gt;= 4.0.5, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.5, PHP 5, PHP 7)<br/>
  * Get the last error code
  * @link http://php.net/manual/en/function.odbc-error.php
  * @param resource $connection_id [optional] The ODBC connection identifier,
@@ -210,10 +210,10 @@ function odbc_execute ($result_id, array $parameters_array = null) {}
  * This function returns meaningful value only if last odbc query failed
  * (i.e. <b>odbc_exec</b> returned <b>FALSE</b>).
  */
-function odbc_error ($connection_id = null) {}
+function odbc_error($connection_id = null): string {}
 
 /**
- * (PHP 4 &gt;= 4.0.5, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.5, PHP 5, PHP 7)<br/>
  * Get the last error message
  * @link http://php.net/manual/en/function.odbc-errormsg.php
  * @param resource $connection_id [optional] The ODBC connection identifier,
@@ -226,10 +226,10 @@ function odbc_error ($connection_id = null) {}
  * This function returns meaningful value only if last odbc query failed
  * (i.e. <b>odbc_exec</b> returned <b>FALSE</b>).
  */
-function odbc_errormsg ($connection_id = null) {}
+function odbc_errormsg($connection_id = null): string {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Prepare and execute an SQL statement
  * @link http://php.net/manual/en/function.odbc-exec.php
  * @param resource $connection_id The ODBC connection identifier,
@@ -243,10 +243,10 @@ function odbc_errormsg ($connection_id = null) {}
  * @return resource an ODBC result identifier if the SQL command was executed
  * successfully, or <b>FALSE</b> on error.
  */
-function odbc_exec ($connection_id, $query_string, $flags = null) {}
+function odbc_exec($connection_id, string $query_string, int $flags = null) {}
 
 /**
- * (PHP 4 &gt;= 4.0.2, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.2, PHP 5, PHP 7)<br/>
  * Fetch a result row as an associative array
  * @link http://php.net/manual/en/function.odbc-fetch-array.php
  * @param resource $result <p>
@@ -258,10 +258,10 @@ function odbc_exec ($connection_id, $query_string, $flags = null) {}
  * @return array an array that corresponds to the fetched row, or <b>FALSE</b> if there
  * are no more rows.
  */
-function odbc_fetch_array ($result, $rownumber = null) {}
+function odbc_fetch_array($result, int $rownumber = null): array {}
 
 /**
- * (PHP 4 &gt;= 4.0.2, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.2, PHP 5, PHP 7)<br/>
  * Fetch a result row as an object
  * @link http://php.net/manual/en/function.odbc-fetch-object.php
  * @param resource $result <p>
@@ -273,10 +273,10 @@ function odbc_fetch_array ($result, $rownumber = null) {}
  * @return object an object that corresponds to the fetched row, or <b>FALSE</b> if there
  * are no more rows.
  */
-function odbc_fetch_object ($result, $rownumber = null) {}
+function odbc_fetch_object($result, int $rownumber = null) {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Fetch a row
  * @link http://php.net/manual/en/function.odbc-fetch-row.php
  * @param resource $result_id <p>
@@ -299,10 +299,10 @@ function odbc_fetch_object ($result, $rownumber = null) {}
  * </p>
  * @return bool <b>TRUE</b> if there was a row, <b>FALSE</b> otherwise.
  */
-function odbc_fetch_row ($result_id, $row_number = null) {}
+function odbc_fetch_row($result_id, int $row_number = null): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Fetch one result row into array
  * @link http://php.net/manual/en/function.odbc-fetch-into.php
  * @param resource $result_id <p>
@@ -320,10 +320,10 @@ function odbc_fetch_row ($result_id, $row_number = null) {}
  * @return int the number of columns in the result;
  * <b>FALSE</b> on error.
  */
-function odbc_fetch_into ($result_id, array &$result_array, $rownumber = null) {}
+function odbc_fetch_into($result_id, array &$result_array, int $rownumber = null): int {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Get the length (precision) of a field
  * @link http://php.net/manual/en/function.odbc-field-len.php
  * @param resource $result_id <p>
@@ -334,10 +334,10 @@ function odbc_fetch_into ($result_id, array &$result_array, $rownumber = null) {
  * </p>
  * @return int the field length, or <b>FALSE</b> on error.
  */
-function odbc_field_len ($result_id, $field_number) {}
+function odbc_field_len($result_id, int $field_number): int {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Get the scale of a field
  * @link http://php.net/manual/en/function.odbc-field-scale.php
  * @param resource $result_id <p>
@@ -348,10 +348,10 @@ function odbc_field_len ($result_id, $field_number) {}
  * </p>
  * @return int the field scale as a integer, or <b>FALSE</b> on error.
  */
-function odbc_field_scale ($result_id, $field_number) {}
+function odbc_field_scale($result_id, int $field_number): int {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Get the columnname
  * @link http://php.net/manual/en/function.odbc-field-name.php
  * @param resource $result_id <p>
@@ -362,10 +362,10 @@ function odbc_field_scale ($result_id, $field_number) {}
  * </p>
  * @return string the field name as a string, or <b>FALSE</b> on error.
  */
-function odbc_field_name ($result_id, $field_number) {}
+function odbc_field_name($result_id, int $field_number): string {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Datatype of a field
  * @link http://php.net/manual/en/function.odbc-field-type.php
  * @param resource $result_id <p>
@@ -376,10 +376,10 @@ function odbc_field_name ($result_id, $field_number) {}
  * </p>
  * @return string the field type as a string, or <b>FALSE</b> on error.
  */
-function odbc_field_type ($result_id, $field_number) {}
+function odbc_field_type($result_id, int $field_number): string {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Return column number
  * @link http://php.net/manual/en/function.odbc-field-num.php
  * @param resource $result_id <p>
@@ -391,10 +391,10 @@ function odbc_field_type ($result_id, $field_number) {}
  * @return int the field number as a integer, or <b>FALSE</b> on error.
  * Field numbering starts at 1.
  */
-function odbc_field_num ($result_id, $field_name) {}
+function odbc_field_num($result_id, string $field_name): int {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Free resources associated with a result
  * @link http://php.net/manual/en/function.odbc-free-result.php
  * @param resource $result_id <p>
@@ -402,10 +402,10 @@ function odbc_field_num ($result_id, $field_name) {}
  * </p>
  * @return bool Always returns <b>TRUE</b>.
  */
-function odbc_free_result ($result_id) {}
+function odbc_free_result($result_id): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Retrieves information about data types supported by the data source
  * @link http://php.net/manual/en/function.odbc-gettypeinfo.php
  * @param resource $connection_id The ODBC connection identifier,
@@ -438,10 +438,10 @@ function odbc_free_result ($result_id) {}
  * <p>
  * The result set is ordered by DATA_TYPE and TYPE_NAME.
  */
-function odbc_gettypeinfo ($connection_id, $data_type = null) {}
+function odbc_gettypeinfo($connection_id, int $data_type = null) {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Handling of LONG columns
  * @link http://php.net/manual/en/function.odbc-longreadlen.php
  * @param resource $result_id <p>
@@ -454,10 +454,10 @@ function odbc_gettypeinfo ($connection_id, $data_type = null) {}
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function odbc_longreadlen ($result_id, $length) {}
+function odbc_longreadlen($result_id, int $length): bool {}
 
 /**
- * (PHP 4 &gt;= 4.0.5, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.0.5, PHP 5, PHP 7)<br/>
  * Checks if multiple results are available
  * @link http://php.net/manual/en/function.odbc-next-result.php
  * @param resource $result_id <p>
@@ -465,10 +465,10 @@ function odbc_longreadlen ($result_id, $length) {}
  * </p>
  * @return bool <b>TRUE</b> if there are more result sets, <b>FALSE</b> otherwise.
  */
-function odbc_next_result ($result_id) {}
+function odbc_next_result($result_id): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Number of columns in a result
  * @link http://php.net/manual/en/function.odbc-num-fields.php
  * @param resource $result_id <p>
@@ -476,10 +476,10 @@ function odbc_next_result ($result_id) {}
  * </p>
  * @return int the number of fields, or -1 on error.
  */
-function odbc_num_fields ($result_id) {}
+function odbc_num_fields($result_id): int {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Number of rows in a result
  * @link http://php.net/manual/en/function.odbc-num-rows.php
  * @param resource $result_id <p>
@@ -488,10 +488,10 @@ function odbc_num_fields ($result_id) {}
  * @return int the number of rows in an ODBC result.
  * This function will return -1 on error.
  */
-function odbc_num_rows ($result_id) {}
+function odbc_num_rows($result_id): int {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Open a persistent database connection
  * @link http://php.net/manual/en/function.odbc-pconnect.php
  * @param string $dsn
@@ -501,10 +501,10 @@ function odbc_num_rows ($result_id) {}
  * @return resource an ODBC connection id or 0 (<b>FALSE</b>) on
  * error.
  */
-function odbc_pconnect ($dsn, $user, $password, $cursor_type = null) {}
+function odbc_pconnect(string $dsn, string $user, string $password, int $cursor_type = null) {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Prepares a statement for execution
  * @link http://php.net/manual/en/function.odbc-prepare.php
  * @param resource $connection_id The ODBC connection identifier,
@@ -515,10 +515,10 @@ function odbc_pconnect ($dsn, $user, $password, $cursor_type = null) {}
  * @return resource an ODBC result identifier if the SQL command was prepared
  * successfully. Returns <b>FALSE</b> on error.
  */
-function odbc_prepare ($connection_id, $query_string) {}
+function odbc_prepare($connection_id, string $query_string) {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Get result data
  * @link http://php.net/manual/en/function.odbc-result.php
  * @param resource $result_id <p>
@@ -532,10 +532,10 @@ function odbc_prepare ($connection_id, $query_string) {}
  * @return mixed the string contents of the field, <b>FALSE</b> on error, <b>NULL</b> for
  * NULL data, or <b>TRUE</b> for binary data.
  */
-function odbc_result ($result_id, $field) {}
+function odbc_result($result_id, $field) {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Print result as HTML table
  * @link http://php.net/manual/en/function.odbc-result-all.php
  * @param resource $result_id <p>
@@ -546,20 +546,20 @@ function odbc_result ($result_id, $field) {}
  * </p>
  * @return int the number of rows in the result or <b>FALSE</b> on error.
  */
-function odbc_result_all ($result_id, $format = null) {}
+function odbc_result_all($result_id, string $format = null): int {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Rollback a transaction
  * @link http://php.net/manual/en/function.odbc-rollback.php
  * @param resource $connection_id The ODBC connection identifier,
  * see <b>odbc_connect</b> for details.</p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function odbc_rollback ($connection_id) {}
+function odbc_rollback($connection_id): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Adjust ODBC settings
  * @link http://php.net/manual/en/function.odbc-setoption.php
  * @param resource $id <p>
@@ -580,10 +580,10 @@ function odbc_rollback ($connection_id) {}
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function odbc_setoption ($id, $function, $option, $param) {}
+function odbc_setoption($id, int $function, int $option, int $param): bool {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Retrieves special columns
  * @link http://php.net/manual/en/function.odbc-specialcolumns.php
  * @param resource $connection_id The ODBC connection identifier,
@@ -624,10 +624,10 @@ function odbc_setoption ($id, $function, $option, $param) {}
  * SCALE
  * PSEUDO_COLUMN
  */
-function odbc_specialcolumns ($connection_id, $type, $qualifier, $owner, $table, $scope, $nullable) {}
+function odbc_specialcolumns($connection_id, int $type, string $qualifier, string $owner, string $table, int $scope, int $nullable) {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Retrieve statistics about a table
  * @link http://php.net/manual/en/function.odbc-statistics.php
  * @param resource $connection_id The ODBC connection identifier,
@@ -665,10 +665,10 @@ function odbc_specialcolumns ($connection_id, $type, $qualifier, $owner, $table,
  * PAGES
  * FILTER_CONDITION
  */
-function odbc_statistics ($connection_id, $qualifier, $owner, $table_name, $unique, $accuracy) {}
+function odbc_statistics($connection_id, string $qualifier, string $owner, string $table_name, int $unique, int $accuracy) {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Get the list of table names stored in a specific data source
  * @link http://php.net/manual/en/function.odbc-tables.php
  * @param resource $connection_id The ODBC connection identifier,
@@ -704,10 +704,10 @@ function odbc_statistics ($connection_id, $qualifier, $owner, $table_name, $uniq
  * TABLE_TYPE
  * REMARKS
  */
-function odbc_tables ($connection_id, $qualifier = null, $owner = null, $name = null, $types = null) {}
+function odbc_tables($connection_id, string $qualifier = null, string $owner = null, string $name = null, string $types = null) {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Gets the primary keys for a table
  * @link http://php.net/manual/en/function.odbc-primarykeys.php
  * @param resource $connection_id The ODBC connection identifier,
@@ -726,10 +726,10 @@ function odbc_tables ($connection_id, $qualifier = null, $owner = null, $name = 
  * KEY_SEQ
  * PK_NAME
  */
-function odbc_primarykeys ($connection_id, $qualifier, $owner, $table) {}
+function odbc_primarykeys($connection_id, string $qualifier, string $owner, string $table) {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Lists columns and associated privileges for the given table
  * @link http://php.net/manual/en/function.odbc-columnprivileges.php
  * @param resource $connection_id The ODBC connection identifier,
@@ -766,10 +766,10 @@ function odbc_primarykeys ($connection_id, $qualifier, $owner, $table) {}
  * The result set is ordered by TABLE_QUALIFIER, TABLE_OWNER and
  * TABLE_NAME.
  */
-function odbc_columnprivileges ($connection_id, $qualifier, $owner, $table_name, $column_name) {}
+function odbc_columnprivileges($connection_id, string $qualifier, string $owner, string $table_name, string $column_name) {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Lists tables and the privileges associated with each table
  * @link http://php.net/manual/en/function.odbc-tableprivileges.php
  * @param resource $connection_id The ODBC connection identifier,
@@ -797,10 +797,10 @@ function odbc_columnprivileges ($connection_id, $qualifier, $owner, $table_name,
  * PRIVILEGE
  * IS_GRANTABLE
  */
-function odbc_tableprivileges ($connection_id, $qualifier, $owner, $name) {}
+function odbc_tableprivileges($connection_id, string $qualifier, string $owner, string $name) {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Retrieves a list of foreign keys
  * @link http://php.net/manual/en/function.odbc-foreignkeys.php
  * @param resource $connection_id The ODBC connection identifier,
@@ -856,10 +856,10 @@ function odbc_tableprivileges ($connection_id, $qualifier, $owner, $name) {}
  * to the primary key of the table specified in
  * <i>pk_table
  */
-function odbc_foreignkeys ($connection_id, $pk_qualifier, $pk_owner, $pk_table, $fk_qualifier, $fk_owner, $fk_table) {}
+function odbc_foreignkeys($connection_id, string $pk_qualifier, string $pk_owner, string $pk_table, string $fk_qualifier, string $fk_owner, string $fk_table) {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Get the list of procedures stored in a specific data source
  * @link http://php.net/manual/en/function.odbc-procedures.php
  * @param resource $connection_id The ODBC connection identifier,
@@ -878,10 +878,10 @@ function odbc_foreignkeys ($connection_id, $pk_qualifier, $pk_owner, $pk_table, 
  * REMARKS
  * PROCEDURE_TYPE
  */
-function odbc_procedures ($connection_id) {}
+function odbc_procedures($connection_id) {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Retrieve information about parameters to procedures
  * @link http://php.net/manual/en/function.odbc-procedurecolumns.php
  * @param resource $connection_id The ODBC connection identifier,
@@ -906,26 +906,26 @@ function odbc_procedures ($connection_id) {}
  * NULLABLE
  * REMARKS
  */
-function odbc_procedurecolumns ($connection_id) {}
+function odbc_procedurecolumns($connection_id) {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Alias of <b>odbc_exec</b>
  * @link http://php.net/manual/en/function.odbc-do.php
  * @param $connection_id
  * @param $query
  * @param $flags [optional]
  */
-function odbc_do ($connection_id, $query, $flags) {}
+function odbc_do($connection_id, $query, $flags) {}
 
 /**
- * (PHP 4, PHP 5)<br/>
+ * (PHP 4, PHP 5, PHP 7)<br/>
  * Alias of <b>odbc_field_len</b>
  * @link http://php.net/manual/en/function.odbc-field-precision.php
  * @param $result_id
  * @param $field_number
  */
-function odbc_field_precision ($result_id, $field_number) {}
+function odbc_field_precision($result_id, $field_number) {}
 
 define ('ODBC_TYPE', "unixODBC");
 define ('ODBC_BINMODE_PASSTHRU', 0);
@@ -985,5 +985,5 @@ define ('SQL_INDEX_ALL', 1);
 define ('SQL_ENSURE', 1);
 define ('SQL_QUICK', 0);
 
-// End of odbc v.1.0
+// End of odbc v.7.0.4-7ubuntu2
 ?>

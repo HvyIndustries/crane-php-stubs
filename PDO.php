@@ -1,6 +1,6 @@
 <?php
 
-// Start of PDO v.1.0.4dev
+// Start of PDO v.7.0.4-7ubuntu2
 
 /**
  * Represents an error raised by PDO. You should not throw a
@@ -9,7 +9,7 @@
  * information about Exceptions in PHP.
  * @link http://php.net/manual/en/class.pdoexception.php
  */
-class PDOException extends RuntimeException  {
+class PDOException extends RuntimeException implements Throwable {
 	protected $message;
 	protected $code;
 	protected $file;
@@ -18,15 +18,15 @@ class PDOException extends RuntimeException  {
 
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Clone the exception
 	 * @link http://php.net/manual/en/exception.clone.php
 	 * @return void No value is returned.
 	 */
-	final private function __clone () {}
+	final private function __clone() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Construct the exception
 	 * @link http://php.net/manual/en/exception.construct.php
 	 * @param string $message [optional] <p>
@@ -35,22 +35,24 @@ class PDOException extends RuntimeException  {
 	 * @param int $code [optional] <p>
 	 * The Exception code.
 	 * </p>
-	 * @param Exception $previous [optional] <p>
+	 * @param Throwable $previous [optional] <p>
 	 * The previous exception used for the exception chaining.
 	 * </p>
 	 */
-	public function __construct ($message = "", $code = 0, Exception $previous = null) {}
+	public function __construct(string $message = "", int $code = 0, Throwable $previous = null) {}
+
+	public function __wakeup() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception message
 	 * @link http://php.net/manual/en/exception.getmessage.php
 	 * @return string the Exception message as a string.
 	 */
-	final public function getMessage () {}
+	final public function getMessage(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the Exception code
 	 * @link http://php.net/manual/en/exception.getcode.php
 	 * @return mixed the exception code as integer in
@@ -58,56 +60,56 @@ class PDOException extends RuntimeException  {
 	 * <b>Exception</b> descendants (for example as
 	 * string in <b>PDOException</b>).
 	 */
-	final public function getCode () {}
+	final public function getCode() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the file in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getfile.php
 	 * @return string the filename in which the exception was created.
 	 */
-	final public function getFile () {}
+	final public function getFile(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the line in which the exception occurred
 	 * @link http://php.net/manual/en/exception.getline.php
 	 * @return int the line number where the exception was created.
 	 */
-	final public function getLine () {}
+	final public function getLine(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace
 	 * @link http://php.net/manual/en/exception.gettrace.php
 	 * @return array the Exception stack trace as an array.
 	 */
-	final public function getTrace () {}
+	final public function getTrace(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.0)<br/>
+	 * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
 	 * Returns previous Exception
 	 * @link http://php.net/manual/en/exception.getprevious.php
 	 * @return Exception the previous <b>Exception</b> if available
 	 * or <b>NULL</b> otherwise.
 	 */
-	final public function getPrevious () {}
+	final public function getPrevious(): Exception {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * Gets the stack trace as a string
 	 * @link http://php.net/manual/en/exception.gettraceasstring.php
 	 * @return string the Exception stack trace as a string.
 	 */
-	final public function getTraceAsString () {}
+	final public function getTraceAsString(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7)<br/>
 	 * String representation of the exception
 	 * @link http://php.net/manual/en/exception.tostring.php
 	 * @return string the string representation of the exception.
 	 */
-	public function __toString () {}
+	public function __toString(): string {}
 
 }
 
@@ -586,6 +588,39 @@ class PDO  {
 	const CURSOR_SCROLL = 1;
 
 	/**
+	 * <p>
+	 * Available since PHP 5.3.0.
+	 * </p>
+	 * <p>
+	 * Sets the date format.
+	 * </p>
+	 * @link http://php.net/manual/en/pdo-firebird.constants.php
+	 */
+	const FB_ATTR_DATE_FORMAT = 1000;
+
+	/**
+	 * <p>
+	 * Sets the time format.
+	 * </p>
+	 * <p>
+	 * Available since PHP 5.3.0.
+	 * </p>
+	 * @link http://php.net/manual/en/pdo-firebird.constants.php
+	 */
+	const FB_ATTR_TIME_FORMAT = 1001;
+
+	/**
+	 * <p>
+	 * Sets the timestamp format.
+	 * </p>
+	 * <p>
+	 * Available since PHP 5.3.0.
+	 * </p>
+	 * @link http://php.net/manual/en/pdo-firebird.constants.php
+	 */
+	const FB_ATTR_TIMESTAMP_FORMAT = 1002;
+
+	/**
 	 * If this attribute is set to <b>TRUE</b> on a
 	 * <b>PDOStatement</b>, the MySQL driver will use the
 	 * buffered versions of the MySQL API. If you're writing portable code, you
@@ -632,8 +667,8 @@ class PDO  {
 
 	/**
 	 * <p>
-	 * Enable network communication compression. This is not supported when
-	 * compiled against mysqlnd.
+	 * Enable network communication compression. This is also supported when
+	 * compiled against mysqlnd as of PHP 5.3.11.
 	 * </p>
 	 * @link http://php.net/manual/en/pdo-mysql.constants.php
 	 */
@@ -722,13 +757,13 @@ class PDO  {
 	 */
 	const MYSQL_ATTR_SSL_CIPHER = 1011;
 	const MYSQL_ATTR_SERVER_PUBLIC_KEY = 1012;
+	const MYSQL_ATTR_MULTI_STATEMENTS = 1013;
 	const ODBC_ATTR_USE_CURSOR_LIBRARY = 1000;
 	const ODBC_ATTR_ASSUME_UTF8 = 1001;
 	const ODBC_SQL_USE_IF_NEEDED = 0;
 	const ODBC_SQL_USE_DRIVER = 2;
 	const ODBC_SQL_USE_ODBC = 1;
-	const PGSQL_ATTR_DISABLE_NATIVE_PREPARED_STATEMENT = 1000;
-	const PGSQL_ATTR_DISABLE_PREPARES = 1001;
+	const PGSQL_ATTR_DISABLE_PREPARES = 1000;
 	const PGSQL_TRANSACTION_IDLE = 0;
 	const PGSQL_TRANSACTION_ACTIVE = 1;
 	const PGSQL_TRANSACTION_INTRANS = 2;
@@ -737,7 +772,7 @@ class PDO  {
 
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.1.0)<br/>
 	 * Creates a PDO instance representing a connection to a database
 	 * @link http://php.net/manual/en/pdo.construct.php
 	 * @param string $dsn <p>
@@ -753,10 +788,10 @@ class PDO  {
 	 * @param string $password [optional]
 	 * @param array $options [optional]
 	 */
-	public function __construct ($dsn, $username = null, $password = null, array $options = null) {}
+	public function __construct(string $dsn, string $username = null, string $password = null, array $options = null) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.1.0)<br/>
 	 * Prepares a statement for execution and returns a statement object
 	 * @link http://php.net/manual/en/pdo.prepare.php
 	 * @param string $statement <p>
@@ -782,52 +817,52 @@ class PDO  {
 	 * Emulated prepared statements does not communicate with the database server
 	 * so <b>PDO::prepare</b> does not check the statement.
 	 */
-	public function prepare ($statement, array $driver_options = 'array()') {}
+	public function prepare(string $statement, array $driver_options = array()): PDOStatement {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.1.0)<br/>
 	 * Initiates a transaction
 	 * @link http://php.net/manual/en/pdo.begintransaction.php
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function beginTransaction () {}
+	public function beginTransaction(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.1.0)<br/>
 	 * Commits a transaction
 	 * @link http://php.net/manual/en/pdo.commit.php
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function commit () {}
+	public function commit(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.1.0)<br/>
 	 * Rolls back a transaction
 	 * @link http://php.net/manual/en/pdo.rollback.php
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function rollBack () {}
+	public function rollBack(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.3.3, Bundled pdo_pgsql)<br/>
+	 * (PHP 5 &gt;= 5.3.3, Bundled pdo_pgsql, PHP 7)<br/>
 	 * Checks if inside a transaction
 	 * @link http://php.net/manual/en/pdo.intransaction.php
 	 * @return bool <b>TRUE</b> if a transaction is currently active, and <b>FALSE</b> if not.
 	 */
-	public function inTransaction () {}
+	public function inTransaction(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.1.0)<br/>
 	 * Set an attribute
 	 * @link http://php.net/manual/en/pdo.setattribute.php
 	 * @param int $attribute
 	 * @param mixed $value
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function setAttribute ($attribute, $value) {}
+	public function setAttribute(int $attribute, $value): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.1.0)<br/>
 	 * Execute an SQL statement and return the number of affected rows
 	 * @link http://php.net/manual/en/pdo.exec.php
 	 * @param string $statement <p>
@@ -854,10 +889,10 @@ class PDO  {
 	 * $db->exec() or die(print_r($db->errorInfo(), true));
 	 * </code>
 	 */
-	public function exec ($statement) {}
+	public function exec(string $statement): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.2.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.2.0)<br/>
 	 * Executes an SQL statement, returning a result set as a PDOStatement object
 	 * @link http://php.net/manual/en/pdo.query.php
 	 * @param string $statement <p>
@@ -869,10 +904,10 @@ class PDO  {
 	 * @return PDOStatement <b>PDO::query</b> returns a PDOStatement object, or <b>FALSE</b>
 	 * on failure.
 	 */
-	public function query ($statement) {}
+	public function query(string $statement): PDOStatement {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.1.0)<br/>
 	 * Returns the ID of the last inserted row or sequence value
 	 * @link http://php.net/manual/en/pdo.lastinsertid.php
 	 * @param string $name [optional] <p>
@@ -894,10 +929,10 @@ class PDO  {
 	 * <b>PDO::lastInsertId</b> triggers an
 	 * IM001 SQLSTATE.
 	 */
-	public function lastInsertId ($name = null) {}
+	public function lastInsertId(string $name = null): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.1.0)<br/>
 	 * Fetch the SQLSTATE associated with the last operation on the database handle
 	 * @link http://php.net/manual/en/pdo.errorcode.php
 	 * @return mixed an SQLSTATE, a five characters alphanumeric identifier defined in
@@ -922,10 +957,10 @@ class PDO  {
 	 * <p>
 	 * Returns <b>NULL</b> if no operation has been run on the database handle.
 	 */
-	public function errorCode () {}
+	public function errorCode() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.1.0)<br/>
 	 * Fetch extended error information associated with the last operation on the database handle
 	 * @link http://php.net/manual/en/pdo.errorinfo.php
 	 * @return array <b>PDO::errorInfo</b> returns an array of error information
@@ -963,10 +998,10 @@ class PDO  {
 	 * <b>PDOStatement::errorInfo</b> to return the error
 	 * information for an operation performed on a particular statement handle.
 	 */
-	public function errorInfo () {}
+	public function errorInfo(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.2.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.2.0)<br/>
 	 * Retrieve a database connection attribute
 	 * @link http://php.net/manual/en/pdo.getattribute.php
 	 * @param int $attribute <p>
@@ -988,10 +1023,10 @@ class PDO  {
 	 * @return mixed A successful call returns the value of the requested PDO attribute.
 	 * An unsuccessful call returns null.
 	 */
-	public function getAttribute ($attribute) {}
+	public function getAttribute(int $attribute) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.2.1)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.2.1)<br/>
 	 * Quotes a string for use in a query.
 	 * @link http://php.net/manual/en/pdo.quote.php
 	 * @param string $string <p>
@@ -1004,20 +1039,20 @@ class PDO  {
 	 * SQL statement. Returns <b>FALSE</b> if the driver does not support quoting in
 	 * this way.
 	 */
-	public function quote ($string, $parameter_type = 'PDO::PARAM_STR') {}
+	public function quote(string $string, int $parameter_type = PDO::PARAM_STR): string {}
 
-	final public function __wakeup () {}
+	final public function __wakeup() {}
 
-	final public function __sleep () {}
+	final public function __sleep() {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.3, PECL pdo &gt;= 1.0.3)<br/>
+	 * (PHP 5 &gt;= 5.1.3, PHP 7, PECL pdo &gt;= 1.0.3)<br/>
 	 * Return an array of available PDO drivers
 	 * @link http://php.net/manual/en/pdo.getavailabledrivers.php
 	 * @return array <b>PDO::getAvailableDrivers</b> returns an array of PDO driver names. If
 	 * no drivers are available, it returns an empty array.
 	 */
-	public static function getAvailableDrivers () {}
+	public static function getAvailableDrivers(): array {}
 
 }
 
@@ -1034,7 +1069,7 @@ class PDOStatement implements Traversable {
 
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.1.0)<br/>
 	 * Executes a prepared statement
 	 * @link http://php.net/manual/en/pdostatement.execute.php
 	 * @param array $input_parameters [optional] <p>
@@ -1055,10 +1090,10 @@ class PDOStatement implements Traversable {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function execute (array $input_parameters = null) {}
+	public function execute(array $input_parameters = null): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.1.0)<br/>
 	 * Fetches the next row from a result set
 	 * @link http://php.net/manual/en/pdostatement.fetch.php
 	 * @param int $fetch_style [optional] <p>
@@ -1084,10 +1119,10 @@ class PDOStatement implements Traversable {
 	 * @return mixed The return value of this function on success depends on the fetch type. In
 	 * all cases, <b>FALSE</b> is returned on failure.
 	 */
-	public function fetch ($fetch_style = null, $cursor_orientation = 'PDO::FETCH_ORI_NEXT', $cursor_offset = 0) {}
+	public function fetch(int $fetch_style = null, int $cursor_orientation = PDO::FETCH_ORI_NEXT, int $cursor_offset = 0) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.1.0)<br/>
 	 * Binds a parameter to the specified variable name
 	 * @link http://php.net/manual/en/pdostatement.bindparam.php
 	 * @param mixed $parameter <p>
@@ -1116,10 +1151,10 @@ class PDOStatement implements Traversable {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function bindParam ($parameter, &$variable, $data_type = 'PDO::PARAM_STR', $length = null, $driver_options = null) {}
+	public function bindParam($parameter, &$variable, int $data_type = PDO::PARAM_STR, int $length = null, $driver_options = null): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.1.0)<br/>
 	 * Bind a column to a PHP variable
 	 * @link http://php.net/manual/en/pdostatement.bindcolumn.php
 	 * @param mixed $column <p>
@@ -1142,10 +1177,10 @@ class PDOStatement implements Traversable {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function bindColumn ($column, &$param, $type = null, $maxlen = null, $driverdata = null) {}
+	public function bindColumn($column, &$param, int $type = null, int $maxlen = null, $driverdata = null): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 1.0.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 1.0.0)<br/>
 	 * Binds a value to a parameter
 	 * @link http://php.net/manual/en/pdostatement.bindvalue.php
 	 * @param mixed $parameter <p>
@@ -1164,18 +1199,18 @@ class PDOStatement implements Traversable {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function bindValue ($parameter, $value, $data_type = 'PDO::PARAM_STR') {}
+	public function bindValue($parameter, $value, int $data_type = PDO::PARAM_STR): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.1.0)<br/>
 	 * Returns the number of rows affected by the last SQL statement
 	 * @link http://php.net/manual/en/pdostatement.rowcount.php
 	 * @return int the number of rows.
 	 */
-	public function rowCount () {}
+	public function rowCount(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.9.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.9.0)<br/>
 	 * Returns a single column from the next row of a result set
 	 * @link http://php.net/manual/en/pdostatement.fetchcolumn.php
 	 * @param int $column_number [optional] <p>
@@ -1190,10 +1225,10 @@ class PDOStatement implements Traversable {
 	 * There is no way to return another column from the same row if you
 	 * use <b>PDOStatement::fetchColumn</b> to retrieve data.
 	 */
-	public function fetchColumn ($column_number = 0) {}
+	public function fetchColumn(int $column_number = 0) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.1.0)<br/>
 	 * Returns an array containing all of the result set rows
 	 * @link http://php.net/manual/en/pdostatement.fetchall.php
 	 * @param int $fetch_style [optional] <p>
@@ -1243,10 +1278,10 @@ class PDOStatement implements Traversable {
 	 * ORDER BY clauses in SQL to restrict results before retrieving and
 	 * processing them with PHP.
 	 */
-	public function fetchAll ($fetch_style = null, $fetch_argument = null, array $ctor_args = 'array()') {}
+	public function fetchAll(int $fetch_style = null, $fetch_argument = null, array $ctor_args = array()): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.2.4)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.2.4)<br/>
 	 * Fetches the next row and returns it as an object.
 	 * @link http://php.net/manual/en/pdostatement.fetchobject.php
 	 * @param string $class_name [optional] <p>
@@ -1258,20 +1293,20 @@ class PDOStatement implements Traversable {
 	 * @return mixed an instance of the required class with property names that
 	 * correspond to the column names or <b>FALSE</b> on failure.
 	 */
-	public function fetchObject ($class_name = "stdClass", array $ctor_args = null) {}
+	public function fetchObject(string $class_name = "stdClass", array $ctor_args = null) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.1.0)<br/>
 	 * Fetch the SQLSTATE associated with the last operation on the statement handle
 	 * @link http://php.net/manual/en/pdostatement.errorcode.php
 	 * @return string Identical to <b>PDO::errorCode</b>, except that
 	 * <b>PDOStatement::errorCode</b> only retrieves error codes
 	 * for operations performed with PDOStatement objects.
 	 */
-	public function errorCode () {}
+	public function errorCode(): string {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.1.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.1.0)<br/>
 	 * Fetch extended error information associated with the last operation on the statement handle
 	 * @link http://php.net/manual/en/pdostatement.errorinfo.php
 	 * @return array <b>PDOStatement::errorInfo</b> returns an array of
@@ -1295,39 +1330,39 @@ class PDOStatement implements Traversable {
 	 * <td>Driver specific error message.</td>
 	 * </tr>
 	 */
-	public function errorInfo () {}
+	public function errorInfo(): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.2.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.2.0)<br/>
 	 * Set a statement attribute
 	 * @link http://php.net/manual/en/pdostatement.setattribute.php
 	 * @param int $attribute
 	 * @param mixed $value
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function setAttribute ($attribute, $value) {}
+	public function setAttribute(int $attribute, $value): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.2.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.2.0)<br/>
 	 * Retrieve a statement attribute
 	 * @link http://php.net/manual/en/pdostatement.getattribute.php
 	 * @param int $attribute
 	 * @return mixed the attribute value.
 	 */
-	public function getAttribute ($attribute) {}
+	public function getAttribute(int $attribute) {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.2.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.2.0)<br/>
 	 * Returns the number of columns in the result set
 	 * @link http://php.net/manual/en/pdostatement.columncount.php
 	 * @return int the number of columns in the result set represented by the
 	 * PDOStatement object. If there is no result set,
 	 * <b>PDOStatement::columnCount</b> returns 0.
 	 */
-	public function columnCount () {}
+	public function columnCount(): int {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.2.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.2.0)<br/>
 	 * Returns metadata for a column in a result set
 	 * @link http://php.net/manual/en/pdostatement.getcolumnmeta.php
 	 * @param int $column <p>
@@ -1387,10 +1422,10 @@ class PDOStatement implements Traversable {
 	 * Returns <b>FALSE</b> if the requested column does not exist in the result set,
 	 * or if no result set exists.
 	 */
-	public function getColumnMeta ($column) {}
+	public function getColumnMeta(int $column): array {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.2.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.2.0)<br/>
 	 * Set the default fetch mode for this statement
 	 * @link http://php.net/manual/en/pdostatement.setfetchmode.php
 	 * @param int $mode <p>
@@ -1398,42 +1433,42 @@ class PDOStatement implements Traversable {
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function setFetchMode ($mode) {}
+	public function setFetchMode(int $mode): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.2.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.2.0)<br/>
 	 * Advances to the next rowset in a multi-rowset statement handle
 	 * @link http://php.net/manual/en/pdostatement.nextrowset.php
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function nextRowset () {}
+	public function nextRowset(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.9.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.9.0)<br/>
 	 * Closes the cursor, enabling the statement to be executed again.
 	 * @link http://php.net/manual/en/pdostatement.closecursor.php
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
 	 */
-	public function closeCursor () {}
+	public function closeCursor(): bool {}
 
 	/**
-	 * (PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.9.0)<br/>
+	 * (PHP 5 &gt;= 5.1.0, PHP 7, PECL pdo &gt;= 0.9.0)<br/>
 	 * Dump an SQL prepared command
 	 * @link http://php.net/manual/en/pdostatement.debugdumpparams.php
 	 * @return void No value is returned.
 	 */
-	public function debugDumpParams () {}
+	public function debugDumpParams() {}
 
-	final public function __wakeup () {}
+	final public function __wakeup() {}
 
-	final public function __sleep () {}
+	final public function __sleep() {}
 
 }
 
 final class PDORow  {
 }
 
-function pdo_drivers () {}
+function pdo_drivers() {}
 
-// End of PDO v.1.0.4dev
+// End of PDO v.7.0.4-7ubuntu2
 ?>

@@ -1,9 +1,9 @@
 <?php
 
-// Start of pcntl v.
+// Start of pcntl v.7.0.4-7ubuntu2
 
 /**
- * (PHP 4 &gt;= 4.1.0, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.1.0, PHP 5, PHP 7)<br/>
  * Forks the currently running process
  * @link http://php.net/manual/en/function.pcntl-fork.php
  * @return int On success, the PID of the child process is returned in the
@@ -12,10 +12,10 @@
  * parent's context, no child process will be created, and a PHP
  * error is raised.
  */
-function pcntl_fork () {}
+function pcntl_fork(): int {}
 
 /**
- * (PHP 4 &gt;= 4.1.0, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.1.0, PHP 5, PHP 7)<br/>
  * Waits on or returns the status of a forked child
  * @link http://php.net/manual/en/function.pcntl-waitpid.php
  * @param int $pid <p>
@@ -93,10 +93,10 @@ function pcntl_fork () {}
  * child which exited, -1 on error or zero if <b>WNOHANG</b> was used and no
  * child was available
  */
-function pcntl_waitpid ($pid, &$status, $options = 0) {}
+function pcntl_waitpid(int $pid, int &$status, int $options = 0): int {}
 
 /**
- * (PHP 5)<br/>
+ * (PHP 5, PHP 7)<br/>
  * Waits on or returns the status of a forked child
  * @link http://php.net/manual/en/function.pcntl-wait.php
  * @param int $status <p>
@@ -139,10 +139,10 @@ function pcntl_waitpid ($pid, &$status, $options = 0) {}
  * child which exited, -1 on error or zero if WNOHANG was provided as an
  * option (on wait3-available systems) and no child was available.
  */
-function pcntl_wait (&$status, $options = 0) {}
+function pcntl_wait(int &$status, int $options = 0): int {}
 
 /**
- * (PHP 4 &gt;= 4.1.0, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.1.0, PHP 5, PHP 7)<br/>
  * Installs a signal handler
  * @link http://php.net/manual/en/function.pcntl-signal.php
  * @param int $signo <p>
@@ -170,18 +170,18 @@ function pcntl_wait (&$status, $options = 0) {}
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function pcntl_signal ($signo, $handler, $restart_syscalls = true) {}
+function pcntl_signal(int $signo, $handler, bool $restart_syscalls = true): bool {}
 
 /**
- * (PHP 5 &gt;= 5.3.0)<br/>
+ * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
  * Calls signal handlers for pending signals
  * @link http://php.net/manual/en/function.pcntl-signal-dispatch.php
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function pcntl_signal_dispatch () {}
+function pcntl_signal_dispatch(): bool {}
 
 /**
- * (PHP 4 &gt;= 4.1.0, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.1.0, PHP 5, PHP 7)<br/>
  * Checks if status code represents a normal exit
  * @link http://php.net/manual/en/function.pcntl-wifexited.php
  * @param int $status The <i>status</i>
@@ -190,10 +190,10 @@ function pcntl_signal_dispatch () {}
  * @return bool <b>TRUE</b> if the child status code represents a normal exit, <b>FALSE</b>
  * otherwise.
  */
-function pcntl_wifexited ($status) {}
+function pcntl_wifexited(int $status): bool {}
 
 /**
- * (PHP 4 &gt;= 4.1.0, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.1.0, PHP 5, PHP 7)<br/>
  * Checks whether the child process is currently stopped
  * @link http://php.net/manual/en/function.pcntl-wifstopped.php
  * @param int $status The <i>status</i>
@@ -202,10 +202,10 @@ function pcntl_wifexited ($status) {}
  * @return bool <b>TRUE</b> if the child process which caused the return is
  * currently stopped, <b>FALSE</b> otherwise.
  */
-function pcntl_wifstopped ($status) {}
+function pcntl_wifstopped(int $status): bool {}
 
 /**
- * (PHP 4 &gt;= 4.1.0, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.1.0, PHP 5, PHP 7)<br/>
  * Checks whether the status code represents a termination due to a signal
  * @link http://php.net/manual/en/function.pcntl-wifsignaled.php
  * @param int $status The <i>status</i>
@@ -214,10 +214,10 @@ function pcntl_wifstopped ($status) {}
  * @return bool <b>TRUE</b> if the child process exited because of a signal which was
  * not caught, <b>FALSE</b> otherwise.
  */
-function pcntl_wifsignaled ($status) {}
+function pcntl_wifsignaled(int $status): bool {}
 
 /**
- * (PHP 4 &gt;= 4.1.0, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.1.0, PHP 5, PHP 7)<br/>
  * Returns the return code of a terminated child
  * @link http://php.net/manual/en/function.pcntl-wexitstatus.php
  * @param int $status The <i>status</i>
@@ -225,10 +225,10 @@ function pcntl_wifsignaled ($status) {}
  * call to <b>pcntl_waitpid</b>.</p>
  * @return int the return code, as an integer.
  */
-function pcntl_wexitstatus ($status) {}
+function pcntl_wexitstatus(int $status): int {}
 
 /**
- * (PHP 4 &gt;= 4.1.0, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.1.0, PHP 5, PHP 7)<br/>
  * Returns the signal which caused the child to terminate
  * @link http://php.net/manual/en/function.pcntl-wtermsig.php
  * @param int $status The <i>status</i>
@@ -236,10 +236,10 @@ function pcntl_wexitstatus ($status) {}
  * call to <b>pcntl_waitpid</b>.</p>
  * @return int the signal number, as an integer.
  */
-function pcntl_wtermsig ($status) {}
+function pcntl_wtermsig(int $status): int {}
 
 /**
- * (PHP 4 &gt;= 4.1.0, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.1.0, PHP 5, PHP 7)<br/>
  * Returns the signal which caused the child to stop
  * @link http://php.net/manual/en/function.pcntl-wstopsig.php
  * @param int $status The <i>status</i>
@@ -247,10 +247,10 @@ function pcntl_wtermsig ($status) {}
  * call to <b>pcntl_waitpid</b>.</p>
  * @return int the signal number.
  */
-function pcntl_wstopsig ($status) {}
+function pcntl_wstopsig(int $status): int {}
 
 /**
- * (PHP 4 &gt;= 4.2.0, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.2.0, PHP 5, PHP 7)<br/>
  * Executes specified program in current process space
  * @link http://php.net/manual/en/function.pcntl-exec.php
  * @param string $path <p>
@@ -271,10 +271,10 @@ function pcntl_wstopsig ($status) {}
  * </p>
  * @return bool <b>FALSE</b> on error and does not return on success.
  */
-function pcntl_exec ($path, array $args = null, array $envs = null) {}
+function pcntl_exec(string $path, array $args = null, array $envs = null): bool {}
 
 /**
- * (PHP 4 &gt;= 4.3.0, PHP 5)<br/>
+ * (PHP 4 &gt;= 4.3.0, PHP 5, PHP 7)<br/>
  * Set an alarm clock for delivery of a signal
  * @link http://php.net/manual/en/function.pcntl-alarm.php
  * @param int $seconds <p>
@@ -285,35 +285,35 @@ function pcntl_exec ($path, array $args = null, array $envs = null) {}
  * remaining before it was to be delivered, or 0 if there
  * was no previously scheduled alarm.
  */
-function pcntl_alarm ($seconds) {}
+function pcntl_alarm(int $seconds): int {}
 
 /**
- * (PHP 5 &gt;= 5.3.4)<br/>
+ * (PHP 5 &gt;= 5.3.4, PHP 7)<br/>
  * Retrieve the error number set by the last pcntl function which failed
  * @link http://php.net/manual/en/function.pcntl-get-last-error.php
  * @return int error code.
  */
-function pcntl_get_last_error () {}
+function pcntl_get_last_error(): int {}
 
 /**
- * (PHP 5 &gt;= 5.3.4)<br/>
+ * (PHP 5 &gt;= 5.3.4, PHP 7)<br/>
  * Alias of <b>pcntl_strerror</b>
  * @link http://php.net/manual/en/function.pcntl-errno.php
  */
-function pcntl_errno () {}
+function pcntl_errno() {}
 
 /**
- * (PHP 5 &gt;= 5.3.4)<br/>
+ * (PHP 5 &gt;= 5.3.4, PHP 7)<br/>
  * Retrieve the system error message associated with the given errno
  * @link http://php.net/manual/en/function.pcntl-strerror.php
  * @param int $errno <p>
  * </p>
  * @return string error description on success or <b>FALSE</b> on failure.
  */
-function pcntl_strerror ($errno) {}
+function pcntl_strerror(int $errno): string {}
 
 /**
- * (PHP 5)<br/>
+ * (PHP 5, PHP 7)<br/>
  * Get the priority of any process
  * @link http://php.net/manual/en/function.pcntl-getpriority.php
  * @param int $pid [optional] <p>
@@ -327,10 +327,10 @@ function pcntl_strerror ($errno) {}
  * or <b>FALSE</b> on error. A lower numerical value causes more favorable
  * scheduling.
  */
-function pcntl_getpriority ($pid = 'getmypid()', $process_identifier = 'PRIO_PROCESS') {}
+function pcntl_getpriority(int $pid = 'getmypid()', int $process_identifier = PRIO_PROCESS): int {}
 
 /**
- * (PHP 5)<br/>
+ * (PHP 5, PHP 7)<br/>
  * Change the priority of any process
  * @link http://php.net/manual/en/function.pcntl-setpriority.php
  * @param int $priority <p>
@@ -350,10 +350,10 @@ function pcntl_getpriority ($pid = 'getmypid()', $process_identifier = 'PRIO_PRO
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function pcntl_setpriority ($priority, $pid = 'getmypid()', $process_identifier = 'PRIO_PROCESS') {}
+function pcntl_setpriority(int $priority, int $pid = 'getmypid()', int $process_identifier = PRIO_PROCESS): bool {}
 
 /**
- * (PHP 5 &gt;= 5.3.0)<br/>
+ * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
  * Sets and retrieves blocked signals
  * @link http://php.net/manual/en/function.pcntl-sigprocmask.php
  * @param int $how <p>
@@ -375,10 +375,10 @@ function pcntl_setpriority ($priority, $pid = 'getmypid()', $process_identifier 
  * </p>
  * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
  */
-function pcntl_sigprocmask ($how, array $set, array &$oldset = null) {}
+function pcntl_sigprocmask(int $how, array $set, array &$oldset = null): bool {}
 
 /**
- * (PHP 5 &gt;= 5.3.0)<br/>
+ * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
  * Waits for signals
  * @link http://php.net/manual/en/function.pcntl-sigwaitinfo.php
  * @param array $set <p>
@@ -416,10 +416,10 @@ function pcntl_sigprocmask ($how, array $set, array &$oldset = null) {}
  * </p>
  * @return int On success, <b>pcntl_sigwaitinfo</b> returns a signal number.
  */
-function pcntl_sigwaitinfo (array $set, array &$siginfo = null) {}
+function pcntl_sigwaitinfo(array $set, array &$siginfo = null): int {}
 
 /**
- * (PHP 5 &gt;= 5.3.0)<br/>
+ * (PHP 5 &gt;= 5.3.0, PHP 7)<br/>
  * Waits for signals, with a timeout
  * @link http://php.net/manual/en/function.pcntl-sigtimedwait.php
  * @param array $set <p>
@@ -438,10 +438,16 @@ function pcntl_sigwaitinfo (array $set, array &$siginfo = null) {}
  * </p>
  * @return int On success, <b>pcntl_sigtimedwait</b> returns a signal number.
  */
-function pcntl_sigtimedwait (array $set, array &$siginfo = null, $seconds = 0, $nanoseconds = 0) {}
+function pcntl_sigtimedwait(array $set, array &$siginfo = null, int $seconds = 0, int $nanoseconds = 0): int {}
+
+/**
+ * @param $status
+ */
+function pcntl_wifcontinued($status) {}
 
 define ('WNOHANG', 1);
 define ('WUNTRACED', 2);
+define ('WCONTINUED', 8);
 define ('SIG_IGN', 1);
 define ('SIG_DFL', 0);
 define ('SIG_ERR', -1);
@@ -776,5 +782,5 @@ define ('PCNTL_ENOEXEC', 8);
 define ('PCNTL_ENOTDIR', 20);
 define ('PCNTL_ETXTBSY', 26);
 
-// End of pcntl v.
+// End of pcntl v.7.0.4-7ubuntu2
 ?>
